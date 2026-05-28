@@ -304,6 +304,82 @@ public:
     const_reverse_iterator crbegin() const { return const_reverse_iterator(end()); }
     const_reverse_iterator crend() const { return const_reverse_iterator(begin()); }
 
+    void assign(size_t count, const T& value) {
+        clear();
+        if (count > _capacity) {
+            reallocate(count);
+        }
+        for (size_t i = 0; i < count; ++i) {
+            _data[i] = value;
+        }
+        _size = count;
+    }
+
+    template<typename InputIt>
+    void assign(InputIt first, InputIt last) {
+        clear();
+        size_t count = std::distance(first, last);
+        if (count > _capacity) {
+            reallocate(count);
+        }
+        size_t i = 0;
+        for (InputIt it = first; it != last; ++it, ++i) {
+            _data[i] = *it;
+        }
+        _size = count;
+    }
+
+    iterator insert(const_iterator pos, const T& value) {
+        size_t index = std::distance(cbegin(), pos);
+        if (index > _size) {
+            throw std::out_of_range("Iterator out of range");
+        }
+
+        if (_size >= _capacity) {
+            size_t new_capacity = (_capacity == 0) ? 1 : _capacity * 2;
+            reallocate(new_capacity);
+        }
+
+        for (size_t i = _size; i > index; --i) {
+            _data[i] = _data[i - 1];
+        }
+        _data[index] = value;
+        ++_size;
+
+        return iterator(_data + index);
+    }
+
+    iterator erase(const_iterator pos) {
+        size_t index = std::distance(cbegin(), pos);
+        if (index >= _size) {
+            throw std::out_of_range("Iterator out of range");
+        }
+
+        for (size_t i = index; i < _size - 1; ++i) {
+            _data[i] = _data[i + 1];
+        }
+        --_size;
+
+        return iterator(_data + index);
+    }
+
+    iterator erase(const_iterator first, const_iterator last) {
+        size_t first_index = std::distance(cbegin(), first);
+        size_t last_index = std::distance(cbegin(), last);
+
+        if (first_index > _size || last_index > _size || first_index > last_index) {
+            throw std::out_of_range("Invalid range");
+        }
+
+        size_t count = last_index - first_index;
+        for (size_t i = first_index; i < _size - count; ++i) {
+            _data[i] = _data[i + count];
+        }
+        _size -= count;
+
+        return iterator(_data + first_index);
+    }
+
     void push_back(const T& value) {
         if (_size >= _capacity) {
             size_t new_capacity = (_capacity == 0) ? 1 : _capacity * 2;
