@@ -134,6 +134,18 @@ public:
         }
     }
 
+    void shrink_to_fit() {
+        if (_capacity > _size) {
+            if (_size == 0) {
+                delete[] _data;
+                _data = nullptr;
+                _capacity = 0;
+            } else {
+                reallocate(_size);
+            }
+        }
+    }
+
     void push_back(const T& value) {
         if (_size >= _capacity) {
             size_t new_capacity = (_capacity == 0) ? 1 : _capacity * 2;
