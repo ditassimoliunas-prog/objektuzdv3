@@ -79,7 +79,26 @@ public:
     inline bool empty() const { return _size == 0; }
 
     inline T& operator[](size_t index) { return _data[index]; }
+    inline T& operator[](size_t index) { return _data[index]; }
     inline const T& operator[](size_t index) const { return _data[index]; }
+    
+    T& at(size_t index) {
+        if (index >= _size) {
+            throw std::out_of_range("Vector index out of range");
+        }
+        return _data[index];
+    }
+    
+    const T& at(size_t index) const {
+        if (index >= _size) {
+            throw std::out_of_range("Vector index out of range");
+        }
+        return _data[index];
+    }
+    
+    void clear() {
+        _size = 0;
+    }
 
     void push_back(const T& value) {
         if (_size >= _capacity) {
@@ -110,4 +129,5 @@ public:
     inline T* data() { return _data; }
     inline const T* data() const { return _data; }
 };
+
 
