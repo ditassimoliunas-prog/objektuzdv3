@@ -128,6 +128,12 @@ public:
         return _data[_size - 1];
     }
 
+    void reserve(size_t new_capacity) {
+        if (new_capacity > _capacity) {
+            reallocate(new_capacity);
+        }
+    }
+
     void push_back(const T& value) {
         if (_size >= _capacity) {
             size_t new_capacity = (_capacity == 0) ? 1 : _capacity * 2;
