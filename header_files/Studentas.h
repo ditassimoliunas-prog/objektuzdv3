@@ -2,11 +2,10 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
+#include "Vector.h"
 #include "Zmogus.h"
 
 using std::string;
-using std::vector;
 
 // Išvestinė klasė iš Zmogus - aprašo studentą
 // Paveldi žmogaus duomenis (vardas, pavardė) iš Zmogus klasės
@@ -14,7 +13,7 @@ using std::vector;
 // Implementuoja Rule of Five
 class Studentas : public Zmogus {
 private:
-    vector<int> paz_;
+    Vector<int> paz_;
     int egz_;
     double rez_;
     double med_;
@@ -53,7 +52,7 @@ public:
     Studentas& operator=(Studentas&& other) noexcept;
 
     // Getters
-    inline const vector<int>& getPaz() const { return paz_; }
+    inline const Vector<int>& getPaz() const { return paz_; }
     inline vector<int>& getPaz() { return paz_; }
     inline int getEgz() const { return egz_; }
     inline double getRez() const { return rez_; }
@@ -69,7 +68,7 @@ public:
     inline void clearPaz() { paz_.clear(); }
     inline void reservePaz(size_t n) { paz_.reserve(n); }
     inline bool isPazEmpty() const { return paz_.empty(); }
-    inline void setPaz(const vector<int>& p) { paz_ = p; }
+    inline void setPaz(const Vector<int>& p) { paz_ = p; }
 
     // Skaitymas ir skaičiavimas
     std::istream& readStudent(std::istream& is);
