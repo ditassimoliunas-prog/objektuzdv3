@@ -1,3 +1,177 @@
+## v3.0 relisas: Custom Vector<T> Konteineris
+
+### Vector<T> Spartos Palyginimas su std::vector
+
+#### push_back() Operacijos Spartos Testas
+
+| Elementų skaičius | std::vector (s) | Vector<int> (s) |
+|-------------------|-----------------|-----------------|
+| 1000              | 0.04200 s       | 0.04292 s       |
+| 10000             | 0.24998 s       | 0.31445 s       |
+| 100000            | 2.31416 s       | 2.91781 s       |
+| 1000000           | 23.71250 s      | 28.25032 s      |
+
+#### Testas: std::vector vs Vector<int> push_back()
+
+---
+
+### Vector<T> API Naudojimo Pavyzdžiai
+
+#### 1. Pagrindinės Operacijos - push_back() ir pop_back()
+
+```cpp
+#include "Vector.h"
+
+Vector<int> v;
+
+// push_back() - pridėjimas į galą
+v.push_back(10);
+v.push_back(20);
+v.push_back(30);
+
+std::cout << "Dydis: " << v.size() << "\n";  // Išveda: 3
+
+// pop_back() - šalinimas iš galo
+v.pop_back();  // Šalina 30
+
+// Prieiga prie elementų
+std::cout << "Pirmas: " << v[0] << "\n";      // Išveda: 10
+std::cout << "Paskutnis: " << v.back() << "\n";  // Išveda: 20
+```
+
+#### 2. Konstruktoriai ir Inicijalizacija
+
+```cpp
+// Default konstruktorius
+Vector<double> v1;
+
+// Konstruktorius su dydžiu
+Vector<int> v2(5);  // 5 int elementų, reikšmės 0
+
+// Konstruktorius su dydžiu ir reikšme
+Vector<std::string> v3(3, "Sveiki");  // 3 "Sveiki" eilutės
+
+// Copy konstruktorius
+Vector<int> v4 = v1;  // Deep copy
+
+// Move konstruktorius
+Vector<int> v5 = std::move(v2);  // Ištekliai perkelti iš v2 į v5
+```
+
+#### 3. Reservavimas ir Dydžio Valdymas
+
+```cpp
+Vector<int> v;
+v.reserve(100);  // Išankstinis atmintis rezervavimas
+
+std::cout << "Talpa: " << v.capacity() << "\n";  // Išveda: 100
+std::cout << "Dydis: " << v.size() << "\n";      // Išveda: 0
+
+// Nustatyti konkretų dydį
+v.resize(50);  // Dabar dydis = 50, nauji elementai = 0
+
+// Sumažinti iš dalies nereikalingą atmintį
+v.shrink_to_fit();  // capacity() == size()
+```
+
+#### 4. Iteratoriai ir Iteravimas
+
+```cpp
+Vector<int> v = {1, 2, 3, 4, 5};
+
+// Range-based for ciklas
+for (int elem : v) {
+    std::cout << elem << " ";  // Išveda: 1 2 3 4 5
+}
+
+// Tiesioginis iteratoriaus naudojimas
+for (auto it = v.begin(); it != v.end(); ++it) {
+    std::cout << *it << " ";
+}
+
+// Atgaline tvarka
+for (auto it = v.rbegin(); it != v.rend(); ++it) {
+    std::cout << *it << " ";  // Išveda: 5 4 3 2 1
+}
+```
+
+#### 5. insert() ir erase() Operacijos
+
+```cpp
+Vector<int> v = {1, 2, 3, 5};
+
+// Dėjimas į konkrečią padėtį
+auto it = v.begin() + 3;
+v.insert(it, 4);  // Dabar: {1, 2, 3, 4, 5}
+
+// Šalinimas iš konkrečios padėties
+v.erase(v.begin() + 1);  // Šalina 2, dabar: {1, 3, 4, 5}
+
+// Šalinimas diapazono
+v.erase(v.begin() + 1, v.begin() + 3);  // Šalina {3, 4}, dabar: {1, 5}
+```
+
+#### 6. assign() - Perkėlimas iš Iteratoriaus Diapazono
+
+```cpp
+Vector<int> v1;
+std::vector<int> std_v = {10, 20, 30, 40};
+
+// Assign iš std::vector iteratorių
+v1.assign(std_v.begin(), std_v.end());
+// Dabar v1 = {10, 20, 30, 40}
+
+// Arba iš kito Vector<int>
+Vector<int> v2;
+v2.assign(v1.begin(), v1.end());
+// Dabar v2 = {10, 20, 30, 40}
+```
+
+#### 7. emplace_back() - Vietos Konstravimas
+
+```cpp
+struct Studentas {
+    std::string vardas;
+    int vidurkis;
+
+    Studentas(const std::string& v, int m) 
+        : vardas(v), vidurkis(m) {}
+};
+
+Vector<Studentas> grup;
+
+// emplace_back() - konstravimas tiesiog vektoriuje (be kopijų)
+grup.emplace_back("Jonas", 8);
+grup.emplace_back("Marija", 9);
+
+std::cout << "Pirmas studentas: " << grup[0].vardas << "\n";
+```
+
+#### 8. Palyginimai ir Operatoriai
+
+```cpp
+Vector<int> v1 = {1, 2, 3};
+Vector<int> v2 = {1, 2, 3};
+Vector<int> v3 = {1, 2, 4};
+
+// Lygybės operatorius
+if (v1 == v2) {
+    std::cout << "v1 ir v2 lygūs\n";  // Spausdina
+}
+
+// Nelygumo operatorius
+if (v1 != v3) {
+    std::cout << "v1 ir v3 nelygūs\n";  // Spausdina
+}
+
+// Mažiau nei operatorius
+if (v1 < v3) {
+    std::cout << "v1 < v3 (leksikografinė sąlyga)\n";
+}
+```
+
+---
+
 ## v2.0 relisas: Unit Testai (Google Test) ir Doxygen Dokumentacija
 
 ### Unit Testai (v2.0)
@@ -5,7 +179,7 @@
 Projektas naudoja **hibridinę test strategiją**:
 - **13 testų** (originalūs iš v1.5): `assert()` framework, Rule of Five ir I/O operacijos
 - **5 testai** (nauji v2.0): Google Test (`gtest`) framework, Rule of Five semantika
-
+7
 #### Rule of Five Metodai - `assert()` Framework (v1.5 pagrindiniai):
 
 | Testas | Metodas | Framework | Aprašas |
