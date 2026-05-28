@@ -100,6 +100,34 @@ public:
         _size = 0;
     }
 
+    T& front() {
+        if (_size == 0) {
+            throw std::out_of_range("Vector is empty: cannot access front()");
+        }
+        return _data[0];
+    }
+
+    const T& front() const {
+        if (_size == 0) {
+            throw std::out_of_range("Vector is empty: cannot access front()");
+        }
+        return _data[0];
+    }
+
+    T& back() {
+        if (_size == 0) {
+            throw std::out_of_range("Vector is empty: cannot access back()");
+        }
+        return _data[_size - 1];
+    }
+
+    const T& back() const {
+        if (_size == 0) {
+            throw std::out_of_range("Vector is empty: cannot access back()");
+        }
+        return _data[_size - 1];
+    }
+
     void push_back(const T& value) {
         if (_size >= _capacity) {
             size_t new_capacity = (_capacity == 0) ? 1 : _capacity * 2;
