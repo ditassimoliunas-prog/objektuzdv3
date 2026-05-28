@@ -4,6 +4,7 @@
 #include <stdexcept>
 #include <utility>
 #include <algorithm>
+#include <limits>
 
 template <typename T>
 class Vector;
@@ -380,6 +381,47 @@ public:
         return iterator(_data + first_index);
     }
 
+    template<typename... Args>
+    void emplace_back(Args&&... args) {
+        if (_size >= _capacity) {
+            size_t new_capacity = (_capacity == 0) ? 1 : _capacity * 2;
+            reallocate(new_capacity);
+        }
+        new (_data + _size) T(std::forward<Args>(args)...);
+        ++_size;
+    }
+
+    template<typename... Args>
+    iterator emplace(const_iterator pos, Args&&... args) {
+        size_t index = std::distance(cbegin(), pos);
+        if (index > _size) {
+            throw std::out_of_range("Iterator out of range");
+        }
+
+        if (_size >= _capacity) {
+            size_t new_capacity = (_capacity == 0) ? 1 : _capacity * 2;
+            reallocate(new_capacity);
+        }
+
+        for (size_t i = _size; i > index; --i) {
+            _data[i] = _data[i - 1];
+        }
+        new (_data + index) T(std::forward<Args>(args)...);
+        ++_size;
+
+        return iterator(_data + index);
+    }
+
+    size_t max_size() const {
+        return std::numeric_limits<size_t>::max() / sizeof(T);
+    }
+
+    inline T* data() { return _data; }
+    inline const T* data() const { return _data; }
+
+    inline size_t get_reallocation_count() const { return _realloc_count; }
+    inline void reset_reallocation_count() { _realloc_count = 0; }
+
     void push_back(const T& value) {
         if (_size >= _capacity) {
             size_t new_capacity = (_capacity == 0) ? 1 : _capacity * 2;
@@ -398,16 +440,12 @@ public:
         ++_size;
     }
 
-    inline size_t get_reallocation_count() const { return _realloc_count; }
-    inline void reset_reallocation_count() { _realloc_count = 0; }
     void pop_back() {
         if (_size > 0) {
             --_size;
         }
     }
-
-    inline T* data() { return _data; }
-    inline const T* data() const { return _data; }
 };
+
 
 
