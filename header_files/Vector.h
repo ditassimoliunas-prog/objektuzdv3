@@ -3,6 +3,81 @@
 #include <iostream>
 #include <stdexcept>
 #include <utility>
+#include <algorithm>
+
+template <typename T>
+class Vector;
+
+// Forward declaration
+template <typename T>
+class VectorIterator {
+public:
+    using iterator_category = std::random_access_iterator_tag;
+    using value_type = T;
+    using difference_type = std::ptrdiff_t;
+    using pointer = T*;
+    using reference = T&;
+
+private:
+    T* _ptr;
+
+public:
+    VectorIterator(T* ptr = nullptr) : _ptr(ptr) {}
+
+    reference operator*() const { return *_ptr; }
+    pointer operator->() const { return _ptr; }
+
+    VectorIterator& operator++() {
+        ++_ptr;
+        return *this;
+    }
+    VectorIterator operator++(int) {
+        VectorIterator temp = *this;
+        ++_ptr;
+        return temp;
+    }
+
+    VectorIterator& operator--() {
+        --_ptr;
+        return *this;
+    }
+    VectorIterator operator--(int) {
+        VectorIterator temp = *this;
+        --_ptr;
+        return temp;
+    }
+
+    VectorIterator operator+(difference_type n) const {
+        return VectorIterator(_ptr + n);
+    }
+    VectorIterator operator-(difference_type n) const {
+        return VectorIterator(_ptr - n);
+    }
+
+    VectorIterator& operator+=(difference_type n) {
+        _ptr += n;
+        return *this;
+    }
+    VectorIterator& operator-=(difference_type n) {
+        _ptr -= n;
+        return *this;
+    }
+
+    reference operator[](difference_type n) const {
+        return _ptr[n];
+    }
+
+    bool operator==(const VectorIterator& other) const { return _ptr == other._ptr; }
+    bool operator!=(const VectorIterator& other) const { return _ptr != other._ptr; }
+    bool operator<(const VectorIterator& other) const { return _ptr < other._ptr; }
+    bool operator>(const VectorIterator& other) const { return _ptr > other._ptr; }
+    bool operator<=(const VectorIterator& other) const { return _ptr <= other._ptr; }
+    bool operator>=(const VectorIterator& other) const { return _ptr >= other._ptr; }
+
+    difference_type operator-(const VectorIterator& other) const {
+        return _ptr - other._ptr;
+    }
+};
 
 template <typename T>
 class Vector {
@@ -204,6 +279,30 @@ public:
     bool operator>=(const Vector& other) const {
         return !(*this < other);
     }
+
+    using iterator = VectorIterator<T>;
+    using const_iterator = VectorIterator<const T>;
+
+    iterator begin() { return iterator(_data); }
+    iterator end() { return iterator(_data + _size); }
+
+    const_iterator begin() const { return const_iterator(_data); }
+    const_iterator end() const { return const_iterator(_data + _size); }
+
+    const_iterator cbegin() const { return const_iterator(_data); }
+    const_iterator cend() const { return const_iterator(_data + _size); }
+
+    using reverse_iterator = std::reverse_iterator<iterator>;
+    using const_reverse_iterator = std::reverse_iterator<const_iterator>;
+
+    reverse_iterator rbegin() { return reverse_iterator(end()); }
+    reverse_iterator rend() { return reverse_iterator(begin()); }
+
+    const_reverse_iterator rbegin() const { return const_reverse_iterator(end()); }
+    const_reverse_iterator rend() const { return const_reverse_iterator(begin()); }
+
+    const_reverse_iterator crbegin() const { return const_reverse_iterator(end()); }
+    const_reverse_iterator crend() const { return const_reverse_iterator(begin()); }
 
     void push_back(const T& value) {
         if (_size >= _capacity) {
