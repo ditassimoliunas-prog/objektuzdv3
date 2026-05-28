@@ -4,6 +4,7 @@
 #include <cassert>
 #include <vector>
 #include "header_files/Studentas.h"
+#include "header_files/Vector.h"
 
 using std::cout;
 using std::cin;
@@ -485,3 +486,291 @@ int main(int argc, char** argv) {
     // Vykdyti Google Test testus
     return RUN_ALL_TESTS();
 }
+
+// ============================================
+// VECTOR GTEST TESTAI
+// ============================================
+
+class VectorTest : public ::testing::Test {
+protected:
+    Vector<int> v;
+};
+
+// Test 1: Default konstruktorius
+TEST_F(VectorTest, DefaultConstructor) {
+    EXPECT_EQ(v.size(), 0);
+    EXPECT_EQ(v.capacity(), 0);
+    EXPECT_TRUE(v.empty());
+}
+
+// Test 2: Parametrizuotas konstruktorius su size
+TEST_F(VectorTest, ConstructorWithCapacity) {
+    Vector<int> v2(10);
+    EXPECT_EQ(v2.size(), 0);
+    EXPECT_EQ(v2.capacity(), 10);
+}
+
+// Test 3: Parametrizuotas konstruktorius su size ir value
+TEST_F(VectorTest, ConstructorWithSizeAndValue) {
+    Vector<int> v2(5, 42);
+    EXPECT_EQ(v2.size(), 5);
+    EXPECT_EQ(v2.capacity(), 5);
+    EXPECT_EQ(v2[0], 42);
+    EXPECT_EQ(v2[4], 42);
+}
+
+// Test 4: push_back()
+TEST_F(VectorTest, PushBack) {
+    v.push_back(10);
+    v.push_back(20);
+    v.push_back(30);
+    EXPECT_EQ(v.size(), 3);
+    EXPECT_EQ(v[0], 10);
+    EXPECT_EQ(v[1], 20);
+    EXPECT_EQ(v[2], 30);
+}
+
+// Test 5: front() ir back()
+TEST_F(VectorTest, FrontAndBack) {
+    v.push_back(10);
+    v.push_back(20);
+    v.push_back(30);
+    EXPECT_EQ(v.front(), 10);
+    EXPECT_EQ(v.back(), 30);
+}
+
+// Test 6: pop_back()
+TEST_F(VectorTest, PopBack) {
+    v.push_back(10);
+    v.push_back(20);
+    v.push_back(30);
+    v.pop_back();
+    EXPECT_EQ(v.size(), 2);
+    EXPECT_EQ(v.back(), 20);
+}
+
+// Test 7: at() su bounds checking
+TEST_F(VectorTest, AtWithBoundsChecking) {
+    v.push_back(10);
+    v.push_back(20);
+    EXPECT_EQ(v.at(0), 10);
+    EXPECT_EQ(v.at(1), 20);
+    EXPECT_THROW(v.at(2), std::out_of_range);
+}
+
+// Test 8: operator[]
+TEST_F(VectorTest, OperatorBrackets) {
+    v.push_back(10);
+    v.push_back(20);
+    v[0] = 100;
+    v[1] = 200;
+    EXPECT_EQ(v[0], 100);
+    EXPECT_EQ(v[1], 200);
+}
+
+// Test 9: clear()
+TEST_F(VectorTest, Clear) {
+    v.push_back(10);
+    v.push_back(20);
+    v.clear();
+    EXPECT_EQ(v.size(), 0);
+    EXPECT_TRUE(v.empty());
+}
+
+// Test 10: reserve()
+TEST_F(VectorTest, Reserve) {
+    v.reserve(100);
+    EXPECT_GE(v.capacity(), 100);
+    EXPECT_EQ(v.size(), 0);
+}
+
+// Test 11: shrink_to_fit()
+TEST_F(VectorTest, ShrinkToFit) {
+    v.push_back(10);
+    v.push_back(20);
+    v.push_back(30);
+    v.shrink_to_fit();
+    EXPECT_EQ(v.capacity(), v.size());
+}
+
+// Test 12: resize()
+TEST_F(VectorTest, Resize) {
+    v.push_back(10);
+    v.push_back(20);
+    v.resize(5);
+    EXPECT_EQ(v.size(), 5);
+
+    v.resize(2);
+    EXPECT_EQ(v.size(), 2);
+}
+
+// Test 13: resize() su value
+TEST_F(VectorTest, ResizeWithValue) {
+    v.resize(3, 42);
+    EXPECT_EQ(v.size(), 3);
+    EXPECT_EQ(v[0], 42);
+    EXPECT_EQ(v[1], 42);
+    EXPECT_EQ(v[2], 42);
+}
+
+// Test 14: swap()
+TEST_F(VectorTest, Swap) {
+    Vector<int> v2;
+    v.push_back(10);
+    v.push_back(20);
+    v2.push_back(100);
+
+    v.swap(v2);
+    EXPECT_EQ(v.size(), 1);
+    EXPECT_EQ(v[0], 100);
+    EXPECT_EQ(v2.size(), 2);
+    EXPECT_EQ(v2[0], 10);
+}
+
+// Test 15: operator== ir operator!=
+TEST_F(VectorTest, ComparisonOperators) {
+    Vector<int> v2;
+    v.push_back(10);
+    v.push_back(20);
+    v2.push_back(10);
+    v2.push_back(20);
+
+    EXPECT_TRUE(v == v2);
+    EXPECT_FALSE(v != v2);
+
+    v2.push_back(30);
+    EXPECT_FALSE(v == v2);
+    EXPECT_TRUE(v != v2);
+}
+
+// Test 16: operator< ir operator>
+TEST_F(VectorTest, LessGreaterOperators) {
+    Vector<int> v2;
+    v.push_back(10);
+    v.push_back(20);
+    v2.push_back(10);
+    v2.push_back(30);
+
+    EXPECT_TRUE(v < v2);
+    EXPECT_TRUE(v2 > v);
+    EXPECT_FALSE(v > v2);
+}
+
+// Test 17: begin() ir end() iteratoriai
+TEST_F(VectorTest, BeginEndIterators) {
+    v.push_back(10);
+    v.push_back(20);
+    v.push_back(30);
+
+    int sum = 0;
+    for (auto it = v.begin(); it != v.end(); ++it) {
+        sum += *it;
+    }
+    EXPECT_EQ(sum, 60);
+}
+
+// Test 18: assign()
+TEST_F(VectorTest, Assign) {
+    v.assign(5, 42);
+    EXPECT_EQ(v.size(), 5);
+    for (size_t i = 0; i < v.size(); ++i) {
+        EXPECT_EQ(v[i], 42);
+    }
+}
+
+// Test 19: insert()
+TEST_F(VectorTest, Insert) {
+    v.push_back(10);
+    v.push_back(30);
+    v.insert(v.begin() + 1, 20);
+
+    EXPECT_EQ(v.size(), 3);
+    EXPECT_EQ(v[0], 10);
+    EXPECT_EQ(v[1], 20);
+    EXPECT_EQ(v[2], 30);
+}
+
+// Test 20: erase()
+TEST_F(VectorTest, Erase) {
+    v.push_back(10);
+    v.push_back(20);
+    v.push_back(30);
+
+    v.erase(v.begin() + 1);
+
+    EXPECT_EQ(v.size(), 2);
+    EXPECT_EQ(v[0], 10);
+    EXPECT_EQ(v[1], 30);
+}
+
+// Test 21: emplace_back()
+TEST_F(VectorTest, EmplaceBack) {
+    v.emplace_back(42);
+    v.emplace_back(99);
+
+    EXPECT_EQ(v.size(), 2);
+    EXPECT_EQ(v[0], 42);
+    EXPECT_EQ(v[1], 99);
+}
+
+// Test 22: Copy konstruktorius
+TEST_F(VectorTest, CopyConstructor) {
+    v.push_back(10);
+    v.push_back(20);
+
+    Vector<int> v2 = v;
+    EXPECT_EQ(v2.size(), 2);
+    EXPECT_EQ(v2[0], 10);
+
+    v2[0] = 100;
+    EXPECT_EQ(v[0], 10);  // Original nepakeistas
+}
+
+// Test 23: Move konstruktorius
+TEST_F(VectorTest, MoveConstructor) {
+    v.push_back(10);
+    v.push_back(20);
+
+    Vector<int> v2 = std::move(v);
+    EXPECT_EQ(v2.size(), 2);
+    EXPECT_EQ(v.size(), 0);  // Original tuščias
+}
+
+// Test 24: Copy assignment
+TEST_F(VectorTest, CopyAssignment) {
+    v.push_back(10);
+    v.push_back(20);
+
+    Vector<int> v2;
+    v2 = v;
+    EXPECT_EQ(v2.size(), 2);
+    v2[0] = 100;
+    EXPECT_EQ(v[0], 10);  // Original nepakeistas
+}
+
+// Test 25: Move assignment
+TEST_F(VectorTest, MoveAssignment) {
+    v.push_back(10);
+    v.push_back(20);
+
+    Vector<int> v2;
+    v2 = std::move(v);
+    EXPECT_EQ(v2.size(), 2);
+    EXPECT_EQ(v.size(), 0);  // Original tuščias
+}
+
+// Test 26: max_size()
+TEST_F(VectorTest, MaxSize) {
+    EXPECT_GT(v.max_size(), 0);
+}
+
+// Test 27: data()
+TEST_F(VectorTest, Data) {
+    v.push_back(10);
+    v.push_back(20);
+
+    int* ptr = v.data();
+    EXPECT_EQ(ptr[0], 10);
+    EXPECT_EQ(ptr[1], 20);
+}
+
