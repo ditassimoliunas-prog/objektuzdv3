@@ -101,6 +101,13 @@ public:
 
     inline size_t get_reallocation_count() const { return _realloc_count; }
     inline void reset_reallocation_count() { _realloc_count = 0; }
+    void pop_back() {
+        if (_size > 0) {
+            --_size;
+        }
+    }
+
     inline T* data() { return _data; }
     inline const T* data() const { return _data; }
 };
+
