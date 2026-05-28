@@ -53,7 +53,7 @@ public:
 
     // Getters
     inline const Vector<int>& getPaz() const { return paz_; }
-    inline vector<int>& getPaz() { return paz_; }
+    inline Vector<int>& getPaz() { return paz_; }
     inline int getEgz() const { return egz_; }
     inline double getRez() const { return rez_; }
     inline double getMed() const { return med_; }

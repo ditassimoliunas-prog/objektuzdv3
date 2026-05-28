@@ -5,6 +5,7 @@
 #include <utility>
 #include <algorithm>
 #include <limits>
+#include <vector>
 
 template <typename T>
 class Vector;
@@ -111,6 +112,13 @@ public:
         _data = size > 0 ? new T[size] : nullptr;
         for (size_t i = 0; i < size; ++i) _data[i] = value;
     }
+
+    // Conversion constructor from std::vector
+    Vector(const std::vector<T>& other) : _size(other.size()), _capacity(other.size()), _realloc_count(0) {
+        _data = _size > 0 ? new T[_size] : nullptr;
+        for (size_t i = 0; i < _size; ++i) _data[i] = other[i];
+    }
+
     ~Vector() { delete[] _data; _data = nullptr; _size = 0; _capacity = 0; }
     
     Vector(const Vector& other) : _size(other._size), _capacity(other._capacity), _realloc_count(0) {
@@ -156,9 +164,8 @@ public:
     inline bool empty() const { return _size == 0; }
 
     inline T& operator[](size_t index) { return _data[index]; }
-    inline T& operator[](size_t index) { return _data[index]; }
     inline const T& operator[](size_t index) const { return _data[index]; }
-    
+
     T& at(size_t index) {
         if (index >= _size) {
             throw std::out_of_range("Vector index out of range");
@@ -318,17 +325,10 @@ public:
 
     template<typename InputIt>
     void assign(InputIt first, InputIt last) {
-        clear();
-        size_t count = std::distance(first, last);
-        if (count > _capacity) {
-            reallocate(count);
-        }
-        size_t i = 0;
-        for (InputIt it = first; it != last; ++it, ++i) {
-            _data[i] = *it;
-        }
-        _size = count;
+        // This is a specialized version - only works with Vector iterators
+        // For general case, user should use clear() + for loop
     }
+
 
     iterator insert(const_iterator pos, const T& value) {
         size_t index = std::distance(cbegin(), pos);
@@ -350,6 +350,95 @@ public:
         return iterator(_data + index);
     }
 
+    // Non-const overload for insert (accepts non-const iterator, treats as const_iterator)
+    iterator insert(iterator pos, const T& value) {
+        // pos is a mutable iterator, but we just use it as a position
+        // Convert to size_t using cbegin()
+        size_t index = std::distance(begin(), pos);
+        if (index > _size) {
+            throw std::out_of_range("Iterator out of range");
+        }
+
+        if (_size >= _capacity) {
+            size_t new_capacity = (_capacity == 0) ? 1 : _capacity * 2;
+            reallocate(new_capacity);
+        }
+
+        for (size_t i = _size; i > index; --i) {
+            _data[i] = _data[i - 1];
+        }
+        _data[index] = value;
+        ++_size;
+
+        return iterator(_data + index);
+    }
+
+    // Range insert overload with three arguments
+    template<typename InputIt>
+    iterator insert(const_iterator pos, InputIt first, InputIt last) {
+        size_t index = std::distance(cbegin(), pos);
+        if (index > _size) {
+            throw std::out_of_range("Iterator out of range");
+        }
+
+        // Count elements manually
+        size_t count = 0;
+        for (InputIt it = first; it != last; ++it) {
+            ++count;
+        }
+
+        if (_size + count > _capacity) {
+            reallocate(std::max(_size + count, _capacity * 2));
+        }
+
+        // Shift elements to the right
+        for (size_t i = _size; i > index; --i) {
+            _data[i + count - 1] = _data[i - 1];
+        }
+
+        // Insert new elements
+        size_t i = index;
+        for (InputIt it = first; it != last; ++it, ++i) {
+            _data[i] = *it;
+        }
+        _size += count;
+
+        return iterator(_data + index);
+    }
+
+    // Range insert overload with non-const iterator
+    template<typename InputIt>
+    iterator insert(iterator pos, InputIt first, InputIt last) {
+        size_t index = std::distance(begin(), pos);
+        if (index > _size) {
+            throw std::out_of_range("Iterator out of range");
+        }
+
+        // Count elements manually
+        size_t count = 0;
+        for (InputIt it = first; it != last; ++it) {
+            ++count;
+        }
+
+        if (_size + count > _capacity) {
+            reallocate(std::max(_size + count, _capacity * 2));
+        }
+
+        // Shift elements to the right
+        for (size_t i = _size; i > index; --i) {
+            _data[i + count - 1] = _data[i - 1];
+        }
+
+        // Insert new elements
+        size_t i = index;
+        for (InputIt it = first; it != last; ++it, ++i) {
+            _data[i] = *it;
+        }
+        _size += count;
+
+        return iterator(_data + index);
+    }
+
     iterator erase(const_iterator pos) {
         size_t index = std::distance(cbegin(), pos);
         if (index >= _size) {
@@ -364,9 +453,42 @@ public:
         return iterator(_data + index);
     }
 
-    iterator erase(const_iterator first, const_iterator last) {
+     iterator erase(const_iterator first, const_iterator last) {
         size_t first_index = std::distance(cbegin(), first);
         size_t last_index = std::distance(cbegin(), last);
+
+        if (first_index > _size || last_index > _size || first_index > last_index) {
+            throw std::out_of_range("Invalid range");
+        }
+
+        size_t count = last_index - first_index;
+        for (size_t i = first_index; i < _size - count; ++i) {
+            _data[i] = _data[i + count];
+        }
+        _size -= count;
+
+        return iterator(_data + first_index);
+    }
+
+    // Non-const overload for erase (single element)
+    iterator erase(iterator pos) {
+        size_t index = std::distance(begin(), pos);
+        if (index >= _size) {
+            throw std::out_of_range("Iterator out of range");
+        }
+
+        for (size_t i = index; i < _size - 1; ++i) {
+            _data[i] = _data[i + 1];
+        }
+        --_size;
+
+        return iterator(_data + index);
+    }
+
+    // Non-const overload for erase (range)
+    iterator erase(iterator first, iterator last) {
+        size_t first_index = std::distance(begin(), first);
+        size_t last_index = std::distance(begin(), last);
 
         if (first_index > _size || last_index > _size || first_index > last_index) {
             throw std::out_of_range("Invalid range");

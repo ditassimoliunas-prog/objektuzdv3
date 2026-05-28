@@ -55,3 +55,28 @@ int generuotiPazymi() {
 int generuotiEgzamina() {
     return rand() % 11;
 }
+
+// Vector versions
+double mediana(Vector <int> paz) {
+    if (paz.empty()) return 0.0;
+
+    Vector <int> temp = paz;
+    sort(temp.begin(), temp.end());
+    int n = temp.size();
+    if (n % 2 == 0) {
+        return (temp[n / 2 - 1] + temp[n / 2]) / 2.0;
+    }
+    else {
+        return temp[n / 2];
+    }
+}
+
+// Vidurkio skaiciavimas is Vector pazymiu
+double vidurkis(const Vector<int>& paz) {
+    if (paz.empty()) return 0.0;
+    int sum = 0;
+    for (int p : paz) {
+        sum += p;
+    }
+    return sum * 1.0 / paz.size();
+}
