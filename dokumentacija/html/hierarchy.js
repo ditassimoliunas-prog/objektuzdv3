@@ -27,7 +27,12 @@ var hierarchy =
     [ "runtime_error", "classruntime__error.html", null ],
     [ "string", "classstring.html", null ],
     [ "stringstream", "classstringstream.html", null ],
+    [ "testing::Test", null, [
+      [ "VectorTest", "class_vector_test.html", null ]
+    ] ],
+    [ "Vector&lt; T &gt;", "class_vector.html", null ],
     [ "vector&lt; T &gt;", "classvector.html", null ],
+    [ "VectorIterator&lt; T &gt;", "class_vector_iterator.html", null ],
     [ "Zmogus", "class_zmogus.html", [
       [ "Studentas", "class_studentas.html", null ]
     ] ]

@@ -38,13 +38,14 @@ var NAVTREE =
     ] ],
     [ "Failai", "files.html", [
       [ "Failai", "files.html", "files_dup" ]
-    ] ]
+    ] ],
+    [ "Pavyzdžiai", "examples.html", "examples" ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"_mat__funkcijos_8h_source.html"
+"_c_1_2_users_2ditas_2source_2repos_2ditassimoliunas-prog_2objektuzdv3_2header_files_2_vector_8h-example.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

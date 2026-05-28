@@ -34,4 +34,5 @@ var menudata={children:[
 {text:"Kintamieji",url:"functions_vars.html"},
 {text:"Susiję Funkcijos",url:"functions_rela.html"}]}]},
 {text:"Failai",url:"files.html",children:[
-{text:"Failai",url:"files.html"}]}]}
+{text:"Failai",url:"files.html"}]},
+{text:"Pavyzdžiai",url:"examples.html"}]}

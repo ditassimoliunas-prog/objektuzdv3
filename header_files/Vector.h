@@ -7,10 +7,17 @@
 #include <limits>
 #include <vector>
 
-template <typename T>
-class Vector;
-
-// Forward declaration
+/**
+ * @brief Random access iterator for Vector<T> container
+ * 
+ * VectorIterator provides bidirectional and random access to Vector elements.
+ * Supports all standard iterator operations including comparison, arithmetic,
+ * and dereferencing.
+ * 
+ * @tparam T The element type that the iterator points to
+ * 
+ * @see Vector
+ */
 template <typename T>
 class VectorIterator {
 public:
@@ -81,6 +88,46 @@ public:
     }
 };
 
+/**
+ * @class Vector
+ * @brief Custom dynamic array container template
+ * 
+ * Vector<T> is a generic container that stores elements of type T in a 
+ * dynamically allocated array. It provides O(1) amortized time complexity 
+ * for push_back(), while maintaining contiguous memory layout like std::vector.
+ * 
+ * The class implements the Rule of Five pattern and fully supports deep copy
+ * and move semantics.
+ * 
+ * **Key Features:**
+ * - Dynamic memory management (automatic resizing)
+ * - Random access iterators (begin(), end(), rbegin(), rend())
+ * - Copy and move semantics (Rule of Five)
+ * - Standard container operations (push_back, pop_back, insert, erase, etc.)
+ * - Comparable performance to std::vector for most operations
+ * 
+ * **Memory Strategy:**
+ * - When capacity is exhausted, reallocates with roughly 1.5x growth factor
+ * - Tracks reallocation count for performance analysis
+ * - Supports manual reserve() for optimization
+ * 
+ * **Example Usage:**
+ * @code
+ * Vector<int> v;
+ * v.push_back(10);
+ * v.push_back(20);
+ * v.reserve(100);        // Pre-allocate capacity
+ * 
+ * for (int elem : v) {
+ *     std::cout << elem << " ";
+ * }
+ * @endcode
+ * 
+ * @tparam T Element type (must support copy and move semantics)
+ * 
+ * @see VectorIterator
+ * @see std::vector
+ */
 template <typename T>
 class Vector {
 private:
@@ -544,6 +591,27 @@ public:
     inline size_t get_reallocation_count() const { return _realloc_count; }
     inline void reset_reallocation_count() { _realloc_count = 0; }
 
+    /**
+     * @brief Add element to the end of the vector (copy semantics)
+     * 
+     * Appends a copy of the given value to the end. If the current size equals 
+     * capacity, the vector doubles its capacity and reallocates.
+     * 
+     * **Time Complexity:** O(1) amortized
+     * 
+     * @param value The value to append (copied)
+     * 
+     * @throws std::bad_alloc if memory allocation fails
+     * 
+     * @see push_back(T&&), pop_back(), emplace_back()
+     * 
+     * @example
+     * @code
+     * Vector<int> v;
+     * v.push_back(42);
+     * v.push_back(100);
+     * @endcode
+     */
     void push_back(const T& value) {
         if (_size >= _capacity) {
             size_t new_capacity = (_capacity == 0) ? 1 : _capacity * 2;
@@ -552,7 +620,27 @@ public:
         _data[_size] = value;
         ++_size;
     }
-    
+
+    /**
+     * @brief Add element to the end of the vector (move semantics)
+     * 
+     * Appends an rvalue reference to the vector. The element is moved
+     * (not copied) into the vector. This is more efficient for expensive-to-copy types.
+     * 
+     * **Time Complexity:** O(1) amortized
+     * 
+     * @param value The rvalue reference to append (moved)
+     * 
+     * @throws std::bad_alloc if memory allocation fails
+     * 
+     * @see push_back(const T&), pop_back(), emplace_back()
+     * 
+     * @example
+     * @code
+     * Vector<std::string> v;
+     * v.push_back(std::string("Hello"));  // Moves the temporary
+     * @endcode
+     */
     void push_back(T&& value) {
         if (_size >= _capacity) {
             size_t new_capacity = (_capacity == 0) ? 1 : _capacity * 2;
@@ -562,12 +650,32 @@ public:
         ++_size;
     }
 
+    /**
+     * @brief Remove the last element from the vector
+     * 
+     * Decrements the size by one, effectively removing the last element.
+     * Does nothing if the vector is empty. Note: the element destructor 
+     * is NOT called (similar to std::vector::pop_back for POD types).
+     * 
+     * **Time Complexity:** O(1) constant
+     * 
+     * **Precondition:** Empty vector is safe to call on (no-op)
+     * 
+     * @see push_back(), front(), back()
+     * 
+     * @example
+     * @code
+     * Vector<int> v = {1, 2, 3};
+     * v.pop_back();  // Now size is 2, last element is 2
+     * @endcode
+     */
     void pop_back() {
         if (_size > 0) {
             --_size;
         }
     }
 };
+
 
 
 

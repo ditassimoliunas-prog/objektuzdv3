@@ -12,6 +12,9 @@ var annotated_dup =
     [ "string", "classstring.html", "classstring" ],
     [ "stringstream", "classstringstream.html", null ],
     [ "Studentas", "class_studentas.html", "class_studentas" ],
+    [ "Vector", "class_vector.html", null ],
     [ "vector", "classvector.html", "classvector" ],
+    [ "VectorIterator", "class_vector_iterator.html", null ],
+    [ "VectorTest", "class_vector_test.html", null ],
     [ "Zmogus", "class_zmogus.html", "class_zmogus" ]
 ];

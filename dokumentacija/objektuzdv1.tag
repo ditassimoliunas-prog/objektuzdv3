@@ -149,6 +149,11 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>Vector</name>
+    <filename>class_vector.html</filename>
+    <templarg>typename T</templarg>
+  </compound>
+  <compound kind="class">
     <name>vector</name>
     <filename>classvector.html</filename>
     <templarg>typename T</templarg>
@@ -163,6 +168,15 @@
       <anchor>a2396209900e8f592db1f0b2467f7d899</anchor>
       <arglist></arglist>
     </member>
+  </compound>
+  <compound kind="class">
+    <name>VectorIterator</name>
+    <filename>class_vector_iterator.html</filename>
+    <templarg>typename T</templarg>
+  </compound>
+  <compound kind="class">
+    <name>VectorTest</name>
+    <filename>class_vector_test.html</filename>
   </compound>
   <compound kind="class">
     <name>Zmogus</name>

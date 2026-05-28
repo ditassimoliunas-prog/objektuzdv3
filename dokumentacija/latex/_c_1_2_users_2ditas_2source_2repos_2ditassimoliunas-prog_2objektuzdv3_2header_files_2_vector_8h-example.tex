@@ -1,0 +1,715 @@
+\doxysection{C:\+/\+\+Users/\+ditas/\+source/\+repos/\+ditassimoliunas-\/prog/\+objektuzdv3/\+header\+\_\+files/\+\+Vector.\+h}
+\hypertarget{_c_1_2_users_2ditas_2source_2repos_2ditassimoliunas-prog_2objektuzdv3_2header_files_2_vector_8h-example}{}\label{_c_1_2_users_2ditas_2source_2repos_2ditassimoliunas-prog_2objektuzdv3_2header_files_2_vector_8h-example}Add element to the end of the vector (copy semantics).
+
+Add element to the end of the vector (copy semantics)Appends a copy of the given value to the end. If the current size equals capacity, the vector doubles its capacity and reallocates.
+
+{\bfseries{Time Complexity:\+}} O(1) amortized
+
+
+\begin{DoxyParams}{Parametrai}
+{\em value} & The value to append (copied)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Išimtys}
+{\em std::\+bad\+\_\+alloc} & if memory allocation fails\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{Taip pat žiūrėti}
+push\+\_\+back(\+T\&\&), pop\+\_\+back(), emplace\+\_\+back()
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{v.push\_back(42);}
+\DoxyCodeLine{v.push\_back(100);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\textcolor{comment}{}}
+\DoxyCodeLine{\textcolor{comment}{/**}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ @brief\ Random\ access\ iterator\ for\ Vector<T>\ container}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ *\ VectorIterator\ provides\ bidirectional\ and\ random\ access\ to\ Vector\ elements.}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ Supports\ all\ standard\ iterator\ operations\ including\ comparison,\ arithmetic,}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ and\ dereferencing.}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ *\ @tparam\ T\ The\ element\ type\ that\ the\ iterator\ points\ to}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ *\ @see\ Vector}}
+\DoxyCodeLine{\textcolor{comment}{\ */}}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_vector_iterator}{VectorIterator}}\ \{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{using\ }iterator\_category\ =\ std::random\_access\_iterator\_tag;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{using\ }value\_type\ =\ T;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{using\ }difference\_type\ =\ std::ptrdiff\_t;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{using\ }pointer\ =\ T*;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{using\ }reference\ =\ T\&;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{private}:}
+\DoxyCodeLine{\ \ \ \ T*\ \_ptr;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ VectorIterator(T*\ ptr\ =\ \textcolor{keyword}{nullptr})\ :\ \_ptr(ptr)\ \{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ reference\ operator*()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ *\_ptr;\ \}}
+\DoxyCodeLine{\ \ \ \ pointer\ operator-\/>()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_ptr;\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ VectorIterator\&\ operator++()\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ++\_ptr;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ VectorIterator\ operator++(\textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ VectorIterator\ temp\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ++\_ptr;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ VectorIterator\&\ operator-\/-\/()\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ -\/-\/\_ptr;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ VectorIterator\ operator-\/-\/(\textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ VectorIterator\ temp\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ -\/-\/\_ptr;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ VectorIterator\ operator+(difference\_type\ n)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ VectorIterator(\_ptr\ +\ n);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ VectorIterator\ operator-\/(difference\_type\ n)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ VectorIterator(\_ptr\ -\/\ n);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ VectorIterator\&\ operator+=(difference\_type\ n)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_ptr\ +=\ n;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ VectorIterator\&\ operator-\/=(difference\_type\ n)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_ptr\ -\/=\ n;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ reference\ operator[](difference\_type\ n)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_ptr[n];}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ VectorIterator\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_ptr\ ==\ other.\_ptr;\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ VectorIterator\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_ptr\ !=\ other.\_ptr;\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ operator<(\textcolor{keyword}{const}\ VectorIterator\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_ptr\ <\ other.\_ptr;\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ operator>(\textcolor{keyword}{const}\ VectorIterator\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_ptr\ >\ other.\_ptr;\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ operator<=(\textcolor{keyword}{const}\ VectorIterator\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_ptr\ <=\ other.\_ptr;\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ operator>=(\textcolor{keyword}{const}\ VectorIterator\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_ptr\ >=\ other.\_ptr;\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ difference\_type\ operator-\/(\textcolor{keyword}{const}\ VectorIterator\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_ptr\ -\/\ other.\_ptr;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{\textcolor{comment}{}}
+\DoxyCodeLine{\textcolor{comment}{/**}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ @class\ Vector}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ @brief\ Custom\ dynamic\ array\ container\ template}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ *\ Vector<T>\ is\ a\ generic\ container\ that\ stores\ elements\ of\ type\ T\ in\ a\ }}
+\DoxyCodeLine{\textcolor{comment}{\ *\ dynamically\ allocated\ array.\ It\ provides\ O(1)\ amortized\ time\ complexity\ }}
+\DoxyCodeLine{\textcolor{comment}{\ *\ for\ push\_back(),\ while\ maintaining\ contiguous\ memory\ layout\ like\ std::vector.}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ *\ The\ class\ implements\ the\ Rule\ of\ Five\ pattern\ and\ fully\ supports\ deep\ copy}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ and\ move\ semantics.}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ *\ **Key\ Features:**}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ -\/\ Dynamic\ memory\ management\ (automatic\ resizing)}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ -\/\ Random\ access\ iterators\ (begin(),\ end(),\ rbegin(),\ rend())}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ -\/\ Copy\ and\ move\ semantics\ (Rule\ of\ Five)}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ -\/\ Standard\ container\ operations\ (push\_back,\ pop\_back,\ insert,\ erase,\ etc.)}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ -\/\ Comparable\ performance\ to\ std::vector\ for\ most\ operations}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ *\ **Memory\ Strategy:**}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ -\/\ When\ capacity\ is\ exhausted,\ reallocates\ with\ roughly\ 1.5x\ growth\ factor}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ -\/\ Tracks\ reallocation\ count\ for\ performance\ analysis}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ -\/\ Supports\ manual\ reserve()\ for\ optimization}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ *\ **Example\ Usage:**}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ @code}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ Vector<int>\ v;}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ v.push\_back(10);}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ v.push\_back(20);}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ v.reserve(100);\ \ \ \ \ \ \ \ //\ Pre-\/allocate\ capacity}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ *\ for\ (int\ elem\ :\ v)\ \{}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ \ \ \ \ std::cout\ <<\ elem\ <<\ "{}\ "{};}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ \}}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ @endcode}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ *\ @tparam\ T\ Element\ type\ (must\ support\ copy\ and\ move\ semantics)}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ *\ @see\ VectorIterator}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ @see\ std::vector}}
+\DoxyCodeLine{\textcolor{comment}{\ */}}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_vector}{Vector}}\ \{}
+\DoxyCodeLine{\textcolor{keyword}{private}:}
+\DoxyCodeLine{\ \ \ \ T*\ \_data;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{size\_t}\ \_size;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{size\_t}\ \_capacity;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{size\_t}\ \_realloc\_count;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ reallocate(\textcolor{keywordtype}{size\_t}\ new\_capacity)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_capacity\ <\ \_size)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}New\ capacity\ must\ be\ >=\ current\ size"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ T*\ new\_data\ =\ \textcolor{keyword}{new}\ T[new\_capacity];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \_size;\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ new\_data[i]\ =\ \_data[i];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \_data;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_data\ =\ new\_data;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_capacity\ =\ new\_capacity;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ++\_realloc\_count;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ Vector()\ :\ \_data(nullptr),\ \_size(0),\ \_capacity(0),\ \_realloc\_count(0)\ \{\}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{explicit}\ Vector(\textcolor{keywordtype}{size\_t}\ capacity)\ :\ \_size(0),\ \_capacity(capacity),\ \_realloc\_count(0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_data\ =\ capacity\ >\ 0\ ?\ \textcolor{keyword}{new}\ T[capacity]\ :\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ Vector(\textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keyword}{const}\ T\&\ value)\ :\ \_size(size),\ \_capacity(size),\ \_realloc\_count(0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_data\ =\ size\ >\ 0\ ?\ \textcolor{keyword}{new}\ T[size]\ :\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ size;\ ++i)\ \_data[i]\ =\ value;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Conversion\ constructor\ from\ std::vector}}
+\DoxyCodeLine{\ \ \ \ Vector(\textcolor{keyword}{const}\ std::vector<T>\&\ other)\ :\ \_size(other.size()),\ \_capacity(other.size()),\ \_realloc\_count(0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_data\ =\ \_size\ >\ 0\ ?\ \textcolor{keyword}{new}\ T[\_size]\ :\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \_size;\ ++i)\ \_data[i]\ =\ other[i];}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \string~Vector()\ \{\ \textcolor{keyword}{delete}[]\ \_data;\ \_data\ =\ \textcolor{keyword}{nullptr};\ \_size\ =\ 0;\ \_capacity\ =\ 0;\ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ Vector(\textcolor{keyword}{const}\ Vector\&\ other)\ :\ \_size(other.\_size),\ \_capacity(other.\_capacity),\ \_realloc\_count(0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_data\ =\ \_capacity\ >\ 0\ ?\ \textcolor{keyword}{new}\ T[\_capacity]\ :\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \_size;\ ++i)\ \_data[i]\ =\ other.\_data[i];}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ Vector\&\ operator=(\textcolor{keyword}{const}\ Vector\&\ other)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \_data;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_size\ =\ other.\_size;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_capacity\ =\ other.\_capacity;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_realloc\_count\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_data\ =\ \_capacity\ >\ 0\ ?\ \textcolor{keyword}{new}\ T[\_capacity]\ :\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \_size;\ ++i)\ \_data[i]\ =\ other.\_data[i];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ Vector(Vector\&\&\ other)\ noexcept\ :\ \_data(other.\_data),\ \_size(other.\_size),\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \_capacity(other.\_capacity),\ \_realloc\_count(other.\_realloc\_count)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ other.\_data\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ other.\_size\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ other.\_capacity\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ other.\_realloc\_count\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ Vector\&\ operator=(Vector\&\&\ other)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \_data;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_data\ =\ other.\_data;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_size\ =\ other.\_size;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_capacity\ =\ other.\_capacity;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_realloc\_count\ =\ other.\_realloc\_count;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ other.\_data\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ other.\_size\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ other.\_capacity\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ other.\_realloc\_count\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ size()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_size;\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ capacity()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_capacity;\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ empty()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_size\ ==\ 0;\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{inline}\ T\&\ operator[](\textcolor{keywordtype}{size\_t}\ index)\ \{\ \textcolor{keywordflow}{return}\ \_data[index];\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ T\&\ operator[](\textcolor{keywordtype}{size\_t}\ index)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_data[index];\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ T\&\ at(\textcolor{keywordtype}{size\_t}\ index)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >=\ \_size)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Vector\ index\ out\ of\ range"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_data[index];}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ T\&\ at(\textcolor{keywordtype}{size\_t}\ index)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >=\ \_size)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Vector\ index\ out\ of\ range"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_data[index];}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ clear()\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_size\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ T\&\ front()\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_size\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Vector\ is\ empty:\ cannot\ access\ front()"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_data[0];}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ T\&\ front()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_size\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Vector\ is\ empty:\ cannot\ access\ front()"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_data[0];}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ T\&\ back()\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_size\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Vector\ is\ empty:\ cannot\ access\ back()"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_data[\_size\ -\/\ 1];}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ T\&\ back()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_size\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Vector\ is\ empty:\ cannot\ access\ back()"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_data[\_size\ -\/\ 1];}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ reserve(\textcolor{keywordtype}{size\_t}\ new\_capacity)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_capacity\ >\ \_capacity)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ reallocate(new\_capacity);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ shrink\_to\_fit()\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_capacity\ >\ \_size)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_size\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \_data;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_data\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_capacity\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reallocate(\_size);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ resize(\textcolor{keywordtype}{size\_t}\ new\_size)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_size\ >\ \_capacity)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ reallocate(new\_size);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_size\ =\ new\_size;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ resize(\textcolor{keywordtype}{size\_t}\ new\_size,\ \textcolor{keyword}{const}\ T\&\ value)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_size\ >\ \_capacity)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ reallocate(new\_size);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_size\ >\ \_size)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ \_size;\ i\ <\ new\_size;\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_data[i]\ =\ value;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_size\ =\ new\_size;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ swap(Vector\&\ other)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::swap(\_data,\ other.\_data);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::swap(\_size,\ other.\_size);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::swap(\_capacity,\ other.\_capacity);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::swap(\_realloc\_count,\ other.\_realloc\_count);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ Vector\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_size\ !=\ other.\_size)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \_size;\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_data[i]\ !=\ other.\_data[i])\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ Vector\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ ==\ other);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ operator<(\textcolor{keyword}{const}\ Vector\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \_size\ \&\&\ i\ <\ other.\_size;\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_data[i]\ <\ other.\_data[i])\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_data[i]\ >\ other.\_data[i])\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_size\ <\ other.\_size;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ operator>(\textcolor{keyword}{const}\ Vector\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ other\ <\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ operator<=(\textcolor{keyword}{const}\ Vector\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(other\ <\ *\textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ operator>=(\textcolor{keyword}{const}\ Vector\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ <\ other);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{using\ }iterator\ =\ VectorIterator<T>;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{using\ }const\_iterator\ =\ VectorIterator<const\ T>;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ iterator\ begin()\ \{\ \textcolor{keywordflow}{return}\ iterator(\_data);\ \}}
+\DoxyCodeLine{\ \ \ \ iterator\ end()\ \{\ \textcolor{keywordflow}{return}\ iterator(\_data\ +\ \_size);\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ const\_iterator\ begin()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ const\_iterator(\_data);\ \}}
+\DoxyCodeLine{\ \ \ \ const\_iterator\ end()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ const\_iterator(\_data\ +\ \_size);\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ const\_iterator\ cbegin()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ const\_iterator(\_data);\ \}}
+\DoxyCodeLine{\ \ \ \ const\_iterator\ cend()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ const\_iterator(\_data\ +\ \_size);\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{using\ }reverse\_iterator\ =\ std::reverse\_iterator<iterator>;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{using\ }const\_reverse\_iterator\ =\ std::reverse\_iterator<const\_iterator>;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ reverse\_iterator\ rbegin()\ \{\ \textcolor{keywordflow}{return}\ reverse\_iterator(end());\ \}}
+\DoxyCodeLine{\ \ \ \ reverse\_iterator\ rend()\ \{\ \textcolor{keywordflow}{return}\ reverse\_iterator(begin());\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ const\_reverse\_iterator\ rbegin()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ const\_reverse\_iterator(end());\ \}}
+\DoxyCodeLine{\ \ \ \ const\_reverse\_iterator\ rend()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ const\_reverse\_iterator(begin());\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ const\_reverse\_iterator\ crbegin()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ const\_reverse\_iterator(end());\ \}}
+\DoxyCodeLine{\ \ \ \ const\_reverse\_iterator\ crend()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ const\_reverse\_iterator(begin());\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ assign(\textcolor{keywordtype}{size\_t}\ count,\ \textcolor{keyword}{const}\ T\&\ value)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ clear();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ >\ \_capacity)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ reallocate(count);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ count;\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_data[i]\ =\ value;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_size\ =\ count;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ InputIt>}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ assign(InputIt\ first,\ InputIt\ last)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ is\ a\ specialized\ version\ -\/\ only\ works\ with\ Vector\ iterators}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ general\ case,\ user\ should\ use\ clear()\ +\ for\ loop}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ iterator\ insert(const\_iterator\ pos,\ \textcolor{keyword}{const}\ T\&\ value)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ index\ =\ std::distance(cbegin(),\ pos);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >\ \_size)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Iterator\ out\ of\ range"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_size\ >=\ \_capacity)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ new\_capacity\ =\ (\_capacity\ ==\ 0)\ ?\ 1\ :\ \_capacity\ *\ 2;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ reallocate(new\_capacity);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ \_size;\ i\ >\ index;\ -\/-\/i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_data[i]\ =\ \_data[i\ -\/\ 1];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_data[index]\ =\ value;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ++\_size;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iterator(\_data\ +\ index);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Non-\/const\ overload\ for\ insert\ (accepts\ non-\/const\ iterator,\ treats\ as\ const\_iterator)}}
+\DoxyCodeLine{\ \ \ \ iterator\ insert(iterator\ pos,\ \textcolor{keyword}{const}\ T\&\ value)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ pos\ is\ a\ mutable\ iterator,\ but\ we\ just\ use\ it\ as\ a\ position}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Convert\ to\ size\_t\ using\ cbegin()}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ index\ =\ std::distance(begin(),\ pos);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >\ \_size)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Iterator\ out\ of\ range"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_size\ >=\ \_capacity)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ new\_capacity\ =\ (\_capacity\ ==\ 0)\ ?\ 1\ :\ \_capacity\ *\ 2;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ reallocate(new\_capacity);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ \_size;\ i\ >\ index;\ -\/-\/i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_data[i]\ =\ \_data[i\ -\/\ 1];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_data[index]\ =\ value;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ++\_size;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iterator(\_data\ +\ index);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Range\ insert\ overload\ with\ three\ arguments}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ InputIt>}
+\DoxyCodeLine{\ \ \ \ iterator\ insert(const\_iterator\ pos,\ InputIt\ first,\ InputIt\ last)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ index\ =\ std::distance(cbegin(),\ pos);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >\ \_size)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Iterator\ out\ of\ range"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Count\ elements\ manually}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ count\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (InputIt\ it\ =\ first;\ it\ !=\ last;\ ++it)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ ++count;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_size\ +\ count\ >\ \_capacity)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ reallocate(std::max(\_size\ +\ count,\ \_capacity\ *\ 2));}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Shift\ elements\ to\ the\ right}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ \_size;\ i\ >\ index;\ -\/-\/i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_data[i\ +\ count\ -\/\ 1]\ =\ \_data[i\ -\/\ 1];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Insert\ new\ elements}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ i\ =\ index;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (InputIt\ it\ =\ first;\ it\ !=\ last;\ ++it,\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_data[i]\ =\ *it;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_size\ +=\ count;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iterator(\_data\ +\ index);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Range\ insert\ overload\ with\ non-\/const\ iterator}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ InputIt>}
+\DoxyCodeLine{\ \ \ \ iterator\ insert(iterator\ pos,\ InputIt\ first,\ InputIt\ last)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ index\ =\ std::distance(begin(),\ pos);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >\ \_size)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Iterator\ out\ of\ range"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Count\ elements\ manually}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ count\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (InputIt\ it\ =\ first;\ it\ !=\ last;\ ++it)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ ++count;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_size\ +\ count\ >\ \_capacity)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ reallocate(std::max(\_size\ +\ count,\ \_capacity\ *\ 2));}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Shift\ elements\ to\ the\ right}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ \_size;\ i\ >\ index;\ -\/-\/i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_data[i\ +\ count\ -\/\ 1]\ =\ \_data[i\ -\/\ 1];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Insert\ new\ elements}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ i\ =\ index;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (InputIt\ it\ =\ first;\ it\ !=\ last;\ ++it,\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_data[i]\ =\ *it;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_size\ +=\ count;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iterator(\_data\ +\ index);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ iterator\ erase(const\_iterator\ pos)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ index\ =\ std::distance(cbegin(),\ pos);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >=\ \_size)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Iterator\ out\ of\ range"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ index;\ i\ <\ \_size\ -\/\ 1;\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_data[i]\ =\ \_data[i\ +\ 1];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ -\/-\/\_size;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iterator(\_data\ +\ index);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ iterator\ erase(const\_iterator\ first,\ const\_iterator\ last)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ first\_index\ =\ std::distance(cbegin(),\ first);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ last\_index\ =\ std::distance(cbegin(),\ last);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (first\_index\ >\ \_size\ ||\ last\_index\ >\ \_size\ ||\ first\_index\ >\ last\_index)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Invalid\ range"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ count\ =\ last\_index\ -\/\ first\_index;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ first\_index;\ i\ <\ \_size\ -\/\ count;\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_data[i]\ =\ \_data[i\ +\ count];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_size\ -\/=\ count;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iterator(\_data\ +\ first\_index);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Non-\/const\ overload\ for\ erase\ (single\ element)}}
+\DoxyCodeLine{\ \ \ \ iterator\ erase(iterator\ pos)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ index\ =\ std::distance(begin(),\ pos);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >=\ \_size)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Iterator\ out\ of\ range"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ index;\ i\ <\ \_size\ -\/\ 1;\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_data[i]\ =\ \_data[i\ +\ 1];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ -\/-\/\_size;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iterator(\_data\ +\ index);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Non-\/const\ overload\ for\ erase\ (range)}}
+\DoxyCodeLine{\ \ \ \ iterator\ erase(iterator\ first,\ iterator\ last)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ first\_index\ =\ std::distance(begin(),\ first);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ last\_index\ =\ std::distance(begin(),\ last);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (first\_index\ >\ \_size\ ||\ last\_index\ >\ \_size\ ||\ first\_index\ >\ last\_index)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Invalid\ range"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ count\ =\ last\_index\ -\/\ first\_index;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ first\_index;\ i\ <\ \_size\ -\/\ count;\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_data[i]\ =\ \_data[i\ +\ count];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_size\ -\/=\ count;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iterator(\_data\ +\ first\_index);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ emplace\_back(Args\&\&...\ args)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_size\ >=\ \_capacity)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ new\_capacity\ =\ (\_capacity\ ==\ 0)\ ?\ 1\ :\ \_capacity\ *\ 2;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ reallocate(new\_capacity);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ (\_data\ +\ \_size)\ T(std::forward<Args>(args)...);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ++\_size;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{\ \ \ \ iterator\ emplace(const\_iterator\ pos,\ Args\&\&...\ args)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ index\ =\ std::distance(cbegin(),\ pos);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >\ \_size)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Iterator\ out\ of\ range"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_size\ >=\ \_capacity)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ new\_capacity\ =\ (\_capacity\ ==\ 0)\ ?\ 1\ :\ \_capacity\ *\ 2;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ reallocate(new\_capacity);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ \_size;\ i\ >\ index;\ -\/-\/i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_data[i]\ =\ \_data[i\ -\/\ 1];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ (\_data\ +\ index)\ T(std::forward<Args>(args)...);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ++\_size;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iterator(\_data\ +\ index);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{size\_t}\ max\_size()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::numeric\_limits<size\_t>::max()\ /\ \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{inline}\ T*\ data()\ \{\ \textcolor{keywordflow}{return}\ \_data;\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ T*\ data()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_data;\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ get\_reallocation\_count()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_realloc\_count;\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ reset\_reallocation\_count()\ \{\ \_realloc\_count\ =\ 0;\ \}}
+\DoxyCodeLine{\textcolor{comment}{}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @brief\ Add\ element\ to\ the\ end\ of\ the\ vector\ (copy\ semantics)}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ Appends\ a\ copy\ of\ the\ given\ value\ to\ the\ end.\ If\ the\ current\ size\ equals\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ capacity,\ the\ vector\ doubles\ its\ capacity\ and\ reallocates.}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ **Time\ Complexity:**\ O(1)\ amortized}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @param\ value\ The\ value\ to\ append\ (copied)}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @throws\ std::bad\_alloc\ if\ memory\ allocation\ fails}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @see\ push\_back(T\&\&),\ pop\_back(),\ emplace\_back()}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @example}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @code}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ Vector<int>\ v;}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ v.push\_back(42);}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ v.push\_back(100);}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @endcode}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ push\_back(\textcolor{keyword}{const}\ T\&\ value)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_size\ >=\ \_capacity)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ new\_capacity\ =\ (\_capacity\ ==\ 0)\ ?\ 1\ :\ \_capacity\ *\ 2;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ reallocate(new\_capacity);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_data[\_size]\ =\ value;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ++\_size;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\textcolor{comment}{}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @brief\ Add\ element\ to\ the\ end\ of\ the\ vector\ (move\ semantics)}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ Appends\ an\ rvalue\ reference\ to\ the\ vector.\ The\ element\ is\ moved}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ (not\ copied)\ into\ the\ vector.\ This\ is\ more\ efficient\ for\ expensive-\/to-\/copy\ types.}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ **Time\ Complexity:**\ O(1)\ amortized}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @param\ value\ The\ rvalue\ reference\ to\ append\ (moved)}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @throws\ std::bad\_alloc\ if\ memory\ allocation\ fails}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @see\ push\_back(const\ T\&),\ pop\_back(),\ emplace\_back()}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @example}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @code}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ Vector<std::string>\ v;}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ v.push\_back(std::string("{}Hello"{}));\ \ //\ Moves\ the\ temporary}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @endcode}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ push\_back(T\&\&\ value)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_size\ >=\ \_capacity)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ new\_capacity\ =\ (\_capacity\ ==\ 0)\ ?\ 1\ :\ \_capacity\ *\ 2;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ reallocate(new\_capacity);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_data[\_size]\ =\ std::move(value);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ++\_size;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\textcolor{comment}{}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @brief\ Remove\ the\ last\ element\ from\ the\ vector}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ Decrements\ the\ size\ by\ one,\ effectively\ removing\ the\ last\ element.}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ Does\ nothing\ if\ the\ vector\ is\ empty.\ Note:\ the\ element\ destructor\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ is\ NOT\ called\ (similar\ to\ std::vector::pop\_back\ for\ POD\ types).}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ **Time\ Complexity:**\ O(1)\ constant}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ **Precondition:**\ Empty\ vector\ is\ safe\ to\ call\ on\ (no-\/op)}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @see\ push\_back(),\ front(),\ back()}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @example}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @code}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ Vector<int>\ v\ =\ \{1,\ 2,\ 3\};}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ v.pop\_back();\ \ //\ Now\ size\ is\ 2,\ last\ element\ is\ 2}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ *\ @endcode}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ pop\_back()\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_size\ >\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\_size;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+
+\end{DoxyCodeInclude}
+ 

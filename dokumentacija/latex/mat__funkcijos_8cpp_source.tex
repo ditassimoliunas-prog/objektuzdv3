@@ -59,5 +59,30 @@
 \DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00055}00055\ \textcolor{keywordtype}{int}\ generuotiEgzamina()\ \{}
 \DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{return}\ rand()\ \%\ 11;}
 \DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00059}00059\ \textcolor{comment}{//\ Vector\ versions}}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00060}00060\ \textcolor{keywordtype}{double}\ mediana(Vector\ <int>\ paz)\ \{}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (paz.empty())\ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00063}00063\ \ \ \ \ Vector\ <int>\ temp\ =\ paz;}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00064}00064\ \ \ \ \ sort(temp.begin(),\ temp.end());}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ temp.size();}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ \%\ 2\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (temp[n\ /\ 2\ -\/\ 1]\ +\ temp[n\ /\ 2])\ /\ 2.0;}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ temp[n\ /\ 2];}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00072}00072\ \}}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00074}00074\ \textcolor{comment}{//\ Vidurkio\ skaiciavimas\ is\ Vector\ pazymiu}}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00075}00075\ \textcolor{keywordtype}{double}\ vidurkis(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\&\ paz)\ \{}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{if}\ (paz.empty())\ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordtype}{int}\ sum\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ p\ :\ paz)\ \{}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ sum\ +=\ p;}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{return}\ sum\ *\ 1.0\ /\ paz.size();}
+\DoxyCodeLine{\Hypertarget{mat__funkcijos_8cpp_source_l00082}00082\ \}}
 
 \end{DoxyCode}
