@@ -173,6 +173,38 @@ public:
         std::swap(_realloc_count, other._realloc_count);
     }
 
+    bool operator==(const Vector& other) const {
+        if (_size != other._size) return false;
+        for (size_t i = 0; i < _size; ++i) {
+            if (_data[i] != other._data[i]) return false;
+        }
+        return true;
+    }
+
+    bool operator!=(const Vector& other) const {
+        return !(*this == other);
+    }
+
+    bool operator<(const Vector& other) const {
+        for (size_t i = 0; i < _size && i < other._size; ++i) {
+            if (_data[i] < other._data[i]) return true;
+            if (_data[i] > other._data[i]) return false;
+        }
+        return _size < other._size;
+    }
+
+    bool operator>(const Vector& other) const {
+        return other < *this;
+    }
+
+    bool operator<=(const Vector& other) const {
+        return !(other < *this);
+    }
+
+    bool operator>=(const Vector& other) const {
+        return !(*this < other);
+    }
+
     void push_back(const T& value) {
         if (_size >= _capacity) {
             size_t new_capacity = (_capacity == 0) ? 1 : _capacity * 2;
