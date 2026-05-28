@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <utility>
 
 template <typename T>
 class Vector {
@@ -151,6 +152,25 @@ public:
             reallocate(new_size);
         }
         _size = new_size;
+    }
+
+    void resize(size_t new_size, const T& value) {
+        if (new_size > _capacity) {
+            reallocate(new_size);
+        }
+        if (new_size > _size) {
+            for (size_t i = _size; i < new_size; ++i) {
+                _data[i] = value;
+            }
+        }
+        _size = new_size;
+    }
+
+    void swap(Vector& other) noexcept {
+        std::swap(_data, other._data);
+        std::swap(_size, other._size);
+        std::swap(_capacity, other._capacity);
+        std::swap(_realloc_count, other._realloc_count);
     }
 
     void push_back(const T& value) {
