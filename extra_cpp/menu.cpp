@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
+#include <utility>
 
 #include "../header_files/menu.h"
 #include "../header_files/studentas.h"
@@ -26,13 +27,14 @@ void menu() {
         cout << string(80, '-') << "\n";
         cout << "Studentu Rezultatu skaiciavimo aplikacija\n";
         cout << string(80, '-') << "\n";
-        cout << "1. Ivesti duomenis ranka \n";
-        cout << "2. Generuoti tik pazymius \n";
-        cout << "3. Generuoti studentu vardus, pavardes ir pazymius \n";
-        cout << "4. Nuskaityti duomenis is failo \n";
+        cout << "1. Ivesti duomenis ranka\n";
+        cout << "2. Generuoti tik pazymius\n";
+        cout << "3. Generuoti studentu vardus, pavardes ir pazymius\n";
+        cout << "4. Nuskaityti duomenis is failo\n";
         cout << "5. Sukurti testavimo failus (1000 - 10000000 irasu)\n";
         cout << "6. Atlikti spartos analize (nuskaitymas, rusiavimas, dalijimas, isvedimas)\n";
-        cout << "7. Baigti darba \n";
+        cout << "7. Baigti darba\n";
+        cout << "Jusu pasirinkimas: ";
 
         try {
             if (!(cin >> pas)) {
@@ -50,7 +52,7 @@ void menu() {
         switch (pas) {
         case 1:
             try {
-                cout << "1. Ivesti duomenisss ranka \n";
+                cout << "1. Ivesti duomenis ranka\n";
                 inputas(grupe);
                 outputas(grupe);
                 grupe.clear();
@@ -62,7 +64,7 @@ void menu() {
             break;
         case 2:
             try {
-                cout << "2. Generuoti tik pazymius \n";
+                cout << "2. Generuoti tik pazymius\n";
                 generuotiPaz(grupe);
                 outputas(grupe);
                 grupe.clear();
@@ -74,7 +76,7 @@ void menu() {
             break;
         case 3:
             try {
-                cout << "3. Generuoti studentu vardus, pavardes ir pazymius \n";
+                cout << "3. Generuoti studentu vardus, pavardes ir pazymius\n";
                 generuotiVardIrPav(grupe);
                 outputas(grupe);
                 grupe.clear();
@@ -86,8 +88,9 @@ void menu() {
             break;
         case 4:
             try {
-                cout << "4. Nuskaityti duomenis is failo \n";
+                cout << "4. Nuskaityti duomenis is failo\n";
                 skaitytiIsFailo(grupe);
+                outputas(grupe);
                 grupe.clear();
             }
             catch (const exception& e) {
@@ -97,33 +100,30 @@ void menu() {
             break;
         case 5:
             try {
-                cout << "5. Testavimo failu kurimas \n";
+                cout << "5. Sukurti testavimo failus (1000 - 10000000 irasu)\n";
                 sukurtiTestavimoFailus();
             }
             catch (const exception& e) {
-                cout << "Klaida vykdant generavima: " << e.what() << "\n";
+                cout << "Klaida vykdant 5 funkcija: " << e.what() << "\n";
             }
             break;
         case 6:
             try {
-                cout << "6. Spartos analizes vykdymas \n";
+                cout << "6. Atlikti spartos analize (nuskaitymas, rusiavimas, dalijimas, isvedimas)\n";
                 atliktiSpartosAnalize();
             }
             catch (const exception& e) {
-                cout << "Klaida vykdant spartos analize: " << e.what() << "\n";
+                cout << "Klaida vykdant 6 funkcija: " << e.what() << "\n";
             }
             break;
         case 7:
-            cout << "Programa uzdaroma \n";
+            cout << "Programa baigia darba. Iki pasimatymo!\n";
             testi = false;
             break;
-
-        // Isvestis ivedus netinkama pasirinkima
         default:
-            cout << "Klaida! Pasirinkite skaiciu nuo 1 iki 7 \n";
-            cin.clear();
-            cin.ignore(1000, '\n');
+            cout << "Neteisingas pasirinkimas! Pasirinkite nuo 1 iki 7.\n";
             break;
         }
     }
 }
+

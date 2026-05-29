@@ -15,420 +15,399 @@
 \DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <deque>}}
 \DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
 \DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <iterator>}\ \ \textcolor{comment}{//\ std::make\_move\_iterator}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00014}00014\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}../header\_files/testavimas.h"{}}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}../header\_files/mat\_funkcijos.h"{}}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}../header\_files/Vector.h"{}}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00018}00018\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00019}00019\ \textcolor{keyword}{using\ }std::cout;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00020}00020\ \textcolor{keyword}{using\ }std::cin;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00021}00021\ \textcolor{keyword}{using\ }std::vector;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00022}00022\ \textcolor{keyword}{using\ }std::string;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00023}00023\ \textcolor{keyword}{using\ }std::ofstream;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00024}00024\ \textcolor{keyword}{using\ }std::ifstream;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00025}00025\ \textcolor{keyword}{using\ }std::chrono::high\_resolution\_clock;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00026}00026\ \textcolor{keyword}{using\ }std::chrono::duration;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00027}00027\ \textcolor{keyword}{using\ }std::fixed;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00028}00028\ \textcolor{keyword}{using\ }std::setprecision;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00029}00029\ \textcolor{keyword}{using\ }std::left;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00030}00030\ \textcolor{keyword}{using\ }std::setw;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00031}00031\ \textcolor{keyword}{using\ }std::to\_string;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00032}00032\ \textcolor{keyword}{using\ }std::move;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00033}00033\ \textcolor{keyword}{using\ }std::list;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00034}00034\ \textcolor{keyword}{using\ }std::deque;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00035}00035\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00036}00036\ \textcolor{keyword}{const}\ vector<int>\ SZ\ =\ \{\ 1000,\ 10000,\ 100000,\ 1000000,\ 10000000\ \};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00037}00037\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ paz\_kiekis\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}../header\_files/testavimas.h"{}}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}../header\_files/mat\_funkcijos.h"{}}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}../header\_files/Vector.h"{}}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00020}00020\ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00022}00022\ \textcolor{keyword}{using\ }std::cout;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00023}00023\ \textcolor{keyword}{using\ }std::cin;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00024}00024\ \textcolor{keyword}{using\ }std::vector;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00025}00025\ \textcolor{keyword}{using\ }std::string;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00026}00026\ \textcolor{keyword}{using\ }std::ofstream;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00027}00027\ \textcolor{keyword}{using\ }std::ifstream;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00028}00028\ \textcolor{keyword}{using\ }std::chrono::high\_resolution\_clock;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00029}00029\ \textcolor{keyword}{using\ }std::chrono::duration;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00030}00030\ \textcolor{keyword}{using\ }std::fixed;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00031}00031\ \textcolor{keyword}{using\ }std::setprecision;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00032}00032\ \textcolor{keyword}{using\ }std::left;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00033}00033\ \textcolor{keyword}{using\ }std::setw;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00034}00034\ \textcolor{keyword}{using\ }std::to\_string;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00035}00035\ \textcolor{keyword}{using\ }std::move;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00036}00036\ \textcolor{keyword}{using\ }std::list;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00037}00037\ \textcolor{keyword}{using\ }std::deque;}
 \DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00039}00039\ \textcolor{keywordtype}{void}\ sukurtiTestavimoFailus()\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{int}\ pas;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00041}00041\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nPasirinkite,\ kuri\ faila\ norite\ sukurti:\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00042}00042\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1.\ 1000\ irasu\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00043}00043\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2.\ 10000\ irasu\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00044}00044\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}3.\ 100000\ irasu\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00045}00045\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}4.\ 1\ 000000\ irasu\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00046}00046\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}5.\ 10000000\ irasu\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00047}00047\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}6.\ Visus\ auksciau\ isvardintus\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00048}00048\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Jusu\ pasirinkimas:\ "{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00049}00049\ \ \ \ \ cin\ >>\ pas;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00051}00051\ \ \ \ \ vector<int>\ pasirinkti\_SZ;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{if}\ (pas\ ==\ 1)\ pasirinkti\_SZ\ =\ \{\ 1000\ \};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 2)\ pasirinkti\_SZ\ =\ \{\ 10000\ \};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 3)\ pasirinkti\_SZ\ =\ \{\ 100000\ \};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 4)\ pasirinkti\_SZ\ =\ \{\ 1000000\ \};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 5)\ pasirinkti\_SZ\ =\ \{\ 10000000\ \};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 6)\ pasirinkti\_SZ\ =\ SZ;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Neteisingas\ pasirinkimas!\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00061}00061\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00062}00062\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00063}00063\ \ \ \ \ srand(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\textcolor{keyword}{>}(time(\textcolor{keyword}{nullptr})));}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00064}00064\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Failu\ kurimas\ prasidejo...\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00065}00065\ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}-\/\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00066}00066\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ n\ :\ pasirinkti\_SZ)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ fname\ =\ \textcolor{stringliteral}{"{}Studentai\_test\(\backslash\)\(\backslash\)studentai\_"{}}\ +\ to\_string(n)\ +\ \textcolor{stringliteral}{"{}.txt"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00069}00069\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pradedamas\ matuoti\ laikas\ tiems\ irasams\ kurti\ }}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ start\ =\ high\_resolution\_clock::now();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ ofstream\ out(fname);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Antraste}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ out\ <<\ left\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Vardas"{}}\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Pavarde"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ paz\_kiekis;\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ setw(8)\ <<\ (\textcolor{stringliteral}{"{}ND"{}}\ +\ to\_string(i));}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}Egz\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00081}00081\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Tiesiai\ irasome\ i\ faila\ (be\ vektoriu\ pagal\ uzduoties\ salyga)}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ n;\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ left\ <<\ setw(20)\ <<\ (\textcolor{stringliteral}{"{}Vardas"{}}\ +\ to\_string(i))\ <<\ setw(20)\ <<\ (\textcolor{stringliteral}{"{}Pavarde"{}}\ +\ to\_string(i));}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ paz\_kiekis;\ k++)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ setw(8)\ <<\ (rand()\ \%\ 10\ +\ 1);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ (rand()\ \%\ 10\ +\ 1)\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ out.close();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00091}00091\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Stabdyti\ laikmati\ ir\ isvesti\ i\ ekrana\ laika}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ end\ =\ high\_resolution\_clock::now();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ duration<double>\ diff\ =\ end\ -\/\ start;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00039}00039\ \textcolor{keyword}{const}\ vector<int>\ SZ\ =\ \{\ 1000,\ 10000,\ 100000,\ 1000000,\ 10000000\ \};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00040}00040\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ paz\_kiekis\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00042}00042\ \textcolor{keywordtype}{void}\ ensureDirectoriesExist()\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!fs::exists(\textcolor{stringliteral}{"{}Studentai\_test"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ fs::create\_directory(\textcolor{stringliteral}{"{}Studentai\_test"{}});}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!fs::exists(\textcolor{stringliteral}{"{}vargsiukai"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ fs::create\_directory(\textcolor{stringliteral}{"{}vargsiukai"{}});}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!fs::exists(\textcolor{stringliteral}{"{}kietiakai"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ fs::create\_directory(\textcolor{stringliteral}{"{}kietiakai"{}});}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00053}00053\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida\ kuriant\ direktorijas:\ "{}}\ <<\ e.what()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00058}00058\ \textcolor{keywordtype}{void}\ sukurtiTestavimoFailus()\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00059}00059\ \ \ \ \ ensureDirectoriesExist();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{int}\ pas;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00062}00062\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nPasirinkite,\ kuri\ faila\ norite\ sukurti:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00063}00063\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1.\ 1000\ irasu\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00064}00064\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2.\ 10000\ irasu\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00065}00065\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}3.\ 100000\ irasu\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00066}00066\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}4.\ 1000000\ irasu\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00067}00067\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}5.\ 10000000\ irasu\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00068}00068\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}6.\ Visus\ auksciau\ isvardintus\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00069}00069\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Jusu\ pasirinkimas:\ "{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00070}00070\ \ \ \ \ cin\ >>\ pas;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00072}00072\ \ \ \ \ vector<int>\ pasirinkti\_SZ;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{if}\ (pas\ ==\ 1)\ pasirinkti\_SZ\ =\ \{\ 1000\ \};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 2)\ pasirinkti\_SZ\ =\ \{\ 10000\ \};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 3)\ pasirinkti\_SZ\ =\ \{\ 100000\ \};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 4)\ pasirinkti\_SZ\ =\ \{\ 1000000\ \};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 5)\ pasirinkti\_SZ\ =\ \{\ 10000000\ \};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 6)\ pasirinkti\_SZ\ =\ SZ;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Neteisingas\ pasirinkimas!\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00084}00084\ \ \ \ \ srand(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\textcolor{keyword}{>}(time(\textcolor{keyword}{nullptr})));}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00085}00085\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Failu\ kurimas\ prasidejo...\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00086}00086\ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ n\ :\ pasirinkti\_SZ)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ fname\ =\ \textcolor{stringliteral}{"{}Studentai\_test\(\backslash\)\(\backslash\)studentai\_"{}}\ +\ to\_string(n)\ +\ \textcolor{stringliteral}{"{}.txt"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pradedamas\ matuoti\ laikas\ tiems\ irasams\ kurti\ }}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ start\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ ofstream\ out(fname);}
 \DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ cout\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ irasu\ failo\ sukurimo\ laikas:\ "{}}\ <<\ fixed\ <<\ setprecision(5)\ <<\ diff.count()\ <<\ \textcolor{stringliteral}{"{}\ s.\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00097}00097\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00098}00098\ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00099}00099\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00100}00100\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Container>}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00101}00101\ \textcolor{keywordtype}{void}\ nuskaitytiDuomenis(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ fname,\ Container\&\ grupe)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00102}00102\ \ \ \ \ ifstream\ in(fname);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keywordtype}{string}\ header;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00104}00104\ \ \ \ \ std::getline(in,\ header);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00105}00105\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00106}00106\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ st;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00107}00107\ \ \ \ \ st.reservePaz(paz\_kiekis);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00108}00108\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ v,\ p;\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(in\ >>\ v\ >>\ p))\ \textcolor{keywordflow}{break};\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ st.\doxymbox{\hyperlink{class_zmogus_a2158d2752cd52e970ac4c809446e9d8b}{setVardas}}(v);\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ st.\doxymbox{\hyperlink{class_zmogus_ac34eb9eb78f1c75080df7230ca61f2d2}{setPavarde}}(p);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ st.clearPaz();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pr;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ paz\_kiekis;\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ in\ >>\ pr;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ st.addPaz(pr);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ egz;\ in\ >>\ egz;\ st.setEgz(egz);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ st.setRez(galutinisBalas(vidurkis(st.getPaz()),\ st.getEgz()));}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ grupe.push\_back(st);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00123}00123\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00124}00124\ \ \ \ \ in.close();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00125}00125\ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Antraste}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ out\ <<\ left\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Vardas"{}}\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Pavarde"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ paz\_kiekis;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ setw(8)\ <<\ (\textcolor{stringliteral}{"{}ND"{}}\ +\ to\_string(i));}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}Egz\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Tiesiai\ irasome\ i\ faila\ (be\ vektoriu\ pagal\ uzduoties\ salyga)}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ n;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ left\ <<\ setw(20)\ <<\ (\textcolor{stringliteral}{"{}Vardas"{}}\ +\ to\_string(i))\ <<\ setw(20)\ <<\ (\textcolor{stringliteral}{"{}Pavarde"{}}\ +\ to\_string(i));}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ paz\_kiekis;\ k++)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ setw(8)\ <<\ (rand()\ \%\ 10\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ (rand()\ \%\ 10\ +\ 1)\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ out.close();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Stabdyti\ laikmati\ ir\ isvesti\ i\ ekrana\ laika}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ end\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ duration<double>\ diff\ =\ end\ -\/\ start;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ cout\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ irasu\ failo\ sukurimo\ laikas:\ "{}}\ <<\ fixed\ <<\ setprecision(5)\ <<\ diff.count()\ <<\ \textcolor{stringliteral}{"{}\ s.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00119}00119\ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00121}00121\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Container>}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00122}00122\ \textcolor{keywordtype}{void}\ nuskaitytiDuomenis(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ fname,\ Container\&\ grupe)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00123}00123\ \ \ \ \ ifstream\ in(fname);}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{keywordtype}{string}\ header;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00125}00125\ \ \ \ \ std::getline(in,\ header);}
 \DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00126}00126\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00127}00127\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Container>}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00128}00128\ \textcolor{keywordtype}{double}\ tirtiKonteineri(\textcolor{keywordtype}{int}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ fname,\ \textcolor{keywordtype}{int}\ strat)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{keyword}{auto}\ total\_start\ =\ high\_resolution\_clock::now();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00130}00130\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{comment}{//\ 1.\ Duomenu\ nuskaitymas\ is\ failo}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00132}00132\ \ \ \ \ \textcolor{keyword}{auto}\ start\ =\ high\_resolution\_clock::now();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00133}00133\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00134}00134\ \ \ \ \ Container\ grupe;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00135}00135\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<Container,\ vector<Studentas>>)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ grupe.reserve(n);\ \textcolor{comment}{//\ list\ neturi\ reserve()\ funkcijos}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Nepakanka\ atminties\ rezervuoti\ "{}}\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ elementu!\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00142}00142\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00143}00143\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00144}00144\ \ \ \ \ nuskaitytiDuomenis(fname,\ grupe);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00145}00145\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00146}00146\ \ \ \ \ \textcolor{keyword}{auto}\ end\ =\ high\_resolution\_clock::now();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00147}00147\ \ \ \ \ duration<double>\ ms\_read\ =\ end\ -\/\ start;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00148}00148\ \ \ \ \ cout\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ Irasu\ failo\ nuskaitymo\ laikas:\ "{}}\ <<\ fixed\ <<\ setprecision(5)\ <<\ ms\_read.count()\ <<\ \textcolor{stringliteral}{"{}\ s.\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00149}00149\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00150}00150\ \ \ \ \ \textcolor{comment}{//\ 2.\ Rusiavimas}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00151}00151\ \ \ \ \ start\ =\ high\_resolution\_clock::now();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<Container,\ list<Studentas>>)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ grupe.sort([](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ a,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ b)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a.getRez()\ <\ b.getRez();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00156}00156\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ std::sort(grupe.begin(),\ grupe.end(),\ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ a,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ b)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ return\ a.getRez()\ <\ b.getRez();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00160}00160\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00161}00161\ \ \ \ \ end\ =\ high\_resolution\_clock::now();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00162}00162\ \ \ \ \ duration<double>\ ms\_sort\ =\ end\ -\/\ start;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00163}00163\ \ \ \ \ cout\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ Irasu\ rusiavimas\ didejimo\ tvarka:\ "{}}\ <<\ fixed\ <<\ setprecision(5)\ <<\ ms\_sort.count()\ <<\ \textcolor{stringliteral}{"{}\ s.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00127}00127\ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ st;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00128}00128\ \ \ \ \ st.reservePaz(paz\_kiekis);}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ v,\ p;\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(in\ >>\ v\ >>\ p))\ \textcolor{keywordflow}{break};\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ st.\doxymbox{\hyperlink{class_zmogus_a2158d2752cd52e970ac4c809446e9d8b}{setVardas}}(v);\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ st.\doxymbox{\hyperlink{class_zmogus_ac34eb9eb78f1c75080df7230ca61f2d2}{setPavarde}}(p);}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ st.clearPaz();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pr;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ paz\_kiekis;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ in\ >>\ pr;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ st.addPaz(pr);}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ egz;\ in\ >>\ egz;\ st.setEgz(egz);}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ st.setRez(galutinisBalas(vidurkis(st.getPaz()),\ st.getEgz()));}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ grupe.push\_back(st);}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00144}00144\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00145}00145\ \ \ \ \ in.close();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00146}00146\ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00148}00148\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Container>}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00149}00149\ \textcolor{keywordtype}{double}\ tirtiKonteineri(\textcolor{keywordtype}{int}\ n,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ fname,\ \textcolor{keywordtype}{int}\ strat)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00150}00150\ \ \ \ \ \textcolor{keyword}{auto}\ total\_start\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{comment}{//\ 1.\ Duomenu\ nuskaitymas\ is\ failo}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00153}00153\ \ \ \ \ \textcolor{keyword}{auto}\ start\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00155}00155\ \ \ \ \ Container\ grupe;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<Container,\ vector<Studentas>>)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ grupe.reserve(n);\ \textcolor{comment}{//\ list\ neturi\ reserve()\ funkcijos}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Nepakanka\ atminties\ rezervuoti\ "{}}\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ elementu!\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00163}00163\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00164}00164\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00165}00165\ \ \ \ \ \textcolor{comment}{//\ 3.\ Skirstymas\ i\ dvi\ grupes}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00166}00166\ \ \ \ \ start\ =\ high\_resolution\_clock::now();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00167}00167\ \ \ \ \ Container\ vargsiukai;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00168}00168\ \ \ \ \ Container\ kietiakai;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00169}00169\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00170}00170\ \ \ \ \ \textcolor{keywordflow}{if}\ (strat\ ==\ 1)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<Container,\ vector<Studentas>>)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ vargsiukai.reserve(n\ /\ 2\ +\ 100);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ kietiakai.reserve(n\ /\ 2\ +\ 100);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00175}00175\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ s\ :\ grupe)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s.getRez()\ <\ 5.0)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vargsiukai.push\_back(move(s));}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kietiakai.push\_back(move(s));}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ Container().swap(grupe);\ \textcolor{comment}{//\ Isvalome\ pradini\ konteineri}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00185}00185\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00186}00186\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (strat\ ==\ 2)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<Container,\ vector<Studentas>>)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sukrupuojame\ vektoriu\ vietoje\ (O(N)\ laikas):\ }}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ splitPoint\ =\ std::partition(grupe.begin(),\ grupe.end(),\ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ s)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ s.getRez()\ >=\ 5.0;\ \textcolor{comment}{//\ Salyga\ kietiakams}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00192}00192\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Iš\ anksto\ rezervuojame\ atminties\ vargšiukams\ (nebutina,\ bet\ dar\ labiau\ pagreitina)}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ vargsiukai.reserve(std::distance(splitPoint,\ grupe.end()));}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00195}00195\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ NAUDOJAME\ MOVE:\ Perkeliame\ vargšiukus\ iš\ pagrindinio\ vektoriaus\ galo\ i\ naujaji.}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ vargsiukai.insert(vargsiukai.end(),\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_move\_iterator(splitPoint),\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_move\_iterator(grupe.end()));}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00200}00200\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ištriname\ perkeltus\ elementus\ iš\ originalaus\ vektoriaus.}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ grupe.erase(splitPoint,\ grupe.end());}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ kietiakai\ =\ move(grupe);\ \textcolor{comment}{//\ Like\ grupeje\ yra\ kietiakai}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00165}00165\ \ \ \ \ nuskaitytiDuomenis(fname,\ grupe);}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00167}00167\ \ \ \ \ \textcolor{keyword}{auto}\ end\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00168}00168\ \ \ \ \ duration<double>\ ms\_read\ =\ end\ -\/\ start;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00169}00169\ \ \ \ \ cout\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ Irasu\ failo\ nuskaitymo\ laikas:\ "{}}\ <<\ fixed\ <<\ setprecision(5)\ <<\ ms\_read.count()\ <<\ \textcolor{stringliteral}{"{}\ s.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00171}00171\ \ \ \ \ \textcolor{comment}{//\ 2.\ Rusiavimas}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00172}00172\ \ \ \ \ start\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00173}00173\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<Container,\ list<Studentas>>)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ grupe.sort([](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ a,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ b)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a.getRez()\ <\ b.getRez();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00177}00177\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ std::sort(grupe.begin(),\ grupe.end(),\ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ a,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ b)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ return\ a.getRez()\ <\ b.getRez();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00181}00181\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00182}00182\ \ \ \ \ end\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00183}00183\ \ \ \ \ duration<double>\ ms\_sort\ =\ end\ -\/\ start;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00184}00184\ \ \ \ \ cout\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ Irasu\ rusiavimas\ didejimo\ tvarka:\ "{}}\ <<\ fixed\ <<\ setprecision(5)\ <<\ ms\_sort.count()\ <<\ \textcolor{stringliteral}{"{}\ s.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00186}00186\ \ \ \ \ \textcolor{comment}{//\ 3.\ Skirstymas\ i\ dvi\ grupes}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00187}00187\ \ \ \ \ start\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00188}00188\ \ \ \ \ Container\ vargsiukai;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00189}00189\ \ \ \ \ Container\ kietiakai;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00191}00191\ \ \ \ \ \textcolor{keywordflow}{if}\ (strat\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<Container,\ vector<Studentas>>)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ vargsiukai.reserve(n\ /\ 2\ +\ 100);}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ kietiakai.reserve(n\ /\ 2\ +\ 100);}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ s\ :\ grupe)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s.getRez()\ <\ 5.0)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vargsiukai.push\_back(move(s));}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kietiakai.push\_back(move(s));}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ grupe.begin();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (it\ !=\ grupe.end())\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>getRez()\ <\ 5.0)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vargsiukai.push\_back(move(*it));}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ =\ grupe.erase(it);\ \textcolor{comment}{//\ vector/deque\ atveju\ tai\ leta,\ list\ atveju\ -\/\ greita}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++it;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ kietiakai\ =\ move(grupe);\ \textcolor{comment}{//\ Like\ grupeje\ yra\ kietiakai}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00218}00218\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00219}00219\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (strat\ ==\ 3)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<Container,\ list<Studentas>>)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ list\ atveju\ efektyviausia\ yra\ iškirpti\ elementus\ per\ splice\ +\ remove\_if\ ar\ pagal\ salyga}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::partition(grupe.begin(),\ grupe.end(),\ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ s)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ s.getRez()\ <\ 5.0;\ \textcolor{comment}{//\ Vargšiukaikeliauja\ i\ pati\ prieki}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Iškerpame\ vargšiukus\ iš\ grupes\ tiesiai\ i\ vargšiuku\ list\ be\ memory\ re-\/allocation}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ vargsiukai.splice(vargsiukai.begin(),\ grupe,\ grupe.begin(),\ it);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ kietiakai\ =\ move(grupe);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::vector\ ir\ std::deque\ atveju\ efektyviausa\ naudoti\ std::partition\ in-\/place}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<Container,\ vector<Studentas>>)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vargsiukai.reserve(n\ /\ 2\ +\ 100);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::stable\_partition(grupe.begin(),\ grupe.end(),\ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ s)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ s.getRez()\ <\ 5.0;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00237}00237\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Iteruojam\ per\ pradžia\ kur\ atsidure\ vargšiukai\ po\ stable\_partition\ pakeitimu}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ vargsiukai.insert(vargsiukai.end(),\ std::make\_move\_iterator(grupe.begin()),\ std::make\_move\_iterator(it));}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Kas\ liko\ originalioj\ grupej\ iteruojame\ i\ kietiakius\ (nuo\ it\ iki\ end)}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ kietiakai.insert(kietiakai.end(),\ std::make\_move\_iterator(it),\ std::make\_move\_iterator(grupe.end()));}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00242}00242\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ Container().swap(grupe);\ \textcolor{comment}{//\ Sunaikinam\ originala}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00245}00245\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00246}00246\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00247}00247\ \ \ \ \ end\ =\ high\_resolution\_clock::now();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00248}00248\ \ \ \ \ duration<double>\ ms\_split\ =\ end\ -\/\ start;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00249}00249\ \ \ \ \ cout\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ Irasu\ dalijimo\ laikas\ ("{}}\ <<\ strat\ <<\ \textcolor{stringliteral}{"{}-\/a\ strategija):\ "{}}\ <<\ fixed\ <<\ setprecision(5)\ <<\ ms\_split.count()\ <<\ \textcolor{stringliteral}{"{}\ s.\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00250}00250\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00251}00251\ \ \ \ \ \textcolor{comment}{//\ 4.1\ Irasome\ vargsiukus\ i\ faila}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00252}00252\ \ \ \ \ start\ =\ high\_resolution\_clock::now();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00253}00253\ \ \ \ \ ofstream\ outV(\textcolor{stringliteral}{"{}vargsiukai\(\backslash\)\(\backslash\)vargsiukai\_"{}}\ +\ to\_string(n)\ +\ \textcolor{stringliteral}{"{}.txt"{}});}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00254}00254\ \ \ \ \ outV\ <<\ left\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Vardas"{}}\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Pavarde"{}}\ <<\ \textcolor{stringliteral}{"{}Galutinis\ (Vid.)\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00255}00255\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ s\ :\ vargsiukai)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ outV\ <<\ left\ <<\ setw(20)\ <<\ s.getVardas()\ <<\ setw(20)\ <<\ s.getPavarde()\ <<\ fixed\ <<\ setprecision(2)\ <<\ s.getRez()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00257}00257\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00258}00258\ \ \ \ \ outV.close();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00259}00259\ \ \ \ \ Container().swap(vargsiukai);\ \textcolor{comment}{//\ Islaisviname\ RAM\ perrasydami!}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00260}00260\ \ \ \ \ end\ =\ high\_resolution\_clock::now();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00261}00261\ \ \ \ \ duration<double>\ ms\_write\_v\ =\ end\ -\/\ start;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00262}00262\ \ \ \ \ cout\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ Irasu\ 'vargsiuku'\ irasymo\ laikas:\ "{}}\ <<\ fixed\ <<\ setprecision(5)\ <<\ ms\_write\_v.count()\ <<\ \textcolor{stringliteral}{"{}\ s.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ Container().swap(grupe);\ \textcolor{comment}{//\ Isvalome\ pradini\ konteineri}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00206}00206\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00207}00207\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (strat\ ==\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<Container,\ vector<Studentas>>)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sukrupuojame\ vektoriu\ vietoje\ (O(N)\ laikas):\ }}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ splitPoint\ =\ std::partition(grupe.begin(),\ grupe.end(),\ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ s)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ s.getRez()\ >=\ 5.0;\ \textcolor{comment}{//\ Salyga\ kietiakams}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Iš\ anksto\ rezervuojame\ atminties\ vargšiukams\ (nebutina,\ bet\ dar\ labiau\ pagreitina)}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ vargsiukai.reserve(std::distance(splitPoint,\ grupe.end()));}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ NAUDOJAME\ MOVE:\ Perkeliame\ vargšiukus\ iš\ pagrindinio\ vektoriaus\ galo\ i\ naujaji.}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ vargsiukai.insert(vargsiukai.end(),\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_move\_iterator(splitPoint),\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_move\_iterator(grupe.end()));}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ištriname\ perkeltus\ elementus\ iš\ originalaus\ vektoriaus.}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ grupe.erase(splitPoint,\ grupe.end());}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ kietiakai\ =\ move(grupe);\ \textcolor{comment}{//\ Like\ grupeje\ yra\ kietiakai}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ grupe.begin();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (it\ !=\ grupe.end())\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>getRez()\ <\ 5.0)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vargsiukai.push\_back(move(*it));}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ =\ grupe.erase(it);\ \textcolor{comment}{//\ vector/deque\ atveju\ tai\ leta,\ list\ atveju\ -\/\ greita}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++it;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ kietiakai\ =\ move(grupe);\ \textcolor{comment}{//\ Like\ grupeje\ yra\ kietiakai}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00239}00239\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00240}00240\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (strat\ ==\ 3)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<Container,\ list<Studentas>>)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ list\ atveju\ efektyviausia\ yra\ iškirpti\ elementus\ per\ splice\ +\ remove\_if\ ar\ pagal\ salyga}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::partition(grupe.begin(),\ grupe.end(),\ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ s)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ s.getRez()\ <\ 5.0;\ \textcolor{comment}{//\ Vargšiukaikeliauja\ i\ pati\ prieki}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Iškerpame\ vargšiukus\ iš\ grupes\ tiesiai\ i\ vargšiuku\ list\ be\ memory\ re-\/allocation}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ vargsiukai.splice(vargsiukai.begin(),\ grupe,\ grupe.begin(),\ it);}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ kietiakai\ =\ move(grupe);}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::vector\ ir\ std::deque\ atveju\ efektyviausa\ naudoti\ std::partition\ in-\/place}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<Container,\ vector<Studentas>>)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vargsiukai.reserve(n\ /\ 2\ +\ 100);}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::stable\_partition(grupe.begin(),\ grupe.end(),\ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ s)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ s.getRez()\ <\ 5.0;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Iteruojam\ per\ pradžia\ kur\ atsidure\ vargšiukai\ po\ stable\_partition\ pakeitimu}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ vargsiukai.insert(vargsiukai.end(),\ std::make\_move\_iterator(grupe.begin()),\ std::make\_move\_iterator(it));}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Kas\ liko\ originalioj\ grupej\ iteruojame\ i\ kietiakius\ (nuo\ it\ iki\ end)}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ kietiakai.insert(kietiakai.end(),\ std::make\_move\_iterator(it),\ std::make\_move\_iterator(grupe.end()));}
 \DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00263}00263\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00264}00264\ \ \ \ \ \textcolor{comment}{//\ 4.2\ Irasome\ kietiakius\ i\ faila}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00265}00265\ \ \ \ \ start\ =\ high\_resolution\_clock::now();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00266}00266\ \ \ \ \ ofstream\ outK(\textcolor{stringliteral}{"{}kietiakai\(\backslash\)\(\backslash\)kietiakai\_"{}}\ +\ to\_string(n)\ +\ \textcolor{stringliteral}{"{}.txt"{}});}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00267}00267\ \ \ \ \ outK\ <<\ left\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Vardas"{}}\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Pavarde"{}}\ <<\ \textcolor{stringliteral}{"{}Galutinis\ (Vid.)\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00268}00268\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ s\ :\ kietiakai)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ outK\ <<\ left\ <<\ setw(20)\ <<\ s.getVardas()\ <<\ setw(20)\ <<\ s.getPavarde()\ <<\ fixed\ <<\ setprecision(2)\ <<\ s.getRez()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00270}00270\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00271}00271\ \ \ \ \ outK.close();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00272}00272\ \ \ \ \ Container().swap(kietiakai);\ \textcolor{comment}{//\ Islaisviname\ ir\ kietiakius!}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00273}00273\ \ \ \ \ end\ =\ high\_resolution\_clock::now();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00274}00274\ \ \ \ \ duration<double>\ ms\_write\_k\ =\ end\ -\/\ start;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00275}00275\ \ \ \ \ cout\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ Irasu\ 'kietiaku'\ irasymo\ laikas:\ "{}}\ <<\ fixed\ <<\ setprecision(5)\ <<\ ms\_write\_k.count()\ <<\ \textcolor{stringliteral}{"{}\ s.\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00276}00276\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00277}00277\ \ \ \ \ \textcolor{comment}{//\ Bendras\ laikas}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00278}00278\ \ \ \ \ \textcolor{keyword}{auto}\ total\_end\ =\ high\_resolution\_clock::now();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00279}00279\ \ \ \ \ duration<double>\ ms\_total\ =\ total\_end\ -\/\ total\_start;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00280}00280\ \ \ \ \ \textcolor{keywordflow}{return}\ ms\_total.count();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00281}00281\ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00282}00282\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00283}00283\ \textcolor{keywordtype}{void}\ atliktiSpartosAnalize()\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00284}00284\ \ \ \ \ \textcolor{keywordtype}{int}\ pas,\ kont,\ strat,\ test\_kartai;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00285}00285\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nPasirinkite,\ su\ kuriuo\ failu\ norite\ atlikti\ spartos\ analize:\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00286}00286\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1.\ 1000\ irasu\ failas\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00287}00287\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2.\ 10000\ irasu\ failas\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00288}00288\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}3.\ 100000\ irasu\ failas\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00289}00289\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}4.\ 1000000\ irasu\ failas\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00290}00290\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}5.\ 10000000\ irasu\ failas\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00291}00291\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}6.\ Visi\ failai\ is\ eiles\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00292}00292\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}7.\ VECTOR\ TESTAVIMAS\ (100k,\ 1M)\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00293}00293\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Jusu\ pasirinkimas:\ "{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00294}00294\ \ \ \ \ cin\ >>\ pas;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00295}00295\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00296}00296\ \ \ \ \ \textcolor{keywordflow}{if}\ (pas\ ==\ 7)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vector\ testing}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ strat\_v,\ test\_kartai\_v;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nPasirinkite\ testavimo\ strategija:\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1.\ 1\ strategija\ (Sukurti\ 2\ naujus\ konteinerius)\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2.\ 2\ strategija\ (Sukurti\ 1\ nauja\ konteineri,\ trinti\ is\ pagrindinio)\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Jusu\ pasirinkimas:\ "{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ cin\ >>\ strat\_v;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00304}00304\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nIveskite,\ kiek\ kartu\ norite\ pakartoti\ testavima:\ "{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ cin\ >>\ test\_kartai\_v;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00307}00307\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nPradedama\ Vector\ spartos\ analize...\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00309}00309\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ vector<int>\ pasirinkti\_SZ\ =\ \{\ 100000,\ 1000000\ \};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00311}00311\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00312}00312\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ n\ :\ pasirinkti\_SZ)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ fname\ =\ \textcolor{stringliteral}{"{}Studentai\_test\(\backslash\)\(\backslash\)studentai\_"{}}\ +\ to\_string(n)\ +\ \textcolor{stringliteral}{"{}.txt"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00314}00314\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ ifstream\ patikrinimas(fname);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!patikrinimas.good())\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Failo\ "{}}\ <<\ fname\ <<\ \textcolor{stringliteral}{"{}\ nera.\ Praleidziama.\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ patikrinimas.close();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00321}00321\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ irasu\ Vector\ spartos\ analize\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00325}00325\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ visas\_laikas\ =\ 0.0;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00327}00327\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ test\_kartai\_v;\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nTESTO\ NUMERIS:\ "{}}\ <<\ i\ +\ 1\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ visas\_laikas\ +=\ tirtiKonteineri<Vector<Studentas>>(n,\ fname,\ strat\_v);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00332}00332\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n========================================\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Vidutinis\ Vector\ testo\ laikas\ po\ "{}}\ <<\ test\_kartai\_v\ <<\ \textcolor{stringliteral}{"{}\ bandymu:\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ fixed\ <<\ setprecision(5)\ <<\ visas\_laikas\ /\ test\_kartai\_v\ <<\ \textcolor{stringliteral}{"{}\ s.\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}========================================\(\backslash\)n\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00337}00337\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00339}00339\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00340}00340\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00341}00341\ \ \ \ \ vector<int>\ pasirinkti\_SZ;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00342}00342\ \ \ \ \ \textcolor{keywordflow}{if}\ (pas\ ==\ 1)\ pasirinkti\_SZ\ =\ \{\ 1000\ \};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00343}00343\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 2)\ pasirinkti\_SZ\ =\ \{\ 10000\ \};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00344}00344\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 3)\ pasirinkti\_SZ\ =\ \{\ 100000\ \};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00345}00345\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 4)\ pasirinkti\_SZ\ =\ \{\ 1000000\ \};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00346}00346\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 5)\ pasirinkti\_SZ\ =\ \{\ 10000000\ \};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00347}00347\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 6)\ pasirinkti\_SZ\ =\ SZ;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00348}00348\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00349}00349\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Neteisingas\ pasirinkimas!\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00350}00350\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00351}00351\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ Container().swap(grupe);\ \textcolor{comment}{//\ Sunaikinam\ originala}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00266}00266\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00267}00267\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00268}00268\ \ \ \ \ end\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00269}00269\ \ \ \ \ duration<double>\ ms\_split\ =\ end\ -\/\ start;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00270}00270\ \ \ \ \ cout\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ Irasu\ dalijimo\ laikas\ ("{}}\ <<\ strat\ <<\ \textcolor{stringliteral}{"{}-\/a\ strategija):\ "{}}\ <<\ fixed\ <<\ setprecision(5)\ <<\ ms\_split.count()\ <<\ \textcolor{stringliteral}{"{}\ s.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00271}00271\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00272}00272\ \ \ \ \ \textcolor{comment}{//\ 4.1\ Irasome\ vargsiukus\ i\ faila}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00273}00273\ \ \ \ \ start\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00274}00274\ \ \ \ \ ofstream\ outV(\textcolor{stringliteral}{"{}vargsiukai\(\backslash\)\(\backslash\)vargsiukai\_"{}}\ +\ to\_string(n)\ +\ \textcolor{stringliteral}{"{}.txt"{}});}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00275}00275\ \ \ \ \ outV\ <<\ left\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Vardas"{}}\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Pavarde"{}}\ <<\ \textcolor{stringliteral}{"{}Galutinis\ (Vid.)\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00276}00276\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ s\ :\ vargsiukai)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ outV\ <<\ left\ <<\ setw(20)\ <<\ s.getVardas()\ <<\ setw(20)\ <<\ s.getPavarde()\ <<\ fixed\ <<\ setprecision(2)\ <<\ s.getRez()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00278}00278\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00279}00279\ \ \ \ \ outV.close();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00280}00280\ \ \ \ \ Container().swap(vargsiukai);\ \textcolor{comment}{//\ Islaisviname\ RAM\ perrasydami!}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00281}00281\ \ \ \ \ end\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00282}00282\ \ \ \ \ duration<double>\ ms\_write\_v\ =\ end\ -\/\ start;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00283}00283\ \ \ \ \ cout\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ Irasu\ 'vargsiuku'\ irasymo\ laikas:\ "{}}\ <<\ fixed\ <<\ setprecision(5)\ <<\ ms\_write\_v.count()\ <<\ \textcolor{stringliteral}{"{}\ s.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00285}00285\ \ \ \ \ \textcolor{comment}{//\ 4.2\ Irasome\ kietiakius\ i\ faila}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00286}00286\ \ \ \ \ start\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00287}00287\ \ \ \ \ ofstream\ outK(\textcolor{stringliteral}{"{}kietiakai\(\backslash\)\(\backslash\)kietiakai\_"{}}\ +\ to\_string(n)\ +\ \textcolor{stringliteral}{"{}.txt"{}});}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00288}00288\ \ \ \ \ outK\ <<\ left\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Vardas"{}}\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Pavarde"{}}\ <<\ \textcolor{stringliteral}{"{}Galutinis\ (Vid.)\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00289}00289\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ s\ :\ kietiakai)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ outK\ <<\ left\ <<\ setw(20)\ <<\ s.getVardas()\ <<\ setw(20)\ <<\ s.getPavarde()\ <<\ fixed\ <<\ setprecision(2)\ <<\ s.getRez()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00291}00291\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00292}00292\ \ \ \ \ outK.close();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00293}00293\ \ \ \ \ Container().swap(kietiakai);\ \textcolor{comment}{//\ Islaisviname\ ir\ kietiakius!}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00294}00294\ \ \ \ \ end\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00295}00295\ \ \ \ \ duration<double>\ ms\_write\_k\ =\ end\ -\/\ start;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00296}00296\ \ \ \ \ cout\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ Irasu\ 'kietiaku'\ irasymo\ laikas:\ "{}}\ <<\ fixed\ <<\ setprecision(5)\ <<\ ms\_write\_k.count()\ <<\ \textcolor{stringliteral}{"{}\ s.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00297}00297\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00298}00298\ \ \ \ \ \textcolor{comment}{//\ Bendras\ laikas}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00299}00299\ \ \ \ \ \textcolor{keyword}{auto}\ total\_end\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00300}00300\ \ \ \ \ duration<double>\ ms\_total\ =\ total\_end\ -\/\ total\_start;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00301}00301\ \ \ \ \ \textcolor{keywordflow}{return}\ ms\_total.count();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00302}00302\ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00303}00303\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00304}00304\ \textcolor{keywordtype}{void}\ atliktiSpartosAnalize()\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00305}00305\ \ \ \ \ ensureDirectoriesExist();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00306}00306\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00307}00307\ \ \ \ \ \textcolor{keywordtype}{int}\ pas,\ kont,\ strat,\ test\_kartai;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00308}00308\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nPasirinkite,\ su\ kuriuo\ failu\ norite\ atlikti\ spartos\ analize:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00309}00309\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1.\ 1000\ irasu\ failas\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00310}00310\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2.\ 10000\ irasu\ failas\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00311}00311\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}3.\ 100000\ irasu\ failas\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00312}00312\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}4.\ 1000000\ irasu\ failas\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00313}00313\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}5.\ 10000000\ irasu\ failas\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00314}00314\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}6.\ Visi\ failai\ is\ eiles\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00315}00315\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Jusu\ pasirinkimas:\ "{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00316}00316\ \ \ \ \ cin\ >>\ pas;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00317}00317\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00318}00318\ \ \ \ \ vector<int>\ pasirinkti\_SZ;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00319}00319\ \ \ \ \ \textcolor{keywordflow}{if}\ (pas\ ==\ 1)\ pasirinkti\_SZ\ =\ \{\ 1000\ \};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00320}00320\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 2)\ pasirinkti\_SZ\ =\ \{\ 10000\ \};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00321}00321\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 3)\ pasirinkti\_SZ\ =\ \{\ 100000\ \};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00322}00322\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 4)\ pasirinkti\_SZ\ =\ \{\ 1000000\ \};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00323}00323\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 5)\ pasirinkti\_SZ\ =\ \{\ 10000000\ \};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00324}00324\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pas\ ==\ 6)\ pasirinkti\_SZ\ =\ SZ;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00325}00325\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Neteisingas\ pasirinkimas!\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00328}00328\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00329}00329\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00330}00330\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nPasirinkite\ konteinerio\ tipa\ testavimui:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00331}00331\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1.\ std::vector\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00332}00332\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2.\ std::list\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00333}00333\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}3.\ std::deque\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00334}00334\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}4.\ Vector\ (custom)\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00335}00335\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Jusu\ pasirinkimas:\ "{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00336}00336\ \ \ \ \ cin\ >>\ kont;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00337}00337\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00338}00338\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nPasirinkite\ testavimo\ strategija:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00339}00339\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1.\ 1\ strategija\ (Sukurti\ 2\ naujus\ konteinerius)\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00340}00340\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2.\ 2\ strategija\ (Sukurti\ 1\ nauja\ konteineri,\ trinti\ is\ pagrindinio)\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00341}00341\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}3.\ 3\ strategija\ (Optimizuoti\ algoritmu\ metodai)\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00342}00342\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Jusu\ pasirinkimas:\ "{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00343}00343\ \ \ \ \ cin\ >>\ strat;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00344}00344\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00345}00345\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nIveskite,\ kiek\ kartu\ norite\ pakartoti\ testavima\ (laiku\ vidurkiui):\ "{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00346}00346\ \ \ \ \ cin\ >>\ test\_kartai;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00347}00347\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00348}00348\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nPradedama\ spartos\ analize\ pagal\ nurodytus\ zingsnius...\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00350}00350\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ n\ :\ pasirinkti\_SZ)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00351}00351\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ fname\ =\ \textcolor{stringliteral}{"{}Studentai\_test\(\backslash\)\(\backslash\)studentai\_"{}}\ +\ to\_string(n)\ +\ \textcolor{stringliteral}{"{}.txt"{}};}
 \DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00352}00352\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00353}00353\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nPasirinkite\ konteinerio\ tipa\ testavimui:\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00354}00354\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1.\ std::vector\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00355}00355\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2.\ std::list\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00356}00356\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}3.\ std::deque\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00357}00357\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Jusu\ pasirinkimas:\ "{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00358}00358\ \ \ \ \ cin\ >>\ kont;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00359}00359\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00360}00360\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nPasirinkite\ testavimo\ strategija:\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00361}00361\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1.\ 1\ strategija\ (Sukurti\ 2\ naujus\ konteinerius)\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00362}00362\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2.\ 2\ strategija\ (Sukurti\ 1\ nauja\ konteineri,\ trinti\ is\ pagrindinio)\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00363}00363\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}3.\ 3\ strategija\ (Optimizuoti\ algoritmu\ metodai)\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00364}00364\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Jusu\ pasirinkimas:\ "{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00365}00365\ \ \ \ \ cin\ >>\ strat;}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00353}00353\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Tikrinimas\ ar\ failas\ atsidaro\ nenaudojant\ filesystem}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00354}00354\ \ \ \ \ \ \ \ \ ifstream\ patikrinimas(fname);}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00355}00355\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!patikrinimas.good())\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Failo\ "{}}\ <<\ fname\ <<\ \textcolor{stringliteral}{"{}\ nera.\ Praleidziama.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00358}00358\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ patikrinimas.close();}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00360}00360\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00361}00361\ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00362}00362\ \ \ \ \ \ \ \ \ cout\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ Irasu\ spartos\ analize\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00364}00364\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00365}00365\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ visas\_laikas\ =\ 0.0;}
 \DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00366}00366\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00367}00367\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nIveskite,\ kiek\ kartu\ norite\ pakartoti\ testavima\ (laiku\ vidurkiui):\ "{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00368}00368\ \ \ \ \ cin\ >>\ test\_kartai;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00369}00369\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00370}00370\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nPradedama\ spartos\ analize\ pagal\ nurodytus\ zingsnius...\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00371}00371\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00372}00372\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ n\ :\ pasirinkti\_SZ)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00373}00373\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ fname\ =\ \textcolor{stringliteral}{"{}Studentai\_test\(\backslash\)\(\backslash\)studentai\_"{}}\ +\ to\_string(n)\ +\ \textcolor{stringliteral}{"{}.txt"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00374}00374\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Tikrinimas\ ar\ failas\ atsidaro\ nenaudojant\ filesystem}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ ifstream\ patikrinimas(fname);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00377}00377\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!patikrinimas.good())\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Failo\ "{}}\ <<\ fname\ <<\ \textcolor{stringliteral}{"{}\ nera.\ Praleidziama.\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00380}00380\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ patikrinimas.close();}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00382}00382\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00384}00384\ \ \ \ \ \ \ \ \ cout\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ Irasu\ spartos\ analize\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00386}00386\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ visas\_laikas\ =\ 0.0;}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00388}00388\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ test\_kartai;\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nTESTO\ NUMERIS:\ "{}}\ <<\ i\ +\ 1\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (kont\ ==\ 1)\ visas\_laikas\ +=\ tirtiKonteineri<vector<Studentas>>(n,\ fname,\ strat);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (kont\ ==\ 2)\ visas\_laikas\ +=\ tirtiKonteineri<list<Studentas>>(n,\ fname,\ strat);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (kont\ ==\ 3)\ visas\_laikas\ +=\ tirtiKonteineri<deque<Studentas>>(n,\ fname,\ strat);}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Neteisingas\ konteinerio\ tipas!\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00398}00398\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00399}00399\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n========================================\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00400}00400\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Vidutinis\ viso\ testo\ (nuskaitymas+dalijimas+isvedimas)\ laikas\ po\ "{}}\ <<\ test\_kartai\ <<\ \textcolor{stringliteral}{"{}\ bandymu:\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00401}00401\ \ \ \ \ \ \ \ \ cout\ <<\ fixed\ <<\ setprecision(5)\ <<\ visas\_laikas\ /\ test\_kartai\ <<\ \textcolor{stringliteral}{"{}\ s.\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00402}00402\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}========================================\(\backslash\)n\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00403}00403\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00404}00404\ \}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00405}00405\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00406}00406\ \textcolor{keywordtype}{void}\ PadalintiStudentusZabioGreiciu(std::vector<Studentas>\&\ studentai,\ std::vector<Studentas>\&\ vargsiukai)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00407}00407\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00408}00408\ \ \ \ \ \textcolor{comment}{//\ 1.\ Sukrupuojame\ vektoriu\ vietoje\ (O(N)\ laikas):\ }}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00409}00409\ \ \ \ \ \textcolor{comment}{//\ Visi,\ kuriu\ balas\ >=\ 5.0\ atsiduria\ priekyje,\ o\ <\ 5.0\ -\/\ gale.}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00410}00410\ \ \ \ \ \textcolor{comment}{//\ Jei\ jums\ BUTINA\ išlaikyti\ jau\ esama\ eiliškuma\ (pvz.,\ abecelini),\ }}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00411}00411\ \ \ \ \ \textcolor{comment}{//\ vietoj\ 'std::partition'\ naudokite\ 'std::stable\_partition'.}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00412}00412\ \ \ \ \ \textcolor{keyword}{auto}\ splitPoint\ =\ std::partition(studentai.begin(),\ studentai.end(),\ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ s)\ \{}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00413}00413\ \ \ \ \ \ \ \ \ return\ s.getRez()\ >=\ 5.0;\ \textcolor{comment}{//\ Pakeista\ is\ galutinis\ i\ rez}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00414}00414\ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00415}00415\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00416}00416\ \ \ \ \ \textcolor{comment}{//\ 2.\ Iš\ anksto\ rezervuojame\ atminties\ vargšiukams\ (nebutina,\ bet\ dar\ labiau\ pagreitina)}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00417}00417\ \ \ \ \ vargsiukai.reserve(std::distance(splitPoint,\ studentai.end()));}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00418}00418\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00419}00419\ \ \ \ \ \textcolor{comment}{//\ 3.\ NAUDOJAME\ MOVE:\ Perkeliame\ vargšiukus\ iš\ pagrindinio\ vektoriaus\ galo\ i\ naujaji.}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00420}00420\ \ \ \ \ \textcolor{comment}{//\ std::make\_move\_iterator\ užtikrina,\ kad\ tekstai\ ir\ kiti\ duomenys\ nebutu\ kopijuojami\ iš\ naujo.}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00421}00421\ \ \ \ \ vargsiukai.insert(vargsiukai.end(),\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00422}00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_move\_iterator(splitPoint),\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00423}00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_move\_iterator(studentai.end()));}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00424}00424\ }
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00425}00425\ \ \ \ \ \textcolor{comment}{//\ 4.\ Ištriname\ perkeltus\ elementus\ iš\ originalaus\ vektoriaus.}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00426}00426\ \ \ \ \ \textcolor{comment}{//\ Kadangi\ triname\ IŠ\ GALO,\ jokio\ duomenu\ stumdymo\ nebelieka\ -\/\ operacija\ ivyksta\ per\ O(1).}}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00427}00427\ \ \ \ \ studentai.erase(splitPoint,\ studentai.end());}
-\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00428}00428\ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00367}00367\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ test\_kartai;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nTESTO\ NUMERIS:\ "{}}\ <<\ i\ +\ 1\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (kont\ ==\ 1)\ visas\_laikas\ +=\ tirtiKonteineri<vector<Studentas>>(n,\ fname,\ strat);}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (kont\ ==\ 2)\ visas\_laikas\ +=\ tirtiKonteineri<list<Studentas>>(n,\ fname,\ strat);}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (kont\ ==\ 3)\ visas\_laikas\ +=\ tirtiKonteineri<deque<Studentas>>(n,\ fname,\ strat);}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (kont\ ==\ 4)\ visas\_laikas\ +=\ tirtiKonteineri<Vector<Studentas>>(n,\ fname,\ strat);}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Neteisingas\ konteinerio\ tipas!\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00377}00377\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00378}00378\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n========================================\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00379}00379\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Vidutinis\ viso\ testo\ (nuskaitymas+dalijimas+isvedimas)\ laikas\ po\ "{}}\ <<\ test\_kartai\ <<\ \textcolor{stringliteral}{"{}\ bandymu:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00380}00380\ \ \ \ \ \ \ \ \ cout\ <<\ fixed\ <<\ setprecision(5)\ <<\ visas\_laikas\ /\ test\_kartai\ <<\ \textcolor{stringliteral}{"{}\ s.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}========================================\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00382}00382\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00383}00383\ \}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00384}00384\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00385}00385\ \textcolor{keywordtype}{void}\ PadalintiStudentusZabioGreiciu(std::vector<Studentas>\&\ studentai,\ std::vector<Studentas>\&\ vargsiukai)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00386}00386\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00387}00387\ \ \ \ \ \textcolor{comment}{//\ 1.\ Sukrupuojame\ vektoriu\ vietoje\ (O(N)\ laikas):\ }}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00388}00388\ \ \ \ \ \textcolor{comment}{//\ Visi,\ kuriu\ balas\ >=\ 5.0\ atsiduria\ priekyje,\ o\ <\ 5.0\ -\/\ gale.}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00389}00389\ \ \ \ \ \textcolor{comment}{//\ Jei\ jums\ BUTINA\ išlaikyti\ jau\ esama\ eiliškuma\ (pvz.,\ abecelini),\ }}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00390}00390\ \ \ \ \ \textcolor{comment}{//\ vietoj\ 'std::partition'\ naudokite\ 'std::stable\_partition'.}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00391}00391\ \ \ \ \ \textcolor{keyword}{auto}\ splitPoint\ =\ std::partition(studentai.begin(),\ studentai.end(),\ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ s)\ \{}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ return\ s.getRez()\ >=\ 5.0;\ \textcolor{comment}{//\ Pakeista\ is\ galutinis\ i\ rez}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00393}00393\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00394}00394\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00395}00395\ \ \ \ \ \textcolor{comment}{//\ 2.\ Iš\ anksto\ rezervuojame\ atminties\ vargšiukams\ (nebutina,\ bet\ dar\ labiau\ pagreitina)}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00396}00396\ \ \ \ \ vargsiukai.reserve(std::distance(splitPoint,\ studentai.end()));}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00397}00397\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00398}00398\ \ \ \ \ \textcolor{comment}{//\ 3.\ NAUDOJAME\ MOVE:\ Perkeliame\ vargšiukus\ iš\ pagrindinio\ vektoriaus\ galo\ i\ naujaji.}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00399}00399\ \ \ \ \ \textcolor{comment}{//\ std::make\_move\_iterator\ užtikrina,\ kad\ tekstai\ ir\ kiti\ duomenys\ nebutu\ kopijuojami\ iš\ naujo.}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00400}00400\ \ \ \ \ vargsiukai.insert(vargsiukai.end(),\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_move\_iterator(splitPoint),\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_move\_iterator(studentai.end()));}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00403}00403\ }
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00404}00404\ \ \ \ \ \textcolor{comment}{//\ 4.\ Ištriname\ perkeltus\ elementus\ iš\ originalaus\ vektoriaus.}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00405}00405\ \ \ \ \ \textcolor{comment}{//\ Kadangi\ triname\ IŠ\ GALO,\ jokio\ duomenu\ stumdymo\ nebelieka\ -\/\ operacija\ ivyksta\ per\ O(1).}}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00406}00406\ \ \ \ \ studentai.erase(splitPoint,\ studentai.end());}
+\DoxyCodeLine{\Hypertarget{testavimas_8cpp_source_l00407}00407\ \}}
 
 \end{DoxyCode}

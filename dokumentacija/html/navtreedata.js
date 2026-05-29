@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "ObjektinisUzdavinys v3.0", "index.html", [
-    [ "📦 ObjektinisUzdavinys v3.0 - Setup ir Naudojimosi Instrukcija", "index.html", null ],
+    [ "ObjektinisUzdavinys v3.0 - Setup ir Naudojimosi Instrukcija", "index.html", null ],
     [ "Klasės", "annotated.html", [
       [ "Klasės", "annotated.html", "annotated_dup" ],
       [ "Klasės Indeksas", "classes.html", null ],

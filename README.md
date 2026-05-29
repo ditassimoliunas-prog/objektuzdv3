@@ -1,6 +1,6 @@
-## 📦 ObjektinisUzdavinys v3.0 - Setup ir Naudojimosi Instrukcija
+## ObjektinisUzdavinys v3.0 - Setup ir Naudojimosi Instrukcija
 
-### 🔧 Diegimas (Setup)
+### Diegimas (Setup)
 
 #### Sisteminiai Reikalavimai
 - **OS**: Windows 7+ / 8 / 10 / 11

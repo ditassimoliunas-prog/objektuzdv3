@@ -254,8 +254,8 @@
   </compound>
   <compound kind="page">
     <name>index</name>
-    <title>📦 ObjektinisUzdavinys v3.0 - Setup ir Naudojimosi Instrukcija</title>
+    <title>ObjektinisUzdavinys v3.0 - Setup ir Naudojimosi Instrukcija</title>
     <filename>index.html</filename>
-    <docanchor file="index.html" title="📦 ObjektinisUzdavinys v3.0 - Setup ir Naudojimosi Instrukcija">md__r_e_a_d_m_e</docanchor>
+    <docanchor file="index.html" title="ObjektinisUzdavinys v3.0 - Setup ir Naudojimosi Instrukcija">md__r_e_a_d_m_e</docanchor>
   </compound>
 </tagfile>

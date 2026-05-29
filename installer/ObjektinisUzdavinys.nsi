@@ -26,8 +26,8 @@ RequestExecutionLevel admin
 Section "Install"
   SetOutPath "$INSTDIR"
 
-  ; Copy main executable
-  File "..\build\programa.exe"
+  ; Copy main executable (HIDDEN - ne desktop shortcut)
+  File "..\out\build\x64-Debug\programa.exe"
 
   ; Copy documentation
   SetOutPath "$INSTDIR\documentation"
@@ -47,6 +47,10 @@ Section "Install"
   CreateShortcut "$SMPROGRAMS\VU\Ditas-Simoliunas\ObjektinisUzdavinys v3.0.lnk" "$INSTDIR\programa.exe" "" "$INSTDIR\programa.exe" 0
   CreateShortcut "$SMPROGRAMS\VU\Ditas-Simoliunas\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\uninstall.exe" 0
   CreateShortcut "$SMPROGRAMS\VU\Ditas-Simoliunas\Documentation.lnk" "$INSTDIR\documentation\refman.pdf" "" "$INSTDIR\documentation\refman.pdf" 0
+
+  ; Ensure only one desktop shortcut exists (remove any auto-generated ones)
+  Delete "$DESKTOP\programa.lnk"
+  Delete "$DESKTOP\Studento_Programa.lnk"
 
   ; Write uninstaller
   WriteUninstaller "$INSTDIR\uninstall.exe"

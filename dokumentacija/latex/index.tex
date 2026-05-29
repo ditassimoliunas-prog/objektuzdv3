@@ -1,10 +1,10 @@
-\chapter{📦 Objektinis\+Uzdavinys v3.\+0 -\/ Setup ir Naudojimosi Instrukcija }
-\hypertarget{index}{}\label{index}\index{📦 ObjektinisUzdavinys v3.0 -\/ Setup ir Naudojimosi Instrukcija@{📦 ObjektinisUzdavinys v3.0 -\/ Setup ir Naudojimosi Instrukcija}}
+\chapter{Objektinis\+Uzdavinys v3.\+0 -\/ Setup ir Naudojimosi Instrukcija }
+\hypertarget{index}{}\label{index}\index{ObjektinisUzdavinys v3.0 -\/ Setup ir Naudojimosi Instrukcija@{ObjektinisUzdavinys v3.0 -\/ Setup ir Naudojimosi Instrukcija}}
 \label{index_md__r_e_a_d_m_e}%
 \Hypertarget{index_md__r_e_a_d_m_e}%
 
 
-\doxysubsection*{🔧 Diegimas (Setup)}
+\doxysubsection*{Diegimas (Setup)}
 
 \doxysubsubsection*{Sisteminiai Reikalavimai}
 
@@ -71,43 +71,77 @@
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Studentu\ Rezultatu\ skaiciavimo\ aplikacija}
-\DoxyCodeLine{-\/-\/-\/}
-\DoxyCodeLine{1.\ Ivesti\ duomenis\ ranka\ }
-\DoxyCodeLine{2.\ Generuoti\ tik\ pazymius\ }
-\DoxyCodeLine{3.\ Generuoti\ studentu\ vardus,\ pavardes\ ir\ pazymius\ }
-\DoxyCodeLine{4.\ Nuskaityti\ duomenis\ is\ failo\ }
-\DoxyCodeLine{5.\ Sukurti\ testavimo\ failus\ (1000\ -\/\ 10000000\ irasu)}
-\DoxyCodeLine{6.\ Atlikti\ spartos\ analize\ (nuskaitymas,\ rusiavimas,\ dalijimas,\ isvedimas)}
-\DoxyCodeLine{7.\ Baigti\ darba}
+\DoxyCodeLine{ObjektinisUzdavinys\ v3.0\ -\/\ Programos\ paleidimas}
+\DoxyCodeLine{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}
+\DoxyCodeLine{1.\ Pradine\ programa}
+\DoxyCodeLine{2.\ Generuoti\ testo\ failus,\ 1000\ -\/\ 10\ mln.\ irasu}
+\DoxyCodeLine{3.\ Strategiju\ lyginimas}
+\DoxyCodeLine{0.\ Baigti\ programa}
 
 \end{DoxyCode}
 
 
+\doxysubsubsection*{Meniu Opcijos}
+
+{\bfseries{1. Pradine programa}}
+\begin{DoxyItemize}
+\item Leidžia {\bfseries{rankiniu būdu įvesti studentų duomenis}}
+\item Skaičiuoja galutinį balą
+\item Išveda rezultatus ekrane
+\end{DoxyItemize}
+
+{\bfseries{2. Generuoti testo failus}}
+\begin{DoxyItemize}
+\item Sukuria test failus su 1K, 10K, 100K, 1M arba 10M studentų įrašų
+\item Failo format:\+ Vardas, Pavardė, 5 ND balai, Egzamino balas
+\item Failai saugomi {\ttfamily Studentai\+\_\+test\textbackslash{}} foldelyje
+\item Galima generuoti iš karto kelis failus
+\end{DoxyItemize}
+
+{\bfseries{3. Strategiju lyginimas}}
+\begin{DoxyItemize}
+\item Atlieka {\bfseries{spartos analizę}} su skirtingais konteineriais
+\item Pasirinkti failą (1K -\/ 10M įrašų)
+\item Pasirinkti konteinerio tipą:\+
+\begin{DoxyItemize}
+\item {\ttfamily 1. std::\+vector} (C++ standartinis konteineris)
+\item {\ttfamily 2. std::\+list} (Dvikryptis sąrašas)
+\item {\ttfamily 3. std::\+deque} (Dekas -\/ dublas ended queue)
+\item {\ttfamily 4. \doxylink{class_vector}{Vector} (custom)} -\/ Jūsų sukurtas konteineris
+\end{DoxyItemize}
+\item Pasirinkti strategiją (1, 2 arba 3)
+\item Gauti ataskaita su laiko rezultatais
+\end{DoxyItemize}
+
 \doxysubsubsection*{Naudojimosi Scenarijai}
 
-{\bfseries{Scenarijus 1:\+ Test Duomenimis su 10K}}
+{\bfseries{Scenarijus 1:\+ Spartos Analiza su std::\+vector}}
 \begin{DoxyEnumerate}
-\item Pasirinkite {\ttfamily 4. Nuskaityti duomenis is failo}
-\item Kelias:\+ {\ttfamily C:\+\textbackslash{}Program Files\textbackslash{}VU\textbackslash{}Ditas-\/\+Simoliunas\textbackslash{}test\+\_\+data\textbackslash{}Studentai\+\_\+test\+\_\+10000.\+txt}
+\item Pasirinkite {\ttfamily 2. Generuoti testo failus} → Generuokite 100K failą
+\item Pasirinkite {\ttfamily 3. Strategiju lyginimas}
+\item Pasirinkite failą:\+ 100000 irasu
+\item Pasirinkite konteinerį:\+ {\ttfamily 1. std::\+vector}
+\item Pasirinkite strategiją:\+ {\ttfamily 1} (Sukurti 2 naujus konteinerius)
+\item Pasirinkite bandymų skaičių:\+ {\ttfamily 3}
+\item Gaukite laiko rezultatus ir palyginimą
 \end{DoxyEnumerate}
 
-{\bfseries{Scenarijus 2:\+ Test Duomenimis su 100K}}
+{\bfseries{Scenarijus 2:\+ Spartos Analiza su \doxylink{class_vector}{Vector} (custom)}}
 \begin{DoxyEnumerate}
-\item Pasirinkite {\ttfamily 4. Nuskaityti duomenis is failo}
-\item Kelias:\+ {\ttfamily C:\+\textbackslash{}Program Files\textbackslash{}VU\textbackslash{}Ditas-\/\+Simoliunas\textbackslash{}test\+\_\+data\textbackslash{}Studentai\+\_\+test\+\_\+100000.\+txt}
+\item Pasirinkite {\ttfamily 2. Generuoti testo failus} → Generuokite 100K failą
+\item Pasirinkite {\ttfamily 3. Strategiju lyginimas}
+\item Pasirinkite failą:\+ 100000 irasu
+\item Pasirinkite konteinerį:\+ {\ttfamily 4. \doxylink{class_vector}{Vector} (custom)}
+\item Pasirinkite strategiją:\+ {\ttfamily 1} arba {\ttfamily 2} arba {\ttfamily 3}
+\item Gaukite laiko rezultatus
 \end{DoxyEnumerate}
 
-{\bfseries{Scenarijus 3:\+ Spartos Analiza}}
+{\bfseries{Scenarijus 3:\+ Palyginimų Lentelė}}
 \begin{DoxyEnumerate}
-\item Pasirinkite {\ttfamily 5. Sukurti testavimo failus}
-\item Pasirinkite {\ttfamily 6. Atlikti spartos analize}
-\item Pasirinkite:\+ Failą, Kontainerį, Strategiją
+\item Generuokite kelis dydžius (10K, 100K, 1M)
+\item Atlikite analizę su kiekvienu konteineriu
+\item Palyginkite rezultatus
 \end{DoxyEnumerate}
-
-\doxysubsubsection*{Iškrovimas (Uninstall)}
-
-
 \begin{DoxyItemize}
 \item {\bfseries{Control Panel}} → {\bfseries{Add/\+\+Remove Programs}} → Raskite "{}\+Objektinis\+Uzdavinys v3.\+0"{} → {\bfseries{Uninstall}}
 \item {\bfseries{Arba}}:\+ Eikite į {\ttfamily C:\+\textbackslash{}Program Files\textbackslash{}VU\textbackslash{}Ditas-\/\+Simoliunas\textbackslash{}} → Spustelėkite {\ttfamily uninstall.\+bat}

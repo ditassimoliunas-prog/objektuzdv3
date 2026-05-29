@@ -11,10 +11,13 @@
 #include <deque>
 #include <type_traits>
 #include <iterator>  // std::make_move_iterator
+#include <filesystem>
 
 #include "../header_files/testavimas.h"
 #include "../header_files/mat_funkcijos.h"
 #include "../header_files/Vector.h"
+
+namespace fs = std::filesystem;
 
 using std::cout;
 using std::cin;
@@ -36,13 +39,31 @@ using std::deque;
 const vector<int> SZ = { 1000, 10000, 100000, 1000000, 10000000 };
 const int paz_kiekis = 5;
 
+void ensureDirectoriesExist() {
+    try {
+        if (!fs::exists("Studentai_test")) {
+            fs::create_directory("Studentai_test");
+        }
+        if (!fs::exists("vargsiukai")) {
+            fs::create_directory("vargsiukai");
+        }
+        if (!fs::exists("kietiakai")) {
+            fs::create_directory("kietiakai");
+        }
+    } catch (const std::exception& e) {
+        cout << "Klaida kuriant direktorijas: " << e.what() << "\n";
+    }
+}
+
 void sukurtiTestavimoFailus() {
+    ensureDirectoriesExist();
+
     int pas;
     cout << "\nPasirinkite, kuri faila norite sukurti:\n";
     cout << "1. 1000 irasu\n";
     cout << "2. 10000 irasu\n";
     cout << "3. 100000 irasu\n";
-    cout << "4. 1 000000 irasu\n";
+    cout << "4. 1000000 irasu\n";
     cout << "5. 10000000 irasu\n";
     cout << "6. Visus auksciau isvardintus\n";
     cout << "Jusu pasirinkimas: ";
@@ -281,6 +302,8 @@ double tirtiKonteineri(int n, const string& fname, int strat) {
 }
 
 void atliktiSpartosAnalize() {
+    ensureDirectoriesExist();
+
     int pas, kont, strat, test_kartai;
     cout << "\nPasirinkite, su kuriuo failu norite atlikti spartos analize:\n";
     cout << "1. 1000 irasu failas\n";
@@ -289,54 +312,8 @@ void atliktiSpartosAnalize() {
     cout << "4. 1000000 irasu failas\n";
     cout << "5. 10000000 irasu failas\n";
     cout << "6. Visi failai is eiles\n";
-    cout << "7. VECTOR TESTAVIMAS (100k, 1M)\n";
     cout << "Jusu pasirinkimas: ";
     cin >> pas;
-
-    if (pas == 7) {
-        // Vector testing
-        int strat_v, test_kartai_v;
-        cout << "\nPasirinkite testavimo strategija:\n";
-        cout << "1. 1 strategija (Sukurti 2 naujus konteinerius)\n";
-        cout << "2. 2 strategija (Sukurti 1 nauja konteineri, trinti is pagrindinio)\n";
-        cout << "Jusu pasirinkimas: ";
-        cin >> strat_v;
-
-        cout << "\nIveskite, kiek kartu norite pakartoti testavima: ";
-        cin >> test_kartai_v;
-
-        cout << "\nPradedama Vector spartos analize...\n";
-
-        vector<int> pasirinkti_SZ = { 100000, 1000000 };
-
-        for (int n : pasirinkti_SZ) {
-            string fname = "Studentai_test\\studentai_" + to_string(n) + ".txt";
-
-            ifstream patikrinimas(fname);
-            if (!patikrinimas.good()) {
-                cout << "Failo " << fname << " nera. Praleidziama.\n";
-                continue;
-            }
-            patikrinimas.close();
-
-            cout << string(80, '-') << "\n";
-            cout << n << " irasu Vector spartos analize\n";
-            cout << string(80, '-') << "\n";
-
-            double visas_laikas = 0.0;
-
-            for (int i = 0; i < test_kartai_v; i++) {
-                cout << "\nTESTO NUMERIS: " << i + 1 << "\n";
-                visas_laikas += tirtiKonteineri<Vector<Studentas>>(n, fname, strat_v);
-            }
-
-            cout << "\n========================================\n";
-            cout << "Vidutinis Vector testo laikas po " << test_kartai_v << " bandymu:\n";
-            cout << fixed << setprecision(5) << visas_laikas / test_kartai_v << " s.\n";
-            cout << "========================================\n\n";
-        }
-        return;
-    }
 
     vector<int> pasirinkti_SZ;
     if (pas == 1) pasirinkti_SZ = { 1000 };
@@ -354,6 +331,7 @@ void atliktiSpartosAnalize() {
     cout << "1. std::vector\n";
     cout << "2. std::list\n";
     cout << "3. std::deque\n";
+    cout << "4. Vector (custom)\n";
     cout << "Jusu pasirinkimas: ";
     cin >> kont;
 
@@ -391,6 +369,7 @@ void atliktiSpartosAnalize() {
             if (kont == 1) visas_laikas += tirtiKonteineri<vector<Studentas>>(n, fname, strat);
             else if (kont == 2) visas_laikas += tirtiKonteineri<list<Studentas>>(n, fname, strat);
             else if (kont == 3) visas_laikas += tirtiKonteineri<deque<Studentas>>(n, fname, strat);
+            else if (kont == 4) visas_laikas += tirtiKonteineri<Vector<Studentas>>(n, fname, strat);
             else {
                 cout << "Neteisingas konteinerio tipas!\n";
                 return;
