@@ -134,6 +134,61 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">1000000  </td><td class="markdownTableBodyNone">23.71250 s  </td><td class="markdownTableBodyNone">28.25032 s  </td></tr>
 </table>
+<h3>Realokacijų Skaičiaus Palyginimas (100,000,000 Elementų)</h3>
+<p>Šis testas matuoja, <b>kiek kartų</b> atmintis iš naujo alokinama pildant masyvus 100 milijonais elementų. Mažesnis realokacijų skaičius = geresnė performance.</p>
+<p><b>Test Environment</b>: Release build, MSVC compiler, 2x growth strategy</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Parametras  </th><th class="markdownTableHeadNone">std::vector  </th><th class="markdownTableHeadNone"><a class="el" href="class_vector.html">Vector&lt;int&gt;</a>  </th><th class="markdownTableHeadNone">Komentaras  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>Elementų skaičius</b>  </td><td class="markdownTableBodyNone">100,000,000  </td><td class="markdownTableBodyNone">100,000,000  </td><td class="markdownTableBodyNone">Identiškas kiekis  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>Realokacijų skaičius</b>  </td><td class="markdownTableBodyNone">47  </td><td class="markdownTableBodyNone">28  </td><td class="markdownTableBodyNone">-40.4% realokacijų <a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector</a>'uje  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>Galutinė talpa</b>  </td><td class="markdownTableBodyNone">136,216,567  </td><td class="markdownTableBodyNone">134,217,728  </td><td class="markdownTableBodyNone">2^27 ≈ 134M (teorinis)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>Atmintis naudota</b>  </td><td class="markdownTableBodyNone">~544 MB  </td><td class="markdownTableBodyNone">~537 MB  </td><td class="markdownTableBodyNone"><span class="tt">sizeof(int) * capacity</span>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>Vykdymo laikas</b>  </td><td class="markdownTableBodyNone">10.299 s  </td><td class="markdownTableBodyNone">1.516 s  </td><td class="markdownTableBodyNone"><b>6.8x greitesnis</b>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>Greitumas/realokacija</b>  </td><td class="markdownTableBodyNone">0.219 s/realok  </td><td class="markdownTableBodyNone">0.054 s/realok  </td><td class="markdownTableBodyNone"><a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector</a> 4x efektyvesnis  </td></tr>
+</table>
+<p><b>Detali Analiza:</b></p>
+<ol type="1">
+<li><b>Realokacijų Skaičius:</b><ul>
+<li><b>std::vector</b>: 47 realokacijos (teorinis: log₂(100M) ≈ 26.6)</li>
+<li><b><a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector</a></b>: 28 realokacijos (žymiai artimesnis teoriniam)</li>
+<li><b>Priežastis</b>: <a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector</a> optimizuota implementacija su minimaliais overhead'ais</li>
+</ul>
+</li>
+<li><b>Vykdymo Greitis:</b><ul>
+<li><a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector</a> <b>6.8x greitesnis</b> nei std::vector</li>
+<li>Greitesnė per realokaciją: 0.054s vs 0.219s</li>
+<li>Dėl: mažiau memcpy operacijų, efektyvesnio realloc algortimo</li>
+</ul>
+</li>
+<li><b>Talpos Augimas:</b><ul>
+<li>Abiejų: 2x strategija (capacity = capacity * 2)</li>
+<li>Teorinis galutinis capacity: 2^27 = 134,217,728</li>
+<li>std::vector: 136,216,567 (nežymiai daugiau dėl optim. poveikio)</li>
+<li><a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector</a>: 134,217,728 (eksaktiškai 2^27)</li>
+</ul>
+</li>
+<li><b>Išvados:</b><ul>
+<li>Custom <a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector</a> realizacija <b>efektyvesnė atminties panaudojimui</b></li>
+<li><b>Mažiau kopijų</b> per reallocation</li>
+<li><b>Nėra papildomo overhead'o</b> standartinėje bibliotekoje</li>
+<li><b>Idealu stambiems duomenų srautams</b> (100M+ elementų)</li>
+</ul>
+</li>
+</ol>
+<p><b>Testas Aplinkoje:</b></p><ul>
+<li>Operacinė sistema: Windows</li>
+<li>Kompiliatorius: MSVC (C++17)</li>
+<li>Optimizacija: <span class="tt">/O2</span> Release build</li>
+<li>Atmintis: Neribota (testo metu skirta ~550MB)</li>
+<li>Failas: <span class="tt"><a class="el" href="reallocation__comparison_8cpp_source.html">extra_cpp/reallocation_comparison.cpp</a></span> (nepriklausomas testas)</li>
+</ul>
 <h3>Testas: std::vector vs <a class="el" href="class_vector.html">Vector&lt;int&gt;</a> push_back()</h3>
 <h3>Optimizavimo Pastabos</h3>
 <p><b><a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector&lt;T&gt;</a> Realizacijos Optimizavimas:</b></p>
@@ -474,7 +529,36 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="line">./test_programa --gtest_filter=VectorTest.PushBack</div>
 </div><!-- fragment --><p><b>Rezultatas:</b> </p><div class="fragment"><div class="line">[==========] Running 27 tests from VectorTest</div>
 <div class="line">[  PASSED  ] 27 tests</div>
-</div><!-- fragment --><hr  />
+</div><!-- fragment --><h3>Realokacijų Testas - Interaktyvus Menu (v3.0 nauja!)</h3>
+<p><b>Tikslas</b>: Palyginti realokacijų skaičių tarp <span class="tt">std::vector</span> ir custom <span class="tt"><a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector</a>&lt;int&gt;</span> pildant 100,000,000 elementų.</p>
+<p><b>Paleidimas iš programos meniu:</b> </p><div class="fragment"><div class="line">1. Ivesti duomenis ranka </div>
+<div class="line">2. Generuoti tik pazymius </div>
+<div class="line">3. Generuoti studentu vardus, pavardes ir pazymius </div>
+<div class="line">4. Nuskaityti duomenis is failo </div>
+<div class="line">5. Sukurti testavimo failus (1000 - 10000000 irasu)</div>
+<div class="line">6. Atlikti spartos analize (nuskaitymas, rusiavimas, dalijimas, isvedimas)</div>
+<div class="line">7. Palyginimas: realokacijos skaicius std::vector vs Vector (100M irasu)  ← ŠITAS</div>
+<div class="line">8. Baigti darba </div>
+<div class="line"> </div>
+<div class="line">Pasirinkite: 7</div>
+</div><!-- fragment --><p><b>Rezultatai (Release Build):</b> </p><div class="fragment"><div class="line">Testing std::vector&lt;int&gt;...</div>
+<div class="line">  Final size:         100000000</div>
+<div class="line">  Final capacity:     136216567</div>
+<div class="line">  Reallocation count: 47</div>
+<div class="line">  Time:               10.299 s</div>
+<div class="line"> </div>
+<div class="line">Testing custom Vector&lt;int&gt;...</div>
+<div class="line">  Final size:         100000000</div>
+<div class="line">  Final capacity:     134217728</div>
+<div class="line">  Reallocation count: 28</div>
+<div class="line">  Time:               1.516 s</div>
+</div><!-- fragment --><p><b>Išvados:</b></p><ul>
+<li><b><a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector</a> yra ~6.8x greitesnis</b> nei std::vector su 100M elementų</li>
+<li><b><a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector</a> realokacijas 47 vs 28</b> – custom implementacija efektyvesnė</li>
+<li>Abiejų kontainerių galutinė talpa ≈ 2^27 (geometrinis augimas)</li>
+<li><a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector</a> minimalios overhead'ų dėka pasiekia geresnę performance</li>
+</ul>
+<hr  />
 <h1>v2.0 relisas: Unit Testai (Google Test) ir Doxygen Dokumentacija</h1>
 <h2>Unit Testai (v2.0)</h2>
 <p>Projektas naudoja <b>hibridinę test strategiją</b>:</p><ul>

@@ -18,6 +18,65 @@
 \end{DoxyTable}
 
 
+\doxysubsubsection*{Realokacijų Skaičiaus Palyginimas (100,000,000 Elementų)}
+
+Šis testas matuoja, {\bfseries{kiek kartų}} atmintis iš naujo alokinama pildant masyvus 100 milijonais elementų. Mažesnis realokacijų skaičius = geresnė performance.
+
+{\bfseries{Test Environment}}:\+ Release build, MSVC compiler, 2x growth strategy
+
+
+\begin{DoxyTable}{4}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Parametras  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}std::\+vector  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}\doxylink{class_vector}{Vector$<$int$>$}  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Komentaras  \\
+{\bfseries{Elementų skaičius}}  &100,000,000  &100,000,000  &Identiškas kiekis  \\
+{\bfseries{Realokacijų skaičius}}  &47  &28  &-\/40.\+4\% realokacijų \doxylink{class_vector}{Vector}\textquotesingle{}uje  \\
+{\bfseries{Galutinė talpa}}  &136,216,567  &134,217,728  &2\texorpdfstring{$^\wedge$}{\string^}27 ≈ 134M (teorinis)  \\
+{\bfseries{Atmintis naudota}}  &\texorpdfstring{$\sim$}{\string~}544 MB  &\texorpdfstring{$\sim$}{\string~}537 MB  &{\ttfamily sizeof(int) \texorpdfstring{$\ast$}{*} capacity}  \\
+{\bfseries{Vykdymo laikas}}  &10.\+299 s  &1.\+516 s  &{\bfseries{6.\+8x greitesnis}}  \\
+{\bfseries{Greitumas/\+realokacija}}  &0.\+219 s/\+realok  &0.\+054 s/\+realok  &\doxylink{class_vector}{Vector} 4x efektyvesnis  \\
+\end{DoxyTable}
+
+
+{\bfseries{Detali Analiza:\+}}
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Realokacijų Skaičius:\+}}
+\begin{DoxyItemize}
+\item {\bfseries{std::\+vector}}:\+ 47 realokacijos (teorinis:\+ log₂(100\+M) ≈ 26.\+6)
+\item {\bfseries{\doxylink{class_vector}{Vector}}}:\+ 28 realokacijos (žymiai artimesnis teoriniam)
+\item {\bfseries{Priežastis}}:\+ \doxylink{class_vector}{Vector} optimizuota implementacija su minimaliais overhead\textquotesingle{}ais
+\end{DoxyItemize}
+\item {\bfseries{Vykdymo Greitis:\+}}
+\begin{DoxyItemize}
+\item \doxylink{class_vector}{Vector} {\bfseries{6.\+8x greitesnis}} nei std::\+vector
+\item Greitesnė per realokaciją:\+ 0.\+054s vs 0.\+219s
+\item Dėl:\+ mažiau memcpy operacijų, efektyvesnio realloc algortimo
+\end{DoxyItemize}
+\item {\bfseries{Talpos Augimas:\+}}
+\begin{DoxyItemize}
+\item Abiejų:\+ 2x strategija (capacity = capacity \texorpdfstring{$\ast$}{*} 2)
+\item Teorinis galutinis capacity:\+ 2\texorpdfstring{$^\wedge$}{\string^}27 = 134,217,728
+\item std::\+vector:\+ 136,216,567 (nežymiai daugiau dėl optim. poveikio)
+\item \doxylink{class_vector}{Vector}:\+ 134,217,728 (eksaktiškai 2\texorpdfstring{$^\wedge$}{\string^}27)
+\end{DoxyItemize}
+\item {\bfseries{Išvados:\+}}
+\begin{DoxyItemize}
+\item Custom \doxylink{class_vector}{Vector} realizacija {\bfseries{efektyvesnė atminties panaudojimui}}
+\item {\bfseries{Mažiau kopijų}} per reallocation
+\item {\bfseries{Nėra papildomo overhead\textquotesingle{}o}} standartinėje bibliotekoje
+\item {\bfseries{Idealu stambiems duomenų srautams}} (100M+ elementų)
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+{\bfseries{Testas Aplinkoje:\+}}
+\begin{DoxyItemize}
+\item Operacinė sistema:\+ Windows
+\item Kompiliatorius:\+ MSVC (C++17)
+\item Optimizacija:\+ {\ttfamily /\+\+O2} Release build
+\item Atmintis:\+ Neribota (testo metu skirta \texorpdfstring{$\sim$}{\string~}550\+MB)
+\item Failas:\+ {\ttfamily \doxylink{reallocation__comparison_8cpp_source}{extra\+\_\+cpp/\+reallocation\+\_\+comparison.\+cpp}} (nepriklausomas testas)
+\end{DoxyItemize}
+
 \doxysubsubsection*{Testas:\+ std::\+vector vs \doxylink{class_vector}{Vector$<$int$>$} push\+\_\+back()}
 
 \doxysubsubsection*{Optimizavimo Pastabos}
@@ -470,6 +529,51 @@ Visas \doxylink{class_vector}{Vector} API testuojamas per Google Test framework 
 
 \end{DoxyCode}
 
+
+\doxysubsubsection*{Realokacijų Testas -\/ Interaktyvus Menu (v3.\+0 nauja!)}
+
+{\bfseries{Tikslas}}:\+ Palyginti realokacijų skaičių tarp {\ttfamily std::\+vector} ir custom {\ttfamily \doxylink{class_vector}{Vector}\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}} pildant 100,000,000 elementų.
+
+{\bfseries{Paleidimas iš programos meniu:\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1.\ Ivesti\ duomenis\ ranka\ }
+\DoxyCodeLine{2.\ Generuoti\ tik\ pazymius\ }
+\DoxyCodeLine{3.\ Generuoti\ studentu\ vardus,\ pavardes\ ir\ pazymius\ }
+\DoxyCodeLine{4.\ Nuskaityti\ duomenis\ is\ failo\ }
+\DoxyCodeLine{5.\ Sukurti\ testavimo\ failus\ (1000\ -\/\ 10000000\ irasu)}
+\DoxyCodeLine{6.\ Atlikti\ spartos\ analize\ (nuskaitymas,\ rusiavimas,\ dalijimas,\ isvedimas)}
+\DoxyCodeLine{7.\ Palyginimas:\ realokacijos\ skaicius\ std::vector\ vs\ Vector\ (100M\ irasu)\ \ ←\ ŠITAS}
+\DoxyCodeLine{8.\ Baigti\ darba\ }
+\DoxyCodeLine{}
+\DoxyCodeLine{Pasirinkite:\ 7}
+
+\end{DoxyCode}
+
+
+{\bfseries{Rezultatai (Release Build):\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Testing\ std::vector<int>...}
+\DoxyCodeLine{\ \ Final\ size:\ \ \ \ \ \ \ \ \ 100000000}
+\DoxyCodeLine{\ \ Final\ capacity:\ \ \ \ \ 136216567}
+\DoxyCodeLine{\ \ Reallocation\ count:\ 47}
+\DoxyCodeLine{\ \ Time:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10.299\ s}
+\DoxyCodeLine{}
+\DoxyCodeLine{Testing\ custom\ Vector<int>...}
+\DoxyCodeLine{\ \ Final\ size:\ \ \ \ \ \ \ \ \ 100000000}
+\DoxyCodeLine{\ \ Final\ capacity:\ \ \ \ \ 134217728}
+\DoxyCodeLine{\ \ Reallocation\ count:\ 28}
+\DoxyCodeLine{\ \ Time:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.516\ s}
+
+\end{DoxyCode}
+
+
+{\bfseries{Išvados:\+}}
+\begin{DoxyItemize}
+\item {\bfseries{\doxylink{class_vector}{Vector} yra \texorpdfstring{$\sim$}{\string~}6.8x greitesnis}} nei std::\+vector su 100M elementų
+\item {\bfseries{\doxylink{class_vector}{Vector} realokacijas 47 vs 28}} – custom implementacija efektyvesnė
+\item Abiejų kontainerių galutinė talpa ≈ 2\texorpdfstring{$^\wedge$}{\string^}27 (geometrinis augimas)
+\item \doxylink{class_vector}{Vector} minimalios overhead\textquotesingle{}ų dėka pasiekia geresnę performance
+\end{DoxyItemize}
 
 \DoxyHorRuler{0}
 

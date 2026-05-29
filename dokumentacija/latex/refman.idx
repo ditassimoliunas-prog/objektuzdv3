@@ -1,309 +1,310 @@
 \indexentry{v3.0 relisas: Custom Vector$<$T$>$ Konteineris@{v3.0 relisas: Custom Vector$<$T$>$ Konteineris}|hyperpage}{1}
-\indexentry{deque$<$ T $>$::const\_iterator@{deque$<$ T $>$::const\_iterator}|hyperpage}{19}
-\indexentry{list$<$ T $>$::const\_iterator@{list$<$ T $>$::const\_iterator}|hyperpage}{19}
-\indexentry{string::const\_iterator@{string::const\_iterator}|hyperpage}{19}
-\indexentry{vector$<$ T $>$::const\_iterator@{vector$<$ T $>$::const\_iterator}|hyperpage}{19}
-\indexentry{deque$<$ T $>$::const\_reverse\_iterator@{deque$<$ T $>$::const\_reverse\_iterator}|hyperpage}{19}
-\indexentry{list$<$ T $>$::const\_reverse\_iterator@{list$<$ T $>$::const\_reverse\_iterator}|hyperpage}{20}
-\indexentry{string::const\_reverse\_iterator@{string::const\_reverse\_iterator}|hyperpage}{20}
-\indexentry{vector$<$ T $>$::const\_reverse\_iterator@{vector$<$ T $>$::const\_reverse\_iterator}|hyperpage}{20}
-\indexentry{deque$<$ T $>$@{deque$<$ T $>$}|hyperpage}{20}
-\indexentry{exception@{exception}|hyperpage}{21}
-\indexentry{ifstream@{ifstream}|hyperpage}{21}
-\indexentry{invalid\_argument@{invalid\_argument}|hyperpage}{21}
-\indexentry{istream@{istream}|hyperpage}{21}
-\indexentry{deque$<$ T $>$::iterator@{deque$<$ T $>$::iterator}|hyperpage}{21}
-\indexentry{list$<$ T $>$::iterator@{list$<$ T $>$::iterator}|hyperpage}{21}
-\indexentry{string::iterator@{string::iterator}|hyperpage}{22}
-\indexentry{vector$<$ T $>$::iterator@{vector$<$ T $>$::iterator}|hyperpage}{22}
-\indexentry{list$<$ T $>$@{list$<$ T $>$}|hyperpage}{22}
-\indexentry{ofstream@{ofstream}|hyperpage}{22}
-\indexentry{ostream@{ostream}|hyperpage}{22}
-\indexentry{deque$<$ T $>$::reverse\_iterator@{deque$<$ T $>$::reverse\_iterator}|hyperpage}{23}
-\indexentry{list$<$ T $>$::reverse\_iterator@{list$<$ T $>$::reverse\_iterator}|hyperpage}{23}
-\indexentry{string::reverse\_iterator@{string::reverse\_iterator}|hyperpage}{23}
-\indexentry{vector$<$ T $>$::reverse\_iterator@{vector$<$ T $>$::reverse\_iterator}|hyperpage}{23}
-\indexentry{runtime\_error@{runtime\_error}|hyperpage}{23}
-\indexentry{string@{string}|hyperpage}{23}
-\indexentry{stringstream@{stringstream}|hyperpage}{24}
-\indexentry{Studentas@{Studentas}|hyperpage}{24}
-\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{25}
-\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{25}
-\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{25}
-\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{25}
-\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{25}
-\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{25}
-\indexentry{Studentas@{Studentas}!````~Studentas@{\texorpdfstring{$\sim$}{\string~}Studentas}|hyperpage}{25}
-\indexentry{````~Studentas@{\texorpdfstring{$\sim$}{\string~}Studentas}!Studentas@{Studentas}|hyperpage}{25}
-\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{26}
-\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{26}
-\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{26}
-\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{26}
-\indexentry{Studentas@{Studentas}!addPaz@{addPaz}|hyperpage}{26}
-\indexentry{addPaz@{addPaz}!Studentas@{Studentas}|hyperpage}{26}
-\indexentry{Studentas@{Studentas}!clearPaz@{clearPaz}|hyperpage}{26}
-\indexentry{clearPaz@{clearPaz}!Studentas@{Studentas}|hyperpage}{26}
-\indexentry{Studentas@{Studentas}!getEgz@{getEgz}|hyperpage}{26}
-\indexentry{getEgz@{getEgz}!Studentas@{Studentas}|hyperpage}{26}
-\indexentry{Studentas@{Studentas}!getInfo@{getInfo}|hyperpage}{26}
-\indexentry{getInfo@{getInfo}!Studentas@{Studentas}|hyperpage}{26}
-\indexentry{Studentas@{Studentas}!getMed@{getMed}|hyperpage}{26}
-\indexentry{getMed@{getMed}!Studentas@{Studentas}|hyperpage}{26}
-\indexentry{Studentas@{Studentas}!getPaz@{getPaz}|hyperpage}{26}
-\indexentry{getPaz@{getPaz}!Studentas@{Studentas}|hyperpage}{26}
-\indexentry{Studentas@{Studentas}!getPaz@{getPaz}|hyperpage}{26}
-\indexentry{getPaz@{getPaz}!Studentas@{Studentas}|hyperpage}{26}
-\indexentry{Studentas@{Studentas}!getRez@{getRez}|hyperpage}{26}
-\indexentry{getRez@{getRez}!Studentas@{Studentas}|hyperpage}{26}
-\indexentry{Studentas@{Studentas}!isPazEmpty@{isPazEmpty}|hyperpage}{26}
-\indexentry{isPazEmpty@{isPazEmpty}!Studentas@{Studentas}|hyperpage}{26}
-\indexentry{Studentas@{Studentas}!operator=@{operator=}|hyperpage}{27}
-\indexentry{operator=@{operator=}!Studentas@{Studentas}|hyperpage}{27}
-\indexentry{Studentas@{Studentas}!operator=@{operator=}|hyperpage}{27}
-\indexentry{operator=@{operator=}!Studentas@{Studentas}|hyperpage}{27}
-\indexentry{Studentas@{Studentas}!readStudent@{readStudent}|hyperpage}{27}
-\indexentry{readStudent@{readStudent}!Studentas@{Studentas}|hyperpage}{27}
-\indexentry{Studentas@{Studentas}!reservePaz@{reservePaz}|hyperpage}{27}
-\indexentry{reservePaz@{reservePaz}!Studentas@{Studentas}|hyperpage}{27}
-\indexentry{Studentas@{Studentas}!setEgz@{setEgz}|hyperpage}{27}
-\indexentry{setEgz@{setEgz}!Studentas@{Studentas}|hyperpage}{27}
-\indexentry{Studentas@{Studentas}!setMed@{setMed}|hyperpage}{27}
-\indexentry{setMed@{setMed}!Studentas@{Studentas}|hyperpage}{27}
-\indexentry{Studentas@{Studentas}!setPaz@{setPaz}|hyperpage}{27}
-\indexentry{setPaz@{setPaz}!Studentas@{Studentas}|hyperpage}{27}
-\indexentry{Studentas@{Studentas}!setRez@{setRez}|hyperpage}{27}
-\indexentry{setRez@{setRez}!Studentas@{Studentas}|hyperpage}{27}
-\indexentry{Studentas@{Studentas}!operator$<$$<$@{operator$<$$<$}|hyperpage}{27}
-\indexentry{operator$<$$<$@{operator$<$$<$}!Studentas@{Studentas}|hyperpage}{27}
-\indexentry{Studentas@{Studentas}!operator$>$$>$@{operator$>$$>$}|hyperpage}{27}
-\indexentry{operator$>$$>$@{operator$>$$>$}!Studentas@{Studentas}|hyperpage}{27}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{28}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!const\_iterator@{const\_iterator}|hyperpage}{30}
-\indexentry{const\_iterator@{const\_iterator}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{30}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!const\_reverse\_iterator@{const\_reverse\_iterator}|hyperpage}{30}
-\indexentry{const\_reverse\_iterator@{const\_reverse\_iterator}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{30}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!iterator@{iterator}|hyperpage}{30}
-\indexentry{iterator@{iterator}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{30}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!reverse\_iterator@{reverse\_iterator}|hyperpage}{30}
-\indexentry{reverse\_iterator@{reverse\_iterator}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{30}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}|hyperpage}{30}
-\indexentry{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{30}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}|hyperpage}{30}
-\indexentry{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{30}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}|hyperpage}{31}
-\indexentry{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{31}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}|hyperpage}{31}
-\indexentry{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{31}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!````~Vector@{\texorpdfstring{$\sim$}{\string~}Vector}|hyperpage}{31}
-\indexentry{````~Vector@{\texorpdfstring{$\sim$}{\string~}Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{31}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}|hyperpage}{31}
-\indexentry{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{31}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}|hyperpage}{31}
-\indexentry{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{31}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!assign@{assign}|hyperpage}{31}
-\indexentry{assign@{assign}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{31}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!assign@{assign}|hyperpage}{31}
-\indexentry{assign@{assign}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{31}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!at@{at}|hyperpage}{31}
-\indexentry{at@{at}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{31}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!at@{at}|hyperpage}{32}
-\indexentry{at@{at}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{32}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!back@{back}|hyperpage}{32}
-\indexentry{back@{back}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{32}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!back@{back}|hyperpage}{32}
-\indexentry{back@{back}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{32}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!begin@{begin}|hyperpage}{32}
-\indexentry{begin@{begin}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{32}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!begin@{begin}|hyperpage}{32}
-\indexentry{begin@{begin}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{32}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!capacity@{capacity}|hyperpage}{32}
-\indexentry{capacity@{capacity}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{32}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!cbegin@{cbegin}|hyperpage}{32}
-\indexentry{cbegin@{cbegin}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{32}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!cend@{cend}|hyperpage}{32}
-\indexentry{cend@{cend}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{32}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!clear@{clear}|hyperpage}{32}
-\indexentry{clear@{clear}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{32}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!crbegin@{crbegin}|hyperpage}{32}
-\indexentry{crbegin@{crbegin}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{32}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!crend@{crend}|hyperpage}{33}
-\indexentry{crend@{crend}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{33}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!data@{data}|hyperpage}{33}
-\indexentry{data@{data}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{33}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!data@{data}|hyperpage}{33}
-\indexentry{data@{data}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{33}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!emplace@{emplace}|hyperpage}{33}
-\indexentry{emplace@{emplace}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{33}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!emplace\_back@{emplace\_back}|hyperpage}{33}
-\indexentry{emplace\_back@{emplace\_back}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{33}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!empty@{empty}|hyperpage}{33}
-\indexentry{empty@{empty}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{33}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!end@{end}|hyperpage}{33}
-\indexentry{end@{end}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{33}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!end@{end}|hyperpage}{33}
-\indexentry{end@{end}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{33}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!erase@{erase}|hyperpage}{33}
-\indexentry{erase@{erase}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{33}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!erase@{erase}|hyperpage}{34}
-\indexentry{erase@{erase}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{34}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!erase@{erase}|hyperpage}{34}
-\indexentry{erase@{erase}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{34}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!erase@{erase}|hyperpage}{34}
-\indexentry{erase@{erase}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{34}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!front@{front}|hyperpage}{34}
-\indexentry{front@{front}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{34}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!front@{front}|hyperpage}{34}
-\indexentry{front@{front}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{34}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!get\_reallocation\_count@{get\_reallocation\_count}|hyperpage}{34}
-\indexentry{get\_reallocation\_count@{get\_reallocation\_count}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{34}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!insert@{insert}|hyperpage}{34}
-\indexentry{insert@{insert}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{34}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!insert@{insert}|hyperpage}{34}
-\indexentry{insert@{insert}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{34}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!insert@{insert}|hyperpage}{35}
-\indexentry{insert@{insert}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{35}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!insert@{insert}|hyperpage}{35}
-\indexentry{insert@{insert}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{35}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!max\_size@{max\_size}|hyperpage}{35}
-\indexentry{max\_size@{max\_size}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{35}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator"!=@{operator"!=}|hyperpage}{35}
-\indexentry{operator"!=@{operator"!=}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{35}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator$<$@{operator$<$}|hyperpage}{35}
-\indexentry{operator$<$@{operator$<$}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{35}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator$<$=@{operator$<$=}|hyperpage}{35}
-\indexentry{operator$<$=@{operator$<$=}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{35}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator=@{operator=}|hyperpage}{35}
-\indexentry{operator=@{operator=}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{35}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator=@{operator=}|hyperpage}{35}
-\indexentry{operator=@{operator=}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{35}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator==@{operator==}|hyperpage}{36}
-\indexentry{operator==@{operator==}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{36}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator$>$@{operator$>$}|hyperpage}{36}
-\indexentry{operator$>$@{operator$>$}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{36}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator$>$=@{operator$>$=}|hyperpage}{36}
-\indexentry{operator$>$=@{operator$>$=}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{36}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator\+[]\+@{operator[]}|hyperpage}{36}
-\indexentry{operator\+[]\+@{operator[]}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{36}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator\+[]\+@{operator[]}|hyperpage}{36}
-\indexentry{operator\+[]\+@{operator[]}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{36}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!pop\_back@{pop\_back}|hyperpage}{36}
-\indexentry{pop\_back@{pop\_back}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{36}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!push\_back@{push\_back}|hyperpage}{36}
-\indexentry{push\_back@{push\_back}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{36}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!push\_back@{push\_back}|hyperpage}{36}
-\indexentry{push\_back@{push\_back}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{36}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!rbegin@{rbegin}|hyperpage}{37}
-\indexentry{rbegin@{rbegin}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{37}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!rbegin@{rbegin}|hyperpage}{37}
-\indexentry{rbegin@{rbegin}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{37}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!rend@{rend}|hyperpage}{37}
-\indexentry{rend@{rend}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{37}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!rend@{rend}|hyperpage}{37}
-\indexentry{rend@{rend}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{37}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!reserve@{reserve}|hyperpage}{37}
-\indexentry{reserve@{reserve}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{37}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!reset\_reallocation\_count@{reset\_reallocation\_count}|hyperpage}{37}
-\indexentry{reset\_reallocation\_count@{reset\_reallocation\_count}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{37}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!resize@{resize}|hyperpage}{37}
-\indexentry{resize@{resize}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{37}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!resize@{resize}|hyperpage}{37}
-\indexentry{resize@{resize}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{37}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!shrink\_to\_fit@{shrink\_to\_fit}|hyperpage}{37}
-\indexentry{shrink\_to\_fit@{shrink\_to\_fit}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{37}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!size@{size}|hyperpage}{38}
-\indexentry{size@{size}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{38}
-\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!swap@{swap}|hyperpage}{38}
-\indexentry{swap@{swap}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{38}
-\indexentry{vector$<$ T $>$@{vector$<$ T $>$}|hyperpage}{38}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{38}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!difference\_type@{difference\_type}|hyperpage}{39}
-\indexentry{difference\_type@{difference\_type}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{39}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!iterator\_category@{iterator\_category}|hyperpage}{39}
-\indexentry{iterator\_category@{iterator\_category}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{39}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!pointer@{pointer}|hyperpage}{39}
-\indexentry{pointer@{pointer}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{39}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!reference@{reference}|hyperpage}{40}
-\indexentry{reference@{reference}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{40}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!value\_type@{value\_type}|hyperpage}{40}
-\indexentry{value\_type@{value\_type}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{40}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!VectorIterator@{VectorIterator}|hyperpage}{40}
-\indexentry{VectorIterator@{VectorIterator}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{40}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator"!=@{operator"!=}|hyperpage}{40}
-\indexentry{operator"!=@{operator"!=}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{40}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}|hyperpage}{40}
-\indexentry{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{40}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator+@{operator+}|hyperpage}{40}
-\indexentry{operator+@{operator+}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{40}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator++@{operator++}|hyperpage}{40}
-\indexentry{operator++@{operator++}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{40}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator++@{operator++}|hyperpage}{40}
-\indexentry{operator++@{operator++}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{40}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator+=@{operator+=}|hyperpage}{40}
-\indexentry{operator+=@{operator+=}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{40}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator-\/@{operator-\/}|hyperpage}{41}
-\indexentry{operator-\/@{operator-\/}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{41}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator-\/@{operator-\/}|hyperpage}{41}
-\indexentry{operator-\/@{operator-\/}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{41}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator-\/-\/@{operator-\/-\/}|hyperpage}{41}
-\indexentry{operator-\/-\/@{operator-\/-\/}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{41}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator-\/-\/@{operator-\/-\/}|hyperpage}{41}
-\indexentry{operator-\/-\/@{operator-\/-\/}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{41}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator-\/=@{operator-\/=}|hyperpage}{41}
-\indexentry{operator-\/=@{operator-\/=}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{41}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator-\/$>$@{operator-\/$>$}|hyperpage}{41}
-\indexentry{operator-\/$>$@{operator-\/$>$}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{41}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator$<$@{operator$<$}|hyperpage}{41}
-\indexentry{operator$<$@{operator$<$}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{41}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator$<$=@{operator$<$=}|hyperpage}{41}
-\indexentry{operator$<$=@{operator$<$=}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{41}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator==@{operator==}|hyperpage}{41}
-\indexentry{operator==@{operator==}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{41}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator$>$@{operator$>$}|hyperpage}{42}
-\indexentry{operator$>$@{operator$>$}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{42}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator$>$=@{operator$>$=}|hyperpage}{42}
-\indexentry{operator$>$=@{operator$>$=}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{42}
-\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator\+[]\+@{operator[]}|hyperpage}{42}
-\indexentry{operator\+[]\+@{operator[]}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{42}
-\indexentry{VectorTest@{VectorTest}|hyperpage}{42}
-\indexentry{VectorTest@{VectorTest}!v@{v}|hyperpage}{42}
-\indexentry{v@{v}!VectorTest@{VectorTest}|hyperpage}{42}
-\indexentry{Zmogus@{Zmogus}|hyperpage}{43}
-\indexentry{Zmogus@{Zmogus}!Zmogus@{Zmogus}|hyperpage}{44}
-\indexentry{Zmogus@{Zmogus}!Zmogus@{Zmogus}|hyperpage}{44}
-\indexentry{Zmogus@{Zmogus}!Zmogus@{Zmogus}|hyperpage}{44}
-\indexentry{Zmogus@{Zmogus}!Zmogus@{Zmogus}|hyperpage}{44}
-\indexentry{Zmogus@{Zmogus}!````~Zmogus@{\texorpdfstring{$\sim$}{\string~}Zmogus}|hyperpage}{44}
-\indexentry{````~Zmogus@{\texorpdfstring{$\sim$}{\string~}Zmogus}!Zmogus@{Zmogus}|hyperpage}{44}
-\indexentry{Zmogus@{Zmogus}!getInfo@{getInfo}|hyperpage}{44}
-\indexentry{getInfo@{getInfo}!Zmogus@{Zmogus}|hyperpage}{44}
-\indexentry{Zmogus@{Zmogus}!getPavarde@{getPavarde}|hyperpage}{44}
-\indexentry{getPavarde@{getPavarde}!Zmogus@{Zmogus}|hyperpage}{44}
-\indexentry{Zmogus@{Zmogus}!getVardas@{getVardas}|hyperpage}{44}
-\indexentry{getVardas@{getVardas}!Zmogus@{Zmogus}|hyperpage}{44}
-\indexentry{Zmogus@{Zmogus}!setPavarde@{setPavarde}|hyperpage}{44}
-\indexentry{setPavarde@{setPavarde}!Zmogus@{Zmogus}|hyperpage}{44}
-\indexentry{Zmogus@{Zmogus}!setVardas@{setVardas}|hyperpage}{45}
-\indexentry{setVardas@{setVardas}!Zmogus@{Zmogus}|hyperpage}{45}
-\indexentry{Zmogus@{Zmogus}!operator$<$$<$@{operator$<$$<$}|hyperpage}{45}
-\indexentry{operator$<$$<$@{operator$<$$<$}!Zmogus@{Zmogus}|hyperpage}{45}
-\indexentry{Zmogus@{Zmogus}!pavarde\_@{pavarde\_}|hyperpage}{45}
-\indexentry{pavarde\_@{pavarde\_}!Zmogus@{Zmogus}|hyperpage}{45}
-\indexentry{Zmogus@{Zmogus}!vardas\_@{vardas\_}|hyperpage}{45}
-\indexentry{vardas\_@{vardas\_}!Zmogus@{Zmogus}|hyperpage}{45}
-\indexentry{extra\_cpp/duomenu\_valdymas.cpp@{extra\_cpp/duomenu\_valdymas.cpp}|hyperpage}{47}
-\indexentry{extra\_cpp/input.cpp@{extra\_cpp/input.cpp}|hyperpage}{52}
-\indexentry{extra\_cpp/mat\_funkcijos.cpp@{extra\_cpp/mat\_funkcijos.cpp}|hyperpage}{53}
-\indexentry{extra\_cpp/menu.cpp@{extra\_cpp/menu.cpp}|hyperpage}{54}
-\indexentry{extra\_cpp/output.cpp@{extra\_cpp/output.cpp}|hyperpage}{56}
-\indexentry{extra\_cpp/Studentas.cpp@{extra\_cpp/Studentas.cpp}|hyperpage}{57}
-\indexentry{extra\_cpp/testavimas.cpp@{extra\_cpp/testavimas.cpp}|hyperpage}{58}
-\indexentry{extra\_cpp/Zmogus.cpp@{extra\_cpp/Zmogus.cpp}|hyperpage}{63}
-\indexentry{header\_files/duomenu\_valdymas.h@{header\_files/duomenu\_valdymas.h}|hyperpage}{64}
-\indexentry{header\_files/input.h@{header\_files/input.h}|hyperpage}{64}
-\indexentry{header\_files/Mat\_funkcijos.h@{header\_files/Mat\_funkcijos.h}|hyperpage}{64}
-\indexentry{header\_files/menu.h@{header\_files/menu.h}|hyperpage}{64}
-\indexentry{header\_files/output.h@{header\_files/output.h}|hyperpage}{64}
-\indexentry{header\_files/Studentas.h@{header\_files/Studentas.h}|hyperpage}{65}
-\indexentry{header\_files/testavimas.h@{header\_files/testavimas.h}|hyperpage}{66}
-\indexentry{header\_files/Vector.h@{header\_files/Vector.h}|hyperpage}{66}
-\indexentry{header\_files/Zmogus.h@{header\_files/Zmogus.h}|hyperpage}{74}
+\indexentry{deque$<$ T $>$::const\_iterator@{deque$<$ T $>$::const\_iterator}|hyperpage}{21}
+\indexentry{list$<$ T $>$::const\_iterator@{list$<$ T $>$::const\_iterator}|hyperpage}{21}
+\indexentry{string::const\_iterator@{string::const\_iterator}|hyperpage}{21}
+\indexentry{vector$<$ T $>$::const\_iterator@{vector$<$ T $>$::const\_iterator}|hyperpage}{21}
+\indexentry{deque$<$ T $>$::const\_reverse\_iterator@{deque$<$ T $>$::const\_reverse\_iterator}|hyperpage}{21}
+\indexentry{list$<$ T $>$::const\_reverse\_iterator@{list$<$ T $>$::const\_reverse\_iterator}|hyperpage}{22}
+\indexentry{string::const\_reverse\_iterator@{string::const\_reverse\_iterator}|hyperpage}{22}
+\indexentry{vector$<$ T $>$::const\_reverse\_iterator@{vector$<$ T $>$::const\_reverse\_iterator}|hyperpage}{22}
+\indexentry{deque$<$ T $>$@{deque$<$ T $>$}|hyperpage}{22}
+\indexentry{exception@{exception}|hyperpage}{23}
+\indexentry{ifstream@{ifstream}|hyperpage}{23}
+\indexentry{invalid\_argument@{invalid\_argument}|hyperpage}{23}
+\indexentry{istream@{istream}|hyperpage}{23}
+\indexentry{deque$<$ T $>$::iterator@{deque$<$ T $>$::iterator}|hyperpage}{23}
+\indexentry{list$<$ T $>$::iterator@{list$<$ T $>$::iterator}|hyperpage}{23}
+\indexentry{string::iterator@{string::iterator}|hyperpage}{24}
+\indexentry{vector$<$ T $>$::iterator@{vector$<$ T $>$::iterator}|hyperpage}{24}
+\indexentry{list$<$ T $>$@{list$<$ T $>$}|hyperpage}{24}
+\indexentry{ofstream@{ofstream}|hyperpage}{24}
+\indexentry{ostream@{ostream}|hyperpage}{25}
+\indexentry{deque$<$ T $>$::reverse\_iterator@{deque$<$ T $>$::reverse\_iterator}|hyperpage}{25}
+\indexentry{list$<$ T $>$::reverse\_iterator@{list$<$ T $>$::reverse\_iterator}|hyperpage}{25}
+\indexentry{string::reverse\_iterator@{string::reverse\_iterator}|hyperpage}{25}
+\indexentry{vector$<$ T $>$::reverse\_iterator@{vector$<$ T $>$::reverse\_iterator}|hyperpage}{25}
+\indexentry{runtime\_error@{runtime\_error}|hyperpage}{25}
+\indexentry{string@{string}|hyperpage}{26}
+\indexentry{stringstream@{stringstream}|hyperpage}{26}
+\indexentry{Studentas@{Studentas}|hyperpage}{26}
+\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{27}
+\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{27}
+\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{27}
+\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{27}
+\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{28}
+\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{28}
+\indexentry{Studentas@{Studentas}!````~Studentas@{\texorpdfstring{$\sim$}{\string~}Studentas}|hyperpage}{28}
+\indexentry{````~Studentas@{\texorpdfstring{$\sim$}{\string~}Studentas}!Studentas@{Studentas}|hyperpage}{28}
+\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{28}
+\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{28}
+\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{28}
+\indexentry{Studentas@{Studentas}!Studentas@{Studentas}|hyperpage}{28}
+\indexentry{Studentas@{Studentas}!addPaz@{addPaz}|hyperpage}{28}
+\indexentry{addPaz@{addPaz}!Studentas@{Studentas}|hyperpage}{28}
+\indexentry{Studentas@{Studentas}!clearPaz@{clearPaz}|hyperpage}{28}
+\indexentry{clearPaz@{clearPaz}!Studentas@{Studentas}|hyperpage}{28}
+\indexentry{Studentas@{Studentas}!getEgz@{getEgz}|hyperpage}{28}
+\indexentry{getEgz@{getEgz}!Studentas@{Studentas}|hyperpage}{28}
+\indexentry{Studentas@{Studentas}!getInfo@{getInfo}|hyperpage}{28}
+\indexentry{getInfo@{getInfo}!Studentas@{Studentas}|hyperpage}{28}
+\indexentry{Studentas@{Studentas}!getMed@{getMed}|hyperpage}{28}
+\indexentry{getMed@{getMed}!Studentas@{Studentas}|hyperpage}{28}
+\indexentry{Studentas@{Studentas}!getPaz@{getPaz}|hyperpage}{28}
+\indexentry{getPaz@{getPaz}!Studentas@{Studentas}|hyperpage}{28}
+\indexentry{Studentas@{Studentas}!getPaz@{getPaz}|hyperpage}{29}
+\indexentry{getPaz@{getPaz}!Studentas@{Studentas}|hyperpage}{29}
+\indexentry{Studentas@{Studentas}!getRez@{getRez}|hyperpage}{29}
+\indexentry{getRez@{getRez}!Studentas@{Studentas}|hyperpage}{29}
+\indexentry{Studentas@{Studentas}!isPazEmpty@{isPazEmpty}|hyperpage}{29}
+\indexentry{isPazEmpty@{isPazEmpty}!Studentas@{Studentas}|hyperpage}{29}
+\indexentry{Studentas@{Studentas}!operator=@{operator=}|hyperpage}{29}
+\indexentry{operator=@{operator=}!Studentas@{Studentas}|hyperpage}{29}
+\indexentry{Studentas@{Studentas}!operator=@{operator=}|hyperpage}{29}
+\indexentry{operator=@{operator=}!Studentas@{Studentas}|hyperpage}{29}
+\indexentry{Studentas@{Studentas}!readStudent@{readStudent}|hyperpage}{29}
+\indexentry{readStudent@{readStudent}!Studentas@{Studentas}|hyperpage}{29}
+\indexentry{Studentas@{Studentas}!reservePaz@{reservePaz}|hyperpage}{29}
+\indexentry{reservePaz@{reservePaz}!Studentas@{Studentas}|hyperpage}{29}
+\indexentry{Studentas@{Studentas}!setEgz@{setEgz}|hyperpage}{29}
+\indexentry{setEgz@{setEgz}!Studentas@{Studentas}|hyperpage}{29}
+\indexentry{Studentas@{Studentas}!setMed@{setMed}|hyperpage}{29}
+\indexentry{setMed@{setMed}!Studentas@{Studentas}|hyperpage}{29}
+\indexentry{Studentas@{Studentas}!setPaz@{setPaz}|hyperpage}{29}
+\indexentry{setPaz@{setPaz}!Studentas@{Studentas}|hyperpage}{29}
+\indexentry{Studentas@{Studentas}!setRez@{setRez}|hyperpage}{29}
+\indexentry{setRez@{setRez}!Studentas@{Studentas}|hyperpage}{29}
+\indexentry{Studentas@{Studentas}!operator$<$$<$@{operator$<$$<$}|hyperpage}{30}
+\indexentry{operator$<$$<$@{operator$<$$<$}!Studentas@{Studentas}|hyperpage}{30}
+\indexentry{Studentas@{Studentas}!operator$>$$>$@{operator$>$$>$}|hyperpage}{30}
+\indexentry{operator$>$$>$@{operator$>$$>$}!Studentas@{Studentas}|hyperpage}{30}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{30}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!const\_iterator@{const\_iterator}|hyperpage}{32}
+\indexentry{const\_iterator@{const\_iterator}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{32}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!const\_reverse\_iterator@{const\_reverse\_iterator}|hyperpage}{32}
+\indexentry{const\_reverse\_iterator@{const\_reverse\_iterator}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{32}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!iterator@{iterator}|hyperpage}{32}
+\indexentry{iterator@{iterator}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{32}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!reverse\_iterator@{reverse\_iterator}|hyperpage}{33}
+\indexentry{reverse\_iterator@{reverse\_iterator}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{33}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}|hyperpage}{33}
+\indexentry{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{33}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}|hyperpage}{33}
+\indexentry{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{33}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}|hyperpage}{33}
+\indexentry{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{33}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}|hyperpage}{33}
+\indexentry{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{33}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!````~Vector@{\texorpdfstring{$\sim$}{\string~}Vector}|hyperpage}{33}
+\indexentry{````~Vector@{\texorpdfstring{$\sim$}{\string~}Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{33}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}|hyperpage}{33}
+\indexentry{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{33}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}|hyperpage}{33}
+\indexentry{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{33}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!assign@{assign}|hyperpage}{34}
+\indexentry{assign@{assign}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{34}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!assign@{assign}|hyperpage}{34}
+\indexentry{assign@{assign}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{34}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!at@{at}|hyperpage}{34}
+\indexentry{at@{at}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{34}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!at@{at}|hyperpage}{34}
+\indexentry{at@{at}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{34}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!back@{back}|hyperpage}{34}
+\indexentry{back@{back}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{34}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!back@{back}|hyperpage}{34}
+\indexentry{back@{back}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{34}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!begin@{begin}|hyperpage}{34}
+\indexentry{begin@{begin}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{34}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!begin@{begin}|hyperpage}{34}
+\indexentry{begin@{begin}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{34}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!capacity@{capacity}|hyperpage}{34}
+\indexentry{capacity@{capacity}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{34}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!cbegin@{cbegin}|hyperpage}{35}
+\indexentry{cbegin@{cbegin}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{35}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!cend@{cend}|hyperpage}{35}
+\indexentry{cend@{cend}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{35}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!clear@{clear}|hyperpage}{35}
+\indexentry{clear@{clear}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{35}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!crbegin@{crbegin}|hyperpage}{35}
+\indexentry{crbegin@{crbegin}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{35}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!crend@{crend}|hyperpage}{35}
+\indexentry{crend@{crend}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{35}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!data@{data}|hyperpage}{35}
+\indexentry{data@{data}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{35}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!data@{data}|hyperpage}{35}
+\indexentry{data@{data}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{35}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!emplace@{emplace}|hyperpage}{35}
+\indexentry{emplace@{emplace}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{35}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!emplace\_back@{emplace\_back}|hyperpage}{35}
+\indexentry{emplace\_back@{emplace\_back}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{35}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!empty@{empty}|hyperpage}{36}
+\indexentry{empty@{empty}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{36}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!end@{end}|hyperpage}{36}
+\indexentry{end@{end}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{36}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!end@{end}|hyperpage}{36}
+\indexentry{end@{end}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{36}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!erase@{erase}|hyperpage}{36}
+\indexentry{erase@{erase}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{36}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!erase@{erase}|hyperpage}{36}
+\indexentry{erase@{erase}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{36}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!erase@{erase}|hyperpage}{36}
+\indexentry{erase@{erase}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{36}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!erase@{erase}|hyperpage}{36}
+\indexentry{erase@{erase}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{36}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!front@{front}|hyperpage}{36}
+\indexentry{front@{front}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{36}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!front@{front}|hyperpage}{37}
+\indexentry{front@{front}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{37}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!get\_reallocation\_count@{get\_reallocation\_count}|hyperpage}{37}
+\indexentry{get\_reallocation\_count@{get\_reallocation\_count}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{37}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!insert@{insert}|hyperpage}{37}
+\indexentry{insert@{insert}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{37}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!insert@{insert}|hyperpage}{37}
+\indexentry{insert@{insert}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{37}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!insert@{insert}|hyperpage}{37}
+\indexentry{insert@{insert}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{37}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!insert@{insert}|hyperpage}{37}
+\indexentry{insert@{insert}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{37}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!max\_size@{max\_size}|hyperpage}{37}
+\indexentry{max\_size@{max\_size}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{37}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator"!=@{operator"!=}|hyperpage}{37}
+\indexentry{operator"!=@{operator"!=}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{37}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator$<$@{operator$<$}|hyperpage}{38}
+\indexentry{operator$<$@{operator$<$}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{38}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator$<$=@{operator$<$=}|hyperpage}{38}
+\indexentry{operator$<$=@{operator$<$=}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{38}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator=@{operator=}|hyperpage}{38}
+\indexentry{operator=@{operator=}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{38}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator=@{operator=}|hyperpage}{38}
+\indexentry{operator=@{operator=}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{38}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator==@{operator==}|hyperpage}{38}
+\indexentry{operator==@{operator==}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{38}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator$>$@{operator$>$}|hyperpage}{38}
+\indexentry{operator$>$@{operator$>$}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{38}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator$>$=@{operator$>$=}|hyperpage}{38}
+\indexentry{operator$>$=@{operator$>$=}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{38}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator\+[]\+@{operator[]}|hyperpage}{38}
+\indexentry{operator\+[]\+@{operator[]}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{38}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!operator\+[]\+@{operator[]}|hyperpage}{39}
+\indexentry{operator\+[]\+@{operator[]}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{39}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!pop\_back@{pop\_back}|hyperpage}{39}
+\indexentry{pop\_back@{pop\_back}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{39}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!push\_back@{push\_back}|hyperpage}{39}
+\indexentry{push\_back@{push\_back}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{39}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!push\_back@{push\_back}|hyperpage}{39}
+\indexentry{push\_back@{push\_back}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{39}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!rbegin@{rbegin}|hyperpage}{39}
+\indexentry{rbegin@{rbegin}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{39}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!rbegin@{rbegin}|hyperpage}{39}
+\indexentry{rbegin@{rbegin}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{39}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!rend@{rend}|hyperpage}{39}
+\indexentry{rend@{rend}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{39}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!rend@{rend}|hyperpage}{39}
+\indexentry{rend@{rend}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{39}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!reserve@{reserve}|hyperpage}{39}
+\indexentry{reserve@{reserve}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{39}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!reset\_reallocation\_count@{reset\_reallocation\_count}|hyperpage}{40}
+\indexentry{reset\_reallocation\_count@{reset\_reallocation\_count}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{40}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!resize@{resize}|hyperpage}{40}
+\indexentry{resize@{resize}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{40}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!resize@{resize}|hyperpage}{40}
+\indexentry{resize@{resize}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{40}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!shrink\_to\_fit@{shrink\_to\_fit}|hyperpage}{40}
+\indexentry{shrink\_to\_fit@{shrink\_to\_fit}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{40}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!size@{size}|hyperpage}{40}
+\indexentry{size@{size}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{40}
+\indexentry{Vector$<$ T $>$@{Vector$<$ T $>$}!swap@{swap}|hyperpage}{40}
+\indexentry{swap@{swap}!Vector$<$ T $>$@{Vector$<$ T $>$}|hyperpage}{40}
+\indexentry{vector$<$ T $>$@{vector$<$ T $>$}|hyperpage}{40}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{41}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!difference\_type@{difference\_type}|hyperpage}{42}
+\indexentry{difference\_type@{difference\_type}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{42}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!iterator\_category@{iterator\_category}|hyperpage}{42}
+\indexentry{iterator\_category@{iterator\_category}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{42}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!pointer@{pointer}|hyperpage}{42}
+\indexentry{pointer@{pointer}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{42}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!reference@{reference}|hyperpage}{42}
+\indexentry{reference@{reference}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{42}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!value\_type@{value\_type}|hyperpage}{42}
+\indexentry{value\_type@{value\_type}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{42}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!VectorIterator@{VectorIterator}|hyperpage}{42}
+\indexentry{VectorIterator@{VectorIterator}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{42}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator"!=@{operator"!=}|hyperpage}{43}
+\indexentry{operator"!=@{operator"!=}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{43}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}|hyperpage}{43}
+\indexentry{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{43}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator+@{operator+}|hyperpage}{43}
+\indexentry{operator+@{operator+}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{43}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator++@{operator++}|hyperpage}{43}
+\indexentry{operator++@{operator++}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{43}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator++@{operator++}|hyperpage}{43}
+\indexentry{operator++@{operator++}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{43}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator+=@{operator+=}|hyperpage}{43}
+\indexentry{operator+=@{operator+=}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{43}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator-\/@{operator-\/}|hyperpage}{43}
+\indexentry{operator-\/@{operator-\/}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{43}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator-\/@{operator-\/}|hyperpage}{43}
+\indexentry{operator-\/@{operator-\/}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{43}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator-\/-\/@{operator-\/-\/}|hyperpage}{43}
+\indexentry{operator-\/-\/@{operator-\/-\/}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{43}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator-\/-\/@{operator-\/-\/}|hyperpage}{44}
+\indexentry{operator-\/-\/@{operator-\/-\/}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{44}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator-\/=@{operator-\/=}|hyperpage}{44}
+\indexentry{operator-\/=@{operator-\/=}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{44}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator-\/$>$@{operator-\/$>$}|hyperpage}{44}
+\indexentry{operator-\/$>$@{operator-\/$>$}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{44}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator$<$@{operator$<$}|hyperpage}{44}
+\indexentry{operator$<$@{operator$<$}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{44}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator$<$=@{operator$<$=}|hyperpage}{44}
+\indexentry{operator$<$=@{operator$<$=}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{44}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator==@{operator==}|hyperpage}{44}
+\indexentry{operator==@{operator==}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{44}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator$>$@{operator$>$}|hyperpage}{44}
+\indexentry{operator$>$@{operator$>$}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{44}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator$>$=@{operator$>$=}|hyperpage}{44}
+\indexentry{operator$>$=@{operator$>$=}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{44}
+\indexentry{VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}!operator\+[]\+@{operator[]}|hyperpage}{44}
+\indexentry{operator\+[]\+@{operator[]}!VectorIterator$<$ T $>$@{VectorIterator$<$ T $>$}|hyperpage}{44}
+\indexentry{VectorTest@{VectorTest}|hyperpage}{45}
+\indexentry{VectorTest@{VectorTest}!v@{v}|hyperpage}{45}
+\indexentry{v@{v}!VectorTest@{VectorTest}|hyperpage}{45}
+\indexentry{Zmogus@{Zmogus}|hyperpage}{45}
+\indexentry{Zmogus@{Zmogus}!Zmogus@{Zmogus}|hyperpage}{46}
+\indexentry{Zmogus@{Zmogus}!Zmogus@{Zmogus}|hyperpage}{46}
+\indexentry{Zmogus@{Zmogus}!Zmogus@{Zmogus}|hyperpage}{46}
+\indexentry{Zmogus@{Zmogus}!Zmogus@{Zmogus}|hyperpage}{46}
+\indexentry{Zmogus@{Zmogus}!````~Zmogus@{\texorpdfstring{$\sim$}{\string~}Zmogus}|hyperpage}{46}
+\indexentry{````~Zmogus@{\texorpdfstring{$\sim$}{\string~}Zmogus}!Zmogus@{Zmogus}|hyperpage}{46}
+\indexentry{Zmogus@{Zmogus}!getInfo@{getInfo}|hyperpage}{47}
+\indexentry{getInfo@{getInfo}!Zmogus@{Zmogus}|hyperpage}{47}
+\indexentry{Zmogus@{Zmogus}!getPavarde@{getPavarde}|hyperpage}{47}
+\indexentry{getPavarde@{getPavarde}!Zmogus@{Zmogus}|hyperpage}{47}
+\indexentry{Zmogus@{Zmogus}!getVardas@{getVardas}|hyperpage}{47}
+\indexentry{getVardas@{getVardas}!Zmogus@{Zmogus}|hyperpage}{47}
+\indexentry{Zmogus@{Zmogus}!setPavarde@{setPavarde}|hyperpage}{47}
+\indexentry{setPavarde@{setPavarde}!Zmogus@{Zmogus}|hyperpage}{47}
+\indexentry{Zmogus@{Zmogus}!setVardas@{setVardas}|hyperpage}{47}
+\indexentry{setVardas@{setVardas}!Zmogus@{Zmogus}|hyperpage}{47}
+\indexentry{Zmogus@{Zmogus}!operator$<$$<$@{operator$<$$<$}|hyperpage}{47}
+\indexentry{operator$<$$<$@{operator$<$$<$}!Zmogus@{Zmogus}|hyperpage}{47}
+\indexentry{Zmogus@{Zmogus}!pavarde\_@{pavarde\_}|hyperpage}{48}
+\indexentry{pavarde\_@{pavarde\_}!Zmogus@{Zmogus}|hyperpage}{48}
+\indexentry{Zmogus@{Zmogus}!vardas\_@{vardas\_}|hyperpage}{48}
+\indexentry{vardas\_@{vardas\_}!Zmogus@{Zmogus}|hyperpage}{48}
+\indexentry{extra\_cpp/duomenu\_valdymas.cpp@{extra\_cpp/duomenu\_valdymas.cpp}|hyperpage}{49}
+\indexentry{extra\_cpp/input.cpp@{extra\_cpp/input.cpp}|hyperpage}{54}
+\indexentry{extra\_cpp/mat\_funkcijos.cpp@{extra\_cpp/mat\_funkcijos.cpp}|hyperpage}{55}
+\indexentry{extra\_cpp/menu.cpp@{extra\_cpp/menu.cpp}|hyperpage}{56}
+\indexentry{extra\_cpp/output.cpp@{extra\_cpp/output.cpp}|hyperpage}{58}
+\indexentry{extra\_cpp/reallocation\_comparison.cpp@{extra\_cpp/reallocation\_comparison.cpp}|hyperpage}{59}
+\indexentry{extra\_cpp/Studentas.cpp@{extra\_cpp/Studentas.cpp}|hyperpage}{59}
+\indexentry{extra\_cpp/testavimas.cpp@{extra\_cpp/testavimas.cpp}|hyperpage}{61}
+\indexentry{extra\_cpp/Zmogus.cpp@{extra\_cpp/Zmogus.cpp}|hyperpage}{66}
+\indexentry{header\_files/duomenu\_valdymas.h@{header\_files/duomenu\_valdymas.h}|hyperpage}{67}
+\indexentry{header\_files/input.h@{header\_files/input.h}|hyperpage}{67}
+\indexentry{header\_files/Mat\_funkcijos.h@{header\_files/Mat\_funkcijos.h}|hyperpage}{67}
+\indexentry{header\_files/menu.h@{header\_files/menu.h}|hyperpage}{67}
+\indexentry{header\_files/output.h@{header\_files/output.h}|hyperpage}{67}
+\indexentry{header\_files/Studentas.h@{header\_files/Studentas.h}|hyperpage}{68}
+\indexentry{header\_files/testavimas.h@{header\_files/testavimas.h}|hyperpage}{69}
+\indexentry{header\_files/Vector.h@{header\_files/Vector.h}|hyperpage}{69}
+\indexentry{header\_files/Zmogus.h@{header\_files/Zmogus.h}|hyperpage}{77}

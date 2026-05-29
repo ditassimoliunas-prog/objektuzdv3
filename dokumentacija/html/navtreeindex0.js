@@ -2,10 +2,10 @@ var NAVTREEINDEX0 =
 {
 "_c_1_2_users_2ditas_2source_2repos_2ditassimoliunas-prog_2objektuzdv3_2header_files_2_vector_8h-example.html":[3,0],
 "_mat__funkcijos_8h_source.html":[2,0,1,2],
-"_studentas_8cpp_source.html":[2,0,0,5],
+"_studentas_8cpp_source.html":[2,0,0,6],
 "_studentas_8h_source.html":[2,0,1,5],
 "_vector_8h_source.html":[2,0,1,7],
-"_zmogus_8cpp_source.html":[2,0,0,7],
+"_zmogus_8cpp_source.html":[2,0,0,8],
 "_zmogus_8h_source.html":[2,0,1,8],
 "annotated.html":[1,0],
 "class_studentas.html":[1,0,11],
@@ -78,7 +78,8 @@ var NAVTREEINDEX0 =
 "output_8cpp_source.html":[2,0,0,4],
 "output_8h_source.html":[2,0,1,4],
 "pages.html":[],
+"reallocation__comparison_8cpp_source.html":[2,0,0,5],
 "test__studentas_8cpp_source.html":[2,0,3],
-"testavimas_8cpp_source.html":[2,0,0,6],
+"testavimas_8cpp_source.html":[2,0,0,7],
 "testavimas_8h_source.html":[2,0,1,6]
 };
