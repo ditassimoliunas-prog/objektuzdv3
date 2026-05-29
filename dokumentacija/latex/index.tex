@@ -1,0 +1,717 @@
+\chapter{v3.\+0 relisas:\+ Custom Vector$<$\+T$>$ Konteineris }
+\hypertarget{index}{}\label{index}\index{v3.0 relisas: Custom Vector$<$T$>$ Konteineris@{v3.0 relisas: Custom Vector$<$T$>$ Konteineris}}
+\label{index_md__r_e_a_d_m_e}%
+\Hypertarget{index_md__r_e_a_d_m_e}%
+
+
+\doxysubsection*{\doxylink{class_vector}{Vector$<$\+T$>$} Spartos Palyginimas su std::\+vector}
+
+\doxysubsubsection*{push\+\_\+back() Operacijos Spartos Testas}
+
+
+\begin{DoxyTable}{3}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Elementų skaičius  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}std::\+vector (s)  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}\doxylink{class_vector}{Vector$<$int$>$} (s)  \\
+1000  &0.\+04200 s  &0.\+04292 s  \\
+10000  &0.\+24998 s  &0.\+31445 s  \\
+100000  &2.\+31416 s  &2.\+91781 s  \\
+1000000  &23.\+71250 s  &28.\+25032 s  \\
+\end{DoxyTable}
+
+
+\doxysubsubsection*{Testas:\+ std::\+vector vs \doxylink{class_vector}{Vector$<$int$>$} push\+\_\+back()}
+
+\DoxyHorRuler{0}
+
+
+\doxysubsection*{\doxylink{class_vector}{Vector$<$\+T$>$} API Naudojimo Pavyzdžiai}
+
+\doxysubsubsection*{1. Pagrindinės Operacijos -\/ push\+\_\+back() ir pop\+\_\+back()}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}Vector.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ push\_back()\ -\/\ pridėjimas\ į\ galą}}
+\DoxyCodeLine{v.push\_back(10);}
+\DoxyCodeLine{v.push\_back(20);}
+\DoxyCodeLine{v.push\_back(30);}
+\DoxyCodeLine{}
+\DoxyCodeLine{std::cout\ <<\ \textcolor{stringliteral}{"{}Dydis:\ "{}}\ <<\ v.size()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};\ \ \textcolor{comment}{//\ Išveda:\ 3}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ pop\_back()\ -\/\ šalinimas\ iš\ galo}}
+\DoxyCodeLine{v.pop\_back();\ \ \textcolor{comment}{//\ Šalina\ 30}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Prieiga\ prie\ elementų}}
+\DoxyCodeLine{std::cout\ <<\ \textcolor{stringliteral}{"{}Pirmas:\ "{}}\ <<\ v[0]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};\ \ \ \ \ \ \textcolor{comment}{//\ Išveda:\ 10}}
+\DoxyCodeLine{std::cout\ <<\ \textcolor{stringliteral}{"{}Paskutnis:\ "{}}\ <<\ v.back()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};\ \ \textcolor{comment}{//\ Išveda:\ 20}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{2. Konstruktoriai ir Inicijalizacija}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Default\ konstruktorius}}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_vector}{Vector<double>}}\ v1;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Konstruktorius\ su\ dydžiu}}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v2(5);\ \ \textcolor{comment}{//\ 5\ int\ elementų,\ reikšmės\ 0}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Konstruktorius\ su\ dydžiu\ ir\ reikšme}}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_vector}{Vector<std::string>}}\ v3(3,\ \textcolor{stringliteral}{"{}Sveiki"{}});\ \ \textcolor{comment}{//\ 3\ "{}Sveiki"{}\ eilutės}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Copy\ konstruktorius}}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v4\ =\ v1;\ \ \textcolor{comment}{//\ Deep\ copy}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Move\ konstruktorius}}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v5\ =\ std::move(v2);\ \ \textcolor{comment}{//\ Ištekliai\ perkelti\ iš\ v2\ į\ v5}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{3. Reservavimas ir Dydžio Valdymas}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v;}
+\DoxyCodeLine{v.reserve(100);\ \ \textcolor{comment}{//\ Išankstinis\ atmintis\ rezervavimas}}
+\DoxyCodeLine{}
+\DoxyCodeLine{std::cout\ <<\ \textcolor{stringliteral}{"{}Talpa:\ "{}}\ <<\ v.capacity()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};\ \ \textcolor{comment}{//\ Išveda:\ 100}}
+\DoxyCodeLine{std::cout\ <<\ \textcolor{stringliteral}{"{}Dydis:\ "{}}\ <<\ v.size()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};\ \ \ \ \ \ \textcolor{comment}{//\ Išveda:\ 0}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Nustatyti\ konkretų\ dydį}}
+\DoxyCodeLine{v.resize(50);\ \ \textcolor{comment}{//\ Dabar\ dydis\ =\ 50,\ nauji\ elementai\ =\ 0}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Sumažinti\ iš\ dalies\ nereikalingą\ atmintį}}
+\DoxyCodeLine{v.shrink\_to\_fit();\ \ \textcolor{comment}{//\ capacity()\ ==\ size()}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{4. Iteratoriai ir Iteravimas}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 2,\ 3,\ 4,\ 5\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Range-\/based\ for\ ciklas}}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ elem\ :\ v)\ \{}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ elem\ <<\ \textcolor{stringliteral}{"{}\ "{}};\ \ \textcolor{comment}{//\ Išveda:\ 1\ 2\ 3\ 4\ 5}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Tiesioginis\ iteratoriaus\ naudojimas}}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ v.begin();\ it\ !=\ v.end();\ ++it)\ \{}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ *it\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Atgaline\ tvarka}}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ v.rbegin();\ it\ !=\ v.rend();\ ++it)\ \{}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ *it\ <<\ \textcolor{stringliteral}{"{}\ "{}};\ \ \textcolor{comment}{//\ Išveda:\ 5\ 4\ 3\ 2\ 1}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{5. insert() ir erase() Operacijos}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v\ =\ \{1,\ 2,\ 3,\ 5\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Dėjimas\ į\ konkrečią\ padėtį}}
+\DoxyCodeLine{\textcolor{keyword}{auto}\ it\ =\ v.begin()\ +\ 3;}
+\DoxyCodeLine{v.insert(it,\ 4);\ \ \textcolor{comment}{//\ Dabar:\ \{1,\ 2,\ 3,\ 4,\ 5\}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Šalinimas\ iš\ konkrečios\ padėties}}
+\DoxyCodeLine{v.erase(v.begin()\ +\ 1);\ \ \textcolor{comment}{//\ Šalina\ 2,\ dabar:\ \{1,\ 3,\ 4,\ 5\}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Šalinimas\ diapazono}}
+\DoxyCodeLine{v.erase(v.begin()\ +\ 1,\ v.begin()\ +\ 3);\ \ \textcolor{comment}{//\ Šalina\ \{3,\ 4\},\ dabar:\ \{1,\ 5\}}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{6. assign() -\/ Perkėlimas iš Iteratoriaus Diapazono}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v1;}
+\DoxyCodeLine{std::vector<int>\ std\_v\ =\ \{10,\ 20,\ 30,\ 40\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Assign\ iš\ std::vector\ iteratorių}}
+\DoxyCodeLine{v1.assign(std\_v.begin(),\ std\_v.end());}
+\DoxyCodeLine{\textcolor{comment}{//\ Dabar\ v1\ =\ \{10,\ 20,\ 30,\ 40\}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Arba\ iš\ kito\ Vector<int>}}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v2;}
+\DoxyCodeLine{v2.assign(v1.begin(),\ v1.end());}
+\DoxyCodeLine{\textcolor{comment}{//\ Dabar\ v2\ =\ \{10,\ 20,\ 30,\ 40\}}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{7. emplace\+\_\+back() -\/ Vietos Konstravimas}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }\doxymbox{\hyperlink{class_studentas}{Studentas}}\ \{}
+\DoxyCodeLine{\ \ \ \ std::string\ vardas;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ vidurkis;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ Studentas(\textcolor{keyword}{const}\ std::string\&\ v,\ \textcolor{keywordtype}{int}\ m)\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ :\ vardas(v),\ vidurkis(m)\ \{\}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_vector}{Vector<Studentas>}}\ grup;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ emplace\_back()\ -\/\ konstravimas\ tiesiog\ vektoriuje\ (be\ kopijų)}}
+\DoxyCodeLine{grup.emplace\_back(\textcolor{stringliteral}{"{}Jonas"{}},\ 8);}
+\DoxyCodeLine{grup.emplace\_back(\textcolor{stringliteral}{"{}Marija"{}},\ 9);}
+\DoxyCodeLine{}
+\DoxyCodeLine{std::cout\ <<\ \textcolor{stringliteral}{"{}Pirmas\ studentas:\ "{}}\ <<\ grup[0].vardas\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{8. Palyginimai ir Operatoriai}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v1\ =\ \{1,\ 2,\ 3\};}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v2\ =\ \{1,\ 2,\ 3\};}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_vector}{Vector<int>}}\ v3\ =\ \{1,\ 2,\ 4\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Lygybės\ operatorius}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (v1\ ==\ v2)\ \{}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}v1\ ir\ v2\ lygūs\(\backslash\)n"{}};\ \ \textcolor{comment}{//\ Spausdina}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Nelygumo\ operatorius}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (v1\ !=\ v3)\ \{}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}v1\ ir\ v3\ nelygūs\(\backslash\)n"{}};\ \ \textcolor{comment}{//\ Spausdina}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Mažiau\ nei\ operatorius}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (v1\ <\ v3)\ \{}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}v1\ <\ v3\ (leksikografinė\ sąlyga)\(\backslash\)n"{}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+
+
+\doxysection*{v2.\+0 relisas:\+ Unit Testai (Google Test) ir Doxygen Dokumentacija}
+
+\doxysubsection*{Unit Testai (v2.\+0)}
+
+Projektas naudoja {\bfseries{hibridinę test strategiją}}:\+
+\begin{DoxyItemize}
+\item {\bfseries{13 testų}} (originalūs iš v1.\+5):\+ {\ttfamily assert()} framework, Rule of Five ir I/\+O operacijos
+\item {\bfseries{5 testai}} (nauji v2.\+0):\+ Google Test ({\ttfamily gtest}) framework, Rule of Five semantika 7 \doxysubsubsection*{Rule of Five Metodai -\/ {\ttfamily assert()} Framework (v1.\+5 pagrindiniai):\+}
+\end{DoxyItemize}
+
+
+\begin{DoxyTable}{4}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Testas  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Metodas  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Framework  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Aprašas  \\
+1  &Default konstruktorius  &{\ttfamily assert()}  &Numatytosios reikšmės (A, BB, 0, 0.\+0)  \\
+2  &Parametrizuotas konstruktorius  &{\ttfamily assert()}  &Duomenų inicializavimas  \\
+3  &{\bfseries{Copy konstruktorius}} (Rule of Five \#1)  &{\ttfamily assert()}  &Deep copy operacija  \\
+4  &{\bfseries{Copy assignment}} (Rule of Five \#2)  &{\ttfamily assert()}  &Duomenų kopijavimas ir self-\/assignment  \\
+5  &{\bfseries{Move konstruktorius}} (Rule of Five \#3)  &{\ttfamily assert()}  &Išteklių perėmimas, šaltinis tuščias  \\
+6  &{\bfseries{Move assignment}} (Rule of Five \#4)  &{\ttfamily assert()}  &Laikino objekto išteklių perėmimas  \\
+7  &{\bfseries{Destruktorius}} (Rule of Five \#5)  &{\ttfamily assert()}  &Tinkamas išteklių atlaisvinimas (RAII)  \\
+8  &I/\+O Round-\/trip  &{\ttfamily assert()}  &Išvestis ir įvedimas (operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} /\+ operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>})  \\
+9-\/10  &Getters/\+\+Setters, vektoriaus ops  &{\ttfamily assert()}  &Duomenų prieiga ir pažymių operacijos  \\
+\end{DoxyTable}
+
+
+\doxysubsubsection*{Papildomi Google Test Testai (v2.\+0):\+}
+
+
+\begin{DoxyTable}{4}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Testas  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Pavadinimas  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Framework  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Aprašas  \\
+14  &{\ttfamily Studentas\+Vector\+Test.\+Push\+Back\+Copy\+Semantics}  &Google Test  &Copy semantika su vektoriumi  \\
+15  &{\ttfamily Studentas\+Vector\+Test.\+Push\+Back\+Move\+Semantics}  &Google Test  &Move semantika su vektoriumi  \\
+16  &{\ttfamily Studentas\+Deep\+Copy\+Test.\+Independent\+Copies}  &Google Test  &Deep copy nepriklausomumas  \\
+17  &{\ttfamily Studentas\+Self\+Assignment\+Test.\+Copy\+Safety\+Check}  &Google Test  &Self-\/assignment saugumas  \\
+18  &{\ttfamily Studentas\+Operator\+Test.\+Assignment\+Chaining}  &Google Test  &Assignment operator chaining  \\
+\end{DoxyTable}
+
+
+\doxysubsection*{Testų Vykdymas}
+
+{\bfseries{Automatinis vykdymas (rekomenduojama):\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Linux/macOS}
+\DoxyCodeLine{./build.sh\ test}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Windows}
+\DoxyCodeLine{powershell\ -\/ExecutionPolicy\ Bypass\ -\/File\ .\(\backslash\)diegimas.ps1\ -\/Stage\ "{}test"{}}
+
+\end{DoxyCode}
+
+
+{\bfseries{Tiesiogas vykdymas:\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Linux/macOS}
+\DoxyCodeLine{cd\ build}
+\DoxyCodeLine{./test\_programa}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Windows}
+\DoxyCodeLine{cd\ out\(\backslash\)build\(\backslash\)x64-\/Debug}
+\DoxyCodeLine{.\(\backslash\)test\_programa.exe}
+
+\end{DoxyCode}
+
+
+{\bfseries{Tikėtini Rezultatai:\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{============================================================}
+\DoxyCodeLine{\ \ STUDENTAS\ KLASES\ VISOS\ METODU\ TESTAI\ (v1.5)}
+\DoxyCodeLine{\ \ +\ GOOGLE\ TEST\ PAPILDYMAS\ (v2.0)}
+\DoxyCodeLine{============================================================}
+\DoxyCodeLine{}
+\DoxyCodeLine{[PRIIMTAS]\ Default\ konstruktorius\ testai...}
+\DoxyCodeLine{...}
+\DoxyCodeLine{Priimti\ testai:\ 50}
+\DoxyCodeLine{Nepriimti\ testai:\ 0}
+\DoxyCodeLine{}
+\DoxyCodeLine{VISI\ TESTAI\ PRIIMTI!}
+\DoxyCodeLine{}
+\DoxyCodeLine{============================================================}
+\DoxyCodeLine{Vykdomme\ GOOGLE\ TEST\ testai...}
+\DoxyCodeLine{============================================================}
+\DoxyCodeLine{}
+\DoxyCodeLine{[==========]\ Running\ 5\ tests\ from\ 4\ test\ suites.}
+\DoxyCodeLine{[\ \ PASSED\ \ ]\ 5\ tests.}
+
+\end{DoxyCode}
+ \doxysubsection*{Doxygen Dokumentacija (v2.\+0 nauja!)}
+
+Visa dokumentacija sugeneruojama iš source kodo Doxygen komentarų.
+
+{\bfseries{Sugeneruoti/\+atnaujinti dokumentaciją:\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Automatinis\ būdas\ (rekomenduojama)}
+\DoxyCodeLine{./build.sh\ docs\ \ \ \ \ \ \ \ \ \ \#\ Linux/macOS}
+\DoxyCodeLine{diegimas.ps1\ -\/Stage\ docs\ \#\ Windows}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Arba\ tiesiogas\ doxygen\ kvietimas}
+\DoxyCodeLine{doxygen\ Doxyfile}
+
+\end{DoxyCode}
+
+
+{\bfseries{Dokumentacijos Rezultatai:\+}}
+\begin{DoxyItemize}
+\item {\ttfamily dokumentacija/\+html/\+index.\+html} -\/ Interaktyvi HTML dokumentacija (naršom nuorodose)
+\item {\ttfamily dokumentacija/\+latex/\+refman.\+pdf} -\/ Kompiliuota PDF dokumentacija (52 psl.)
+\end{DoxyItemize}
+
+{\bfseries{Atidarytite dokumentaciją:\+}}
+\begin{DoxyItemize}
+\item HTML:\+ Atidaryti {\ttfamily dokumentacija/\+html/\+index.\+html} naršyklėje
+\item PDF:\+ Atidaryti {\ttfamily dokumentacija/\+latex/\+refman.\+pdf} PDF skaitykloje
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+\doxysection*{Diegimo Instrukcija}
+
+\doxysubsection*{Sistemos Reikalavimai}
+
+
+\begin{DoxyTable}{3}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Reikalavimas  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Versija  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Pastaba  \\
+CMake  &≥ 3.\+10  &Build sistema  \\
+C++ Kompiliatorius  &C++17  &MSVC /\+ GCC /\+ Clang  \\
+Google Test  &v1.\+14.\+0  &Automatiškai parsiunčiama  \\
+Doxygen  &naujausias  &Dokumentacijai (parsisiuntimas:\+ \href{https://www.doxygen.nl/download.html}{\texttt{https:\+/\+/\+www.\+doxygen.\+nl/\+download.\+html}})  \\
+TeX Live /\+ La\+TeX  &2024+  &PDF generavimui (parsisiuntimas:\+ \href{https://www.tug.org/texlive/}{\texttt{https:\+/\+/\+www.\+tug.\+org/\+texlive/\+}})  \\
+\end{DoxyTable}
+
+
+\doxysubsection*{1. Klonuojame repoziciją}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ https://github.com/ditassimoliunas-\/prog/objektuzdv1.git}
+\DoxyCodeLine{cd\ objektuzdv1}
+\DoxyCodeLine{git\ checkout\ v2.0}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{2. Automatinis diegimas (rekomenduojama)}
+
+{\bfseries{Linux/\+mac\+OS (su bash):\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{chmod\ +x\ build.sh}
+\DoxyCodeLine{./build.sh\ all}
+
+\end{DoxyCode}
+
+
+{\bfseries{Windows (su Power\+Shell):\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Set-\/ExecutionPolicy\ -\/ExecutionPolicy\ Bypass\ -\/Scope\ Process}
+\DoxyCodeLine{powershell\ -\/File\ .\(\backslash\)diegimas.ps1\ -\/Stage\ all}
+
+\end{DoxyCode}
+
+
+{\bfseries{mac\+OS (su Makefile):\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ all}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{3. Rankinis diegimas žingsniai}
+
+\doxysubsubsection*{Schritt 2a:\+ Konfigūruojame CMake}
+
+{\bfseries{Linux/\+mac\+OS:\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir\ build}
+\DoxyCodeLine{cd\ build}
+\DoxyCodeLine{cmake\ -\/DCMAKE\_BUILD\_TYPE=Release\ ..}
+
+\end{DoxyCode}
+
+
+{\bfseries{Windows (MSVC/\+\+Ninja):\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir\ build}
+\DoxyCodeLine{cd\ build}
+\DoxyCodeLine{cmake\ -\/G\ "{}Visual\ Studio\ 17\ 2022"{}\ -\/A\ x64\ ..}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{Schritt 2b:\+ Kompiliuojame}
+
+{\bfseries{Linux/\+mac\+OS:\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/-\/build\ .\ -\/-\/config\ Release}
+
+\end{DoxyCode}
+
+
+{\bfseries{Windows:\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/-\/build\ .\ -\/-\/config\ Release}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{Schritt 2c:\+ Vykdome testus}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Linux/macOS}
+\DoxyCodeLine{./test\_programa}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Windows}
+\DoxyCodeLine{.\(\backslash\)Release\(\backslash\)test\_programa.exe}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{Schritt 2d:\+ Sugeneruojame dokumentaciją}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ ..}
+\DoxyCodeLine{doxygen\ Doxyfile}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{4. Patikrinimas}
+
+Po diegimo turėtumėte matyti:\+
+\begin{DoxyItemize}
+\item ✅ {\ttfamily build/\+} direktorijoje kompiliuoti failai
+\item ✅ {\ttfamily test\+\_\+programa} išvykdomas su 55 praejetais testais (50 assert + 5 gtest)
+\item ✅ {\ttfamily dokumentacija/\+html/\+index.\+html} -\/ atidaryti naršyklėje
+\item ✅ {\ttfamily dokumentacija/\+latex/\+refman.\+pdf} -\/ PDF dokumentacija
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+\doxysection*{Naudojimosi Instrukcija}
+
+\doxysubsection*{Pagrindinės Programos Paleidimas}
+
+{\bfseries{Linux/\+mac\+OS:\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./build/programa}
+
+\end{DoxyCode}
+
+
+{\bfseries{Windows:\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.\(\backslash\)build\(\backslash\)Release\(\backslash\)programa.exe}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{Programos Meniu}
+
+Paleidus pagrindinę programą, galima rinktis iš šių opcijų:\+
+
+
+\begin{DoxyTable}{2}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Opciją  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Veikimas  \\
+1  &Rankininis įvedimas (vardas, pavardė, 5 pažymiai, egzaminas)  \\
+2  &Generuoti tik pažymius  \\
+3  &Generuoti visus duomenis automatiškai  \\
+4  &Nuskaityti iš failo  \\
+5  &Sukurti testavimo failus  \\
+6  &Atlikti spartos analizę  \\
+7  &Baigti darbą  \\
+\end{DoxyTable}
+
+
+\doxysubsection*{Build Sumos Komandos}
+
+{\bfseries{Linux/\+mac\+OS (build.\+sh):\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./build.sh\ build\ \ \ \ \ \ \ \#\ Kompiliuoti}
+\DoxyCodeLine{./build.sh\ test\ \ \ \ \ \ \ \ \#\ Vykdyti\ testus}
+\DoxyCodeLine{./build.sh\ docs\ \ \ \ \ \ \ \ \#\ Sugeneruoti\ dokumentaciją}
+\DoxyCodeLine{./build.sh\ run\ \ \ \ \ \ \ \ \ \#\ Paleisti\ programą}
+\DoxyCodeLine{./build.sh\ clean\ \ \ \ \ \ \ \#\ Valyti\ build\ failus}
+\DoxyCodeLine{./build.sh\ help\ \ \ \ \ \ \ \ \#\ Pagalba}
+
+\end{DoxyCode}
+
+
+{\bfseries{Windows (diegimas.\+ps1):\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{powershell\ -\/File\ .\(\backslash\)diegimas.ps1\ -\/Stage\ build\ \ \#\ Kompiliuoti}
+\DoxyCodeLine{powershell\ -\/File\ .\(\backslash\)diegimas.ps1\ -\/Stage\ test\ \ \ \#\ Vykdyti\ testus}
+\DoxyCodeLine{powershell\ -\/File\ .\(\backslash\)diegimas.ps1\ -\/Stage\ docs\ \ \ \#\ Sugeneruoti\ dokumentaciją}
+\DoxyCodeLine{powershell\ -\/File\ .\(\backslash\)diegimas.ps1\ -\/Stage\ run\ \ \ \ \#\ Paleisti\ programą}
+\DoxyCodeLine{powershell\ -\/File\ .\(\backslash\)diegimas.ps1\ -\/Stage\ clean\ \ \#\ Valyti\ build\ failus}
+
+\end{DoxyCode}
+
+
+{\bfseries{mac\+OS (Makefile):\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ build\ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Kompiliuoti}
+\DoxyCodeLine{make\ test\ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Vykdyti\ testus}
+\DoxyCodeLine{make\ docs\ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Sugeneruoti\ dokumentaciją}
+\DoxyCodeLine{make\ run\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Paleisti\ programą}
+\DoxyCodeLine{make\ clean\ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Valyti\ build\ failus}
+\DoxyCodeLine{make\ info\ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Pagalba}
+
+\end{DoxyCode}
+
+
+\doxysection*{Projekto Failų Struktūra}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{objektuzdv1/}
+\DoxyCodeLine{├──\ CMakeLists.txt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ CMake\ build\ konfigūracija\ (v2.0:\ Google\ Test\ FetchContent)}
+\DoxyCodeLine{├──\ Doxyfile\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Doxygen\ konfigūracija\ (v2.0:\ HTML\ +\ PDF)}
+\DoxyCodeLine{├──\ Makefile\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Unix-\/style\ build\ helper\ (v2.0:\ build/test/docs/run/clean)}
+\DoxyCodeLine{├──\ build.sh\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Linux/macOS\ build\ script\ (v2.0:\ automatinis\ diegimas)}
+\DoxyCodeLine{├──\ diegimas.ps1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Windows\ PowerShell\ script\ (v2.0:\ automatinis\ diegimas)}
+\DoxyCodeLine{├──\ README.md\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Šis\ failas\ (v2.0:\ atnaujintas)}
+\DoxyCodeLine{├──\ .gitignore\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Git\ taisyklės\ (v2.0:\ dokumentacija\ jau\ versijuota)}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ header\_files/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Klasių\ aprašymai\ (interface)}
+\DoxyCodeLine{│\ \ \ ├──\ Zmogus.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Abstrakti\ bazė}
+\DoxyCodeLine{│\ \ \ ├──\ Studentas.h\ \ \ \ \ \ \ \ \ \ \ \ \#\ Studentas\ klasė\ (Rule\ of\ Five)}
+\DoxyCodeLine{│\ \ \ ├──\ mat\_funkcijos.h}
+\DoxyCodeLine{│\ \ \ ├──\ menu.h}
+\DoxyCodeLine{│\ \ \ └──\ ...}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ extra\_cpp/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Implementacijos}
+\DoxyCodeLine{│\ \ \ ├──\ Zmogus.cpp\ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Bazės\ klasės\ implementacija}
+\DoxyCodeLine{│\ \ \ ├──\ Studentas.cpp\ \ \ \ \ \ \ \ \ \ \#\ Studentas\ klasės\ implementacija}
+\DoxyCodeLine{│\ \ \ ├──\ mat\_funkcijos.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ menu.cpp}
+\DoxyCodeLine{│\ \ \ └──\ ...}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ objekt1uzd.cpp\ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Pagrindinė\ programa\ (main)}
+\DoxyCodeLine{├──\ test\_studentas.cpp\ \ \ \ \ \ \ \ \ \#\ Unit\ testai\ (v2.0:\ 13x\ assert\ +\ 5x\ Google\ Test)}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ dokumentacija/\ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Sugeneruota\ Doxygen\ dokumentacija\ (v2.0:\ versijuota!)}
+\DoxyCodeLine{│\ \ \ ├──\ html/}
+\DoxyCodeLine{│\ \ \ │\ \ \ └──\ index.html\ \ \ \ \ \ \ \ \ \#\ HTML\ dokumentacijos\ pradžia}
+\DoxyCodeLine{│\ \ \ ├──\ latex/}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ refman.tex}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ refman.pdf\ \ \ \ \ \ \ \ \ \#\ PDF\ dokumentacija\ (52\ psl.)}
+\DoxyCodeLine{│\ \ \ │\ \ \ └──\ ...}
+\DoxyCodeLine{│\ \ \ └──\ ...}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ out/build/x64-\/Debug/\ \ \ \ \ \ \ \#\ Visual\ Studio\ build\ output\ (git\ ignored)}
+\DoxyCodeLine{├──\ build/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ CMake\ build\ direktorija\ (git\ ignored)}
+\DoxyCodeLine{│\ \ \ ├──\ test\_programa\ \ \ \ \ \ \ \ \ \ \#\ Kompiliuotas\ testas}
+\DoxyCodeLine{│\ \ \ ├──\ programa\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Kompiliuota\ pagrindinė\ programa}
+\DoxyCodeLine{│\ \ \ └──\ CMakeFiles/}
+\DoxyCodeLine{│}
+\DoxyCodeLine{└──\ .git/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Git\ repositorija}
+\DoxyCodeLine{}
+\DoxyCodeLine{-\/-\/-\/}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\#\ Klaidų\ Sprendimas}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\#\#\ Klaida:\ "{}CMake\ not\ found"{}}
+
+\end{DoxyCode}
+ bash \doxysection*{CMake instaliacija}
+
+\doxysection*{Windows:\+ \href{https://cmake.org/download/}{\texttt{https:\+/\+/\+cmake.\+org/\+download/\+}} (arba choco install cmake)}
+
+\doxysection*{Linux:\+ sudo apt install cmake}
+
+\doxysection*{mac\+OS:\+ brew install cmake}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\#\#\ Klaida:\ "{}C++\ compiler\ not\ found"{}}
+
+\end{DoxyCode}
+ bash \doxysection*{Kompiliatoriaus instaliacija}
+
+\doxysection*{Windows:\+ Instaliuoti Visual Studio Build Tools arba Visual Studio Community}
+
+\doxysection*{Linux:\+ sudo apt install build-\/essential g++}
+
+\doxysection*{mac\+OS:\+ xcode-\/select --install}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\#\#\ Klaida:\ "{}Doxygen\ not\ found"{}}
+
+\end{DoxyCode}
+ bash \doxysection*{Doxygen parsisiuntimas ir instaliacija}
+
+\doxysection*{\href{https://www.doxygen.nl/download.html}{\texttt{https:\+/\+/\+www.\+doxygen.\+nl/\+download.\+html}}}
+
+\doxysection*{mac\+OS:\+ brew install doxygen}
+
+\doxysection*{Tada pridėti doxygen į PATH arba naudoti pilną path:\+ /\+usr/\+local/\+bin/\+doxygen}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\#\#\ Klaida:\ "{}pdflatex\ not\ found"{}}
+
+\end{DoxyCode}
+ bash \doxysection*{TeX Live parsisiuntimas (PDF generavimui)}
+
+\doxysection*{Windows:\+ \href{https://www.tug.org/texlive/}{\texttt{https:\+/\+/\+www.\+tug.\+org/\+texlive/\+}} (instaliuoti texlive-\/full)}
+
+\doxysection*{Linux:\+ sudo apt install texlive-\/latex-\/base texlive-\/latex-\/extra}
+
+\doxysection*{mac\+OS:\+ brew install basictex}
+
+\doxysection*{Po instaliavimo, pdflatex turėtų būti automatiškai PATH\textquotesingle{}e}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\#\#\ Klaida:\ "{}Google\ Test\ linking\ errors"{}}
+
+\end{DoxyCode}
+ bash \doxysection*{Paprastai išsprendžiama automatiškai Fetch\+Content\textquotesingle{}u CMake\textquotesingle{}e}
+
+\doxysection*{Jei problema lieka:\+}
+
+\doxysection*{1. Išvalykite build direktorijų:\+ rm -\/rf build/\+}
+
+\doxysection*{2. Iš naujo sukonfigūruokite:\+ cmake -\/B build -\/S .}
+
+\doxysection*{3. Perrankinkite:\+ cmake --build build --config Debug}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\#\#\ Klaida:\ "{}test\_programa.exe\ not\ found"{}}
+
+\end{DoxyCode}
+ bash \doxysection*{Patikrinkite, ar build sėkminga:\+}
+
+cd build ls -\/la \# Linux/\+mac\+OS dir \# Windows \doxysection*{Jei failas nėra, perrankinkite:\+ cmake --build . --config Release}
+
+\`{}\`{}\`{}
+
+\doxysubsubsection*{Dėl Build Problemų}
+
+Jei naudojate Visual Studio Code arba kitą IDE ir kyla problemos:\+
+
+
+\begin{DoxyEnumerate}
+\item Išvalykite CMake cache:\+ {\ttfamily rm -\/rf build} (arba {\ttfamily rmdir /\+s build} Windows)
+\item Iš naujo sukonfigūruokite projektą:\+ {\ttfamily cmake -\/B build -\/S . -\/G "{}Visual Studio 17 2022"{}}
+\item Perrankinkite:\+ {\ttfamily cmake -\/-\/build build -\/-\/config Release}
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+
+
+\doxysubsection*{Release Istorija}
+
+\doxysubsubsection*{v2.\+0 (Dabartinis)}
+
+
+\begin{DoxyItemize}
+\item ✅ Integruotas Google Test framework (5 papildomi testai)
+\item ✅ Doxygen dokumentacija (HTML + PDF)
+\item ✅ CMake optimizuotas su Fetch\+Content
+\item ✅ Automatiniai build scripti (build.\+sh, diegimas.\+ps1, Makefile)
+\item ✅ Visos Rule of Five metodai su {\ttfamily assert()} testais
+\item ✅ Dokumentacija versijuota į git repository
+\end{DoxyItemize}
+
+\doxysubsubsection*{v1.\+5}
+
+
+\begin{DoxyItemize}
+\item Originalūs 13 {\ttfamily assert()} testai (Rule of Five + I/\+O)
+\item Bazė klasė \doxylink{class_zmogus}{Zmogus} su \doxylink{class_studentas}{Studentas} derivacija
+\item Pagrindinė meniu programa
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+\doxysubsection*{Pagalba ir Suportas}
+
+Jei kyla klausimų:\+
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Patikrinkite dokumentaciją:\+}} {\ttfamily dokumentacija/\+html/\+index.\+html}
+\item {\bfseries{Perskaityti README sekcijas}} -\/ greitasis startas aukščiau
+\item {\bfseries{Vykdyti testus}} -\/ tai parodo, ar viskas veikia:\+ {\ttfamily ./\+test\+\_\+programa}
+\item {\bfseries{Kontaktuoti autorių}} arba \href{https://github.com/ditassimoliunas-prog/objektuzdv1/issues}{\texttt{Parašyti Issue}}
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+
+
+\doxysubsection*{Autoriaus Informacija}
+
+{\bfseries{Projekto Pavadinimas:\+}} objektuzdv1 (Objektinio Programavimo Užduotis 1) {\bfseries{Versija:\+}} v2.\+0 {\bfseries{Sukurta:\+}} 2024-\/2026 {\bfseries{Licenzija:\+}} MIT {\bfseries{Git\+Hub:\+}} \href{https://github.com/ditassimoliunas-prog/objektuzdv1}{\texttt{https:\+/\+/\+github.\+com/\+ditassimoliunas-\/prog/\+objektuzdv1}}
+
+\DoxyHorRuler{0}
+ Assert Rule of five testai:\+
+
+  
+
+Google.\+test testai:\+
+
+ 

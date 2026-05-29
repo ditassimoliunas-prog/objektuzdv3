@@ -24,7 +24,8 @@
 */
 var NAVTREE =
 [
-  [ "ObjektinisUzdavinys v2.0", "index.html", [
+  [ "ObjektinisUzdavinys v3.0", "index.html", [
+    [ "v3.0 relisas: Custom Vector&lt;T&gt; Konteineris", "index.html", null ],
     [ "Klasės", "annotated.html", [
       [ "Klasės", "annotated.html", "annotated_dup" ],
       [ "Klasės Indeksas", "classes.html", null ],

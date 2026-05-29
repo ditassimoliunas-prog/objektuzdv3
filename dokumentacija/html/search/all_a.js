@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['vector_0',['Vector',['../class_vector.html',1,'']]],
-  ['vector_1',['vector',['../classvector.html',1,'']]],
-  ['vector_3c_20int_20_3e_2',['Vector&lt; int &gt;',['../class_vector.html',1,'']]],
-  ['vectoriterator_3',['VectorIterator',['../class_vector_iterator.html',1,'']]],
-  ['vectoriterator_3c_20const_20t_20_3e_4',['VectorIterator&lt; const T &gt;',['../class_vector_iterator.html',1,'']]],
-  ['vectortest_5',['VectorTest',['../class_vector_test.html',1,'']]]
+  ['relisas_3a_20custom_20vector_20konteineris_0',['v3.0 relisas: Custom Vector&amp;lt;T&amp;gt; Konteineris',['../index.html',1,'']]],
+  ['reverse_5fiterator_1',['reverse_iterator',['../classdeque_1_1reverse__iterator.html',1,'deque&lt; T &gt;::reverse_iterator'],['../classlist_1_1reverse__iterator.html',1,'list&lt; T &gt;::reverse_iterator'],['../classstring_1_1reverse__iterator.html',1,'string::reverse_iterator'],['../classvector_1_1reverse__iterator.html',1,'vector&lt; T &gt;::reverse_iterator']]],
+  ['runtime_5ferror_2',['runtime_error',['../classruntime__error.html',1,'']]]
 ];

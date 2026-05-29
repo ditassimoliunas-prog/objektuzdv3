@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['ifstream_0',['ifstream',['../classifstream.html',1,'']]],
-  ['invalid_5fargument_1',['invalid_argument',['../classinvalid__argument.html',1,'']]],
-  ['istream_2',['istream',['../classistream.html',1,'']]],
-  ['iterator_3',['iterator',['../classdeque_1_1iterator.html',1,'deque&lt; T &gt;::iterator'],['../classlist_1_1iterator.html',1,'list&lt; T &gt;::iterator'],['../classstring_1_1iterator.html',1,'string::iterator'],['../classvector_1_1iterator.html',1,'vector&lt; T &gt;::iterator']]]
+  ['getinfo_0',['getInfo',['../class_studentas.html#a7faf789b278a884948799b7487163d6c',1,'Studentas::getInfo()'],['../class_zmogus.html#ab583744efd0a0a73c4ef890f195825ea',1,'Zmogus::getInfo() const =0']]],
+  ['getpavarde_1',['getPavarde',['../class_zmogus.html#a11ee9ac120fbb7d6a4e1f4da3a602b63',1,'Zmogus']]],
+  ['getvardas_2',['getVardas',['../class_zmogus.html#aaea44664c236e2fadf022f3821862499',1,'Zmogus']]]
 ];

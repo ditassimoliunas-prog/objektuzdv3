@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ObjektinisUzdavinys v2.0: Pagrindinis Puslapis</title>
+<title>ObjektinisUzdavinys v3.0: v3.0 relisas: Custom Vector&lt;T&gt; Konteineris</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -30,9 +30,9 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ObjektinisUzdavinys v2.0<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">ObjektinisUzdavinys v3.0<span id="projectnumber">&#160;3.0</span>
    </div>
-   <div id="projectbrief">C++ projektas su objektiniu programavimu - abstrakti klase Zmogus ir isvestine klase Studentas</div>
+   <div id="projectbrief">C++ projektas su custom Vector&lt;T&gt; konteineriu - v3.0 relisas</div>
   </td>
  </tr>
  </tbody>
@@ -115,10 +115,461 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">ObjektinisUzdavinys v2.0 Dokumentacija</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">v3.0 relisas: Custom <a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector&lt;T&gt;</a> Konteineris </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
+<h2><a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector&lt;T&gt;</a> Spartos Palyginimas su std::vector</h2>
+<h3>push_back() Operacijos Spartos Testas</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Elementų skaičius  </th><th class="markdownTableHeadNone">std::vector (s)  </th><th class="markdownTableHeadNone"><a class="el" href="class_vector.html">Vector&lt;int&gt;</a> (s)  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">1000  </td><td class="markdownTableBodyNone">0.04200 s  </td><td class="markdownTableBodyNone">0.04292 s  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">10000  </td><td class="markdownTableBodyNone">0.24998 s  </td><td class="markdownTableBodyNone">0.31445 s  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">100000  </td><td class="markdownTableBodyNone">2.31416 s  </td><td class="markdownTableBodyNone">2.91781 s  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">1000000  </td><td class="markdownTableBodyNone">23.71250 s  </td><td class="markdownTableBodyNone">28.25032 s  </td></tr>
+</table>
+<h3>Testas: std::vector vs <a class="el" href="class_vector.html">Vector&lt;int&gt;</a> push_back()</h3>
+<hr  />
+<h2><a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector&lt;T&gt;</a> API Naudojimo Pavyzdžiai</h2>
+<h3>1. Pagrindinės Operacijos - push_back() ir pop_back()</h3>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;Vector.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// push_back() - pridėjimas į galą</span></div>
+<div class="line">v.push_back(10);</div>
+<div class="line">v.push_back(20);</div>
+<div class="line">v.push_back(30);</div>
+<div class="line"> </div>
+<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;Dydis: &quot;</span> &lt;&lt; v.size() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;  <span class="comment">// Išveda: 3</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// pop_back() - šalinimas iš galo</span></div>
+<div class="line">v.pop_back();  <span class="comment">// Šalina 30</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Prieiga prie elementų</span></div>
+<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;Pirmas: &quot;</span> &lt;&lt; v[0] &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;      <span class="comment">// Išveda: 10</span></div>
+<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;Paskutnis: &quot;</span> &lt;&lt; v.back() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;  <span class="comment">// Išveda: 20</span></div>
+<div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector</a></div><div class="ttdoc">Custom dynamic array container template.</div><div class="ttdef"><b>Definition</b> <a href="_vector_8h_source.html#l00132">Vector.h:132</a></div></div>
+</div><!-- fragment --><h3>2. Konstruktoriai ir Inicijalizacija</h3>
+<div class="fragment"><div class="line"><span class="comment">// Default konstruktorius</span></div>
+<div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;double&gt;</a> v1;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Konstruktorius su dydžiu</span></div>
+<div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a> v2(5);  <span class="comment">// 5 int elementų, reikšmės 0</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Konstruktorius su dydžiu ir reikšme</span></div>
+<div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;std::string&gt;</a> v3(3, <span class="stringliteral">&quot;Sveiki&quot;</span>);  <span class="comment">// 3 &quot;Sveiki&quot; eilutės</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Copy konstruktorius</span></div>
+<div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a> v4 = v1;  <span class="comment">// Deep copy</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Move konstruktorius</span></div>
+<div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a> v5 = std::move(v2);  <span class="comment">// Ištekliai perkelti iš v2 į v5</span></div>
+</div><!-- fragment --><h3>3. Reservavimas ir Dydžio Valdymas</h3>
+<div class="fragment"><div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a> v;</div>
+<div class="line">v.reserve(100);  <span class="comment">// Išankstinis atmintis rezervavimas</span></div>
+<div class="line"> </div>
+<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;Talpa: &quot;</span> &lt;&lt; v.capacity() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;  <span class="comment">// Išveda: 100</span></div>
+<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;Dydis: &quot;</span> &lt;&lt; v.size() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;      <span class="comment">// Išveda: 0</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Nustatyti konkretų dydį</span></div>
+<div class="line">v.resize(50);  <span class="comment">// Dabar dydis = 50, nauji elementai = 0</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Sumažinti iš dalies nereikalingą atmintį</span></div>
+<div class="line">v.shrink_to_fit();  <span class="comment">// capacity() == size()</span></div>
+</div><!-- fragment --><h3>4. Iteratoriai ir Iteravimas</h3>
+<div class="fragment"><div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a> v = {1, 2, 3, 4, 5};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Range-based for ciklas</span></div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">int</span> elem : v) {</div>
+<div class="line">    std::cout &lt;&lt; elem &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;  <span class="comment">// Išveda: 1 2 3 4 5</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Tiesioginis iteratoriaus naudojimas</span></div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> it = v.begin(); it != v.end(); ++it) {</div>
+<div class="line">    std::cout &lt;&lt; *it &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Atgaline tvarka</span></div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> it = v.rbegin(); it != v.rend(); ++it) {</div>
+<div class="line">    std::cout &lt;&lt; *it &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;  <span class="comment">// Išveda: 5 4 3 2 1</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><h3>5. insert() ir erase() Operacijos</h3>
+<div class="fragment"><div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a> v = {1, 2, 3, 5};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Dėjimas į konkrečią padėtį</span></div>
+<div class="line"><span class="keyword">auto</span> it = v.begin() + 3;</div>
+<div class="line">v.insert(it, 4);  <span class="comment">// Dabar: {1, 2, 3, 4, 5}</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Šalinimas iš konkrečios padėties</span></div>
+<div class="line">v.erase(v.begin() + 1);  <span class="comment">// Šalina 2, dabar: {1, 3, 4, 5}</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Šalinimas diapazono</span></div>
+<div class="line">v.erase(v.begin() + 1, v.begin() + 3);  <span class="comment">// Šalina {3, 4}, dabar: {1, 5}</span></div>
+</div><!-- fragment --><h3>6. assign() - Perkėlimas iš Iteratoriaus Diapazono</h3>
+<div class="fragment"><div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a> v1;</div>
+<div class="line">std::vector&lt;int&gt; std_v = {10, 20, 30, 40};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Assign iš std::vector iteratorių</span></div>
+<div class="line">v1.assign(std_v.begin(), std_v.end());</div>
+<div class="line"><span class="comment">// Dabar v1 = {10, 20, 30, 40}</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Arba iš kito Vector&lt;int&gt;</span></div>
+<div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a> v2;</div>
+<div class="line">v2.assign(v1.begin(), v1.end());</div>
+<div class="line"><span class="comment">// Dabar v2 = {10, 20, 30, 40}</span></div>
+</div><!-- fragment --><h3>7. emplace_back() - Vietos Konstravimas</h3>
+<div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code hl_class" href="class_studentas.html">Studentas</a> {</div>
+<div class="line">    std::string vardas;</div>
+<div class="line">    <span class="keywordtype">int</span> vidurkis;</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_class" href="class_studentas.html">Studentas</a>(<span class="keyword">const</span> std::string&amp; v, <span class="keywordtype">int</span> m) </div>
+<div class="line">        : vardas(v), vidurkis(m) {}</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;Studentas&gt;</a> grup;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// emplace_back() - konstravimas tiesiog vektoriuje (be kopijų)</span></div>
+<div class="line">grup.emplace_back(<span class="stringliteral">&quot;Jonas&quot;</span>, 8);</div>
+<div class="line">grup.emplace_back(<span class="stringliteral">&quot;Marija&quot;</span>, 9);</div>
+<div class="line"> </div>
+<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;Pirmas studentas: &quot;</span> &lt;&lt; grup[0].vardas &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="ttc" id="aclass_studentas_html"><div class="ttname"><a href="class_studentas.html">Studentas</a></div><div class="ttdef"><b>Definition</b> <a href="_studentas_8h_source.html#l00014">Studentas.h:14</a></div></div>
+</div><!-- fragment --><h3>8. Palyginimai ir Operatoriai</h3>
+<div class="fragment"><div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a> v1 = {1, 2, 3};</div>
+<div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a> v2 = {1, 2, 3};</div>
+<div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a> v3 = {1, 2, 4};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Lygybės operatorius</span></div>
+<div class="line"><span class="keywordflow">if</span> (v1 == v2) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;v1 ir v2 lygūs\n&quot;</span>;  <span class="comment">// Spausdina</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Nelygumo operatorius</span></div>
+<div class="line"><span class="keywordflow">if</span> (v1 != v3) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;v1 ir v3 nelygūs\n&quot;</span>;  <span class="comment">// Spausdina</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Mažiau nei operatorius</span></div>
+<div class="line"><span class="keywordflow">if</span> (v1 &lt; v3) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;v1 &lt; v3 (leksikografinė sąlyga)\n&quot;</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment --><hr  />
+<h1>v2.0 relisas: Unit Testai (Google Test) ir Doxygen Dokumentacija</h1>
+<h2>Unit Testai (v2.0)</h2>
+<p>Projektas naudoja <b>hibridinę test strategiją</b>:</p><ul>
+<li><b>13 testų</b> (originalūs iš v1.5): <span class="tt">assert()</span> framework, Rule of Five ir I/O operacijos</li>
+<li><b>5 testai</b> (nauji v2.0): Google Test (<span class="tt">gtest</span>) framework, Rule of Five semantika 7 <h3>Rule of Five Metodai - <span class="tt">assert()</span> Framework (v1.5 pagrindiniai):</h3>
+</li>
+</ul>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Testas  </th><th class="markdownTableHeadNone">Metodas  </th><th class="markdownTableHeadNone">Framework  </th><th class="markdownTableHeadNone">Aprašas  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">1  </td><td class="markdownTableBodyNone">Default konstruktorius  </td><td class="markdownTableBodyNone"><span class="tt">assert()</span>  </td><td class="markdownTableBodyNone">Numatytosios reikšmės (A, BB, 0, 0.0)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">2  </td><td class="markdownTableBodyNone">Parametrizuotas konstruktorius  </td><td class="markdownTableBodyNone"><span class="tt">assert()</span>  </td><td class="markdownTableBodyNone">Duomenų inicializavimas  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">3  </td><td class="markdownTableBodyNone"><b>Copy konstruktorius</b> (Rule of Five #1)  </td><td class="markdownTableBodyNone"><span class="tt">assert()</span>  </td><td class="markdownTableBodyNone">Deep copy operacija  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">4  </td><td class="markdownTableBodyNone"><b>Copy assignment</b> (Rule of Five #2)  </td><td class="markdownTableBodyNone"><span class="tt">assert()</span>  </td><td class="markdownTableBodyNone">Duomenų kopijavimas ir self-assignment  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">5  </td><td class="markdownTableBodyNone"><b>Move konstruktorius</b> (Rule of Five #3)  </td><td class="markdownTableBodyNone"><span class="tt">assert()</span>  </td><td class="markdownTableBodyNone">Išteklių perėmimas, šaltinis tuščias  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">6  </td><td class="markdownTableBodyNone"><b>Move assignment</b> (Rule of Five #4)  </td><td class="markdownTableBodyNone"><span class="tt">assert()</span>  </td><td class="markdownTableBodyNone">Laikino objekto išteklių perėmimas  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">7  </td><td class="markdownTableBodyNone"><b>Destruktorius</b> (Rule of Five #5)  </td><td class="markdownTableBodyNone"><span class="tt">assert()</span>  </td><td class="markdownTableBodyNone">Tinkamas išteklių atlaisvinimas (RAII)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">8  </td><td class="markdownTableBodyNone">I/O Round-trip  </td><td class="markdownTableBodyNone"><span class="tt">assert()</span>  </td><td class="markdownTableBodyNone">Išvestis ir įvedimas (operator&lt;&lt; / operator&gt;&gt;)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">9-10  </td><td class="markdownTableBodyNone">Getters/Setters, vektoriaus ops  </td><td class="markdownTableBodyNone"><span class="tt">assert()</span>  </td><td class="markdownTableBodyNone">Duomenų prieiga ir pažymių operacijos  </td></tr>
+</table>
+<h3>Papildomi Google Test Testai (v2.0):</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Testas  </th><th class="markdownTableHeadNone">Pavadinimas  </th><th class="markdownTableHeadNone">Framework  </th><th class="markdownTableHeadNone">Aprašas  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">14  </td><td class="markdownTableBodyNone"><span class="tt">StudentasVectorTest.PushBackCopySemantics</span>  </td><td class="markdownTableBodyNone">Google Test  </td><td class="markdownTableBodyNone">Copy semantika su vektoriumi  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">15  </td><td class="markdownTableBodyNone"><span class="tt">StudentasVectorTest.PushBackMoveSemantics</span>  </td><td class="markdownTableBodyNone">Google Test  </td><td class="markdownTableBodyNone">Move semantika su vektoriumi  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">16  </td><td class="markdownTableBodyNone"><span class="tt">StudentasDeepCopyTest.IndependentCopies</span>  </td><td class="markdownTableBodyNone">Google Test  </td><td class="markdownTableBodyNone">Deep copy nepriklausomumas  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">17  </td><td class="markdownTableBodyNone"><span class="tt">StudentasSelfAssignmentTest.CopySafetyCheck</span>  </td><td class="markdownTableBodyNone">Google Test  </td><td class="markdownTableBodyNone">Self-assignment saugumas  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">18  </td><td class="markdownTableBodyNone"><span class="tt">StudentasOperatorTest.AssignmentChaining</span>  </td><td class="markdownTableBodyNone">Google Test  </td><td class="markdownTableBodyNone">Assignment operator chaining  </td></tr>
+</table>
+<h2>Testų Vykdymas</h2>
+<p><b>Automatinis vykdymas (rekomenduojama):</b> </p><div class="fragment"><div class="line"># Linux/macOS</div>
+<div class="line">./build.sh test</div>
+<div class="line"> </div>
+<div class="line"># Windows</div>
+<div class="line">powershell -ExecutionPolicy Bypass -File .\diegimas.ps1 -Stage &quot;test&quot;</div>
+</div><!-- fragment --><p><b>Tiesiogas vykdymas:</b> </p><div class="fragment"><div class="line"># Linux/macOS</div>
+<div class="line">cd build</div>
+<div class="line">./test_programa</div>
+<div class="line"> </div>
+<div class="line"># Windows</div>
+<div class="line">cd out\build\x64-Debug</div>
+<div class="line">.\test_programa.exe</div>
+</div><!-- fragment --><p><b>Tikėtini Rezultatai:</b> </p><div class="fragment"><div class="line">============================================================</div>
+<div class="line">  STUDENTAS KLASES VISOS METODU TESTAI (v1.5)</div>
+<div class="line">  + GOOGLE TEST PAPILDYMAS (v2.0)</div>
+<div class="line">============================================================</div>
+<div class="line"> </div>
+<div class="line">[PRIIMTAS] Default konstruktorius testai...</div>
+<div class="line">...</div>
+<div class="line">Priimti testai: 50</div>
+<div class="line">Nepriimti testai: 0</div>
+<div class="line"> </div>
+<div class="line">VISI TESTAI PRIIMTI!</div>
+<div class="line"> </div>
+<div class="line">============================================================</div>
+<div class="line">Vykdomme GOOGLE TEST testai...</div>
+<div class="line">============================================================</div>
+<div class="line"> </div>
+<div class="line">[==========] Running 5 tests from 4 test suites.</div>
+<div class="line">[  PASSED  ] 5 tests.</div>
+</div><!-- fragment --> <h2>Doxygen Dokumentacija (v2.0 nauja!)</h2>
+<p>Visa dokumentacija sugeneruojama iš source kodo Doxygen komentarų.</p>
+<p><b>Sugeneruoti/atnaujinti dokumentaciją:</b> </p><div class="fragment"><div class="line"># Automatinis būdas (rekomenduojama)</div>
+<div class="line">./build.sh docs          # Linux/macOS</div>
+<div class="line">diegimas.ps1 -Stage docs # Windows</div>
+<div class="line"> </div>
+<div class="line"># Arba tiesiogas doxygen kvietimas</div>
+<div class="line">doxygen Doxyfile</div>
+</div><!-- fragment --><p><b>Dokumentacijos Rezultatai:</b></p><ul>
+<li><span class="tt">dokumentacija/html/index.html</span> - Interaktyvi HTML dokumentacija (naršom nuorodose)</li>
+<li><span class="tt">dokumentacija/latex/refman.pdf</span> - Kompiliuota PDF dokumentacija (52 psl.)</li>
+</ul>
+<p><b>Atidarytite dokumentaciją:</b></p><ul>
+<li>HTML: Atidaryti <span class="tt">dokumentacija/html/index.html</span> naršyklėje</li>
+<li>PDF: Atidaryti <span class="tt">dokumentacija/latex/refman.pdf</span> PDF skaitykloje</li>
+</ul>
+<hr  />
+<h1>Diegimo Instrukcija</h1>
+<h2>Sistemos Reikalavimai</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Reikalavimas  </th><th class="markdownTableHeadNone">Versija  </th><th class="markdownTableHeadNone">Pastaba  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CMake  </td><td class="markdownTableBodyNone">≥ 3.10  </td><td class="markdownTableBodyNone">Build sistema  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">C++ Kompiliatorius  </td><td class="markdownTableBodyNone">C++17  </td><td class="markdownTableBodyNone">MSVC / GCC / Clang  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Google Test  </td><td class="markdownTableBodyNone">v1.14.0  </td><td class="markdownTableBodyNone">Automatiškai parsiunčiama  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Doxygen  </td><td class="markdownTableBodyNone">naujausias  </td><td class="markdownTableBodyNone">Dokumentacijai (parsisiuntimas: <a href="https://www.doxygen.nl/download.html">https://www.doxygen.nl/download.html</a>)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">TeX Live / LaTeX  </td><td class="markdownTableBodyNone">2024+  </td><td class="markdownTableBodyNone">PDF generavimui (parsisiuntimas: <a href="https://www.tug.org/texlive/">https://www.tug.org/texlive/</a>)  </td></tr>
+</table>
+<h2>1. Klonuojame repoziciją</h2>
+<div class="fragment"><div class="line">git clone https://github.com/ditassimoliunas-prog/objektuzdv1.git</div>
+<div class="line">cd objektuzdv1</div>
+<div class="line">git checkout v2.0</div>
+</div><!-- fragment --><h2>2. Automatinis diegimas (rekomenduojama)</h2>
+<p><b>Linux/macOS (su bash):</b> </p><div class="fragment"><div class="line">chmod +x build.sh</div>
+<div class="line">./build.sh all</div>
+</div><!-- fragment --><p><b>Windows (su PowerShell):</b> </p><div class="fragment"><div class="line">Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process</div>
+<div class="line">powershell -File .\diegimas.ps1 -Stage all</div>
+</div><!-- fragment --><p><b>macOS (su Makefile):</b> </p><div class="fragment"><div class="line">make all</div>
+</div><!-- fragment --><h2>3. Rankinis diegimas žingsniai</h2>
+<h3>Schritt 2a: Konfigūruojame CMake</h3>
+<p><b>Linux/macOS:</b> </p><div class="fragment"><div class="line">mkdir build</div>
+<div class="line">cd build</div>
+<div class="line">cmake -DCMAKE_BUILD_TYPE=Release ..</div>
+</div><!-- fragment --><p><b>Windows (MSVC/Ninja):</b> </p><div class="fragment"><div class="line">mkdir build</div>
+<div class="line">cd build</div>
+<div class="line">cmake -G &quot;Visual Studio 17 2022&quot; -A x64 ..</div>
+</div><!-- fragment --><h3>Schritt 2b: Kompiliuojame</h3>
+<p><b>Linux/macOS:</b> </p><div class="fragment"><div class="line">cmake --build . --config Release</div>
+</div><!-- fragment --><p><b>Windows:</b> </p><div class="fragment"><div class="line">cmake --build . --config Release</div>
+</div><!-- fragment --><h3>Schritt 2c: Vykdome testus</h3>
+<div class="fragment"><div class="line"># Linux/macOS</div>
+<div class="line">./test_programa</div>
+<div class="line"> </div>
+<div class="line"># Windows</div>
+<div class="line">.\Release\test_programa.exe</div>
+</div><!-- fragment --><h3>Schritt 2d: Sugeneruojame dokumentaciją</h3>
+<div class="fragment"><div class="line">cd ..</div>
+<div class="line">doxygen Doxyfile</div>
+</div><!-- fragment --><h2>4. Patikrinimas</h2>
+<p>Po diegimo turėtumėte matyti:</p><ul>
+<li>✅ <span class="tt">build/</span> direktorijoje kompiliuoti failai</li>
+<li>✅ <span class="tt">test_programa</span> išvykdomas su 55 praejetais testais (50 assert + 5 gtest)</li>
+<li>✅ <span class="tt">dokumentacija/html/index.html</span> - atidaryti naršyklėje</li>
+<li>✅ <span class="tt">dokumentacija/latex/refman.pdf</span> - PDF dokumentacija</li>
+</ul>
+<hr  />
+<h1>Naudojimosi Instrukcija</h1>
+<h2>Pagrindinės Programos Paleidimas</h2>
+<p><b>Linux/macOS:</b> </p><div class="fragment"><div class="line">./build/programa</div>
+</div><!-- fragment --><p><b>Windows:</b> </p><div class="fragment"><div class="line">.\build\Release\programa.exe</div>
+</div><!-- fragment --><h2>Programos Meniu</h2>
+<p>Paleidus pagrindinę programą, galima rinktis iš šių opcijų:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Opciją  </th><th class="markdownTableHeadNone">Veikimas  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">1  </td><td class="markdownTableBodyNone">Rankininis įvedimas (vardas, pavardė, 5 pažymiai, egzaminas)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">2  </td><td class="markdownTableBodyNone">Generuoti tik pažymius  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">3  </td><td class="markdownTableBodyNone">Generuoti visus duomenis automatiškai  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">4  </td><td class="markdownTableBodyNone">Nuskaityti iš failo  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">5  </td><td class="markdownTableBodyNone">Sukurti testavimo failus  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">6  </td><td class="markdownTableBodyNone">Atlikti spartos analizę  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">7  </td><td class="markdownTableBodyNone">Baigti darbą  </td></tr>
+</table>
+<h2>Build Sumos Komandos</h2>
+<p><b>Linux/macOS (build.sh):</b> </p><div class="fragment"><div class="line">./build.sh build       # Kompiliuoti</div>
+<div class="line">./build.sh test        # Vykdyti testus</div>
+<div class="line">./build.sh docs        # Sugeneruoti dokumentaciją</div>
+<div class="line">./build.sh run         # Paleisti programą</div>
+<div class="line">./build.sh clean       # Valyti build failus</div>
+<div class="line">./build.sh help        # Pagalba</div>
+</div><!-- fragment --><p><b>Windows (diegimas.ps1):</b> </p><div class="fragment"><div class="line">powershell -File .\diegimas.ps1 -Stage build  # Kompiliuoti</div>
+<div class="line">powershell -File .\diegimas.ps1 -Stage test   # Vykdyti testus</div>
+<div class="line">powershell -File .\diegimas.ps1 -Stage docs   # Sugeneruoti dokumentaciją</div>
+<div class="line">powershell -File .\diegimas.ps1 -Stage run    # Paleisti programą</div>
+<div class="line">powershell -File .\diegimas.ps1 -Stage clean  # Valyti build failus</div>
+</div><!-- fragment --><p><b>macOS (Makefile):</b> </p><div class="fragment"><div class="line">make build             # Kompiliuoti</div>
+<div class="line">make test              # Vykdyti testus</div>
+<div class="line">make docs              # Sugeneruoti dokumentaciją</div>
+<div class="line">make run               # Paleisti programą</div>
+<div class="line">make clean             # Valyti build failus</div>
+<div class="line">make info              # Pagalba</div>
+</div><!-- fragment --><h1>Projekto Failų Struktūra</h1>
+<div class="fragment"><div class="line">objektuzdv1/</div>
+<div class="line">├── CMakeLists.txt              # CMake build konfigūracija (v2.0: Google Test FetchContent)</div>
+<div class="line">├── Doxyfile                    # Doxygen konfigūracija (v2.0: HTML + PDF)</div>
+<div class="line">├── Makefile                    # Unix-style build helper (v2.0: build/test/docs/run/clean)</div>
+<div class="line">├── build.sh                    # Linux/macOS build script (v2.0: automatinis diegimas)</div>
+<div class="line">├── diegimas.ps1                # Windows PowerShell script (v2.0: automatinis diegimas)</div>
+<div class="line">├── README.md                   # Šis failas (v2.0: atnaujintas)</div>
+<div class="line">├── .gitignore                  # Git taisyklės (v2.0: dokumentacija jau versijuota)</div>
+<div class="line">│</div>
+<div class="line">├── header_files/               # Klasių aprašymai (interface)</div>
+<div class="line">│   ├── Zmogus.h               # Abstrakti bazė</div>
+<div class="line">│   ├── Studentas.h            # Studentas klasė (Rule of Five)</div>
+<div class="line">│   ├── mat_funkcijos.h</div>
+<div class="line">│   ├── menu.h</div>
+<div class="line">│   └── ...</div>
+<div class="line">│</div>
+<div class="line">├── extra_cpp/                  # Implementacijos</div>
+<div class="line">│   ├── Zmogus.cpp             # Bazės klasės implementacija</div>
+<div class="line">│   ├── Studentas.cpp          # Studentas klasės implementacija</div>
+<div class="line">│   ├── mat_funkcijos.cpp</div>
+<div class="line">│   ├── menu.cpp</div>
+<div class="line">│   └── ...</div>
+<div class="line">│</div>
+<div class="line">├── objekt1uzd.cpp             # Pagrindinė programa (main)</div>
+<div class="line">├── test_studentas.cpp         # Unit testai (v2.0: 13x assert + 5x Google Test)</div>
+<div class="line">│</div>
+<div class="line">├── dokumentacija/             # Sugeneruota Doxygen dokumentacija (v2.0: versijuota!)</div>
+<div class="line">│   ├── html/</div>
+<div class="line">│   │   └── index.html         # HTML dokumentacijos pradžia</div>
+<div class="line">│   ├── latex/</div>
+<div class="line">│   │   ├── refman.tex</div>
+<div class="line">│   │   ├── refman.pdf         # PDF dokumentacija (52 psl.)</div>
+<div class="line">│   │   └── ...</div>
+<div class="line">│   └── ...</div>
+<div class="line">│</div>
+<div class="line">├── out/build/x64-Debug/       # Visual Studio build output (git ignored)</div>
+<div class="line">├── build/                      # CMake build direktorija (git ignored)</div>
+<div class="line">│   ├── test_programa          # Kompiliuotas testas</div>
+<div class="line">│   ├── programa               # Kompiliuota pagrindinė programa</div>
+<div class="line">│   └── CMakeFiles/</div>
+<div class="line">│</div>
+<div class="line">└── .git/                       # Git repositorija</div>
+<div class="line"> </div>
+<div class="line">---</div>
+<div class="line"> </div>
+<div class="line">## Klaidų Sprendimas</div>
+<div class="line"> </div>
+<div class="line">### Klaida: &quot;CMake not found&quot;</div>
+</div><!-- fragment --><p> bash </p><h1>CMake instaliacija</h1>
+<h1>Windows: <a href="https://cmake.org/download/">https://cmake.org/download/</a> (arba choco install cmake)</h1>
+<h1>Linux: sudo apt install cmake</h1>
+<h1>macOS: brew install cmake</h1>
+<div class="fragment"><div class="line">### Klaida: &quot;C++ compiler not found&quot;</div>
+</div><!-- fragment --><p> bash </p><h1>Kompiliatoriaus instaliacija</h1>
+<h1>Windows: Instaliuoti Visual Studio Build Tools arba Visual Studio Community</h1>
+<h1>Linux: sudo apt install build-essential g++</h1>
+<h1>macOS: xcode-select &ndash;install</h1>
+<div class="fragment"><div class="line">### Klaida: &quot;Doxygen not found&quot;</div>
+</div><!-- fragment --><p> bash </p><h1>Doxygen parsisiuntimas ir instaliacija</h1>
+<h1><a href="https://www.doxygen.nl/download.html">https://www.doxygen.nl/download.html</a></h1>
+<h1>macOS: brew install doxygen</h1>
+<h1>Tada pridėti doxygen į PATH arba naudoti pilną path: /usr/local/bin/doxygen</h1>
+<div class="fragment"><div class="line">### Klaida: &quot;pdflatex not found&quot;</div>
+</div><!-- fragment --><p> bash </p><h1>TeX Live parsisiuntimas (PDF generavimui)</h1>
+<h1>Windows: <a href="https://www.tug.org/texlive/">https://www.tug.org/texlive/</a> (instaliuoti texlive-full)</h1>
+<h1>Linux: sudo apt install texlive-latex-base texlive-latex-extra</h1>
+<h1>macOS: brew install basictex</h1>
+<h1>Po instaliavimo, pdflatex turėtų būti automatiškai PATH'e</h1>
+<div class="fragment"><div class="line">### Klaida: &quot;Google Test linking errors&quot;</div>
+</div><!-- fragment --><p> bash </p><h1>Paprastai išsprendžiama automatiškai FetchContent'u CMake'e</h1>
+<h1>Jei problema lieka:</h1>
+<h1>1. Išvalykite build direktorijų: rm -rf build/</h1>
+<h1>2. Iš naujo sukonfigūruokite: cmake -B build -S .</h1>
+<h1>3. Perrankinkite: cmake &ndash;build build &ndash;config Debug</h1>
+<div class="fragment"><div class="line">### Klaida: &quot;test_programa.exe not found&quot;</div>
+</div><!-- fragment --><p> bash </p><h1>Patikrinkite, ar build sėkminga:</h1>
+<p>cd build ls -la # Linux/macOS dir # Windows </p><h1>Jei failas nėra, perrankinkite: cmake &ndash;build . &ndash;config Release</h1>
+<p>```</p>
+<h3>Dėl Build Problemų</h3>
+<p>Jei naudojate Visual Studio Code arba kitą IDE ir kyla problemos:</p>
+<ol type="1">
+<li>Išvalykite CMake cache: <span class="tt">rm -rf build</span> (arba <span class="tt">rmdir /s build</span> Windows)</li>
+<li>Iš naujo sukonfigūruokite projektą: <span class="tt">cmake -B build -S . -G "Visual Studio 17 2022"</span></li>
+<li>Perrankinkite: <span class="tt">cmake --build build --config Release</span></li>
+</ol>
+<hr  />
+<h2>Release Istorija</h2>
+<h3>v2.0 (Dabartinis)</h3>
+<ul>
+<li>✅ Integruotas Google Test framework (5 papildomi testai)</li>
+<li>✅ Doxygen dokumentacija (HTML + PDF)</li>
+<li>✅ CMake optimizuotas su FetchContent</li>
+<li>✅ Automatiniai build scripti (build.sh, diegimas.ps1, Makefile)</li>
+<li>✅ Visos Rule of Five metodai su <span class="tt">assert()</span> testais</li>
+<li>✅ Dokumentacija versijuota į git repository</li>
+</ul>
+<h3>v1.5</h3>
+<ul>
+<li>Originalūs 13 <span class="tt">assert()</span> testai (Rule of Five + I/O)</li>
+<li>Bazė klasė <a class="el" href="class_zmogus.html" title="Abstrakti bazinė klasė bendram žmogaus aprašymui.">Zmogus</a> su <a class="el" href="class_studentas.html">Studentas</a> derivacija</li>
+<li>Pagrindinė meniu programa</li>
+</ul>
+<hr  />
+<h2>Pagalba ir Suportas</h2>
+<p>Jei kyla klausimų:</p>
+<ol type="1">
+<li><b>Patikrinkite dokumentaciją:</b> <span class="tt">dokumentacija/html/index.html</span></li>
+<li><b>Perskaityti README sekcijas</b> - greitasis startas aukščiau</li>
+<li><b>Vykdyti testus</b> - tai parodo, ar viskas veikia: <span class="tt">./test_programa</span></li>
+<li><b>Kontaktuoti autorių</b> arba <a href="https://github.com/ditassimoliunas-prog/objektuzdv1/issues">Parašyti Issue</a></li>
+</ol>
+<hr  />
+<h2>Autoriaus Informacija</h2>
+<p><b>Projekto Pavadinimas:</b> objektuzdv1 (Objektinio Programavimo Užduotis 1) <b>Versija:</b> v2.0 <b>Sukurta:</b> 2024-2026 <b>Licenzija:</b> MIT <b>GitHub:</b> <a href="https://github.com/ditassimoliunas-prog/objektuzdv1">https://github.com/ditassimoliunas-prog/objektuzdv1</a></p>
+<hr  />
+<p> Assert Rule of five testai:</p>
+<p><img src="https://github.com/user-attachments/assets/378556d4-baec-41be-ba2b-20b1401cf511" alt="Screenshot 2026-05-24 171304" width="424" height="722" class="inline"/> <img src="https://github.com/user-attachments/assets/8f343a65-4895-40bf-aa0c-5da988354cf1" alt="Screenshot 2026-05-24 171330" width="835" height="689" class="inline"/> <img src="https://github.com/user-attachments/assets/452b239b-0c8e-47ff-bfcb-115a8902081d" alt="Screenshot 2026-05-24 171440" width="459" height="383" class="inline"/></p>
+<p>Google.test testai:</p>
+<p><img src="https://github.com/user-attachments/assets/dc899571-b8e1-4d06-9222-77ec201fe551" alt="image" width="560" height="484" class="inline"/> </p>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -126,7 +577,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Sugeneruota <span class="timestamp"></span> ObjektinisUzdavinys v2.0  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Sugeneruota <span class="timestamp"></span> ObjektinisUzdavinys v3.0  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

@@ -252,4 +252,10 @@
       <arglist>(std::ostream &amp;os, const Zmogus &amp;z)</arglist>
     </member>
   </compound>
+  <compound kind="page">
+    <name>index</name>
+    <title>v3.0 relisas: Custom Vector&lt;T&gt; Konteineris</title>
+    <filename>index.html</filename>
+    <docanchor file="index.html" title="v3.0 relisas: Custom Vector&lt;T&gt; Konteineris">md__r_e_a_d_m_e</docanchor>
+  </compound>
 </tagfile>
