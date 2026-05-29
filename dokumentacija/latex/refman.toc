@@ -1,243 +1,243 @@
 \@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
 \babel@toc {lithuanian}{}\relax 
-\contentsline {chapter}{\numberline {1}v3.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 relisas:\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{} Custom Vector$<$\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}T$>$ Konteineris }{1}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Hierarchijos Indeksas}{15}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Klasių hierarchija}{15}{section.2.1}%
-\contentsline {chapter}{\numberline {3}Klasės Indeksas}{17}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Klasės}{17}{section.3.1}%
-\contentsline {chapter}{\numberline {4}Failo Indeksas}{19}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Failai}{19}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Klasės Dokumentacija}{21}{chapter.5}%
-\contentsline {section}{\numberline {5.1}deque$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}const\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{21}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Smulkus aprašymas}{21}{subsection.5.1.1}%
-\contentsline {section}{\numberline {5.2}list$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}const\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{21}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Smulkus aprašymas}{21}{subsection.5.2.1}%
-\contentsline {section}{\numberline {5.3}string::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}const\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{21}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Smulkus aprašymas}{21}{subsection.5.3.1}%
-\contentsline {section}{\numberline {5.4}vector$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}const\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{21}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Smulkus aprašymas}{21}{subsection.5.4.1}%
-\contentsline {section}{\numberline {5.5}deque$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}const\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reverse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{21}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Smulkus aprašymas}{22}{subsection.5.5.1}%
-\contentsline {section}{\numberline {5.6}list$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}const\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reverse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{22}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Smulkus aprašymas}{22}{subsection.5.6.1}%
-\contentsline {section}{\numberline {5.7}string::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}const\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reverse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{22}{section.5.7}%
-\contentsline {subsection}{\numberline {5.7.1}Smulkus aprašymas}{22}{subsection.5.7.1}%
-\contentsline {section}{\numberline {5.8}vector$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}const\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reverse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{22}{section.5.8}%
-\contentsline {subsection}{\numberline {5.8.1}Smulkus aprašymas}{22}{subsection.5.8.1}%
-\contentsline {section}{\numberline {5.9}deque$<$ T $>$ Klasė Šablonas}{22}{section.5.9}%
-\contentsline {subsection}{\numberline {5.9.1}Smulkus aprašymas}{23}{subsection.5.9.1}%
-\contentsline {section}{\numberline {5.10}exception Klasė}{23}{section.5.10}%
-\contentsline {subsection}{\numberline {5.10.1}Smulkus aprašymas}{23}{subsection.5.10.1}%
-\contentsline {section}{\numberline {5.11}ifstream Klasė}{23}{section.5.11}%
-\contentsline {subsection}{\numberline {5.11.1}Smulkus aprašymas}{23}{subsection.5.11.1}%
-\contentsline {section}{\numberline {5.12}invalid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}argument Klasė}{23}{section.5.12}%
-\contentsline {subsection}{\numberline {5.12.1}Smulkus aprašymas}{23}{subsection.5.12.1}%
-\contentsline {section}{\numberline {5.13}istream Klasė}{23}{section.5.13}%
-\contentsline {subsection}{\numberline {5.13.1}Smulkus aprašymas}{23}{subsection.5.13.1}%
-\contentsline {section}{\numberline {5.14}deque$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{23}{section.5.14}%
-\contentsline {subsection}{\numberline {5.14.1}Smulkus aprašymas}{23}{subsection.5.14.1}%
-\contentsline {section}{\numberline {5.15}list$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{23}{section.5.15}%
-\contentsline {subsection}{\numberline {5.15.1}Smulkus aprašymas}{24}{subsection.5.15.1}%
-\contentsline {section}{\numberline {5.16}string::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{24}{section.5.16}%
-\contentsline {subsection}{\numberline {5.16.1}Smulkus aprašymas}{24}{subsection.5.16.1}%
-\contentsline {section}{\numberline {5.17}vector$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{24}{section.5.17}%
-\contentsline {subsection}{\numberline {5.17.1}Smulkus aprašymas}{24}{subsection.5.17.1}%
-\contentsline {section}{\numberline {5.18}list$<$ T $>$ Klasė Šablonas}{24}{section.5.18}%
-\contentsline {subsection}{\numberline {5.18.1}Smulkus aprašymas}{24}{subsection.5.18.1}%
-\contentsline {section}{\numberline {5.19}ofstream Klasė}{24}{section.5.19}%
-\contentsline {subsection}{\numberline {5.19.1}Smulkus aprašymas}{25}{subsection.5.19.1}%
-\contentsline {section}{\numberline {5.20}ostream Klasė}{25}{section.5.20}%
-\contentsline {subsection}{\numberline {5.20.1}Smulkus aprašymas}{25}{subsection.5.20.1}%
-\contentsline {section}{\numberline {5.21}deque$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reverse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{25}{section.5.21}%
-\contentsline {subsection}{\numberline {5.21.1}Smulkus aprašymas}{25}{subsection.5.21.1}%
-\contentsline {section}{\numberline {5.22}list$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reverse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{25}{section.5.22}%
-\contentsline {subsection}{\numberline {5.22.1}Smulkus aprašymas}{25}{subsection.5.22.1}%
-\contentsline {section}{\numberline {5.23}string::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reverse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{25}{section.5.23}%
-\contentsline {subsection}{\numberline {5.23.1}Smulkus aprašymas}{25}{subsection.5.23.1}%
-\contentsline {section}{\numberline {5.24}vector$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reverse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{25}{section.5.24}%
-\contentsline {subsection}{\numberline {5.24.1}Smulkus aprašymas}{25}{subsection.5.24.1}%
-\contentsline {section}{\numberline {5.25}runtime\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}error Klasė}{25}{section.5.25}%
-\contentsline {subsection}{\numberline {5.25.1}Smulkus aprašymas}{26}{subsection.5.25.1}%
-\contentsline {section}{\numberline {5.26}string Klasė}{26}{section.5.26}%
-\contentsline {subsection}{\numberline {5.26.1}Smulkus aprašymas}{26}{subsection.5.26.1}%
-\contentsline {section}{\numberline {5.27}stringstream Klasė}{26}{section.5.27}%
-\contentsline {subsection}{\numberline {5.27.1}Smulkus aprašymas}{26}{subsection.5.27.1}%
-\contentsline {section}{\numberline {5.28}Studentas Klasė}{26}{section.5.28}%
-\contentsline {subsection}{\numberline {5.28.1}Smulkus aprašymas}{27}{subsection.5.28.1}%
-\contentsline {subsection}{\numberline {5.28.2}Konstruktoriaus ir Destruktoriaus Dokumentacija}{27}{subsection.5.28.2}%
-\contentsline {subsubsection}{\numberline {5.28.2.1}Studentas()\hspace {0.1cm}{\footnotesize \ttfamily [1/5]}}{27}{subsubsection.5.28.2.1}%
-\contentsline {subsubsection}{\numberline {5.28.2.2}Studentas()\hspace {0.1cm}{\footnotesize \ttfamily [2/5]}}{28}{subsubsection.5.28.2.2}%
-\contentsline {subsubsection}{\numberline {5.28.2.3}Studentas()\hspace {0.1cm}{\footnotesize \ttfamily [3/5]}}{28}{subsubsection.5.28.2.3}%
-\contentsline {subsubsection}{\numberline {5.28.2.4}$\sim $Studentas()}{28}{subsubsection.5.28.2.4}%
-\contentsline {subsubsection}{\numberline {5.28.2.5}Studentas()\hspace {0.1cm}{\footnotesize \ttfamily [4/5]}}{28}{subsubsection.5.28.2.5}%
-\contentsline {subsubsection}{\numberline {5.28.2.6}Studentas()\hspace {0.1cm}{\footnotesize \ttfamily [5/5]}}{28}{subsubsection.5.28.2.6}%
-\contentsline {subsection}{\numberline {5.28.3}Metodų Dokumentacija}{28}{subsection.5.28.3}%
-\contentsline {subsubsection}{\numberline {5.28.3.1}addPaz()}{28}{subsubsection.5.28.3.1}%
-\contentsline {subsubsection}{\numberline {5.28.3.2}clearPaz()}{28}{subsubsection.5.28.3.2}%
-\contentsline {subsubsection}{\numberline {5.28.3.3}getEgz()}{28}{subsubsection.5.28.3.3}%
-\contentsline {subsubsection}{\numberline {5.28.3.4}getInfo()}{28}{subsubsection.5.28.3.4}%
-\contentsline {subsubsection}{\numberline {5.28.3.5}getMed()}{28}{subsubsection.5.28.3.5}%
-\contentsline {subsubsection}{\numberline {5.28.3.6}getPaz()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{29}{subsubsection.5.28.3.6}%
-\contentsline {subsubsection}{\numberline {5.28.3.7}getPaz()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{29}{subsubsection.5.28.3.7}%
-\contentsline {subsubsection}{\numberline {5.28.3.8}getRez()}{29}{subsubsection.5.28.3.8}%
-\contentsline {subsubsection}{\numberline {5.28.3.9}isPazEmpty()}{29}{subsubsection.5.28.3.9}%
-\contentsline {subsubsection}{\numberline {5.28.3.10}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{29}{subsubsection.5.28.3.10}%
-\contentsline {subsubsection}{\numberline {5.28.3.11}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{29}{subsubsection.5.28.3.11}%
-\contentsline {subsubsection}{\numberline {5.28.3.12}readStudent()}{29}{subsubsection.5.28.3.12}%
-\contentsline {subsubsection}{\numberline {5.28.3.13}reservePaz()}{29}{subsubsection.5.28.3.13}%
-\contentsline {subsubsection}{\numberline {5.28.3.14}setEgz()}{29}{subsubsection.5.28.3.14}%
-\contentsline {subsubsection}{\numberline {5.28.3.15}setMed()}{29}{subsubsection.5.28.3.15}%
-\contentsline {subsubsection}{\numberline {5.28.3.16}setPaz()}{29}{subsubsection.5.28.3.16}%
-\contentsline {subsubsection}{\numberline {5.28.3.17}setRez()}{30}{subsubsection.5.28.3.17}%
-\contentsline {subsection}{\numberline {5.28.4}Draugiškų Ir Susijusių Funkcijų Dokumentacija}{30}{subsection.5.28.4}%
-\contentsline {subsubsection}{\numberline {5.28.4.1}operator$<$$<$}{30}{subsubsection.5.28.4.1}%
-\contentsline {subsubsection}{\numberline {5.28.4.2}operator$>$$>$}{30}{subsubsection.5.28.4.2}%
-\contentsline {section}{\numberline {5.29}Vector$<$ T $>$ Klasė Šablonas}{30}{section.5.29}%
-\contentsline {subsection}{\numberline {5.29.1}Smulkus aprašymas}{32}{subsection.5.29.1}%
-\contentsline {subsection}{\numberline {5.29.2}Tipo Aprašymo Dokumentacija}{32}{subsection.5.29.2}%
-\contentsline {subsubsection}{\numberline {5.29.2.1}const\_iterator}{32}{subsubsection.5.29.2.1}%
-\contentsline {subsubsection}{\numberline {5.29.2.2}const\_reverse\_iterator}{32}{subsubsection.5.29.2.2}%
-\contentsline {subsubsection}{\numberline {5.29.2.3}iterator}{33}{subsubsection.5.29.2.3}%
-\contentsline {subsubsection}{\numberline {5.29.2.4}reverse\_iterator}{33}{subsubsection.5.29.2.4}%
-\contentsline {subsection}{\numberline {5.29.3}Konstruktoriaus ir Destruktoriaus Dokumentacija}{33}{subsection.5.29.3}%
-\contentsline {subsubsection}{\numberline {5.29.3.1}Vector()\hspace {0.1cm}{\footnotesize \ttfamily [1/6]}}{33}{subsubsection.5.29.3.1}%
-\contentsline {subsubsection}{\numberline {5.29.3.2}Vector()\hspace {0.1cm}{\footnotesize \ttfamily [2/6]}}{33}{subsubsection.5.29.3.2}%
-\contentsline {subsubsection}{\numberline {5.29.3.3}Vector()\hspace {0.1cm}{\footnotesize \ttfamily [3/6]}}{33}{subsubsection.5.29.3.3}%
-\contentsline {subsubsection}{\numberline {5.29.3.4}Vector()\hspace {0.1cm}{\footnotesize \ttfamily [4/6]}}{33}{subsubsection.5.29.3.4}%
-\contentsline {subsubsection}{\numberline {5.29.3.5}$\sim $Vector()}{33}{subsubsection.5.29.3.5}%
-\contentsline {subsubsection}{\numberline {5.29.3.6}Vector()\hspace {0.1cm}{\footnotesize \ttfamily [5/6]}}{33}{subsubsection.5.29.3.6}%
-\contentsline {subsubsection}{\numberline {5.29.3.7}Vector()\hspace {0.1cm}{\footnotesize \ttfamily [6/6]}}{33}{subsubsection.5.29.3.7}%
-\contentsline {subsection}{\numberline {5.29.4}Metodų Dokumentacija}{34}{subsection.5.29.4}%
-\contentsline {subsubsection}{\numberline {5.29.4.1}assign()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{34}{subsubsection.5.29.4.1}%
-\contentsline {subsubsection}{\numberline {5.29.4.2}assign()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{34}{subsubsection.5.29.4.2}%
-\contentsline {subsubsection}{\numberline {5.29.4.3}at()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{34}{subsubsection.5.29.4.3}%
-\contentsline {subsubsection}{\numberline {5.29.4.4}at()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{34}{subsubsection.5.29.4.4}%
-\contentsline {subsubsection}{\numberline {5.29.4.5}back()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{34}{subsubsection.5.29.4.5}%
-\contentsline {subsubsection}{\numberline {5.29.4.6}back()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{34}{subsubsection.5.29.4.6}%
-\contentsline {subsubsection}{\numberline {5.29.4.7}begin()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{34}{subsubsection.5.29.4.7}%
-\contentsline {subsubsection}{\numberline {5.29.4.8}begin()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{34}{subsubsection.5.29.4.8}%
-\contentsline {subsubsection}{\numberline {5.29.4.9}capacity()}{35}{subsubsection.5.29.4.9}%
-\contentsline {subsubsection}{\numberline {5.29.4.10}cbegin()}{35}{subsubsection.5.29.4.10}%
-\contentsline {subsubsection}{\numberline {5.29.4.11}cend()}{35}{subsubsection.5.29.4.11}%
-\contentsline {subsubsection}{\numberline {5.29.4.12}clear()}{35}{subsubsection.5.29.4.12}%
-\contentsline {subsubsection}{\numberline {5.29.4.13}crbegin()}{35}{subsubsection.5.29.4.13}%
-\contentsline {subsubsection}{\numberline {5.29.4.14}crend()}{35}{subsubsection.5.29.4.14}%
-\contentsline {subsubsection}{\numberline {5.29.4.15}data()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{35}{subsubsection.5.29.4.15}%
-\contentsline {subsubsection}{\numberline {5.29.4.16}data()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{35}{subsubsection.5.29.4.16}%
-\contentsline {subsubsection}{\numberline {5.29.4.17}emplace()}{35}{subsubsection.5.29.4.17}%
-\contentsline {subsubsection}{\numberline {5.29.4.18}emplace\_back()}{36}{subsubsection.5.29.4.18}%
-\contentsline {subsubsection}{\numberline {5.29.4.19}empty()}{36}{subsubsection.5.29.4.19}%
-\contentsline {subsubsection}{\numberline {5.29.4.20}end()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{36}{subsubsection.5.29.4.20}%
-\contentsline {subsubsection}{\numberline {5.29.4.21}end()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{36}{subsubsection.5.29.4.21}%
-\contentsline {subsubsection}{\numberline {5.29.4.22}erase()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{36}{subsubsection.5.29.4.22}%
-\contentsline {subsubsection}{\numberline {5.29.4.23}erase()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{36}{subsubsection.5.29.4.23}%
-\contentsline {subsubsection}{\numberline {5.29.4.24}erase()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{36}{subsubsection.5.29.4.24}%
-\contentsline {subsubsection}{\numberline {5.29.4.25}erase()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{36}{subsubsection.5.29.4.25}%
-\contentsline {subsubsection}{\numberline {5.29.4.26}front()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{36}{subsubsection.5.29.4.26}%
-\contentsline {subsubsection}{\numberline {5.29.4.27}front()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{37}{subsubsection.5.29.4.27}%
-\contentsline {subsubsection}{\numberline {5.29.4.28}get\_reallocation\_count()}{37}{subsubsection.5.29.4.28}%
-\contentsline {subsubsection}{\numberline {5.29.4.29}insert()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{37}{subsubsection.5.29.4.29}%
-\contentsline {subsubsection}{\numberline {5.29.4.30}insert()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{37}{subsubsection.5.29.4.30}%
-\contentsline {subsubsection}{\numberline {5.29.4.31}insert()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{37}{subsubsection.5.29.4.31}%
-\contentsline {subsubsection}{\numberline {5.29.4.32}insert()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{37}{subsubsection.5.29.4.32}%
-\contentsline {subsubsection}{\numberline {5.29.4.33}max\_size()}{37}{subsubsection.5.29.4.33}%
-\contentsline {subsubsection}{\numberline {5.29.4.34}operator"!=()}{38}{subsubsection.5.29.4.34}%
-\contentsline {subsubsection}{\numberline {5.29.4.35}operator$<$()}{38}{subsubsection.5.29.4.35}%
-\contentsline {subsubsection}{\numberline {5.29.4.36}operator$<$=()}{38}{subsubsection.5.29.4.36}%
-\contentsline {subsubsection}{\numberline {5.29.4.37}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{38}{subsubsection.5.29.4.37}%
-\contentsline {subsubsection}{\numberline {5.29.4.38}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{38}{subsubsection.5.29.4.38}%
-\contentsline {subsubsection}{\numberline {5.29.4.39}operator==()}{38}{subsubsection.5.29.4.39}%
-\contentsline {subsubsection}{\numberline {5.29.4.40}operator$>$()}{38}{subsubsection.5.29.4.40}%
-\contentsline {subsubsection}{\numberline {5.29.4.41}operator$>$=()}{38}{subsubsection.5.29.4.41}%
-\contentsline {subsubsection}{\numberline {5.29.4.42}operator[]()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{39}{subsubsection.5.29.4.42}%
-\contentsline {subsubsection}{\numberline {5.29.4.43}operator[]()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{39}{subsubsection.5.29.4.43}%
-\contentsline {subsubsection}{\numberline {5.29.4.44}pop\_back()}{39}{subsubsection.5.29.4.44}%
-\contentsline {subsubsection}{\numberline {5.29.4.45}push\_back()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{39}{subsubsection.5.29.4.45}%
-\contentsline {subsubsection}{\numberline {5.29.4.46}push\_back()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{39}{subsubsection.5.29.4.46}%
-\contentsline {subsubsection}{\numberline {5.29.4.47}rbegin()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{39}{subsubsection.5.29.4.47}%
-\contentsline {subsubsection}{\numberline {5.29.4.48}rbegin()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{39}{subsubsection.5.29.4.48}%
-\contentsline {subsubsection}{\numberline {5.29.4.49}rend()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{39}{subsubsection.5.29.4.49}%
-\contentsline {subsubsection}{\numberline {5.29.4.50}rend()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{39}{subsubsection.5.29.4.50}%
-\contentsline {subsubsection}{\numberline {5.29.4.51}reserve()}{40}{subsubsection.5.29.4.51}%
-\contentsline {subsubsection}{\numberline {5.29.4.52}reset\_reallocation\_count()}{40}{subsubsection.5.29.4.52}%
-\contentsline {subsubsection}{\numberline {5.29.4.53}resize()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{40}{subsubsection.5.29.4.53}%
-\contentsline {subsubsection}{\numberline {5.29.4.54}resize()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{40}{subsubsection.5.29.4.54}%
-\contentsline {subsubsection}{\numberline {5.29.4.55}shrink\_to\_fit()}{40}{subsubsection.5.29.4.55}%
-\contentsline {subsubsection}{\numberline {5.29.4.56}size()}{40}{subsubsection.5.29.4.56}%
-\contentsline {subsubsection}{\numberline {5.29.4.57}swap()}{40}{subsubsection.5.29.4.57}%
-\contentsline {section}{\numberline {5.30}vector$<$ T $>$ Klasė Šablonas}{40}{section.5.30}%
-\contentsline {subsection}{\numberline {5.30.1}Smulkus aprašymas}{41}{subsection.5.30.1}%
-\contentsline {section}{\numberline {5.31}Vector\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Iterator$<$ T $>$ Klasė Šablonas}{41}{section.5.31}%
-\contentsline {subsection}{\numberline {5.31.1}Smulkus aprašymas}{42}{subsection.5.31.1}%
-\contentsline {subsection}{\numberline {5.31.2}Tipo Aprašymo Dokumentacija}{42}{subsection.5.31.2}%
-\contentsline {subsubsection}{\numberline {5.31.2.1}difference\_type}{42}{subsubsection.5.31.2.1}%
-\contentsline {subsubsection}{\numberline {5.31.2.2}iterator\_category}{42}{subsubsection.5.31.2.2}%
-\contentsline {subsubsection}{\numberline {5.31.2.3}pointer}{42}{subsubsection.5.31.2.3}%
-\contentsline {subsubsection}{\numberline {5.31.2.4}reference}{42}{subsubsection.5.31.2.4}%
-\contentsline {subsubsection}{\numberline {5.31.2.5}value\_type}{42}{subsubsection.5.31.2.5}%
-\contentsline {subsection}{\numberline {5.31.3}Konstruktoriaus ir Destruktoriaus Dokumentacija}{42}{subsection.5.31.3}%
-\contentsline {subsubsection}{\numberline {5.31.3.1}VectorIterator()}{42}{subsubsection.5.31.3.1}%
-\contentsline {subsection}{\numberline {5.31.4}Metodų Dokumentacija}{43}{subsection.5.31.4}%
-\contentsline {subsubsection}{\numberline {5.31.4.1}operator"!=()}{43}{subsubsection.5.31.4.1}%
-\contentsline {subsubsection}{\numberline {5.31.4.2}operator$\ast $()}{43}{subsubsection.5.31.4.2}%
-\contentsline {subsubsection}{\numberline {5.31.4.3}operator+()}{43}{subsubsection.5.31.4.3}%
-\contentsline {subsubsection}{\numberline {5.31.4.4}operator++()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{43}{subsubsection.5.31.4.4}%
-\contentsline {subsubsection}{\numberline {5.31.4.5}operator++()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{43}{subsubsection.5.31.4.5}%
-\contentsline {subsubsection}{\numberline {5.31.4.6}operator+=()}{43}{subsubsection.5.31.4.6}%
-\contentsline {subsubsection}{\numberline {5.31.4.7}operator-\/()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{43}{subsubsection.5.31.4.7}%
-\contentsline {subsubsection}{\numberline {5.31.4.8}operator-\/()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{43}{subsubsection.5.31.4.8}%
-\contentsline {subsubsection}{\numberline {5.31.4.9}operator-\/-\/()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{44}{subsubsection.5.31.4.9}%
-\contentsline {subsubsection}{\numberline {5.31.4.10}operator-\/-\/()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{44}{subsubsection.5.31.4.10}%
-\contentsline {subsubsection}{\numberline {5.31.4.11}operator-\/=()}{44}{subsubsection.5.31.4.11}%
-\contentsline {subsubsection}{\numberline {5.31.4.12}operator-\/$>$()}{44}{subsubsection.5.31.4.12}%
-\contentsline {subsubsection}{\numberline {5.31.4.13}operator$<$()}{44}{subsubsection.5.31.4.13}%
-\contentsline {subsubsection}{\numberline {5.31.4.14}operator$<$=()}{44}{subsubsection.5.31.4.14}%
-\contentsline {subsubsection}{\numberline {5.31.4.15}operator==()}{44}{subsubsection.5.31.4.15}%
-\contentsline {subsubsection}{\numberline {5.31.4.16}operator$>$()}{44}{subsubsection.5.31.4.16}%
-\contentsline {subsubsection}{\numberline {5.31.4.17}operator$>$=()}{44}{subsubsection.5.31.4.17}%
-\contentsline {subsubsection}{\numberline {5.31.4.18}operator[]()}{45}{subsubsection.5.31.4.18}%
-\contentsline {section}{\numberline {5.32}Vector\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test Klasė}{45}{section.5.32}%
-\contentsline {subsection}{\numberline {5.32.1}Smulkus aprašymas}{45}{subsection.5.32.1}%
-\contentsline {subsection}{\numberline {5.32.2}Atributų Dokumentacija}{45}{subsection.5.32.2}%
-\contentsline {subsubsection}{\numberline {5.32.2.1}v}{45}{subsubsection.5.32.2.1}%
-\contentsline {section}{\numberline {5.33}Zmogus Klasė}{45}{section.5.33}%
-\contentsline {subsection}{\numberline {5.33.1}Smulkus aprašymas}{46}{subsection.5.33.1}%
-\contentsline {subsection}{\numberline {5.33.2}Konstruktoriaus ir Destruktoriaus Dokumentacija}{46}{subsection.5.33.2}%
-\contentsline {subsubsection}{\numberline {5.33.2.1}Zmogus()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{46}{subsubsection.5.33.2.1}%
-\contentsline {subsubsection}{\numberline {5.33.2.2}Zmogus()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{46}{subsubsection.5.33.2.2}%
-\contentsline {subsubsection}{\numberline {5.33.2.3}$\sim $Zmogus()}{47}{subsubsection.5.33.2.3}%
-\contentsline {subsection}{\numberline {5.33.3}Metodų Dokumentacija}{47}{subsection.5.33.3}%
-\contentsline {subsubsection}{\numberline {5.33.3.1}getInfo()}{47}{subsubsection.5.33.3.1}%
-\contentsline {subsubsection}{\numberline {5.33.3.2}getPavarde()}{47}{subsubsection.5.33.3.2}%
-\contentsline {subsubsection}{\numberline {5.33.3.3}getVardas()}{47}{subsubsection.5.33.3.3}%
-\contentsline {subsubsection}{\numberline {5.33.3.4}setPavarde()}{47}{subsubsection.5.33.3.4}%
-\contentsline {subsubsection}{\numberline {5.33.3.5}setVardas()}{47}{subsubsection.5.33.3.5}%
-\contentsline {subsection}{\numberline {5.33.4}Draugiškų Ir Susijusių Funkcijų Dokumentacija}{47}{subsection.5.33.4}%
-\contentsline {subsubsection}{\numberline {5.33.4.1}operator$<$$<$}{47}{subsubsection.5.33.4.1}%
-\contentsline {subsection}{\numberline {5.33.5}Atributų Dokumentacija}{48}{subsection.5.33.5}%
-\contentsline {subsubsection}{\numberline {5.33.5.1}pavarde\_}{48}{subsubsection.5.33.5.1}%
-\contentsline {subsubsection}{\numberline {5.33.5.2}vardas\_}{48}{subsubsection.5.33.5.2}%
-\contentsline {chapter}{\numberline {6}Failo Dokumentacija}{49}{chapter.6}%
-\contentsline {section}{\numberline {6.1}duomenu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}valdymas.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{49}{section.6.1}%
-\contentsline {section}{\numberline {6.2}input.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{54}{section.6.2}%
-\contentsline {section}{\numberline {6.3}mat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}funkcijos.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{55}{section.6.3}%
-\contentsline {section}{\numberline {6.4}menu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{56}{section.6.4}%
-\contentsline {section}{\numberline {6.5}output.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{58}{section.6.5}%
-\contentsline {section}{\numberline {6.6}reallocation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}comparison.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{59}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Studentas.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{59}{section.6.7}%
-\contentsline {section}{\numberline {6.8}testavimas.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{61}{section.6.8}%
-\contentsline {section}{\numberline {6.9}Zmogus.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{66}{section.6.9}%
-\contentsline {section}{\numberline {6.10}duomenu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}valdymas.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{67}{section.6.10}%
-\contentsline {section}{\numberline {6.11}input.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{67}{section.6.11}%
-\contentsline {section}{\numberline {6.12}Mat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}funkcijos.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{67}{section.6.12}%
-\contentsline {section}{\numberline {6.13}menu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{67}{section.6.13}%
-\contentsline {section}{\numberline {6.14}output.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{67}{section.6.14}%
-\contentsline {section}{\numberline {6.15}Studentas.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{68}{section.6.15}%
-\contentsline {section}{\numberline {6.16}testavimas.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{69}{section.6.16}%
-\contentsline {section}{\numberline {6.17}Vector.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{69}{section.6.17}%
-\contentsline {section}{\numberline {6.18}Zmogus.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{77}{section.6.18}%
-\contentsline {section}{\numberline {6.19}objekt1uzd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{78}{section.6.19}%
-\contentsline {section}{\numberline {6.20}test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}studentas.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{78}{section.6.20}%
-\contentsline {chapter}{\numberline {7}Pavyzdžiai}{89}{chapter.7}%
-\contentsline {section}{\numberline {7.1}C:\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ditas/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}source/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}repos/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ditassimoliunas-\/prog/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}objektuzdv3/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}header\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}files/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Vector.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{89}{section.7.1}%
-\contentsline {chapter}{Rodykl\.e}{99}{section*.100}%
+\contentsline {chapter}{\numberline {1}📦 Objektinis\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Uzdavinys v3.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 -\/ Setup ir Naudojimosi Instrukcija }{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Hierarchijos Indeksas}{17}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Klasių hierarchija}{17}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Klasės Indeksas}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Klasės}{19}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Failo Indeksas}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Failai}{21}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Klasės Dokumentacija}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}deque$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}const\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{23}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Smulkus aprašymas}{23}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}list$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}const\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{23}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Smulkus aprašymas}{23}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3}string::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}const\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{23}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Smulkus aprašymas}{23}{subsection.5.3.1}%
+\contentsline {section}{\numberline {5.4}vector$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}const\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{23}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Smulkus aprašymas}{23}{subsection.5.4.1}%
+\contentsline {section}{\numberline {5.5}deque$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}const\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reverse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{23}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Smulkus aprašymas}{24}{subsection.5.5.1}%
+\contentsline {section}{\numberline {5.6}list$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}const\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reverse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{24}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Smulkus aprašymas}{24}{subsection.5.6.1}%
+\contentsline {section}{\numberline {5.7}string::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}const\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reverse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{24}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Smulkus aprašymas}{24}{subsection.5.7.1}%
+\contentsline {section}{\numberline {5.8}vector$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}const\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reverse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{24}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Smulkus aprašymas}{24}{subsection.5.8.1}%
+\contentsline {section}{\numberline {5.9}deque$<$ T $>$ Klasė Šablonas}{24}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Smulkus aprašymas}{25}{subsection.5.9.1}%
+\contentsline {section}{\numberline {5.10}exception Klasė}{25}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Smulkus aprašymas}{25}{subsection.5.10.1}%
+\contentsline {section}{\numberline {5.11}ifstream Klasė}{25}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Smulkus aprašymas}{25}{subsection.5.11.1}%
+\contentsline {section}{\numberline {5.12}invalid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}argument Klasė}{25}{section.5.12}%
+\contentsline {subsection}{\numberline {5.12.1}Smulkus aprašymas}{25}{subsection.5.12.1}%
+\contentsline {section}{\numberline {5.13}istream Klasė}{25}{section.5.13}%
+\contentsline {subsection}{\numberline {5.13.1}Smulkus aprašymas}{25}{subsection.5.13.1}%
+\contentsline {section}{\numberline {5.14}deque$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{25}{section.5.14}%
+\contentsline {subsection}{\numberline {5.14.1}Smulkus aprašymas}{25}{subsection.5.14.1}%
+\contentsline {section}{\numberline {5.15}list$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{25}{section.5.15}%
+\contentsline {subsection}{\numberline {5.15.1}Smulkus aprašymas}{26}{subsection.5.15.1}%
+\contentsline {section}{\numberline {5.16}string::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{26}{section.5.16}%
+\contentsline {subsection}{\numberline {5.16.1}Smulkus aprašymas}{26}{subsection.5.16.1}%
+\contentsline {section}{\numberline {5.17}vector$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{26}{section.5.17}%
+\contentsline {subsection}{\numberline {5.17.1}Smulkus aprašymas}{26}{subsection.5.17.1}%
+\contentsline {section}{\numberline {5.18}list$<$ T $>$ Klasė Šablonas}{26}{section.5.18}%
+\contentsline {subsection}{\numberline {5.18.1}Smulkus aprašymas}{26}{subsection.5.18.1}%
+\contentsline {section}{\numberline {5.19}ofstream Klasė}{26}{section.5.19}%
+\contentsline {subsection}{\numberline {5.19.1}Smulkus aprašymas}{27}{subsection.5.19.1}%
+\contentsline {section}{\numberline {5.20}ostream Klasė}{27}{section.5.20}%
+\contentsline {subsection}{\numberline {5.20.1}Smulkus aprašymas}{27}{subsection.5.20.1}%
+\contentsline {section}{\numberline {5.21}deque$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reverse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{27}{section.5.21}%
+\contentsline {subsection}{\numberline {5.21.1}Smulkus aprašymas}{27}{subsection.5.21.1}%
+\contentsline {section}{\numberline {5.22}list$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reverse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{27}{section.5.22}%
+\contentsline {subsection}{\numberline {5.22.1}Smulkus aprašymas}{27}{subsection.5.22.1}%
+\contentsline {section}{\numberline {5.23}string::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reverse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{27}{section.5.23}%
+\contentsline {subsection}{\numberline {5.23.1}Smulkus aprašymas}{27}{subsection.5.23.1}%
+\contentsline {section}{\numberline {5.24}vector$<$ T $>$::\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reverse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Klasė}{27}{section.5.24}%
+\contentsline {subsection}{\numberline {5.24.1}Smulkus aprašymas}{27}{subsection.5.24.1}%
+\contentsline {section}{\numberline {5.25}runtime\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}error Klasė}{27}{section.5.25}%
+\contentsline {subsection}{\numberline {5.25.1}Smulkus aprašymas}{28}{subsection.5.25.1}%
+\contentsline {section}{\numberline {5.26}string Klasė}{28}{section.5.26}%
+\contentsline {subsection}{\numberline {5.26.1}Smulkus aprašymas}{28}{subsection.5.26.1}%
+\contentsline {section}{\numberline {5.27}stringstream Klasė}{28}{section.5.27}%
+\contentsline {subsection}{\numberline {5.27.1}Smulkus aprašymas}{28}{subsection.5.27.1}%
+\contentsline {section}{\numberline {5.28}Studentas Klasė}{28}{section.5.28}%
+\contentsline {subsection}{\numberline {5.28.1}Smulkus aprašymas}{29}{subsection.5.28.1}%
+\contentsline {subsection}{\numberline {5.28.2}Konstruktoriaus ir Destruktoriaus Dokumentacija}{29}{subsection.5.28.2}%
+\contentsline {subsubsection}{\numberline {5.28.2.1}Studentas()\hspace {0.1cm}{\footnotesize \ttfamily [1/5]}}{29}{subsubsection.5.28.2.1}%
+\contentsline {subsubsection}{\numberline {5.28.2.2}Studentas()\hspace {0.1cm}{\footnotesize \ttfamily [2/5]}}{30}{subsubsection.5.28.2.2}%
+\contentsline {subsubsection}{\numberline {5.28.2.3}Studentas()\hspace {0.1cm}{\footnotesize \ttfamily [3/5]}}{30}{subsubsection.5.28.2.3}%
+\contentsline {subsubsection}{\numberline {5.28.2.4}$\sim $Studentas()}{30}{subsubsection.5.28.2.4}%
+\contentsline {subsubsection}{\numberline {5.28.2.5}Studentas()\hspace {0.1cm}{\footnotesize \ttfamily [4/5]}}{30}{subsubsection.5.28.2.5}%
+\contentsline {subsubsection}{\numberline {5.28.2.6}Studentas()\hspace {0.1cm}{\footnotesize \ttfamily [5/5]}}{30}{subsubsection.5.28.2.6}%
+\contentsline {subsection}{\numberline {5.28.3}Metodų Dokumentacija}{30}{subsection.5.28.3}%
+\contentsline {subsubsection}{\numberline {5.28.3.1}addPaz()}{30}{subsubsection.5.28.3.1}%
+\contentsline {subsubsection}{\numberline {5.28.3.2}clearPaz()}{30}{subsubsection.5.28.3.2}%
+\contentsline {subsubsection}{\numberline {5.28.3.3}getEgz()}{30}{subsubsection.5.28.3.3}%
+\contentsline {subsubsection}{\numberline {5.28.3.4}getInfo()}{30}{subsubsection.5.28.3.4}%
+\contentsline {subsubsection}{\numberline {5.28.3.5}getMed()}{30}{subsubsection.5.28.3.5}%
+\contentsline {subsubsection}{\numberline {5.28.3.6}getPaz()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{31}{subsubsection.5.28.3.6}%
+\contentsline {subsubsection}{\numberline {5.28.3.7}getPaz()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{31}{subsubsection.5.28.3.7}%
+\contentsline {subsubsection}{\numberline {5.28.3.8}getRez()}{31}{subsubsection.5.28.3.8}%
+\contentsline {subsubsection}{\numberline {5.28.3.9}isPazEmpty()}{31}{subsubsection.5.28.3.9}%
+\contentsline {subsubsection}{\numberline {5.28.3.10}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{31}{subsubsection.5.28.3.10}%
+\contentsline {subsubsection}{\numberline {5.28.3.11}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{31}{subsubsection.5.28.3.11}%
+\contentsline {subsubsection}{\numberline {5.28.3.12}readStudent()}{31}{subsubsection.5.28.3.12}%
+\contentsline {subsubsection}{\numberline {5.28.3.13}reservePaz()}{31}{subsubsection.5.28.3.13}%
+\contentsline {subsubsection}{\numberline {5.28.3.14}setEgz()}{31}{subsubsection.5.28.3.14}%
+\contentsline {subsubsection}{\numberline {5.28.3.15}setMed()}{31}{subsubsection.5.28.3.15}%
+\contentsline {subsubsection}{\numberline {5.28.3.16}setPaz()}{31}{subsubsection.5.28.3.16}%
+\contentsline {subsubsection}{\numberline {5.28.3.17}setRez()}{32}{subsubsection.5.28.3.17}%
+\contentsline {subsection}{\numberline {5.28.4}Draugiškų Ir Susijusių Funkcijų Dokumentacija}{32}{subsection.5.28.4}%
+\contentsline {subsubsection}{\numberline {5.28.4.1}operator$<$$<$}{32}{subsubsection.5.28.4.1}%
+\contentsline {subsubsection}{\numberline {5.28.4.2}operator$>$$>$}{32}{subsubsection.5.28.4.2}%
+\contentsline {section}{\numberline {5.29}Vector$<$ T $>$ Klasė Šablonas}{32}{section.5.29}%
+\contentsline {subsection}{\numberline {5.29.1}Smulkus aprašymas}{34}{subsection.5.29.1}%
+\contentsline {subsection}{\numberline {5.29.2}Tipo Aprašymo Dokumentacija}{34}{subsection.5.29.2}%
+\contentsline {subsubsection}{\numberline {5.29.2.1}const\_iterator}{34}{subsubsection.5.29.2.1}%
+\contentsline {subsubsection}{\numberline {5.29.2.2}const\_reverse\_iterator}{34}{subsubsection.5.29.2.2}%
+\contentsline {subsubsection}{\numberline {5.29.2.3}iterator}{35}{subsubsection.5.29.2.3}%
+\contentsline {subsubsection}{\numberline {5.29.2.4}reverse\_iterator}{35}{subsubsection.5.29.2.4}%
+\contentsline {subsection}{\numberline {5.29.3}Konstruktoriaus ir Destruktoriaus Dokumentacija}{35}{subsection.5.29.3}%
+\contentsline {subsubsection}{\numberline {5.29.3.1}Vector()\hspace {0.1cm}{\footnotesize \ttfamily [1/6]}}{35}{subsubsection.5.29.3.1}%
+\contentsline {subsubsection}{\numberline {5.29.3.2}Vector()\hspace {0.1cm}{\footnotesize \ttfamily [2/6]}}{35}{subsubsection.5.29.3.2}%
+\contentsline {subsubsection}{\numberline {5.29.3.3}Vector()\hspace {0.1cm}{\footnotesize \ttfamily [3/6]}}{35}{subsubsection.5.29.3.3}%
+\contentsline {subsubsection}{\numberline {5.29.3.4}Vector()\hspace {0.1cm}{\footnotesize \ttfamily [4/6]}}{35}{subsubsection.5.29.3.4}%
+\contentsline {subsubsection}{\numberline {5.29.3.5}$\sim $Vector()}{35}{subsubsection.5.29.3.5}%
+\contentsline {subsubsection}{\numberline {5.29.3.6}Vector()\hspace {0.1cm}{\footnotesize \ttfamily [5/6]}}{35}{subsubsection.5.29.3.6}%
+\contentsline {subsubsection}{\numberline {5.29.3.7}Vector()\hspace {0.1cm}{\footnotesize \ttfamily [6/6]}}{35}{subsubsection.5.29.3.7}%
+\contentsline {subsection}{\numberline {5.29.4}Metodų Dokumentacija}{36}{subsection.5.29.4}%
+\contentsline {subsubsection}{\numberline {5.29.4.1}assign()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{36}{subsubsection.5.29.4.1}%
+\contentsline {subsubsection}{\numberline {5.29.4.2}assign()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{36}{subsubsection.5.29.4.2}%
+\contentsline {subsubsection}{\numberline {5.29.4.3}at()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{36}{subsubsection.5.29.4.3}%
+\contentsline {subsubsection}{\numberline {5.29.4.4}at()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{36}{subsubsection.5.29.4.4}%
+\contentsline {subsubsection}{\numberline {5.29.4.5}back()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{36}{subsubsection.5.29.4.5}%
+\contentsline {subsubsection}{\numberline {5.29.4.6}back()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{36}{subsubsection.5.29.4.6}%
+\contentsline {subsubsection}{\numberline {5.29.4.7}begin()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{36}{subsubsection.5.29.4.7}%
+\contentsline {subsubsection}{\numberline {5.29.4.8}begin()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{36}{subsubsection.5.29.4.8}%
+\contentsline {subsubsection}{\numberline {5.29.4.9}capacity()}{37}{subsubsection.5.29.4.9}%
+\contentsline {subsubsection}{\numberline {5.29.4.10}cbegin()}{37}{subsubsection.5.29.4.10}%
+\contentsline {subsubsection}{\numberline {5.29.4.11}cend()}{37}{subsubsection.5.29.4.11}%
+\contentsline {subsubsection}{\numberline {5.29.4.12}clear()}{37}{subsubsection.5.29.4.12}%
+\contentsline {subsubsection}{\numberline {5.29.4.13}crbegin()}{37}{subsubsection.5.29.4.13}%
+\contentsline {subsubsection}{\numberline {5.29.4.14}crend()}{37}{subsubsection.5.29.4.14}%
+\contentsline {subsubsection}{\numberline {5.29.4.15}data()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{37}{subsubsection.5.29.4.15}%
+\contentsline {subsubsection}{\numberline {5.29.4.16}data()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{37}{subsubsection.5.29.4.16}%
+\contentsline {subsubsection}{\numberline {5.29.4.17}emplace()}{37}{subsubsection.5.29.4.17}%
+\contentsline {subsubsection}{\numberline {5.29.4.18}emplace\_back()}{38}{subsubsection.5.29.4.18}%
+\contentsline {subsubsection}{\numberline {5.29.4.19}empty()}{38}{subsubsection.5.29.4.19}%
+\contentsline {subsubsection}{\numberline {5.29.4.20}end()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{38}{subsubsection.5.29.4.20}%
+\contentsline {subsubsection}{\numberline {5.29.4.21}end()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{38}{subsubsection.5.29.4.21}%
+\contentsline {subsubsection}{\numberline {5.29.4.22}erase()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{38}{subsubsection.5.29.4.22}%
+\contentsline {subsubsection}{\numberline {5.29.4.23}erase()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{38}{subsubsection.5.29.4.23}%
+\contentsline {subsubsection}{\numberline {5.29.4.24}erase()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{38}{subsubsection.5.29.4.24}%
+\contentsline {subsubsection}{\numberline {5.29.4.25}erase()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{38}{subsubsection.5.29.4.25}%
+\contentsline {subsubsection}{\numberline {5.29.4.26}front()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{38}{subsubsection.5.29.4.26}%
+\contentsline {subsubsection}{\numberline {5.29.4.27}front()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{39}{subsubsection.5.29.4.27}%
+\contentsline {subsubsection}{\numberline {5.29.4.28}get\_reallocation\_count()}{39}{subsubsection.5.29.4.28}%
+\contentsline {subsubsection}{\numberline {5.29.4.29}insert()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{39}{subsubsection.5.29.4.29}%
+\contentsline {subsubsection}{\numberline {5.29.4.30}insert()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{39}{subsubsection.5.29.4.30}%
+\contentsline {subsubsection}{\numberline {5.29.4.31}insert()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{39}{subsubsection.5.29.4.31}%
+\contentsline {subsubsection}{\numberline {5.29.4.32}insert()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{39}{subsubsection.5.29.4.32}%
+\contentsline {subsubsection}{\numberline {5.29.4.33}max\_size()}{39}{subsubsection.5.29.4.33}%
+\contentsline {subsubsection}{\numberline {5.29.4.34}operator"!=()}{40}{subsubsection.5.29.4.34}%
+\contentsline {subsubsection}{\numberline {5.29.4.35}operator$<$()}{40}{subsubsection.5.29.4.35}%
+\contentsline {subsubsection}{\numberline {5.29.4.36}operator$<$=()}{40}{subsubsection.5.29.4.36}%
+\contentsline {subsubsection}{\numberline {5.29.4.37}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{40}{subsubsection.5.29.4.37}%
+\contentsline {subsubsection}{\numberline {5.29.4.38}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{40}{subsubsection.5.29.4.38}%
+\contentsline {subsubsection}{\numberline {5.29.4.39}operator==()}{40}{subsubsection.5.29.4.39}%
+\contentsline {subsubsection}{\numberline {5.29.4.40}operator$>$()}{40}{subsubsection.5.29.4.40}%
+\contentsline {subsubsection}{\numberline {5.29.4.41}operator$>$=()}{40}{subsubsection.5.29.4.41}%
+\contentsline {subsubsection}{\numberline {5.29.4.42}operator[]()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{41}{subsubsection.5.29.4.42}%
+\contentsline {subsubsection}{\numberline {5.29.4.43}operator[]()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{41}{subsubsection.5.29.4.43}%
+\contentsline {subsubsection}{\numberline {5.29.4.44}pop\_back()}{41}{subsubsection.5.29.4.44}%
+\contentsline {subsubsection}{\numberline {5.29.4.45}push\_back()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{41}{subsubsection.5.29.4.45}%
+\contentsline {subsubsection}{\numberline {5.29.4.46}push\_back()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{41}{subsubsection.5.29.4.46}%
+\contentsline {subsubsection}{\numberline {5.29.4.47}rbegin()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{41}{subsubsection.5.29.4.47}%
+\contentsline {subsubsection}{\numberline {5.29.4.48}rbegin()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{41}{subsubsection.5.29.4.48}%
+\contentsline {subsubsection}{\numberline {5.29.4.49}rend()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{41}{subsubsection.5.29.4.49}%
+\contentsline {subsubsection}{\numberline {5.29.4.50}rend()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{41}{subsubsection.5.29.4.50}%
+\contentsline {subsubsection}{\numberline {5.29.4.51}reserve()}{42}{subsubsection.5.29.4.51}%
+\contentsline {subsubsection}{\numberline {5.29.4.52}reset\_reallocation\_count()}{42}{subsubsection.5.29.4.52}%
+\contentsline {subsubsection}{\numberline {5.29.4.53}resize()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{42}{subsubsection.5.29.4.53}%
+\contentsline {subsubsection}{\numberline {5.29.4.54}resize()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{42}{subsubsection.5.29.4.54}%
+\contentsline {subsubsection}{\numberline {5.29.4.55}shrink\_to\_fit()}{42}{subsubsection.5.29.4.55}%
+\contentsline {subsubsection}{\numberline {5.29.4.56}size()}{42}{subsubsection.5.29.4.56}%
+\contentsline {subsubsection}{\numberline {5.29.4.57}swap()}{42}{subsubsection.5.29.4.57}%
+\contentsline {section}{\numberline {5.30}vector$<$ T $>$ Klasė Šablonas}{42}{section.5.30}%
+\contentsline {subsection}{\numberline {5.30.1}Smulkus aprašymas}{43}{subsection.5.30.1}%
+\contentsline {section}{\numberline {5.31}Vector\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Iterator$<$ T $>$ Klasė Šablonas}{43}{section.5.31}%
+\contentsline {subsection}{\numberline {5.31.1}Smulkus aprašymas}{44}{subsection.5.31.1}%
+\contentsline {subsection}{\numberline {5.31.2}Tipo Aprašymo Dokumentacija}{44}{subsection.5.31.2}%
+\contentsline {subsubsection}{\numberline {5.31.2.1}difference\_type}{44}{subsubsection.5.31.2.1}%
+\contentsline {subsubsection}{\numberline {5.31.2.2}iterator\_category}{44}{subsubsection.5.31.2.2}%
+\contentsline {subsubsection}{\numberline {5.31.2.3}pointer}{44}{subsubsection.5.31.2.3}%
+\contentsline {subsubsection}{\numberline {5.31.2.4}reference}{44}{subsubsection.5.31.2.4}%
+\contentsline {subsubsection}{\numberline {5.31.2.5}value\_type}{44}{subsubsection.5.31.2.5}%
+\contentsline {subsection}{\numberline {5.31.3}Konstruktoriaus ir Destruktoriaus Dokumentacija}{44}{subsection.5.31.3}%
+\contentsline {subsubsection}{\numberline {5.31.3.1}VectorIterator()}{44}{subsubsection.5.31.3.1}%
+\contentsline {subsection}{\numberline {5.31.4}Metodų Dokumentacija}{45}{subsection.5.31.4}%
+\contentsline {subsubsection}{\numberline {5.31.4.1}operator"!=()}{45}{subsubsection.5.31.4.1}%
+\contentsline {subsubsection}{\numberline {5.31.4.2}operator$\ast $()}{45}{subsubsection.5.31.4.2}%
+\contentsline {subsubsection}{\numberline {5.31.4.3}operator+()}{45}{subsubsection.5.31.4.3}%
+\contentsline {subsubsection}{\numberline {5.31.4.4}operator++()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{45}{subsubsection.5.31.4.4}%
+\contentsline {subsubsection}{\numberline {5.31.4.5}operator++()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{45}{subsubsection.5.31.4.5}%
+\contentsline {subsubsection}{\numberline {5.31.4.6}operator+=()}{45}{subsubsection.5.31.4.6}%
+\contentsline {subsubsection}{\numberline {5.31.4.7}operator-\/()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{45}{subsubsection.5.31.4.7}%
+\contentsline {subsubsection}{\numberline {5.31.4.8}operator-\/()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{45}{subsubsection.5.31.4.8}%
+\contentsline {subsubsection}{\numberline {5.31.4.9}operator-\/-\/()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{46}{subsubsection.5.31.4.9}%
+\contentsline {subsubsection}{\numberline {5.31.4.10}operator-\/-\/()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{46}{subsubsection.5.31.4.10}%
+\contentsline {subsubsection}{\numberline {5.31.4.11}operator-\/=()}{46}{subsubsection.5.31.4.11}%
+\contentsline {subsubsection}{\numberline {5.31.4.12}operator-\/$>$()}{46}{subsubsection.5.31.4.12}%
+\contentsline {subsubsection}{\numberline {5.31.4.13}operator$<$()}{46}{subsubsection.5.31.4.13}%
+\contentsline {subsubsection}{\numberline {5.31.4.14}operator$<$=()}{46}{subsubsection.5.31.4.14}%
+\contentsline {subsubsection}{\numberline {5.31.4.15}operator==()}{46}{subsubsection.5.31.4.15}%
+\contentsline {subsubsection}{\numberline {5.31.4.16}operator$>$()}{46}{subsubsection.5.31.4.16}%
+\contentsline {subsubsection}{\numberline {5.31.4.17}operator$>$=()}{46}{subsubsection.5.31.4.17}%
+\contentsline {subsubsection}{\numberline {5.31.4.18}operator[]()}{47}{subsubsection.5.31.4.18}%
+\contentsline {section}{\numberline {5.32}Vector\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test Klasė}{47}{section.5.32}%
+\contentsline {subsection}{\numberline {5.32.1}Smulkus aprašymas}{47}{subsection.5.32.1}%
+\contentsline {subsection}{\numberline {5.32.2}Atributų Dokumentacija}{47}{subsection.5.32.2}%
+\contentsline {subsubsection}{\numberline {5.32.2.1}v}{47}{subsubsection.5.32.2.1}%
+\contentsline {section}{\numberline {5.33}Zmogus Klasė}{47}{section.5.33}%
+\contentsline {subsection}{\numberline {5.33.1}Smulkus aprašymas}{48}{subsection.5.33.1}%
+\contentsline {subsection}{\numberline {5.33.2}Konstruktoriaus ir Destruktoriaus Dokumentacija}{48}{subsection.5.33.2}%
+\contentsline {subsubsection}{\numberline {5.33.2.1}Zmogus()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{48}{subsubsection.5.33.2.1}%
+\contentsline {subsubsection}{\numberline {5.33.2.2}Zmogus()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{48}{subsubsection.5.33.2.2}%
+\contentsline {subsubsection}{\numberline {5.33.2.3}$\sim $Zmogus()}{49}{subsubsection.5.33.2.3}%
+\contentsline {subsection}{\numberline {5.33.3}Metodų Dokumentacija}{49}{subsection.5.33.3}%
+\contentsline {subsubsection}{\numberline {5.33.3.1}getInfo()}{49}{subsubsection.5.33.3.1}%
+\contentsline {subsubsection}{\numberline {5.33.3.2}getPavarde()}{49}{subsubsection.5.33.3.2}%
+\contentsline {subsubsection}{\numberline {5.33.3.3}getVardas()}{49}{subsubsection.5.33.3.3}%
+\contentsline {subsubsection}{\numberline {5.33.3.4}setPavarde()}{49}{subsubsection.5.33.3.4}%
+\contentsline {subsubsection}{\numberline {5.33.3.5}setVardas()}{49}{subsubsection.5.33.3.5}%
+\contentsline {subsection}{\numberline {5.33.4}Draugiškų Ir Susijusių Funkcijų Dokumentacija}{49}{subsection.5.33.4}%
+\contentsline {subsubsection}{\numberline {5.33.4.1}operator$<$$<$}{49}{subsubsection.5.33.4.1}%
+\contentsline {subsection}{\numberline {5.33.5}Atributų Dokumentacija}{50}{subsection.5.33.5}%
+\contentsline {subsubsection}{\numberline {5.33.5.1}pavarde\_}{50}{subsubsection.5.33.5.1}%
+\contentsline {subsubsection}{\numberline {5.33.5.2}vardas\_}{50}{subsubsection.5.33.5.2}%
+\contentsline {chapter}{\numberline {6}Failo Dokumentacija}{51}{chapter.6}%
+\contentsline {section}{\numberline {6.1}duomenu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}valdymas.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{51}{section.6.1}%
+\contentsline {section}{\numberline {6.2}input.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{56}{section.6.2}%
+\contentsline {section}{\numberline {6.3}mat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}funkcijos.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{57}{section.6.3}%
+\contentsline {section}{\numberline {6.4}menu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{58}{section.6.4}%
+\contentsline {section}{\numberline {6.5}output.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{60}{section.6.5}%
+\contentsline {section}{\numberline {6.6}reallocation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}comparison.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{61}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Studentas.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{61}{section.6.7}%
+\contentsline {section}{\numberline {6.8}testavimas.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{63}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Zmogus.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{68}{section.6.9}%
+\contentsline {section}{\numberline {6.10}duomenu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}valdymas.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{69}{section.6.10}%
+\contentsline {section}{\numberline {6.11}input.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{69}{section.6.11}%
+\contentsline {section}{\numberline {6.12}Mat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}funkcijos.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{69}{section.6.12}%
+\contentsline {section}{\numberline {6.13}menu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{69}{section.6.13}%
+\contentsline {section}{\numberline {6.14}output.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{69}{section.6.14}%
+\contentsline {section}{\numberline {6.15}Studentas.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{70}{section.6.15}%
+\contentsline {section}{\numberline {6.16}testavimas.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{71}{section.6.16}%
+\contentsline {section}{\numberline {6.17}Vector.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{71}{section.6.17}%
+\contentsline {section}{\numberline {6.18}Zmogus.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{79}{section.6.18}%
+\contentsline {section}{\numberline {6.19}objekt1uzd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{80}{section.6.19}%
+\contentsline {section}{\numberline {6.20}test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}studentas.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{80}{section.6.20}%
+\contentsline {chapter}{\numberline {7}Pavyzdžiai}{91}{chapter.7}%
+\contentsline {section}{\numberline {7.1}C:\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ditas/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}source/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}repos/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ditassimoliunas-\/prog/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}objektuzdv3/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}header\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}files/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Vector.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{91}{section.7.1}%
+\contentsline {chapter}{Rodykl\.e}{101}{section*.110}%

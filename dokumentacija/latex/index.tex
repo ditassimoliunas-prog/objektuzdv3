@@ -1,8 +1,122 @@
-\chapter{v3.\+0 relisas:\+ Custom Vector$<$\+T$>$ Konteineris }
-\hypertarget{index}{}\label{index}\index{v3.0 relisas: Custom Vector$<$T$>$ Konteineris@{v3.0 relisas: Custom Vector$<$T$>$ Konteineris}}
+\chapter{📦 Objektinis\+Uzdavinys v3.\+0 -\/ Setup ir Naudojimosi Instrukcija }
+\hypertarget{index}{}\label{index}\index{📦 ObjektinisUzdavinys v3.0 -\/ Setup ir Naudojimosi Instrukcija@{📦 ObjektinisUzdavinys v3.0 -\/ Setup ir Naudojimosi Instrukcija}}
 \label{index_md__r_e_a_d_m_e}%
 \Hypertarget{index_md__r_e_a_d_m_e}%
 
+
+\doxysubsection*{🔧 Diegimas (Setup)}
+
+\doxysubsubsection*{Sisteminiai Reikalavimai}
+
+
+\begin{DoxyItemize}
+\item {\bfseries{OS}}:\+ Windows 7+ /\+ 8 /\+ 10 /\+ 11
+\item {\bfseries{RAM}}:\+ Minimum 2 GB
+\item {\bfseries{Disk}}:\+ \texorpdfstring{$\sim$}{\string~}100 MB laisvos vietos
+\item {\bfseries{Teisės}}:\+ Administrator reikalingos diegimui
+\end{DoxyItemize}
+
+\doxysubsubsection*{Setup.\+exe Paleidimas}
+
+
+\begin{DoxyEnumerate}
+\item Atsisiųskite {\ttfamily Objektinis\+Uzdavinys\+\_\+v3.\+0\+\_\+\+Setup.\+exe}
+\item Dukart spustelėkite ant failo
+\item {\bfseries{Windows Security}} dialogo → Paspauskite {\bfseries{"{}\+Yes"{}}} (reikalinga admin teisėms)
+\item Sekite Setup vedliu:\+
+\begin{DoxyItemize}
+\item Welcome → {\bfseries{Next}}
+\item Installation Folder → {\ttfamily C:\+\textbackslash{}Program Files\textbackslash{}VU\textbackslash{}Ditas-\/\+Simoliunas} (default)
+\item Install → {\bfseries{Install}}
+\item Finish → {\bfseries{Finish}}
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+\doxysubsubsection*{Instaliacijos Vieta}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C:\(\backslash\)Program\ Files\(\backslash\)VU\(\backslash\)Ditas-\/Simoliunas\(\backslash\)}
+\DoxyCodeLine{├──\ programa.exe\ \ \ \ \ \ \ \ \ \ \ \ \ \ (Pagrindinė\ programa)}
+\DoxyCodeLine{├──\ dokumentacija/}
+\DoxyCodeLine{│\ \ \ ├──\ README.md\ \ \ \ \ \ \ \ \ \ \ \ (Projekto\ dokumentacija)}
+\DoxyCodeLine{│\ \ \ └──\ refman.pdf\ \ \ \ \ \ \ \ \ \ \ (Doxygen\ dokumentacija\ -\/\ 110\ puslapių)}
+\DoxyCodeLine{└──\ test\_data/}
+\DoxyCodeLine{\ \ \ \ ├──\ Studentai\_test\_10000.txt\ \ \ \ \ (10K\ test\ duomenys)}
+\DoxyCodeLine{\ \ \ \ └──\ Studentai\_test\_100000.txt\ \ \ \ (100K\ test\ duomenys)}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{Nuorodos Po Diegimo}
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Desktop}}:\+ {\ttfamily Objektinis\+Uzdavinys v3.\+0.\+lnk}
+\item {\bfseries{Start Menu}}:\+ {\ttfamily VU} → {\ttfamily Ditas-\/\+Simoliunas} → {\ttfamily Objektinis\+Uzdavinys v3.\+0}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+\doxysubsection*{🚀 Programos Naudojimas}
+
+\doxysubsubsection*{Paleidimas}
+
+
+\begin{DoxyEnumerate}
+\item Dukart spustelėkite Desktop shortcut arba Start Menu nuorodą
+\item Pasirinkite iš meniu:\+
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Studentu\ Rezultatu\ skaiciavimo\ aplikacija}
+\DoxyCodeLine{-\/-\/-\/}
+\DoxyCodeLine{1.\ Ivesti\ duomenis\ ranka\ }
+\DoxyCodeLine{2.\ Generuoti\ tik\ pazymius\ }
+\DoxyCodeLine{3.\ Generuoti\ studentu\ vardus,\ pavardes\ ir\ pazymius\ }
+\DoxyCodeLine{4.\ Nuskaityti\ duomenis\ is\ failo\ }
+\DoxyCodeLine{5.\ Sukurti\ testavimo\ failus\ (1000\ -\/\ 10000000\ irasu)}
+\DoxyCodeLine{6.\ Atlikti\ spartos\ analize\ (nuskaitymas,\ rusiavimas,\ dalijimas,\ isvedimas)}
+\DoxyCodeLine{7.\ Baigti\ darba}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{Naudojimosi Scenarijai}
+
+{\bfseries{Scenarijus 1:\+ Test Duomenimis su 10K}}
+\begin{DoxyEnumerate}
+\item Pasirinkite {\ttfamily 4. Nuskaityti duomenis is failo}
+\item Kelias:\+ {\ttfamily C:\+\textbackslash{}Program Files\textbackslash{}VU\textbackslash{}Ditas-\/\+Simoliunas\textbackslash{}test\+\_\+data\textbackslash{}Studentai\+\_\+test\+\_\+10000.\+txt}
+\end{DoxyEnumerate}
+
+{\bfseries{Scenarijus 2:\+ Test Duomenimis su 100K}}
+\begin{DoxyEnumerate}
+\item Pasirinkite {\ttfamily 4. Nuskaityti duomenis is failo}
+\item Kelias:\+ {\ttfamily C:\+\textbackslash{}Program Files\textbackslash{}VU\textbackslash{}Ditas-\/\+Simoliunas\textbackslash{}test\+\_\+data\textbackslash{}Studentai\+\_\+test\+\_\+100000.\+txt}
+\end{DoxyEnumerate}
+
+{\bfseries{Scenarijus 3:\+ Spartos Analiza}}
+\begin{DoxyEnumerate}
+\item Pasirinkite {\ttfamily 5. Sukurti testavimo failus}
+\item Pasirinkite {\ttfamily 6. Atlikti spartos analize}
+\item Pasirinkite:\+ Failą, Kontainerį, Strategiją
+\end{DoxyEnumerate}
+
+\doxysubsubsection*{Iškrovimas (Uninstall)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Control Panel}} → {\bfseries{Add/\+\+Remove Programs}} → Raskite "{}\+Objektinis\+Uzdavinys v3.\+0"{} → {\bfseries{Uninstall}}
+\item {\bfseries{Arba}}:\+ Eikite į {\ttfamily C:\+\textbackslash{}Program Files\textbackslash{}VU\textbackslash{}Ditas-\/\+Simoliunas\textbackslash{}} → Spustelėkite {\ttfamily uninstall.\+bat}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+\doxysection*{v3.\+0 relisas:\+ Custom \doxylink{class_vector}{Vector$<$\+T$>$} Konteineris}
 
 \doxysubsection*{\doxylink{class_vector}{Vector$<$\+T$>$} Spartos Palyginimas su std::\+vector}
 

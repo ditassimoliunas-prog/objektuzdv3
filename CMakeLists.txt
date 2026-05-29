@@ -30,7 +30,7 @@ set(SOURCES
     extra_cpp/Studentas.cpp
 )
 
-# Sukuriame ezkekutuojamąjį (executable) failą
+# Sukuriame programa.exe (nuolatinis executable - nechange)
 add_executable(programa ${SOURCES})
 
 # ===== GOOGLE TEST FRAMEWORK =====

@@ -1,0 +1,58 @@
+MIT License (Educational Use)
+
+Copyright (c) 2026 Ditas Simoliunas
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Educational Use Statement
+
+This software ("ObjektinisUzdavinys v3.0") is provided for educational purposes 
+at Vilnius University (VU) as part of the Object-Oriented Programming course.
+
+### Permitted Uses:
+- Academic study and teaching
+- Course assignments and projects
+- Learning C++ concepts
+- Understanding data structures and algorithms
+
+### Restrictions:
+- Not for commercial use without written permission
+- Not for redistribution without attribution
+- Not for production systems without modifications
+
+### Attribution Required:
+When using this software, please acknowledge:
+- Author: Ditas Simoliunas
+- Institution: Vilnius University (VU)
+- Course: Object-Oriented Programming
+- Version: 3.0
+
+### Support and Liability:
+- This software is provided as-is
+- No warranty or guarantee of fitness for any purpose
+- User assumes all risks and responsibilities
+- Author is not liable for any damages or losses
+
+---
+
+**Version**: 3.0
+**Date**: May 29, 2026
+**Institution**: Vilnius University (VU)

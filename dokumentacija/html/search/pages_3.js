@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['relisas_3a_20custom_20vector_20konteineris_0',['v3.0 relisas: Custom Vector&amp;lt;T&amp;gt; Konteineris',['../index.html',1,'']]]
+  ['objektinisuzdavinys_20v3_200_20setup_20ir_20naudojimosi_20instrukcija_0',['📦 ObjektinisUzdavinys v3.0 - Setup ir Naudojimosi Instrukcija',['../index.html',1,'']]]
 ];

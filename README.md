@@ -1,3 +1,80 @@
+## 📦 ObjektinisUzdavinys v3.0 - Setup ir Naudojimosi Instrukcija
+
+### 🔧 Diegimas (Setup)
+
+#### Sisteminiai Reikalavimai
+- **OS**: Windows 7+ / 8 / 10 / 11
+- **RAM**: Minimum 2 GB
+- **Disk**: ~100 MB laisvos vietos
+- **Teisės**: Administrator reikalingos diegimui
+
+#### Setup.exe Paleidimas
+1. Atsisiųskite `ObjektinisUzdavinys_v3.0_Setup.exe`
+2. Dukart spustelėkite ant failo
+3. **Windows Security** dialogo → Paspauskite **"Yes"** (reikalinga admin teisėms)
+4. Sekite Setup vedliu:
+   - Welcome → **Next**
+   - Installation Folder → `C:\Program Files\VU\Ditas-Simoliunas` (default)
+   - Install → **Install**
+   - Finish → **Finish**
+
+#### Instaliacijos Vieta
+```
+C:\Program Files\VU\Ditas-Simoliunas\
+├── programa.exe              (Pagrindinė programa)
+├── dokumentacija/
+│   ├── README.md            (Projekto dokumentacija)
+│   └── refman.pdf           (Doxygen dokumentacija - 110 puslapių)
+└── test_data/
+    ├── Studentai_test_10000.txt     (10K test duomenys)
+    └── Studentai_test_100000.txt    (100K test duomenys)
+```
+
+#### Nuorodos Po Diegimo
+- **Desktop**: `ObjektinisUzdavinys v3.0.lnk`
+- **Start Menu**: `VU` → `Ditas-Simoliunas` → `ObjektinisUzdavinys v3.0`
+
+---
+
+### 🚀 Programos Naudojimas
+
+#### Paleidimas
+1. Dukart spustelėkite Desktop shortcut arba Start Menu nuorodą
+2. Pasirinkite iš meniu:
+
+```
+Studentu Rezultatu skaiciavimo aplikacija
+---
+1. Ivesti duomenis ranka 
+2. Generuoti tik pazymius 
+3. Generuoti studentu vardus, pavardes ir pazymius 
+4. Nuskaityti duomenis is failo 
+5. Sukurti testavimo failus (1000 - 10000000 irasu)
+6. Atlikti spartos analize (nuskaitymas, rusiavimas, dalijimas, isvedimas)
+7. Baigti darba
+```
+
+#### Naudojimosi Scenarijai
+
+**Scenarijus 1: Test Duomenimis su 10K**
+1. Pasirinkite `4. Nuskaityti duomenis is failo`
+2. Kelias: `C:\Program Files\VU\Ditas-Simoliunas\test_data\Studentai_test_10000.txt`
+
+**Scenarijus 2: Test Duomenimis su 100K**
+1. Pasirinkite `4. Nuskaityti duomenis is failo`
+2. Kelias: `C:\Program Files\VU\Ditas-Simoliunas\test_data\Studentai_test_100000.txt`
+
+**Scenarijus 3: Spartos Analiza**
+1. Pasirinkite `5. Sukurti testavimo failus`
+2. Pasirinkite `6. Atlikti spartos analize`
+3. Pasirinkite: Failą, Kontainerį, Strategiją
+
+#### Iškrovimas (Uninstall)
+- **Control Panel** → **Add/Remove Programs** → Raskite "ObjektinisUzdavinys v3.0" → **Uninstall**
+- **Arba**: Eikite į `C:\Program Files\VU\Ditas-Simoliunas\` → Spustelėkite `uninstall.bat`
+
+---
+
 ## v3.0 relisas: Custom Vector<T> Konteineris
 
 ### Vector<T> Spartos Palyginimas su std::vector

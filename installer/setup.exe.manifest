@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity
+	version="3.0.0.0"
+	processorArchitecture="*"
+	name="ObjektinisUzdavinys.Setup"
+	type="win32"
+  />
+  <description>ObjektinisUzdavinys v3.0 Installation</description>
+
+  <!-- Admin Elevation Request -->
+  <trustInfo xmlns="urn:schemas-microsoft-com:compatibility.v1">
+	<security>
+	  <requestedPrivileges>
+		<!-- This app requires admin rights to install -->
+		<requestedExecutionLevel level="requireAdministrator" uiAccess="false"/>
+	  </requestedPrivileges>
+	</security>
+  </trustInfo>
+
+  <!-- Compatibility -->
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+	<application>
+	  <!-- Windows 7, 8, 10, 11 support -->
+	  <supportedOS Id="{35138b9a-5d96-4881-b32f-0c4eed36725f}"/> <!-- Windows 7 -->
+	  <supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"/> <!-- Windows 8 -->
+	  <supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}"/> <!-- Windows 8.1 -->
+	  <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a7-93ff0cb3a3b8}"/> <!-- Windows 10 -->
+	  <supportedOS Id="{35138b9a-5d96-4881-b32f-0c4eed36725f}"/> <!-- Windows 11 -->
+	</application>
+  </compatibility>
+
+  <!-- UAC Consent Prompt -->
+  <asmv3:application xmlns:asmv3="urn:schemas-microsoft-com:asm.v3">
+	<asmv3:windowsSettings xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">
+	  <dpiAware>true</dpiAware>
+	</asmv3:windowsSettings>
+  </asmv3:application>
+
+</assembly>

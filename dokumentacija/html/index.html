@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ObjektinisUzdavinys v3.0: v3.0 relisas: Custom Vector&lt;T&gt; Konteineris</title>
+<title>ObjektinisUzdavinys v3.0: 📦 ObjektinisUzdavinys v3.0 - Setup ir Naudojimosi Instrukcija</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -116,10 +116,82 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">v3.0 relisas: Custom <a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector&lt;T&gt;</a> Konteineris </div></div>
+  <div class="headertitle"><div class="title">📦 ObjektinisUzdavinys v3.0 - Setup ir Naudojimosi Instrukcija </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
+<h2>🔧 Diegimas (Setup)</h2>
+<h3>Sisteminiai Reikalavimai</h3>
+<ul>
+<li><b>OS</b>: Windows 7+ / 8 / 10 / 11</li>
+<li><b>RAM</b>: Minimum 2 GB</li>
+<li><b>Disk</b>: ~100 MB laisvos vietos</li>
+<li><b>Teisės</b>: Administrator reikalingos diegimui</li>
+</ul>
+<h3>Setup.exe Paleidimas</h3>
+<ol type="1">
+<li>Atsisiųskite <span class="tt">ObjektinisUzdavinys_v3.0_Setup.exe</span></li>
+<li>Dukart spustelėkite ant failo</li>
+<li><b>Windows Security</b> dialogo → Paspauskite <b>"Yes"</b> (reikalinga admin teisėms)</li>
+<li>Sekite Setup vedliu:<ul>
+<li>Welcome → <b>Next</b></li>
+<li>Installation Folder → <span class="tt">C:\Program Files\VU\Ditas-Simoliunas</span> (default)</li>
+<li>Install → <b>Install</b></li>
+<li>Finish → <b>Finish</b></li>
+</ul>
+</li>
+</ol>
+<h3>Instaliacijos Vieta</h3>
+<div class="fragment"><div class="line">C:\Program Files\VU\Ditas-Simoliunas\</div>
+<div class="line">├── programa.exe              (Pagrindinė programa)</div>
+<div class="line">├── dokumentacija/</div>
+<div class="line">│   ├── README.md            (Projekto dokumentacija)</div>
+<div class="line">│   └── refman.pdf           (Doxygen dokumentacija - 110 puslapių)</div>
+<div class="line">└── test_data/</div>
+<div class="line">    ├── Studentai_test_10000.txt     (10K test duomenys)</div>
+<div class="line">    └── Studentai_test_100000.txt    (100K test duomenys)</div>
+</div><!-- fragment --><h3>Nuorodos Po Diegimo</h3>
+<ul>
+<li><b>Desktop</b>: <span class="tt">ObjektinisUzdavinys v3.0.lnk</span></li>
+<li><b>Start Menu</b>: <span class="tt">VU</span> → <span class="tt">Ditas-Simoliunas</span> → <span class="tt">ObjektinisUzdavinys v3.0</span></li>
+</ul>
+<hr  />
+<h2>🚀 Programos Naudojimas</h2>
+<h3>Paleidimas</h3>
+<ol type="1">
+<li>Dukart spustelėkite Desktop shortcut arba Start Menu nuorodą</li>
+<li>Pasirinkite iš meniu:</li>
+</ol>
+<div class="fragment"><div class="line">Studentu Rezultatu skaiciavimo aplikacija</div>
+<div class="line">---</div>
+<div class="line">1. Ivesti duomenis ranka </div>
+<div class="line">2. Generuoti tik pazymius </div>
+<div class="line">3. Generuoti studentu vardus, pavardes ir pazymius </div>
+<div class="line">4. Nuskaityti duomenis is failo </div>
+<div class="line">5. Sukurti testavimo failus (1000 - 10000000 irasu)</div>
+<div class="line">6. Atlikti spartos analize (nuskaitymas, rusiavimas, dalijimas, isvedimas)</div>
+<div class="line">7. Baigti darba</div>
+</div><!-- fragment --><h3>Naudojimosi Scenarijai</h3>
+<p><b>Scenarijus 1: Test Duomenimis su 10K</b></p><ol type="1">
+<li>Pasirinkite <span class="tt">4. Nuskaityti duomenis is failo</span></li>
+<li>Kelias: <span class="tt">C:\Program Files\VU\Ditas-Simoliunas\test_data\Studentai_test_10000.txt</span></li>
+</ol>
+<p><b>Scenarijus 2: Test Duomenimis su 100K</b></p><ol type="1">
+<li>Pasirinkite <span class="tt">4. Nuskaityti duomenis is failo</span></li>
+<li>Kelias: <span class="tt">C:\Program Files\VU\Ditas-Simoliunas\test_data\Studentai_test_100000.txt</span></li>
+</ol>
+<p><b>Scenarijus 3: Spartos Analiza</b></p><ol type="1">
+<li>Pasirinkite <span class="tt">5. Sukurti testavimo failus</span></li>
+<li>Pasirinkite <span class="tt">6. Atlikti spartos analize</span></li>
+<li>Pasirinkite: Failą, Kontainerį, Strategiją</li>
+</ol>
+<h3>Iškrovimas (Uninstall)</h3>
+<ul>
+<li><b>Control Panel</b> → <b>Add/Remove Programs</b> → Raskite "ObjektinisUzdavinys v3.0" → <b>Uninstall</b></li>
+<li><b>Arba</b>: Eikite į <span class="tt">C:\Program Files\VU\Ditas-Simoliunas\</span> → Spustelėkite <span class="tt">uninstall.bat</span></li>
+</ul>
+<hr  />
+<h1>v3.0 relisas: Custom <a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector&lt;T&gt;</a> Konteineris</h1>
 <h2><a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector&lt;T&gt;</a> Spartos Palyginimas su std::vector</h2>
 <h3>push_back() Operacijos Spartos Testas</h3>
 <table class="markdownTable">
