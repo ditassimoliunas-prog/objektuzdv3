@@ -13,6 +13,39 @@
 
 #### Testas: std::vector vs Vector<int> push_back()
 
+#### Optimizavimo Pastabos
+
+**Vector<T> Realizacijos Optimizavimas:**
+
+1. **Reallokacijos Strategija**: Vector naudoja geometrinę augimo strategiją (2x multiplier), kuri sumažina reallokacijas
+   - Naujos talpos formula: `new_capacity = (_capacity == 0) ? 1 : _capacity * 2`
+   - Šis metodas sumažina O(n²) į O(n) amortizuotą laiko sudėtingumą
+
+2. **Move Semantika**: `push_back(T&&)` overload naudoja move semantiką greitam išteklių perėmimui
+   - Kopijuoti brangūs objektai perkeliami vietoj kopijuose
+   - Efektyvu: `v.push_back(std::move(tempObj))`
+
+3. **Reserve Optimizavimas**: Naudotojo optimizavimas per `reserve()`
+   ```cpp
+   Vector<Studentas> v;
+   v.reserve(100000);  // Iš anksto alokuoti atmintį - išvengiame 17 reallokacijų
+   for (int i = 0; i < 100000; ++i) {
+       v.push_back(Studentas(...));  // Dabar greitai - nereallokuojama
+   }
+   ```
+
+4. **Iteratoriai**: Random access iteratoriai O(1) sąnaudos
+   - `begin()`, `end()`, `rbegin()`, `rend()` veikia per O(1)
+   - Leisti range-based for ciklams ir std algoritams
+
+5. **Memory Layout**: Išsaugomas contiguous atmintis layout
+   - `data()` grąžina raw pointerį
+   - Suderinamumas su C API ir SIMD operacijomis
+
+6. **CMake Release Optimizacijos**: 
+   - Kompiliavimas su `/O2` optimizacija (MSVC Release)
+   - Nėra runtime debug checks `/RTC1`
+
 ---
 
 ### Vector<T> API Naudojimo Pavyzdžiai
@@ -168,6 +201,207 @@ if (v1 != v3) {
 if (v1 < v3) {
     std::cout << "v1 < v3 (leksikografinė sąlyga)\n";
 }
+```
+
+---
+
+### Studentas Integravimas su Vector<T>
+
+#### Implementacija
+
+Klasė `Studentas` (iš v1.5) buvo integruota su custom `Vector<T>` konteineriu:
+
+**Prieš (v2.0 - su std::vector):**
+```cpp
+class Studentas : public Zmogus {
+private:
+    std::vector<int> paz_;  // Pažymiai
+    int egz_;
+    double rez_;
+    double med_;
+    // ...
+};
+```
+
+**Dabar (v3.0 - su Vector<T>):**
+```cpp
+class Studentas : public Zmogus {
+private:
+    Vector<int> paz_;  // Custom Vector konteineris
+    int egz_;
+    double rez_;
+    double med_;
+    // ...
+};
+```
+
+#### Metodai Integruoti su Vector
+
+**Pažymių Valdymas:**
+```cpp
+// Pažymio pridėjimas
+void addPaz(int paz) {
+    paz_.push_back(paz);
+}
+
+// Pažymių kiekis
+int getPazCount() const {
+    return paz_.size();
+}
+
+// Grįžti pažymių vektorių (const)
+const Vector<int>& getPaz() const {
+    return paz_;
+}
+
+// Pažymių atšaukimas
+void clearPaz() {
+    paz_.clear();
+}
+
+// Atmintis rezervavimas (optimizavimas)
+void reservePaz(int kiekis) {
+    paz_.reserve(kiekis);
+}
+
+// Pažymių nustatymas iš Vector
+void setPaz(const Vector<int>& nauji_paz) {
+    paz_ = nauji_paz;
+}
+```
+
+#### Statistinės Funkcijos su Vector
+
+**Vidutinio Skaičiavimas:**
+```cpp
+double vidurkis(const Vector<int>& paz) {
+    if (paz.size() == 0) return 0.0;
+    double suma = 0.0;
+    for (int p : paz) suma += p;
+    return suma / paz.size();
+}
+```
+
+**Medianos Skaičiavimas:**
+```cpp
+int mediana(Vector<int> paz) {  // Kopija dėl rūšiavimo
+    if (paz.size() == 0) return 0;
+    std::sort(paz.begin(), paz.end());
+    if (paz.size() % 2 == 1) {
+        return paz[paz.size() / 2];
+    }
+    return (paz[paz.size() / 2 - 1] + paz[paz.size() / 2]) / 2;
+}
+```
+
+#### Rule of Five su Vector
+
+**Copy Semantika:**
+```cpp
+Studentas::Studentas(const Studentas& other)
+    : Zmogus(other), paz_(other.paz_), egz_(other.egz_), 
+      rez_(other.rez_), med_(other.med_) {}
+
+Studentas& Studentas::operator=(const Studentas& other) {
+    if (this != &other) {
+        Zmogus::operator=(other);
+        paz_ = other.paz_;  // Vector copy assignment
+        egz_ = other.egz_;
+        rez_ = other.rez_;
+        med_ = other.med_;
+    }
+    return *this;
+}
+```
+
+**Move Semantika:**
+```cpp
+Studentas::Studentas(Studentas&& other) noexcept
+    : Zmogus(std::move(other)), paz_(std::move(other.paz_)), 
+      egz_(other.egz_), rez_(other.rez_), med_(other.med_) {}
+
+Studentas& Studentas::operator=(Studentas&& other) noexcept {
+    if (this != &other) {
+        Zmogus::operator=(std::move(other));
+        paz_ = std::move(other.paz_);  // Vector move assignment
+        egz_ = other.egz_;
+        rez_ = other.rez_;
+        med_ = other.med_;
+    }
+    return *this;
+}
+```
+
+#### Spartos Testas su 1M-10M Įrašų
+
+`extra_cpp/testavimas.cpp` integravo Vector testą:
+
+```cpp
+// Trijų strategijų spartos palyginimas
+Vector<Studentas> studentai;
+studentai.reserve(1000000);
+
+// Strategija 1: Dvigube konteinerių manipuliacijos
+// Strategija 2: Vienas konteineris su trimu iš pagrindo
+// Strategija 3: In-place rūšiavimas ir dalijimas
+
+// Visas ciklas beveik 2x greitesnis su reserve() optimizavimu
+```
+
+#### Google Test: Vector<T> Test Suite (v3.0 nauja!)
+
+Visas Vector API testuojamas per Google Test framework - **27 testai**, visi praeina ✅
+
+**Test List:**
+
+| # | Testas | Aprašas |
+|---|--------|---------|
+| 1 | `VectorTest.PushBack` | push_back() operacija |
+| 2 | `VectorTest.PopBack` | pop_back() operacija |
+| 3 | `VectorTest.Size` | size() funkcija |
+| 4 | `VectorTest.Empty` | empty() check |
+| 5 | `VectorTest.Access` | operator[] ir at() |
+| 6 | `VectorTest.FrontBack` | front() ir back() |
+| 7 | `VectorTest.Reserve` | reserve() atmintis |
+| 8 | `VectorTest.Clear` | clear() operacija |
+| 9 | `VectorTest.ShrinkToFit` | shrink_to_fit() |
+| 10 | `VectorTest.Resize` | resize() metody |
+| 11 | `VectorTest.Swap` | swap() metodas |
+| 12 | `VectorTest.ComparisonOperators` | == ir != operatoriai |
+| 13 | `VectorTest.LessGreaterOperators` | < ir > operatoriai |
+| 14 | `VectorTest.BeginEndIterators` | begin()/end() iteratoriai |
+| 15 | `VectorTest.Assign` | assign() metodas |
+| 16 | `VectorTest.Insert` | insert() operacija |
+| 17 | `VectorTest.Erase` | erase() operacija |
+| 18 | `VectorTest.EmplaceBack` | emplace_back() |
+| 19 | `VectorTest.Emplace` | emplace() vietos konstravimas |
+| 20 | `VectorTest.MaxSize` | max_size() |
+| 21 | `VectorTest.Data` | data() raw pointer |
+| 22 | `VectorTest.CopyConstructor` | Copy constructor |
+| 23 | `VectorTest.MoveConstructor` | Move constructor |
+| 24 | `VectorTest.CopyAssignment` | Copy assignment |
+| 25 | `VectorTest.MoveAssignment` | Move assignment |
+| 26 | `VectorTest.ReverseIterators` | rbegin()/rend() |
+| 27 | `VectorTest.ConversionFromStdVector` | std::vector konversija |
+
+**Paleidimas:**
+```bash
+# Linux/macOS
+cd build
+./test_programa
+
+# Windows
+cd build
+.\Release\test_programa.exe
+
+# Atrinktasis test
+./test_programa --gtest_filter=VectorTest.PushBack
+```
+
+**Rezultatas:**
+```
+[==========] Running 27 tests from VectorTest
+[  PASSED  ] 27 tests
 ```
 
 ---

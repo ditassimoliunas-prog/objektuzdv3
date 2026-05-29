@@ -135,6 +135,43 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <td class="markdownTableBodyNone">1000000  </td><td class="markdownTableBodyNone">23.71250 s  </td><td class="markdownTableBodyNone">28.25032 s  </td></tr>
 </table>
 <h3>Testas: std::vector vs <a class="el" href="class_vector.html">Vector&lt;int&gt;</a> push_back()</h3>
+<h3>Optimizavimo Pastabos</h3>
+<p><b><a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector&lt;T&gt;</a> Realizacijos Optimizavimas:</b></p>
+<ol type="1">
+<li><b>Reallokacijos Strategija</b>: <a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector</a> naudoja geometrinę augimo strategiją (2x multiplier), kuri sumažina reallokacijas<ul>
+<li>Naujos talpos formula: <span class="tt">new_capacity = (_capacity == 0) ? 1 : _capacity * 2</span></li>
+<li>Šis metodas sumažina O(n²) į O(n) amortizuotą laiko sudėtingumą</li>
+</ul>
+</li>
+<li><b>Move Semantika</b>: <span class="tt">push_back(T&amp;&amp;)</span> overload naudoja move semantiką greitam išteklių perėmimui<ul>
+<li>Kopijuoti brangūs objektai perkeliami vietoj kopijuose</li>
+<li>Efektyvu: <span class="tt">v.push_back(std::move(tempObj))</span></li>
+</ul>
+</li>
+<li><b>Reserve Optimizavimas</b>: Naudotojo optimizavimas per <span class="tt">reserve()</span> <div class="fragment"><div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;Studentas&gt;</a> v;</div>
+<div class="line">v.reserve(100000);  <span class="comment">// Iš anksto alokuoti atmintį - išvengiame 17 reallokacijų</span></div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 100000; ++i) {</div>
+<div class="line">    v.push_back(<a class="code hl_class" href="class_studentas.html">Studentas</a>(...));  <span class="comment">// Dabar greitai - nereallokuojama</span></div>
+<div class="line">}</div>
+<div class="ttc" id="aclass_studentas_html"><div class="ttname"><a href="class_studentas.html">Studentas</a></div><div class="ttdef"><b>Definition</b> <a href="_studentas_8h_source.html#l00014">Studentas.h:14</a></div></div>
+<div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector</a></div><div class="ttdoc">Custom dynamic array container template.</div><div class="ttdef"><b>Definition</b> <a href="_vector_8h_source.html#l00132">Vector.h:132</a></div></div>
+</div><!-- fragment --></li>
+<li><b>Iteratoriai</b>: Random access iteratoriai O(1) sąnaudos<ul>
+<li><span class="tt">begin()</span>, <span class="tt">end()</span>, <span class="tt">rbegin()</span>, <span class="tt">rend()</span> veikia per O(1)</li>
+<li>Leisti range-based for ciklams ir std algoritams</li>
+</ul>
+</li>
+<li><b>Memory Layout</b>: Išsaugomas contiguous atmintis layout<ul>
+<li><span class="tt">data()</span> grąžina raw pointerį</li>
+<li>Suderinamumas su C API ir SIMD operacijomis</li>
+</ul>
+</li>
+<li><b>CMake Release Optimizacijos</b>:<ul>
+<li>Kompiliavimas su <span class="tt">/O2</span> optimizacija (MSVC Release)</li>
+<li>Nėra runtime debug checks <span class="tt">/RTC1</span></li>
+</ul>
+</li>
+</ol>
 <hr  />
 <h2><a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector&lt;T&gt;</a> API Naudojimo Pavyzdžiai</h2>
 <h3>1. Pagrindinės Operacijos - push_back() ir pop_back()</h3>
@@ -155,7 +192,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="line"><span class="comment">// Prieiga prie elementų</span></div>
 <div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;Pirmas: &quot;</span> &lt;&lt; v[0] &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;      <span class="comment">// Išveda: 10</span></div>
 <div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;Paskutnis: &quot;</span> &lt;&lt; v.back() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;  <span class="comment">// Išveda: 20</span></div>
-<div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector</a></div><div class="ttdoc">Custom dynamic array container template.</div><div class="ttdef"><b>Definition</b> <a href="_vector_8h_source.html#l00132">Vector.h:132</a></div></div>
 </div><!-- fragment --><h3>2. Konstruktoriai ir Inicijalizacija</h3>
 <div class="fragment"><div class="line"><span class="comment">// Default konstruktorius</span></div>
 <div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;double&gt;</a> v1;</div>
@@ -240,7 +276,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="line">grup.emplace_back(<span class="stringliteral">&quot;Marija&quot;</span>, 9);</div>
 <div class="line"> </div>
 <div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;Pirmas studentas: &quot;</span> &lt;&lt; grup[0].vardas &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="ttc" id="aclass_studentas_html"><div class="ttname"><a href="class_studentas.html">Studentas</a></div><div class="ttdef"><b>Definition</b> <a href="_studentas_8h_source.html#l00014">Studentas.h:14</a></div></div>
 </div><!-- fragment --><h3>8. Palyginimai ir Operatoriai</h3>
 <div class="fragment"><div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a> v1 = {1, 2, 3};</div>
 <div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a> v2 = {1, 2, 3};</div>
@@ -260,6 +295,185 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="line"><span class="keywordflow">if</span> (v1 &lt; v3) {</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;v1 &lt; v3 (leksikografinė sąlyga)\n&quot;</span>;</div>
 <div class="line">}</div>
+</div><!-- fragment --><hr  />
+<h2><a class="el" href="class_studentas.html">Studentas</a> Integravimas su <a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector&lt;T&gt;</a></h2>
+<h3>Implementacija</h3>
+<p>Klasė <span class="tt"><a class="el" href="class_studentas.html">Studentas</a></span> (iš v1.5) buvo integruota su custom <span class="tt"><a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector</a>&lt;T&gt;</span> konteineriu:</p>
+<p><b>Prieš (v2.0 - su std::vector):</b> </p><div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_class" href="class_studentas.html">Studentas</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_zmogus.html">Zmogus</a> {</div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    std::vector&lt;int&gt; paz_;  <span class="comment">// Pažymiai</span></div>
+<div class="line">    <span class="keywordtype">int</span> egz_;</div>
+<div class="line">    <span class="keywordtype">double</span> rez_;</div>
+<div class="line">    <span class="keywordtype">double</span> med_;</div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line">};</div>
+<div class="ttc" id="aclass_zmogus_html"><div class="ttname"><a href="class_zmogus.html">Zmogus</a></div><div class="ttdoc">Abstrakti bazinė klasė bendram žmogaus aprašymui.</div><div class="ttdef"><b>Definition</b> <a href="_zmogus_8h_source.html#l00017">Zmogus.h:17</a></div></div>
+</div><!-- fragment --><p><b>Dabar (v3.0 - su <a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector&lt;T&gt;</a>):</b> </p><div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_class" href="class_studentas.html">Studentas</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_zmogus.html">Zmogus</a> {</div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    <a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a> paz_;  <span class="comment">// Custom Vector konteineris</span></div>
+<div class="line">    <span class="keywordtype">int</span> egz_;</div>
+<div class="line">    <span class="keywordtype">double</span> rez_;</div>
+<div class="line">    <span class="keywordtype">double</span> med_;</div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line">};</div>
+</div><!-- fragment --><h3>Metodai Integruoti su <a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector</a></h3>
+<p><b>Pažymių Valdymas:</b> </p><div class="fragment"><div class="line"><span class="comment">// Pažymio pridėjimas</span></div>
+<div class="line"><span class="keywordtype">void</span> addPaz(<span class="keywordtype">int</span> paz) {</div>
+<div class="line">    paz_.push_back(paz);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Pažymių kiekis</span></div>
+<div class="line"><span class="keywordtype">int</span> getPazCount()<span class="keyword"> const </span>{</div>
+<div class="line">    <span class="keywordflow">return</span> paz_.size();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Grįžti pažymių vektorių (const)</span></div>
+<div class="line"><span class="keyword">const</span> <a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a>&amp; getPaz()<span class="keyword"> const </span>{</div>
+<div class="line">    <span class="keywordflow">return</span> paz_;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Pažymių atšaukimas</span></div>
+<div class="line"><span class="keywordtype">void</span> clearPaz() {</div>
+<div class="line">    paz_.clear();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Atmintis rezervavimas (optimizavimas)</span></div>
+<div class="line"><span class="keywordtype">void</span> reservePaz(<span class="keywordtype">int</span> kiekis) {</div>
+<div class="line">    paz_.reserve(kiekis);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Pažymių nustatymas iš Vector</span></div>
+<div class="line"><span class="keywordtype">void</span> setPaz(<span class="keyword">const</span> <a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a>&amp; nauji_paz) {</div>
+<div class="line">    paz_ = nauji_paz;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h3>Statistinės Funkcijos su <a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector</a></h3>
+<p><b>Vidutinio Skaičiavimas:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">double</span> vidurkis(<span class="keyword">const</span> <a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a>&amp; paz) {</div>
+<div class="line">    <span class="keywordflow">if</span> (paz.size() == 0) <span class="keywordflow">return</span> 0.0;</div>
+<div class="line">    <span class="keywordtype">double</span> suma = 0.0;</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> p : paz) suma += p;</div>
+<div class="line">    <span class="keywordflow">return</span> suma / paz.size();</div>
+<div class="line">}</div>
+</div><!-- fragment --><p><b>Medianos Skaičiavimas:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> mediana(<a class="code hl_class" href="class_vector.html">Vector&lt;int&gt;</a> paz) {  <span class="comment">// Kopija dėl rūšiavimo</span></div>
+<div class="line">    <span class="keywordflow">if</span> (paz.size() == 0) <span class="keywordflow">return</span> 0;</div>
+<div class="line">    std::sort(paz.begin(), paz.end());</div>
+<div class="line">    <span class="keywordflow">if</span> (paz.size() % 2 == 1) {</div>
+<div class="line">        <span class="keywordflow">return</span> paz[paz.size() / 2];</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> (paz[paz.size() / 2 - 1] + paz[paz.size() / 2]) / 2;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h3>Rule of Five su <a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector</a></h3>
+<p><b>Copy Semantika:</b> </p><div class="fragment"><div class="line">Studentas::Studentas(<span class="keyword">const</span> <a class="code hl_class" href="class_studentas.html">Studentas</a>&amp; other)</div>
+<div class="line">    : <a class="code hl_class" href="class_zmogus.html">Zmogus</a>(other), paz_(other.paz_), egz_(other.egz_), </div>
+<div class="line">      rez_(other.rez_), med_(other.med_) {}</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_class" href="class_studentas.html">Studentas</a>&amp; Studentas::operator=(<span class="keyword">const</span> <a class="code hl_class" href="class_studentas.html">Studentas</a>&amp; other) {</div>
+<div class="line">    <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other) {</div>
+<div class="line">        Zmogus::operator=(other);</div>
+<div class="line">        paz_ = other.paz_;  <span class="comment">// Vector copy assignment</span></div>
+<div class="line">        egz_ = other.egz_;</div>
+<div class="line">        rez_ = other.rez_;</div>
+<div class="line">        med_ = other.med_;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p><b>Move Semantika:</b> </p><div class="fragment"><div class="line">Studentas::Studentas(<a class="code hl_class" href="class_studentas.html">Studentas</a>&amp;&amp; other) noexcept</div>
+<div class="line">    : <a class="code hl_class" href="class_zmogus.html">Zmogus</a>(std::move(other)), paz_(std::move(other.paz_)), </div>
+<div class="line">      egz_(other.egz_), rez_(other.rez_), med_(other.med_) {}</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_class" href="class_studentas.html">Studentas</a>&amp; Studentas::operator=(<a class="code hl_class" href="class_studentas.html">Studentas</a>&amp;&amp; other) <span class="keyword">noexcept</span> {</div>
+<div class="line">    <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other) {</div>
+<div class="line">        Zmogus::operator=(std::move(other));</div>
+<div class="line">        paz_ = std::move(other.paz_);  <span class="comment">// Vector move assignment</span></div>
+<div class="line">        egz_ = other.egz_;</div>
+<div class="line">        rez_ = other.rez_;</div>
+<div class="line">        med_ = other.med_;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h3>Spartos Testas su 1M-10M Įrašų</h3>
+<p><span class="tt"><a class="el" href="testavimas_8cpp_source.html">extra_cpp/testavimas.cpp</a></span> integravo <a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector</a> testą:</p>
+<div class="fragment"><div class="line"><span class="comment">// Trijų strategijų spartos palyginimas</span></div>
+<div class="line"><a class="code hl_class" href="class_vector.html">Vector&lt;Studentas&gt;</a> studentai;</div>
+<div class="line">studentai.reserve(1000000);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Strategija 1: Dvigube konteinerių manipuliacijos</span></div>
+<div class="line"><span class="comment">// Strategija 2: Vienas konteineris su trimu iš pagrindo</span></div>
+<div class="line"><span class="comment">// Strategija 3: In-place rūšiavimas ir dalijimas</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Visas ciklas beveik 2x greitesnis su reserve() optimizavimu</span></div>
+</div><!-- fragment --><h3>Google Test: <a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector&lt;T&gt;</a> Test Suite (v3.0 nauja!)</h3>
+<p>Visas <a class="el" href="class_vector.html" title="Custom dynamic array container template.">Vector</a> API testuojamas per Google Test framework - <b>27 testai</b>, visi praeina ✅</p>
+<p><b>Test List:</b></p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">#  </th><th class="markdownTableHeadNone">Testas  </th><th class="markdownTableHeadNone">Aprašas  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">1  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.PushBack</span>  </td><td class="markdownTableBodyNone">push_back() operacija  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">2  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.PopBack</span>  </td><td class="markdownTableBodyNone">pop_back() operacija  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">3  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.Size</span>  </td><td class="markdownTableBodyNone">size() funkcija  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">4  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.Empty</span>  </td><td class="markdownTableBodyNone">empty() check  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">5  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.Access</span>  </td><td class="markdownTableBodyNone">operator[] ir at()  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">6  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.FrontBack</span>  </td><td class="markdownTableBodyNone">front() ir back()  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">7  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.Reserve</span>  </td><td class="markdownTableBodyNone">reserve() atmintis  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">8  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.Clear</span>  </td><td class="markdownTableBodyNone">clear() operacija  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">9  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.ShrinkToFit</span>  </td><td class="markdownTableBodyNone">shrink_to_fit()  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">10  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.Resize</span>  </td><td class="markdownTableBodyNone">resize() metody  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">11  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.Swap</span>  </td><td class="markdownTableBodyNone">swap() metodas  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">12  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.ComparisonOperators</span>  </td><td class="markdownTableBodyNone">== ir != operatoriai  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">13  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.LessGreaterOperators</span>  </td><td class="markdownTableBodyNone">&lt; ir &gt; operatoriai  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">14  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.BeginEndIterators</span>  </td><td class="markdownTableBodyNone">begin()/end() iteratoriai  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">15  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.Assign</span>  </td><td class="markdownTableBodyNone">assign() metodas  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">16  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.Insert</span>  </td><td class="markdownTableBodyNone">insert() operacija  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">17  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.Erase</span>  </td><td class="markdownTableBodyNone">erase() operacija  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">18  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.EmplaceBack</span>  </td><td class="markdownTableBodyNone">emplace_back()  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">19  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.Emplace</span>  </td><td class="markdownTableBodyNone">emplace() vietos konstravimas  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">20  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.MaxSize</span>  </td><td class="markdownTableBodyNone">max_size()  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">21  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.Data</span>  </td><td class="markdownTableBodyNone">data() raw pointer  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">22  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.CopyConstructor</span>  </td><td class="markdownTableBodyNone">Copy constructor  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">23  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.MoveConstructor</span>  </td><td class="markdownTableBodyNone">Move constructor  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">24  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.CopyAssignment</span>  </td><td class="markdownTableBodyNone">Copy assignment  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">25  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.MoveAssignment</span>  </td><td class="markdownTableBodyNone">Move assignment  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">26  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.ReverseIterators</span>  </td><td class="markdownTableBodyNone">rbegin()/rend()  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">27  </td><td class="markdownTableBodyNone"><span class="tt">VectorTest.ConversionFromStdVector</span>  </td><td class="markdownTableBodyNone">std::vector konversija  </td></tr>
+</table>
+<p><b>Paleidimas:</b> </p><div class="fragment"><div class="line"># Linux/macOS</div>
+<div class="line">cd build</div>
+<div class="line">./test_programa</div>
+<div class="line"> </div>
+<div class="line"># Windows</div>
+<div class="line">cd build</div>
+<div class="line">.\Release\test_programa.exe</div>
+<div class="line"> </div>
+<div class="line"># Atrinktasis test</div>
+<div class="line">./test_programa --gtest_filter=VectorTest.PushBack</div>
+</div><!-- fragment --><p><b>Rezultatas:</b> </p><div class="fragment"><div class="line">[==========] Running 27 tests from VectorTest</div>
+<div class="line">[  PASSED  ] 27 tests</div>
 </div><!-- fragment --><hr  />
 <h1>v2.0 relisas: Unit Testai (Google Test) ir Doxygen Dokumentacija</h1>
 <h2>Unit Testai (v2.0)</h2>

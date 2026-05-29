@@ -20,6 +20,49 @@
 
 \doxysubsubsection*{Testas:\+ std::\+vector vs \doxylink{class_vector}{Vector$<$int$>$} push\+\_\+back()}
 
+\doxysubsubsection*{Optimizavimo Pastabos}
+
+{\bfseries{\doxylink{class_vector}{Vector$<$\+T$>$} Realizacijos Optimizavimas:\+}}
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Reallokacijos Strategija}}:\+ \doxylink{class_vector}{Vector} naudoja geometrinę augimo strategiją (2x multiplier), kuri sumažina reallokacijas
+\begin{DoxyItemize}
+\item Naujos talpos formula:\+ {\ttfamily new\+\_\+capacity = (\+\_\+capacity == 0) ? 1 :\+ \+\_\+capacity \texorpdfstring{$\ast$}{*} 2}
+\item Šis metodas sumažina O(n²) į O(n) amortizuotą laiko sudėtingumą
+\end{DoxyItemize}
+\item {\bfseries{Move Semantika}}:\+ {\ttfamily push\+\_\+back(T\&\&)} overload naudoja move semantiką greitam išteklių perėmimui
+\begin{DoxyItemize}
+\item Kopijuoti brangūs objektai perkeliami vietoj kopijuose
+\item Efektyvu:\+ {\ttfamily v.\+push\+\_\+back(std::\+move(temp\+Obj))}
+\end{DoxyItemize}
+\item {\bfseries{Reserve Optimizavimas}}:\+ Naudotojo optimizavimas per {\ttfamily reserve()} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_vector}{Vector<Studentas>}}\ v;}
+\DoxyCodeLine{v.reserve(100000);\ \ \textcolor{comment}{//\ Iš\ anksto\ alokuoti\ atmintį\ -\/\ išvengiame\ 17\ reallokacijų}}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 100000;\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ v.push\_back(\doxymbox{\hyperlink{class_studentas}{Studentas}}(...));\ \ \textcolor{comment}{//\ Dabar\ greitai\ -\/\ nereallokuojama}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\item {\bfseries{Iteratoriai}}:\+ Random access iteratoriai O(1) sąnaudos
+\begin{DoxyItemize}
+\item {\ttfamily begin()}, {\ttfamily end()}, {\ttfamily rbegin()}, {\ttfamily rend()} veikia per O(1)
+\item Leisti range-\/based for ciklams ir std algoritams
+\end{DoxyItemize}
+\item {\bfseries{Memory Layout}}:\+ Išsaugomas contiguous atmintis layout
+\begin{DoxyItemize}
+\item {\ttfamily data()} grąžina raw pointerį
+\item Suderinamumas su C API ir SIMD operacijomis
+\end{DoxyItemize}
+\item {\bfseries{CMake Release Optimizacijos}}:\+
+\begin{DoxyItemize}
+\item Kompiliavimas su {\ttfamily /\+\+O2} optimizacija (MSVC Release)
+\item Nėra runtime debug checks {\ttfamily /\+\+RTC1}
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
 \DoxyHorRuler{0}
 
 
@@ -198,6 +241,232 @@
 \DoxyCodeLine{\textcolor{keywordflow}{if}\ (v1\ <\ v3)\ \{}
 \DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}v1\ <\ v3\ (leksikografinė\ sąlyga)\(\backslash\)n"{}};}
 \DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+
+
+\doxysubsection*{\doxylink{class_studentas}{Studentas} Integravimas su \doxylink{class_vector}{Vector$<$\+T$>$}}
+
+\doxysubsubsection*{Implementacija}
+
+Klasė {\ttfamily \doxylink{class_studentas}{Studentas}} (iš v1.\+5) buvo integruota su custom {\ttfamily \doxylink{class_vector}{Vector}\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} konteineriu:\+
+
+{\bfseries{Prieš (v2.\+0 -\/ su std::\+vector):\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_studentas}{Studentas}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_zmogus}{Zmogus}}\ \{}
+\DoxyCodeLine{\textcolor{keyword}{private}:}
+\DoxyCodeLine{\ \ \ \ std::vector<int>\ paz\_;\ \ \textcolor{comment}{//\ Pažymiai}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ egz\_;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ rez\_;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ med\_;}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+{\bfseries{Dabar (v3.\+0 -\/ su \doxylink{class_vector}{Vector$<$\+T$>$}):\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_studentas}{Studentas}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_zmogus}{Zmogus}}\ \{}
+\DoxyCodeLine{\textcolor{keyword}{private}:}
+\DoxyCodeLine{\ \ \ \ Vector<int>\ paz\_;\ \ \textcolor{comment}{//\ Custom\ Vector\ konteineris}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ egz\_;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ rez\_;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ med\_;}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{Metodai Integruoti su \doxylink{class_vector}{Vector}}
+
+{\bfseries{Pažymių Valdymas:\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Pažymio\ pridėjimas}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ addPaz(\textcolor{keywordtype}{int}\ paz)\ \{}
+\DoxyCodeLine{\ \ \ \ paz\_.push\_back(paz);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Pažymių\ kiekis}}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ getPazCount()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ paz\_.size();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Grįžti\ pažymių\ vektorių\ (const)}}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\&\ getPaz()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ paz\_;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Pažymių\ atšaukimas}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ clearPaz()\ \{}
+\DoxyCodeLine{\ \ \ \ paz\_.clear();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Atmintis\ rezervavimas\ (optimizavimas)}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ reservePaz(\textcolor{keywordtype}{int}\ kiekis)\ \{}
+\DoxyCodeLine{\ \ \ \ paz\_.reserve(kiekis);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Pažymių\ nustatymas\ iš\ Vector}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ setPaz(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\&\ nauji\_paz)\ \{}
+\DoxyCodeLine{\ \ \ \ paz\_\ =\ nauji\_paz;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{Statistinės Funkcijos su \doxylink{class_vector}{Vector}}
+
+{\bfseries{Vidutinio Skaičiavimas:\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double}\ vidurkis(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_vector}{Vector<int>}}\&\ paz)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (paz.size()\ ==\ 0)\ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ suma\ =\ 0.0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ p\ :\ paz)\ suma\ +=\ p;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ suma\ /\ paz.size();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+{\bfseries{Medianos Skaičiavimas:\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ mediana(\doxymbox{\hyperlink{class_vector}{Vector<int>}}\ paz)\ \{\ \ \textcolor{comment}{//\ Kopija\ dėl\ rūšiavimo}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (paz.size()\ ==\ 0)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\ \ \ \ std::sort(paz.begin(),\ paz.end());}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (paz.size()\ \%\ 2\ ==\ 1)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ paz[paz.size()\ /\ 2];}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ (paz[paz.size()\ /\ 2\ -\/\ 1]\ +\ paz[paz.size()\ /\ 2])\ /\ 2;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{Rule of Five su \doxylink{class_vector}{Vector}}
+
+{\bfseries{Copy Semantika:\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Studentas::Studentas(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ other)}
+\DoxyCodeLine{\ \ \ \ :\ \doxymbox{\hyperlink{class_zmogus}{Zmogus}}(other),\ paz\_(other.paz\_),\ egz\_(other.egz\_),\ }
+\DoxyCodeLine{\ \ \ \ \ \ rez\_(other.rez\_),\ med\_(other.med\_)\ \{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ Studentas::operator=(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ other)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Zmogus::operator=(other);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ paz\_\ =\ other.paz\_;\ \ \textcolor{comment}{//\ Vector\ copy\ assignment}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ egz\_\ =\ other.egz\_;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ rez\_\ =\ other.rez\_;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ med\_\ =\ other.med\_;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+{\bfseries{Move Semantika:\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Studentas::Studentas(\doxymbox{\hyperlink{class_studentas}{Studentas}}\&\&\ other)\ noexcept}
+\DoxyCodeLine{\ \ \ \ :\ \doxymbox{\hyperlink{class_zmogus}{Zmogus}}(std::move(other)),\ paz\_(std::move(other.paz\_)),\ }
+\DoxyCodeLine{\ \ \ \ \ \ egz\_(other.egz\_),\ rez\_(other.rez\_),\ med\_(other.med\_)\ \{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ Studentas::operator=(\doxymbox{\hyperlink{class_studentas}{Studentas}}\&\&\ other)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Zmogus::operator=(std::move(other));}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ paz\_\ =\ std::move(other.paz\_);\ \ \textcolor{comment}{//\ Vector\ move\ assignment}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ egz\_\ =\ other.egz\_;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ rez\_\ =\ other.rez\_;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ med\_\ =\ other.med\_;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{Spartos Testas su 1M-\/10M Įrašų}
+
+{\ttfamily \doxylink{testavimas_8cpp_source}{extra\+\_\+cpp/\+testavimas.\+cpp}} integravo \doxylink{class_vector}{Vector} testą:\+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Trijų\ strategijų\ spartos\ palyginimas}}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_vector}{Vector<Studentas>}}\ studentai;}
+\DoxyCodeLine{studentai.reserve(1000000);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Strategija\ 1:\ Dvigube\ konteinerių\ manipuliacijos}}
+\DoxyCodeLine{\textcolor{comment}{//\ Strategija\ 2:\ Vienas\ konteineris\ su\ trimu\ iš\ pagrindo}}
+\DoxyCodeLine{\textcolor{comment}{//\ Strategija\ 3:\ In-\/place\ rūšiavimas\ ir\ dalijimas}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Visas\ ciklas\ beveik\ 2x\ greitesnis\ su\ reserve()\ optimizavimu}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{Google Test:\+ \doxylink{class_vector}{Vector$<$\+T$>$} Test Suite (v3.\+0 nauja!)}
+
+Visas \doxylink{class_vector}{Vector} API testuojamas per Google Test framework -\/ {\bfseries{27 testai}}, visi praeina ✅
+
+{\bfseries{Test List:\+}}
+
+
+\begin{DoxyTable}{3}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}\#  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Testas  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Aprašas  \\
+1  &{\ttfamily Vector\+Test.\+Push\+Back}  &push\+\_\+back() operacija  \\
+2  &{\ttfamily Vector\+Test.\+Pop\+Back}  &pop\+\_\+back() operacija  \\
+3  &{\ttfamily Vector\+Test.\+Size}  &size() funkcija  \\
+4  &{\ttfamily Vector\+Test.\+Empty}  &empty() check  \\
+5  &{\ttfamily Vector\+Test.\+Access}  &operator\+[]\+ ir at()  \\
+6  &{\ttfamily Vector\+Test.\+Front\+Back}  &front() ir back()  \\
+7  &{\ttfamily Vector\+Test.\+Reserve}  &reserve() atmintis  \\
+8  &{\ttfamily Vector\+Test.\+Clear}  &clear() operacija  \\
+9  &{\ttfamily Vector\+Test.\+Shrink\+To\+Fit}  &shrink\+\_\+to\+\_\+fit()  \\
+10  &{\ttfamily Vector\+Test.\+Resize}  &resize() metody  \\
+11  &{\ttfamily Vector\+Test.\+Swap}  &swap() metodas  \\
+12  &{\ttfamily Vector\+Test.\+Comparison\+Operators}  &== ir != operatoriai  \\
+13  &{\ttfamily Vector\+Test.\+Less\+Greater\+Operators}  &\texorpdfstring{$<$}{<} ir \texorpdfstring{$>$}{>} operatoriai  \\
+14  &{\ttfamily Vector\+Test.\+Begin\+End\+Iterators}  &begin()/\+end() iteratoriai  \\
+15  &{\ttfamily Vector\+Test.\+Assign}  &assign() metodas  \\
+16  &{\ttfamily Vector\+Test.\+Insert}  &insert() operacija  \\
+17  &{\ttfamily Vector\+Test.\+Erase}  &erase() operacija  \\
+18  &{\ttfamily Vector\+Test.\+Emplace\+Back}  &emplace\+\_\+back()  \\
+19  &{\ttfamily Vector\+Test.\+Emplace}  &emplace() vietos konstravimas  \\
+20  &{\ttfamily Vector\+Test.\+Max\+Size}  &max\+\_\+size()  \\
+21  &{\ttfamily Vector\+Test.\+Data}  &data() raw pointer  \\
+22  &{\ttfamily Vector\+Test.\+Copy\+Constructor}  &Copy constructor  \\
+23  &{\ttfamily Vector\+Test.\+Move\+Constructor}  &Move constructor  \\
+24  &{\ttfamily Vector\+Test.\+Copy\+Assignment}  &Copy assignment  \\
+25  &{\ttfamily Vector\+Test.\+Move\+Assignment}  &Move assignment  \\
+26  &{\ttfamily Vector\+Test.\+Reverse\+Iterators}  &rbegin()/\+rend()  \\
+27  &{\ttfamily Vector\+Test.\+Conversion\+From\+Std\+Vector}  &std::\+vector konversija  \\
+\end{DoxyTable}
+
+
+{\bfseries{Paleidimas:\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Linux/macOS}
+\DoxyCodeLine{cd\ build}
+\DoxyCodeLine{./test\_programa}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Windows}
+\DoxyCodeLine{cd\ build}
+\DoxyCodeLine{.\(\backslash\)Release\(\backslash\)test\_programa.exe}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Atrinktasis\ test}
+\DoxyCodeLine{./test\_programa\ -\/-\/gtest\_filter=VectorTest.PushBack}
+
+\end{DoxyCode}
+
+
+{\bfseries{Rezultatas:\+}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[==========]\ Running\ 27\ tests\ from\ VectorTest}
+\DoxyCodeLine{[\ \ PASSED\ \ ]\ 27\ tests}
 
 \end{DoxyCode}
 

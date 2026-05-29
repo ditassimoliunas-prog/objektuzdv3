@@ -1,174 +1,378 @@
 \begin{theindex}
 
   \item {\texorpdfstring{$\sim$}{\string~}Studentas}
-    \subitem {Studentas}, \hyperpage{16}
+    \subitem {Studentas}, \hyperpage{25}
+  \item {\texorpdfstring{$\sim$}{\string~}Vector}
+    \subitem {Vector$<$ T $>$}, \hyperpage{31}
   \item {\texorpdfstring{$\sim$}{\string~}Zmogus}
-    \subitem {Zmogus}, \hyperpage{22}
+    \subitem {Zmogus}, \hyperpage{44}
 
   \indexspace
 
   \item {addPaz}
-    \subitem {Studentas}, \hyperpage{17}
+    \subitem {Studentas}, \hyperpage{26}
+  \item {assign}
+    \subitem {Vector$<$ T $>$}, \hyperpage{31}
+  \item {at}
+    \subitem {Vector$<$ T $>$}, \hyperpage{31, 32}
 
   \indexspace
 
+  \item {back}
+    \subitem {Vector$<$ T $>$}, \hyperpage{32}
+  \item {begin}
+    \subitem {Vector$<$ T $>$}, \hyperpage{32}
+
+  \indexspace
+
+  \item {capacity}
+    \subitem {Vector$<$ T $>$}, \hyperpage{32}
+  \item {cbegin}
+    \subitem {Vector$<$ T $>$}, \hyperpage{32}
+  \item {cend}
+    \subitem {Vector$<$ T $>$}, \hyperpage{32}
+  \item {clear}
+    \subitem {Vector$<$ T $>$}, \hyperpage{32}
   \item {clearPaz}
-    \subitem {Studentas}, \hyperpage{17}
+    \subitem {Studentas}, \hyperpage{26}
+  \item {const\_iterator}
+    \subitem {Vector$<$ T $>$}, \hyperpage{30}
+  \item {const\_reverse\_iterator}
+    \subitem {Vector$<$ T $>$}, \hyperpage{30}
+  \item {crbegin}
+    \subitem {Vector$<$ T $>$}, \hyperpage{32}
+  \item {crend}
+    \subitem {Vector$<$ T $>$}, \hyperpage{33}
 
   \indexspace
 
-  \item {deque$<$ T $>$}, \hyperpage{9}
-  \item {deque$<$ T $>$::const\_iterator}, \hyperpage{7}
-  \item {deque$<$ T $>$::const\_reverse\_iterator}, \hyperpage{8}
-  \item {deque$<$ T $>$::iterator}, \hyperpage{10}
-  \item {deque$<$ T $>$::reverse\_iterator}, \hyperpage{13}
+  \item {data}
+    \subitem {Vector$<$ T $>$}, \hyperpage{33}
+  \item {deque$<$ T $>$}, \hyperpage{20}
+  \item {deque$<$ T $>$::const\_iterator}, \hyperpage{19}
+  \item {deque$<$ T $>$::const\_reverse\_iterator}, \hyperpage{19}
+  \item {deque$<$ T $>$::iterator}, \hyperpage{21}
+  \item {deque$<$ T $>$::reverse\_iterator}, \hyperpage{23}
+  \item {difference\_type}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{39}
 
   \indexspace
 
-  \item {exception}, \hyperpage{9}
-  \item {extra\_cpp/duomenu\_valdymas.cpp}, \hyperpage{25}
-  \item {extra\_cpp/input.cpp}, \hyperpage{30}
-  \item {extra\_cpp/mat\_funkcijos.cpp}, \hyperpage{31}
-  \item {extra\_cpp/menu.cpp}, \hyperpage{32}
-  \item {extra\_cpp/output.cpp}, \hyperpage{33}
-  \item {extra\_cpp/Studentas.cpp}, \hyperpage{34}
-  \item {extra\_cpp/testavimas.cpp}, \hyperpage{36}
-  \item {extra\_cpp/Zmogus.cpp}, \hyperpage{41}
+  \item {emplace}
+    \subitem {Vector$<$ T $>$}, \hyperpage{33}
+  \item {emplace\_back}
+    \subitem {Vector$<$ T $>$}, \hyperpage{33}
+  \item {empty}
+    \subitem {Vector$<$ T $>$}, \hyperpage{33}
+  \item {end}
+    \subitem {Vector$<$ T $>$}, \hyperpage{33}
+  \item {erase}
+    \subitem {Vector$<$ T $>$}, \hyperpage{33, 34}
+  \item {exception}, \hyperpage{21}
+  \item {extra\_cpp/duomenu\_valdymas.cpp}, \hyperpage{47}
+  \item {extra\_cpp/input.cpp}, \hyperpage{52}
+  \item {extra\_cpp/mat\_funkcijos.cpp}, \hyperpage{53}
+  \item {extra\_cpp/menu.cpp}, \hyperpage{54}
+  \item {extra\_cpp/output.cpp}, \hyperpage{56}
+  \item {extra\_cpp/Studentas.cpp}, \hyperpage{57}
+  \item {extra\_cpp/testavimas.cpp}, \hyperpage{58}
+  \item {extra\_cpp/Zmogus.cpp}, \hyperpage{63}
 
   \indexspace
 
+  \item {front}
+    \subitem {Vector$<$ T $>$}, \hyperpage{34}
+
+  \indexspace
+
+  \item {get\_reallocation\_count}
+    \subitem {Vector$<$ T $>$}, \hyperpage{34}
   \item {getEgz}
-    \subitem {Studentas}, \hyperpage{17}
+    \subitem {Studentas}, \hyperpage{26}
   \item {getInfo}
-    \subitem {Studentas}, \hyperpage{17}
-    \subitem {Zmogus}, \hyperpage{22}
+    \subitem {Studentas}, \hyperpage{26}
+    \subitem {Zmogus}, \hyperpage{44}
   \item {getMed}
-    \subitem {Studentas}, \hyperpage{17}
+    \subitem {Studentas}, \hyperpage{26}
   \item {getPavarde}
-    \subitem {Zmogus}, \hyperpage{22}
+    \subitem {Zmogus}, \hyperpage{44}
   \item {getPaz}
-    \subitem {Studentas}, \hyperpage{18}
+    \subitem {Studentas}, \hyperpage{26}
   \item {getRez}
-    \subitem {Studentas}, \hyperpage{18}
+    \subitem {Studentas}, \hyperpage{26}
   \item {getVardas}
-    \subitem {Zmogus}, \hyperpage{23}
+    \subitem {Zmogus}, \hyperpage{44}
 
   \indexspace
 
-  \item {header\_files/duomenu\_valdymas.h}, \hyperpage{41}
-  \item {header\_files/input.h}, \hyperpage{41}
-  \item {header\_files/Mat\_funkcijos.h}, \hyperpage{42}
-  \item {header\_files/menu.h}, \hyperpage{42}
-  \item {header\_files/output.h}, \hyperpage{42}
-  \item {header\_files/Studentas.h}, \hyperpage{42}
-  \item {header\_files/testavimas.h}, \hyperpage{43}
-  \item {header\_files/Zmogus.h}, \hyperpage{43}
+  \item {header\_files/duomenu\_valdymas.h}, \hyperpage{64}
+  \item {header\_files/input.h}, \hyperpage{64}
+  \item {header\_files/Mat\_funkcijos.h}, \hyperpage{64}
+  \item {header\_files/menu.h}, \hyperpage{64}
+  \item {header\_files/output.h}, \hyperpage{64}
+  \item {header\_files/Studentas.h}, \hyperpage{65}
+  \item {header\_files/testavimas.h}, \hyperpage{66}
+  \item {header\_files/Vector.h}, \hyperpage{66}
+  \item {header\_files/Zmogus.h}, \hyperpage{74}
 
   \indexspace
 
-  \item {ifstream}, \hyperpage{10}
-  \item {invalid\_argument}, \hyperpage{10}
+  \item {ifstream}, \hyperpage{21}
+  \item {insert}
+    \subitem {Vector$<$ T $>$}, \hyperpage{34, 35}
+  \item {invalid\_argument}, \hyperpage{21}
   \item {isPazEmpty}
-    \subitem {Studentas}, \hyperpage{18}
-  \item {istream}, \hyperpage{10}
+    \subitem {Studentas}, \hyperpage{26}
+  \item {istream}, \hyperpage{21}
+  \item {iterator}
+    \subitem {Vector$<$ T $>$}, \hyperpage{30}
+  \item {iterator\_category}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{39}
 
   \indexspace
 
-  \item {list$<$ T $>$}, \hyperpage{11}
-  \item {list$<$ T $>$::const\_iterator}, \hyperpage{7}
-  \item {list$<$ T $>$::const\_reverse\_iterator}, \hyperpage{8}
-  \item {list$<$ T $>$::iterator}, \hyperpage{11}
-  \item {list$<$ T $>$::reverse\_iterator}, \hyperpage{13}
+  \item {list$<$ T $>$}, \hyperpage{22}
+  \item {list$<$ T $>$::const\_iterator}, \hyperpage{19}
+  \item {list$<$ T $>$::const\_reverse\_iterator}, \hyperpage{20}
+  \item {list$<$ T $>$::iterator}, \hyperpage{21}
+  \item {list$<$ T $>$::reverse\_iterator}, \hyperpage{23}
 
   \indexspace
 
-  \item {ofstream}, \hyperpage{12}
+  \item {max\_size}
+    \subitem {Vector$<$ T $>$}, \hyperpage{35}
+
+  \indexspace
+
+  \item {ofstream}, \hyperpage{22}
+  \item {operator!=}
+    \subitem {Vector$<$ T $>$}, \hyperpage{35}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{40}
+  \item {operator$<$}
+    \subitem {Vector$<$ T $>$}, \hyperpage{35}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{41}
   \item {operator$<$$<$}
-    \subitem {Studentas}, \hyperpage{19}
-    \subitem {Zmogus}, \hyperpage{24}
+    \subitem {Studentas}, \hyperpage{27}
+    \subitem {Zmogus}, \hyperpage{45}
+  \item {operator$<$=}
+    \subitem {Vector$<$ T $>$}, \hyperpage{35}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{41}
+  \item {operator$>$}
+    \subitem {Vector$<$ T $>$}, \hyperpage{36}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{42}
   \item {operator$>$$>$}
-    \subitem {Studentas}, \hyperpage{19}
+    \subitem {Studentas}, \hyperpage{27}
+  \item {operator$>$=}
+    \subitem {Vector$<$ T $>$}, \hyperpage{36}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{42}
+  \item {operator+}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{40}
+  \item {operator++}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{40}
+  \item {operator+=}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{40}
+  \item {operator-\/}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{41}
+  \item {operator-\/$>$}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{41}
+  \item {operator-\/-\/}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{41}
+  \item {operator-\/=}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{41}
   \item {operator=}
-    \subitem {Studentas}, \hyperpage{18}
-  \item {ostream}, \hyperpage{12}
+    \subitem {Studentas}, \hyperpage{27}
+    \subitem {Vector$<$ T $>$}, \hyperpage{35}
+  \item {operator==}
+    \subitem {Vector$<$ T $>$}, \hyperpage{36}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{41}
+  \item {operator[]}
+    \subitem {Vector$<$ T $>$}, \hyperpage{36}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{42}
+  \item {operator\texorpdfstring{$\ast$}{*}}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{40}
+  \item {ostream}, \hyperpage{22}
 
   \indexspace
 
   \item {pavarde\_}
-    \subitem {Zmogus}, \hyperpage{24}
+    \subitem {Zmogus}, \hyperpage{45}
+  \item {pointer}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{39}
+  \item {pop\_back}
+    \subitem {Vector$<$ T $>$}, \hyperpage{36}
+  \item {push\_back}
+    \subitem {Vector$<$ T $>$}, \hyperpage{36}
 
   \indexspace
 
+  \item {rbegin}
+    \subitem {Vector$<$ T $>$}, \hyperpage{37}
   \item {readStudent}
-    \subitem {Studentas}, \hyperpage{18}
+    \subitem {Studentas}, \hyperpage{27}
+  \item {reference}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{40}
+  \item {rend}
+    \subitem {Vector$<$ T $>$}, \hyperpage{37}
+  \item {reserve}
+    \subitem {Vector$<$ T $>$}, \hyperpage{37}
   \item {reservePaz}
-    \subitem {Studentas}, \hyperpage{19}
-  \item {runtime\_error}, \hyperpage{14}
+    \subitem {Studentas}, \hyperpage{27}
+  \item {reset\_reallocation\_count}
+    \subitem {Vector$<$ T $>$}, \hyperpage{37}
+  \item {resize}
+    \subitem {Vector$<$ T $>$}, \hyperpage{37}
+  \item {reverse\_iterator}
+    \subitem {Vector$<$ T $>$}, \hyperpage{30}
+  \item {runtime\_error}, \hyperpage{23}
 
   \indexspace
 
   \item {setEgz}
-    \subitem {Studentas}, \hyperpage{19}
+    \subitem {Studentas}, \hyperpage{27}
   \item {setMed}
-    \subitem {Studentas}, \hyperpage{19}
+    \subitem {Studentas}, \hyperpage{27}
   \item {setPavarde}
-    \subitem {Zmogus}, \hyperpage{23}
+    \subitem {Zmogus}, \hyperpage{44}
   \item {setPaz}
-    \subitem {Studentas}, \hyperpage{19}
+    \subitem {Studentas}, \hyperpage{27}
   \item {setRez}
-    \subitem {Studentas}, \hyperpage{19}
+    \subitem {Studentas}, \hyperpage{27}
   \item {setVardas}
-    \subitem {Zmogus}, \hyperpage{23}
-  \item {string}, \hyperpage{14}
-  \item {string::const\_iterator}, \hyperpage{7}
-  \item {string::const\_reverse\_iterator}, \hyperpage{8}
-  \item {string::iterator}, \hyperpage{11}
-  \item {string::reverse\_iterator}, \hyperpage{13}
-  \item {stringstream}, \hyperpage{14}
-  \item {Studentas}, \hyperpage{15}
+    \subitem {Zmogus}, \hyperpage{45}
+  \item {shrink\_to\_fit}
+    \subitem {Vector$<$ T $>$}, \hyperpage{37}
+  \item {size}
+    \subitem {Vector$<$ T $>$}, \hyperpage{38}
+  \item {string}, \hyperpage{23}
+  \item {string::const\_iterator}, \hyperpage{19}
+  \item {string::const\_reverse\_iterator}, \hyperpage{20}
+  \item {string::iterator}, \hyperpage{22}
+  \item {string::reverse\_iterator}, \hyperpage{23}
+  \item {stringstream}, \hyperpage{24}
+  \item {Studentas}, \hyperpage{24}
     \subitem {\texorpdfstring{$\sim$}{\string~}Studentas}, 
-		\hyperpage{16}
-    \subitem {addPaz}, \hyperpage{17}
-    \subitem {clearPaz}, \hyperpage{17}
-    \subitem {getEgz}, \hyperpage{17}
-    \subitem {getInfo}, \hyperpage{17}
-    \subitem {getMed}, \hyperpage{17}
-    \subitem {getPaz}, \hyperpage{18}
-    \subitem {getRez}, \hyperpage{18}
-    \subitem {isPazEmpty}, \hyperpage{18}
-    \subitem {operator$<$$<$}, \hyperpage{19}
-    \subitem {operator$>$$>$}, \hyperpage{19}
-    \subitem {operator=}, \hyperpage{18}
-    \subitem {readStudent}, \hyperpage{18}
-    \subitem {reservePaz}, \hyperpage{19}
-    \subitem {setEgz}, \hyperpage{19}
-    \subitem {setMed}, \hyperpage{19}
-    \subitem {setPaz}, \hyperpage{19}
-    \subitem {setRez}, \hyperpage{19}
-    \subitem {Studentas}, \hyperpage{16, 17}
+		\hyperpage{25}
+    \subitem {addPaz}, \hyperpage{26}
+    \subitem {clearPaz}, \hyperpage{26}
+    \subitem {getEgz}, \hyperpage{26}
+    \subitem {getInfo}, \hyperpage{26}
+    \subitem {getMed}, \hyperpage{26}
+    \subitem {getPaz}, \hyperpage{26}
+    \subitem {getRez}, \hyperpage{26}
+    \subitem {isPazEmpty}, \hyperpage{26}
+    \subitem {operator$<$$<$}, \hyperpage{27}
+    \subitem {operator$>$$>$}, \hyperpage{27}
+    \subitem {operator=}, \hyperpage{27}
+    \subitem {readStudent}, \hyperpage{27}
+    \subitem {reservePaz}, \hyperpage{27}
+    \subitem {setEgz}, \hyperpage{27}
+    \subitem {setMed}, \hyperpage{27}
+    \subitem {setPaz}, \hyperpage{27}
+    \subitem {setRez}, \hyperpage{27}
+    \subitem {Studentas}, \hyperpage{25, 26}
+  \item {swap}
+    \subitem {Vector$<$ T $>$}, \hyperpage{38}
 
   \indexspace
 
+  \item {v}
+    \subitem {VectorTest}, \hyperpage{42}
+  \item {v3.0 relisas: Custom Vector$<$T$>$ Konteineris}, \hyperpage{1}
+  \item {value\_type}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{40}
   \item {vardas\_}
-    \subitem {Zmogus}, \hyperpage{24}
-  \item {vector$<$ T $>$}, \hyperpage{20}
-  \item {vector$<$ T $>$::const\_iterator}, \hyperpage{8}
-  \item {vector$<$ T $>$::const\_reverse\_iterator}, \hyperpage{9}
-  \item {vector$<$ T $>$::iterator}, \hyperpage{11}
-  \item {vector$<$ T $>$::reverse\_iterator}, \hyperpage{13}
+    \subitem {Zmogus}, \hyperpage{45}
+  \item {Vector}
+    \subitem {Vector$<$ T $>$}, \hyperpage{30, 31}
+  \item {Vector$<$ T $>$}, \hyperpage{28}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Vector}, \hyperpage{31}
+    \subitem {assign}, \hyperpage{31}
+    \subitem {at}, \hyperpage{31, 32}
+    \subitem {back}, \hyperpage{32}
+    \subitem {begin}, \hyperpage{32}
+    \subitem {capacity}, \hyperpage{32}
+    \subitem {cbegin}, \hyperpage{32}
+    \subitem {cend}, \hyperpage{32}
+    \subitem {clear}, \hyperpage{32}
+    \subitem {const\_iterator}, \hyperpage{30}
+    \subitem {const\_reverse\_iterator}, \hyperpage{30}
+    \subitem {crbegin}, \hyperpage{32}
+    \subitem {crend}, \hyperpage{33}
+    \subitem {data}, \hyperpage{33}
+    \subitem {emplace}, \hyperpage{33}
+    \subitem {emplace\_back}, \hyperpage{33}
+    \subitem {empty}, \hyperpage{33}
+    \subitem {end}, \hyperpage{33}
+    \subitem {erase}, \hyperpage{33, 34}
+    \subitem {front}, \hyperpage{34}
+    \subitem {get\_reallocation\_count}, \hyperpage{34}
+    \subitem {insert}, \hyperpage{34, 35}
+    \subitem {iterator}, \hyperpage{30}
+    \subitem {max\_size}, \hyperpage{35}
+    \subitem {operator!=}, \hyperpage{35}
+    \subitem {operator$<$}, \hyperpage{35}
+    \subitem {operator$<$=}, \hyperpage{35}
+    \subitem {operator$>$}, \hyperpage{36}
+    \subitem {operator$>$=}, \hyperpage{36}
+    \subitem {operator=}, \hyperpage{35}
+    \subitem {operator==}, \hyperpage{36}
+    \subitem {operator[]}, \hyperpage{36}
+    \subitem {pop\_back}, \hyperpage{36}
+    \subitem {push\_back}, \hyperpage{36}
+    \subitem {rbegin}, \hyperpage{37}
+    \subitem {rend}, \hyperpage{37}
+    \subitem {reserve}, \hyperpage{37}
+    \subitem {reset\_reallocation\_count}, \hyperpage{37}
+    \subitem {resize}, \hyperpage{37}
+    \subitem {reverse\_iterator}, \hyperpage{30}
+    \subitem {shrink\_to\_fit}, \hyperpage{37}
+    \subitem {size}, \hyperpage{38}
+    \subitem {swap}, \hyperpage{38}
+    \subitem {Vector}, \hyperpage{30, 31}
+  \item {vector$<$ T $>$}, \hyperpage{38}
+  \item {vector$<$ T $>$::const\_iterator}, \hyperpage{19}
+  \item {vector$<$ T $>$::const\_reverse\_iterator}, \hyperpage{20}
+  \item {vector$<$ T $>$::iterator}, \hyperpage{22}
+  \item {vector$<$ T $>$::reverse\_iterator}, \hyperpage{23}
+  \item {VectorIterator}
+    \subitem {VectorIterator$<$ T $>$}, \hyperpage{40}
+  \item {VectorIterator$<$ T $>$}, \hyperpage{38}
+    \subitem {difference\_type}, \hyperpage{39}
+    \subitem {iterator\_category}, \hyperpage{39}
+    \subitem {operator!=}, \hyperpage{40}
+    \subitem {operator$<$}, \hyperpage{41}
+    \subitem {operator$<$=}, \hyperpage{41}
+    \subitem {operator$>$}, \hyperpage{42}
+    \subitem {operator$>$=}, \hyperpage{42}
+    \subitem {operator+}, \hyperpage{40}
+    \subitem {operator++}, \hyperpage{40}
+    \subitem {operator+=}, \hyperpage{40}
+    \subitem {operator-\/}, \hyperpage{41}
+    \subitem {operator-\/$>$}, \hyperpage{41}
+    \subitem {operator-\/-\/}, \hyperpage{41}
+    \subitem {operator-\/=}, \hyperpage{41}
+    \subitem {operator==}, \hyperpage{41}
+    \subitem {operator[]}, \hyperpage{42}
+    \subitem {operator\texorpdfstring{$\ast$}{*}}, \hyperpage{40}
+    \subitem {pointer}, \hyperpage{39}
+    \subitem {reference}, \hyperpage{40}
+    \subitem {value\_type}, \hyperpage{40}
+    \subitem {VectorIterator}, \hyperpage{40}
+  \item {VectorTest}, \hyperpage{42}
+    \subitem {v}, \hyperpage{42}
 
   \indexspace
 
-  \item {Zmogus}, \hyperpage{20}
-    \subitem {\texorpdfstring{$\sim$}{\string~}Zmogus}, \hyperpage{22}
-    \subitem {getInfo}, \hyperpage{22}
-    \subitem {getPavarde}, \hyperpage{22}
-    \subitem {getVardas}, \hyperpage{23}
-    \subitem {operator$<$$<$}, \hyperpage{24}
-    \subitem {pavarde\_}, \hyperpage{24}
-    \subitem {setPavarde}, \hyperpage{23}
-    \subitem {setVardas}, \hyperpage{23}
-    \subitem {vardas\_}, \hyperpage{24}
-    \subitem {Zmogus}, \hyperpage{22}
+  \item {Zmogus}, \hyperpage{43}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Zmogus}, \hyperpage{44}
+    \subitem {getInfo}, \hyperpage{44}
+    \subitem {getPavarde}, \hyperpage{44}
+    \subitem {getVardas}, \hyperpage{44}
+    \subitem {operator$<$$<$}, \hyperpage{45}
+    \subitem {pavarde\_}, \hyperpage{45}
+    \subitem {setPavarde}, \hyperpage{44}
+    \subitem {setVardas}, \hyperpage{45}
+    \subitem {vardas\_}, \hyperpage{45}
+    \subitem {Zmogus}, \hyperpage{44}
 
 \end{theindex}
