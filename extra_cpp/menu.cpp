@@ -1,4 +1,3 @@
-#include <vector>
 #include <iostream>
 #include <string>
 #include <stdexcept>
@@ -10,16 +9,16 @@
 #include "../header_files/output.h"
 #include "../header_files/duomenu_valdymas.h"
 #include "../header_files/testavimas.h"
+#include "../header_files/Vector.h"
 
 using std::cout;
 using std::cin;
 using std::string;
-using std::vector;
 using std::invalid_argument;
 using std::exception;
 
 void menu() {
-    vector<Studentas>grupe;
+    Vector<Studentas> grupe;
     int pas; // Pasirinkimas
     bool testi = true;
 

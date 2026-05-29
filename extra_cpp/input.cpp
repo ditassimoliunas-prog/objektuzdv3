@@ -3,15 +3,15 @@
 
 #include "../header_files/input.h"
 #include "../header_files/mat_funkcijos.h"
+#include "../header_files/Vector.h"
 
 using std::cin;
 using std::cout;
-using std::vector;
 using std::string;
 using std::numeric_limits;
 using std::streamsize;
 
-void inputas(vector<Studentas>& grupe) {
+void inputas(Vector<Studentas>& grupe) {
     bool testiStudenta = true;
 
     while (testiStudenta) {

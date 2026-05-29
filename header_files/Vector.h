@@ -160,6 +160,15 @@ public:
         for (size_t i = 0; i < size; ++i) _data[i] = value;
     }
 
+    // Initializer list constructor
+    Vector(std::initializer_list<T> init) : _size(init.size()), _capacity(init.size()), _realloc_count(0) {
+        _data = _size > 0 ? new T[_size] : nullptr;
+        size_t i = 0;
+        for (const auto& val : init) {
+            _data[i++] = val;
+        }
+    }
+
     // Conversion constructor from std::vector
     Vector(const std::vector<T>& other) : _size(other.size()), _capacity(other.size()), _realloc_count(0) {
         _data = _size > 0 ? new T[_size] : nullptr;
@@ -360,20 +369,24 @@ public:
     const_reverse_iterator crend() const { return const_reverse_iterator(begin()); }
 
     void assign(size_t count, const T& value) {
-        clear();
+        // Assign: replace contents with count copies of value
         if (count > _capacity) {
-            reallocate(count);
+            // Deallocate old data
+            delete[] _data;
+            _data = nullptr;
+
+            // Allocate new data with proper capacity
+            size_t new_capacity = std::max(count, (size_t)10);
+            _data = new T[new_capacity];
+            _capacity = new_capacity;
+            _realloc_count++;
         }
+
+        // Fill with values
         for (size_t i = 0; i < count; ++i) {
             _data[i] = value;
         }
         _size = count;
-    }
-
-    template<typename InputIt>
-    void assign(InputIt first, InputIt last) {
-        // This is a specialized version - only works with Vector iterators
-        // For general case, user should use clear() + for loop
     }
 
 

@@ -27,6 +27,8 @@ using \doxymbox{\hyperlink{class_vector_a830f097cd0cf82deebdaa63a04d5ade6}{const
 \item 
 \doxymbox{\hyperlink{class_vector_a2b3c2ea9f564a134db843987137882b6}{Vector}} (size\+\_\+t size, const T \&value)
 \item 
+\doxymbox{\hyperlink{class_vector_a8d4ab361a0285a27e994707c43e50b21}{Vector}} (std::\+initializer\+\_\+list$<$ T $>$ init)
+\item 
 \doxymbox{\hyperlink{class_vector_a7d31be6e17417c7a2835600f8ae7a414}{Vector}} (const std::\+vector$<$ T $>$ \&other)
 \item 
 \doxymbox{\hyperlink{class_vector_a940f94b7c4a1c15a65a1ab6e13859dfe}{Vector}} (const \doxymbox{\hyperlink{class_vector}{Vector}} \&other)
@@ -108,8 +110,6 @@ const\+\_\+reverse\+\_\+iterator \doxymbox{\hyperlink{class_vector_af5f7e3324c56
 const\+\_\+reverse\+\_\+iterator \doxymbox{\hyperlink{class_vector_a2b2998e97102c3750b0b556431b5b6b6}{crend}} () const
 \item 
 void \doxymbox{\hyperlink{class_vector_ae8dfa135fec20c87550383b3ae20dff0}{assign}} (size\+\_\+t count, const T \&value)
-\item 
-{\footnotesize template$<$typename Input\+It$>$ }\\void \doxymbox{\hyperlink{class_vector_ae3bf2684ba5030e95f062d59d02a1d53}{assign}} (Input\+It first, Input\+It last)
 \item 
 iterator \doxymbox{\hyperlink{class_vector_a543330cea78641b32eb35d37e3642b51}{insert}} (const\+\_\+iterator pos, const T \&value)
 \item 
@@ -219,7 +219,7 @@ using \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+const\+\_\+iterato
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00339}{339}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00348}{348}}.
 
 \Hypertarget{class_vector_a830f097cd0cf82deebdaa63a04d5ade6}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!const\_reverse\_iterator@{const\_reverse\_iterator}}
 \index{const\_reverse\_iterator@{const\_reverse\_iterator}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -230,7 +230,7 @@ using \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+const\+\_\+reverse
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00351}{351}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00360}{360}}.
 
 \Hypertarget{class_vector_a9e06aa18fd0dd9a1fd80fef9d8467e8d}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!iterator@{iterator}}
 \index{iterator@{iterator}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -241,7 +241,7 @@ using \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+iterator = \doxymb
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00338}{338}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00347}{347}}.
 
 \Hypertarget{class_vector_a468800ce1838bd48c7b9c685a8777720}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!reverse\_iterator@{reverse\_iterator}}
 \index{reverse\_iterator@{reverse\_iterator}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -252,7 +252,7 @@ using \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+reverse\+\_\+itera
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00350}{350}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00359}{359}}.
 
 
 
@@ -261,7 +261,7 @@ Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutė
 \doxysubsection{Konstruktoriaus ir Destruktoriaus Dokumentacija}
 \Hypertarget{class_vector_a39d6069675db4ecfc1ab81d440da759a}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}}
 \index{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
 {\footnotesize\ttfamily \label{class_vector_a39d6069675db4ecfc1ab81d440da759a} 
 template$<$typename T$>$ \\
 \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+\+Vector (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
@@ -272,7 +272,7 @@ Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutė
 
 \Hypertarget{class_vector_af987082942a1e09bb5e63591e99f6f62}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}}
 \index{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
 {\footnotesize\ttfamily \label{class_vector_af987082942a1e09bb5e63591e99f6f62} 
 template$<$typename T$>$ \\
 \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+\+Vector (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{capacity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
@@ -283,7 +283,7 @@ Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutė
 
 \Hypertarget{class_vector_a2b3c2ea9f564a134db843987137882b6}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}}
 \index{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
 {\footnotesize\ttfamily \label{class_vector_a2b3c2ea9f564a134db843987137882b6} 
 template$<$typename T$>$ \\
 \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+\+Vector (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size}{, }\item[{const T \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
@@ -292,16 +292,27 @@ template$<$typename T$>$ \\
 
 Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00158}{158}}.
 
+\Hypertarget{class_vector_a8d4ab361a0285a27e994707c43e50b21}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily \label{class_vector_a8d4ab361a0285a27e994707c43e50b21} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+\+Vector (\begin{DoxyParamCaption}\item[{std::\+initializer\+\_\+list$<$ T $>$}]{init}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00164}{164}}.
+
 \Hypertarget{class_vector_a7d31be6e17417c7a2835600f8ae7a414}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}}
 \index{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
 {\footnotesize\ttfamily \label{class_vector_a7d31be6e17417c7a2835600f8ae7a414} 
 template$<$typename T$>$ \\
 \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+\+Vector (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00164}{164}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00173}{173}}.
 
 \Hypertarget{class_vector_afd524fac19e6d3d69db5198ffe2952b0}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!````~Vector@{\texorpdfstring{$\sim$}{\string~}Vector}}
 \index{````~Vector@{\texorpdfstring{$\sim$}{\string~}Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -312,57 +323,45 @@ template$<$typename T$>$ \\
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00169}{169}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00178}{178}}.
 
 \Hypertarget{class_vector_a940f94b7c4a1c15a65a1ab6e13859dfe}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}}
 \index{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
 {\footnotesize\ttfamily \label{class_vector_a940f94b7c4a1c15a65a1ab6e13859dfe} 
 template$<$typename T$>$ \\
 \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+\+Vector (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00171}{171}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00180}{180}}.
 
 \Hypertarget{class_vector_a5ed9bb7852ccee071f8418d10182927f}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}}
 \index{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
 {\footnotesize\ttfamily \label{class_vector_a5ed9bb7852ccee071f8418d10182927f} 
 template$<$typename T$>$ \\
 \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+\+Vector (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00187}{187}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00196}{196}}.
 
 
 
 \label{class_vector_doc-func-members}
 \Hypertarget{class_vector_doc-func-members}
 \doxysubsection{Metodų Dokumentacija}
-\Hypertarget{class_vector_ae3bf2684ba5030e95f062d59d02a1d53}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!assign@{assign}}
-\index{assign@{assign}!Vector$<$ T $>$@{Vector$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{assign()}{assign()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_vector_ae3bf2684ba5030e95f062d59d02a1d53} 
-template$<$typename T$>$ \\
-template$<$typename Input\+It$>$ \\
-void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+assign (\begin{DoxyParamCaption}\item[{Input\+It}]{first}{, }\item[{Input\+It}]{last}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00374}{374}}.
-
 \Hypertarget{class_vector_ae8dfa135fec20c87550383b3ae20dff0}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!assign@{assign}}
 \index{assign@{assign}!Vector$<$ T $>$@{Vector$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{assign()}{assign()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}}
 {\footnotesize\ttfamily \label{class_vector_ae8dfa135fec20c87550383b3ae20dff0} 
 template$<$typename T$>$ \\
 void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+assign (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{count}{, }\item[{const T \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00362}{362}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00371}{371}}.
 
 \Hypertarget{class_vector_a7495aa482571ad81f957802387770123}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!at@{at}}
 \index{at@{at}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -373,7 +372,7 @@ T \& \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+at (\begin{DoxyPara
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00216}{216}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00225}{225}}.
 
 \Hypertarget{class_vector_a9258e84ecd3d5311a4652518cf9281fe}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!at@{at}}
 \index{at@{at}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -384,7 +383,7 @@ const T \& \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+at (\begin{Do
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00223}{223}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00232}{232}}.
 
 \Hypertarget{class_vector_a6decf0bdeb6849bfcc151b2c514f639f}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!back@{back}}
 \index{back@{back}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -395,7 +394,7 @@ T \& \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+back (\begin{DoxyPa
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00248}{248}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00257}{257}}.
 
 \Hypertarget{class_vector_ae2094e298cbe0394557b9213942a31d1}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!back@{back}}
 \index{back@{back}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -406,7 +405,7 @@ const T \& \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+back (\begin{
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00255}{255}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00264}{264}}.
 
 \Hypertarget{class_vector_a466e8c045ea10d62c28b689888e9fe5a}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!begin@{begin}}
 \index{begin@{begin}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -417,7 +416,7 @@ iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+begin (\begin{D
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00341}{341}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00350}{350}}.
 
 \Hypertarget{class_vector_a514c5f6246f07f0012f1d00912838b19}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!begin@{begin}}
 \index{begin@{begin}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -428,7 +427,7 @@ const\+\_\+iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+begi
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00344}{344}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00353}{353}}.
 
 \Hypertarget{class_vector_a85c39fed5822d2a03a3250336039c933}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!capacity@{capacity}}
 \index{capacity@{capacity}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -439,7 +438,7 @@ size\+\_\+t \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+capacity (\b
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00210}{210}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00219}{219}}.
 
 \Hypertarget{class_vector_afa15b0e58a9d29293941b3741a2ed1b5}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!cbegin@{cbegin}}
 \index{cbegin@{cbegin}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -450,7 +449,7 @@ const\+\_\+iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+cbeg
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00347}{347}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00356}{356}}.
 
 \Hypertarget{class_vector_aab84ab1d529efc8949fb1891fe259f48}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!cend@{cend}}
 \index{cend@{cend}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -461,7 +460,7 @@ const\+\_\+iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+cend
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00348}{348}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00357}{357}}.
 
 \Hypertarget{class_vector_a32ad98b135472b0ebc5d6cb3ae5d0085}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!clear@{clear}}
 \index{clear@{clear}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -472,7 +471,7 @@ void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+clear (\begin{DoxyP
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00230}{230}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00239}{239}}.
 
 \Hypertarget{class_vector_af5f7e3324c56c546c88099d12820c432}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!crbegin@{crbegin}}
 \index{crbegin@{crbegin}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -483,7 +482,7 @@ const\+\_\+reverse\+\_\+iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ 
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00359}{359}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00368}{368}}.
 
 \Hypertarget{class_vector_a2b2998e97102c3750b0b556431b5b6b6}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!crend@{crend}}
 \index{crend@{crend}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -494,7 +493,7 @@ const\+\_\+reverse\+\_\+iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ 
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00360}{360}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00369}{369}}.
 
 \Hypertarget{class_vector_a641a765cb13d9e9ff8f9bc4e5a375c9b}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!data@{data}}
 \index{data@{data}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -505,7 +504,7 @@ T \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00588}{588}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00601}{601}}.
 
 \Hypertarget{class_vector_adf2019fbfec16aeea3150a48e0c773ee}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!data@{data}}
 \index{data@{data}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -516,7 +515,7 @@ const T \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_vector}{Vector}}$<
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00589}{589}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00602}{602}}.
 
 \Hypertarget{class_vector_a6e7596194e3dc0ddc289017df291e179}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!emplace@{emplace}}
 \index{emplace@{emplace}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -528,7 +527,7 @@ iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+emplace (\begin
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00564}{564}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00577}{577}}.
 
 \Hypertarget{class_vector_ab9d0d8011ddfd2ff0d037f0c64dd94dd}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!emplace\_back@{emplace\_back}}
 \index{emplace\_back@{emplace\_back}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -540,7 +539,7 @@ void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+emplace\+\_\+back (
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00554}{554}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00567}{567}}.
 
 \Hypertarget{class_vector_ad688a8a0dfbd07ea63d838058a436f79}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!empty@{empty}}
 \index{empty@{empty}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -551,7 +550,7 @@ bool \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+empty (\begin{DoxyP
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00211}{211}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00220}{220}}.
 
 \Hypertarget{class_vector_ae288fa619188bff101d5300b8aaf9a90}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!end@{end}}
 \index{end@{end}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -562,7 +561,7 @@ iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+end (\begin{Dox
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00342}{342}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00351}{351}}.
 
 \Hypertarget{class_vector_a3f5f39e8ec9f506664b259299e79c485}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!end@{end}}
 \index{end@{end}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -573,7 +572,7 @@ const\+\_\+iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+end 
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00345}{345}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00354}{354}}.
 
 \Hypertarget{class_vector_a4c79ccc14e48bf7efed8d57233b1d3ff}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!erase@{erase}}
 \index{erase@{erase}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -584,7 +583,7 @@ iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+erase (\begin{D
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00503}{503}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00516}{516}}.
 
 \Hypertarget{class_vector_ada08ce2d41733da63bdeac9901d48a74}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!erase@{erase}}
 \index{erase@{erase}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -595,7 +594,7 @@ iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+erase (\begin{D
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00489}{489}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00502}{502}}.
 
 \Hypertarget{class_vector_afd90059f9dff48f4417b51f6eae8e152}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!erase@{erase}}
 \index{erase@{erase}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -606,7 +605,7 @@ iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+erase (\begin{D
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00536}{536}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00549}{549}}.
 
 \Hypertarget{class_vector_ad790d517be3f4ed3d05d078c80a6b720}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!erase@{erase}}
 \index{erase@{erase}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -617,7 +616,7 @@ iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+erase (\begin{D
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00521}{521}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00534}{534}}.
 
 \Hypertarget{class_vector_a0061cc9127a9cbf541439121998a1fdd}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!front@{front}}
 \index{front@{front}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -628,7 +627,7 @@ T \& \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+front (\begin{DoxyP
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00234}{234}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00243}{243}}.
 
 \Hypertarget{class_vector_ae891494a5654af2db2a00d162c50985a}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!front@{front}}
 \index{front@{front}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -639,7 +638,7 @@ const T \& \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+front (\begin
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00241}{241}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00250}{250}}.
 
 \Hypertarget{class_vector_a2a7fddb5c9c138ff5fcf431f7abfbc63}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!get\_reallocation\_count@{get\_reallocation\_count}}
 \index{get\_reallocation\_count@{get\_reallocation\_count}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -650,7 +649,7 @@ size\+\_\+t \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+get\+\_\+rea
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00591}{591}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00604}{604}}.
 
 \Hypertarget{class_vector_a543330cea78641b32eb35d37e3642b51}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!insert@{insert}}
 \index{insert@{insert}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -661,7 +660,7 @@ iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+insert (\begin{
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00380}{380}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00393}{393}}.
 
 \Hypertarget{class_vector_a01fe34691d0dd3be86ea2e488e241cf2}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!insert@{insert}}
 \index{insert@{insert}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -673,7 +672,7 @@ iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+insert (\begin{
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00425}{425}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00438}{438}}.
 
 \Hypertarget{class_vector_ada8ee773476f28ce569716e39b4b7e14}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!insert@{insert}}
 \index{insert@{insert}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -684,7 +683,7 @@ iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+insert (\begin{
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00401}{401}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00414}{414}}.
 
 \Hypertarget{class_vector_a7dfd89e7db95850ef2c56ac23320a37d}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!insert@{insert}}
 \index{insert@{insert}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -696,7 +695,7 @@ iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+insert (\begin{
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00458}{458}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00471}{471}}.
 
 \Hypertarget{class_vector_a442b72c70b33b62d49c99845385bba51}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!max\_size@{max\_size}}
 \index{max\_size@{max\_size}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -707,7 +706,7 @@ size\+\_\+t \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+max\+\_\+siz
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00584}{584}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00597}{597}}.
 
 \Hypertarget{class_vector_aeb226de8807a211671abc6864858bf6b}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -718,7 +717,7 @@ bool \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+operator!= (\begin{
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00314}{314}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00323}{323}}.
 
 \Hypertarget{class_vector_abd4fc7036719f7a2d6603d314382b89d}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -729,7 +728,7 @@ bool \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+operator$<$ (\begin
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00318}{318}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00327}{327}}.
 
 \Hypertarget{class_vector_aacfd8d2dffb899bc87935b062a5693b4}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!operator$<$=@{operator$<$=}}
 \index{operator$<$=@{operator$<$=}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -740,7 +739,7 @@ bool \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+operator$<$= (\begi
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00330}{330}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00339}{339}}.
 
 \Hypertarget{class_vector_a2fe37b54a47d28015829196cb5abec05}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!operator=@{operator=}}
 \index{operator=@{operator=}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -751,7 +750,7 @@ template$<$typename T$>$ \\
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00175}{175}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00184}{184}}.
 
 \Hypertarget{class_vector_ac7a5d1c7410208d7ce8f13497e31dd87}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!operator=@{operator=}}
 \index{operator=@{operator=}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -762,7 +761,7 @@ template$<$typename T$>$ \\
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00194}{194}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00203}{203}}.
 
 \Hypertarget{class_vector_a1b2b4d9dc3df91e091a709322b76859a}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!operator==@{operator==}}
 \index{operator==@{operator==}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -773,7 +772,7 @@ bool \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+operator== (\begin{
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00306}{306}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00315}{315}}.
 
 \Hypertarget{class_vector_aba5a2729dbecd9873a9d4f7b2d0d2ce7}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -784,7 +783,7 @@ bool \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+operator$>$ (\begin
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00326}{326}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00335}{335}}.
 
 \Hypertarget{class_vector_aa52b8c5b80c74523303491db09fb4636}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!operator$>$=@{operator$>$=}}
 \index{operator$>$=@{operator$>$=}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -795,7 +794,7 @@ bool \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+operator$>$= (\begi
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00334}{334}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00343}{343}}.
 
 \Hypertarget{class_vector_a314b19cea6ad9ce76457e24ac8264bd8}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!operator\+[]\+@{operator[]}}
 \index{operator\+[]\+@{operator[]}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -806,7 +805,7 @@ T \& \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+operator\+[$\,$]\+ 
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00213}{213}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00222}{222}}.
 
 \Hypertarget{class_vector_a63cc62738d6c877aed773260d1f5d925}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!operator\+[]\+@{operator[]}}
 \index{operator\+[]\+@{operator[]}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -817,7 +816,7 @@ const T \& \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+operator\+[$\
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00214}{214}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00223}{223}}.
 
 \Hypertarget{class_vector_adcba035109febbe55cba2a25f8483ba6}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!pop\_back@{pop\_back}}
 \index{pop\_back@{pop\_back}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -828,7 +827,7 @@ void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+pop\+\_\+back (\beg
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00672}{672}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00685}{685}}.
 
 \Hypertarget{class_vector_a4415960a83615855ec32f8169f641786}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!push\_back@{push\_back}}
 \index{push\_back@{push\_back}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -842,7 +841,7 @@ void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+push\+\_\+back (\be
 \doxymbox{\hyperlink{_c_1_2_users_2ditas_2source_2repos_2ditassimoliunas-prog_2objektuzdv3_2header_files_2_vector_8h-example}{C:\+/\+\+Users/\+ditas/\+source/\+repos/\+ditassimoliunas-\/prog/\+objektuzdv3/\+header\+\_\+files/\+\+Vector.\+h}}.\end{Desc}
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00615}{615}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00628}{628}}.
 
 \Hypertarget{class_vector_a7e9c3a4530e85fd3490d932846307683}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!push\_back@{push\_back}}
 \index{push\_back@{push\_back}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -853,7 +852,7 @@ void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+push\+\_\+back (\be
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00644}{644}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00657}{657}}.
 
 \Hypertarget{class_vector_a72d1ce8358a966c55da760012fb9a68b}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!rbegin@{rbegin}}
 \index{rbegin@{rbegin}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -864,7 +863,7 @@ reverse\+\_\+iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+rb
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00353}{353}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00362}{362}}.
 
 \Hypertarget{class_vector_a0a43fdc1d2f4b49ed085545e6e53a409}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!rbegin@{rbegin}}
 \index{rbegin@{rbegin}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -875,7 +874,7 @@ const\+\_\+reverse\+\_\+iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ 
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00356}{356}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00365}{365}}.
 
 \Hypertarget{class_vector_a74380623d29305cf5c9a544756672ef5}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!rend@{rend}}
 \index{rend@{rend}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -886,7 +885,7 @@ reverse\+\_\+iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+re
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00354}{354}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00363}{363}}.
 
 \Hypertarget{class_vector_a2749110ca7d7260fac6a1725e7fcbed1}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!rend@{rend}}
 \index{rend@{rend}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -897,7 +896,7 @@ const\+\_\+reverse\+\_\+iterator \doxymbox{\hyperlink{class_vector}{Vector}}$<$ 
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00357}{357}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00366}{366}}.
 
 \Hypertarget{class_vector_afa0c4c5f0f2d2d7940180fbed0f46bc4}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!reserve@{reserve}}
 \index{reserve@{reserve}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -908,7 +907,7 @@ void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+reserve (\begin{Dox
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00262}{262}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00271}{271}}.
 
 \Hypertarget{class_vector_aa1e53069518420257e11b0a4f85e95cb}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!reset\_reallocation\_count@{reset\_reallocation\_count}}
 \index{reset\_reallocation\_count@{reset\_reallocation\_count}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -919,7 +918,7 @@ void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+reset\+\_\+realloca
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00592}{592}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00605}{605}}.
 
 \Hypertarget{class_vector_ae904067f0717793273fa2b6fe8fc9eb8}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!resize@{resize}}
 \index{resize@{resize}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -930,7 +929,7 @@ void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+resize (\begin{Doxy
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00280}{280}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00289}{289}}.
 
 \Hypertarget{class_vector_a2ab610e9a6526abfc5bda3b10aa4eaaf}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!resize@{resize}}
 \index{resize@{resize}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -941,7 +940,7 @@ void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+resize (\begin{Doxy
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00287}{287}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00296}{296}}.
 
 \Hypertarget{class_vector_ad6454ce193263b8000d4c18cb0c3a0c8}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!shrink\_to\_fit@{shrink\_to\_fit}}
 \index{shrink\_to\_fit@{shrink\_to\_fit}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -952,7 +951,7 @@ void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+shrink\+\_\+to\+\_\
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00268}{268}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00277}{277}}.
 
 \Hypertarget{class_vector_a9b439586cd10cb45d002ca9d6e3db43c}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!size@{size}}
 \index{size@{size}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -963,7 +962,7 @@ size\+\_\+t \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+size (\begin
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00209}{209}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00218}{218}}.
 
 \Hypertarget{class_vector_a04719915f34b27674e1eca2c42e48eb2}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!swap@{swap}}
 \index{swap@{swap}!Vector$<$ T $>$@{Vector$<$ T $>$}}
@@ -974,7 +973,7 @@ void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+swap (\begin{DoxyPa
 
 
 
-Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00299}{299}}.
+Apibrėžimas failo \doxymbox{\hyperlink{_vector_8h_source}{Vector.\+h}} eilutėje \doxymbox{\hyperlink{_vector_8h_source_l00308}{308}}.
 
 
 

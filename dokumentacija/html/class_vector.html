@@ -136,6 +136,7 @@ Vieši Tipai</h2></td></tr>
 Vieši Metodai</h2></td></tr>
 <tr class="memitem:af987082942a1e09bb5e63591e99f6f62" id="r_af987082942a1e09bb5e63591e99f6f62"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af987082942a1e09bb5e63591e99f6f62">Vector</a> (size_t capacity)</td></tr>
 <tr class="memitem:a2b3c2ea9f564a134db843987137882b6" id="r_a2b3c2ea9f564a134db843987137882b6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2b3c2ea9f564a134db843987137882b6">Vector</a> (size_t size, const T &amp;value)</td></tr>
+<tr class="memitem:a8d4ab361a0285a27e994707c43e50b21" id="r_a8d4ab361a0285a27e994707c43e50b21"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8d4ab361a0285a27e994707c43e50b21">Vector</a> (std::initializer_list&lt; T &gt; init)</td></tr>
 <tr class="memitem:a7d31be6e17417c7a2835600f8ae7a414" id="r_a7d31be6e17417c7a2835600f8ae7a414"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7d31be6e17417c7a2835600f8ae7a414">Vector</a> (const std::vector&lt; T &gt; &amp;other)</td></tr>
 <tr class="memitem:a940f94b7c4a1c15a65a1ab6e13859dfe" id="r_a940f94b7c4a1c15a65a1ab6e13859dfe"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a940f94b7c4a1c15a65a1ab6e13859dfe">Vector</a> (const <a class="el" href="class_vector.html">Vector</a> &amp;other)</td></tr>
 <tr class="memitem:a2fe37b54a47d28015829196cb5abec05" id="r_a2fe37b54a47d28015829196cb5abec05"><td class="memItemLeft"><a class="el" href="class_vector.html">Vector</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a2fe37b54a47d28015829196cb5abec05">operator=</a> (const <a class="el" href="class_vector.html">Vector</a> &amp;other)</td></tr>
@@ -177,8 +178,6 @@ Vieši Metodai</h2></td></tr>
 <tr class="memitem:af5f7e3324c56c546c88099d12820c432" id="r_af5f7e3324c56c546c88099d12820c432"><td class="memItemLeft">const_reverse_iterator&#160;</td><td class="memItemRight"><a class="el" href="#af5f7e3324c56c546c88099d12820c432">crbegin</a> () const</td></tr>
 <tr class="memitem:a2b2998e97102c3750b0b556431b5b6b6" id="r_a2b2998e97102c3750b0b556431b5b6b6"><td class="memItemLeft">const_reverse_iterator&#160;</td><td class="memItemRight"><a class="el" href="#a2b2998e97102c3750b0b556431b5b6b6">crend</a> () const</td></tr>
 <tr class="memitem:ae8dfa135fec20c87550383b3ae20dff0" id="r_ae8dfa135fec20c87550383b3ae20dff0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae8dfa135fec20c87550383b3ae20dff0">assign</a> (size_t count, const T &amp;value)</td></tr>
-<tr class="memitem:ae3bf2684ba5030e95f062d59d02a1d53" id="r_ae3bf2684ba5030e95f062d59d02a1d53"><td class="memTemplParams" colspan="2">template&lt;typename InputIt&gt; </td></tr>
-<tr class="memitem:ae3bf2684ba5030e95f062d59d02a1d53 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae3bf2684ba5030e95f062d59d02a1d53">assign</a> (InputIt first, InputIt last)</td></tr>
 <tr class="memitem:a543330cea78641b32eb35d37e3642b51" id="r_a543330cea78641b32eb35d37e3642b51"><td class="memItemLeft">iterator&#160;</td><td class="memItemRight"><a class="el" href="#a543330cea78641b32eb35d37e3642b51">insert</a> (const_iterator pos, const T &amp;value)</td></tr>
 <tr class="memitem:ada8ee773476f28ce569716e39b4b7e14" id="r_ada8ee773476f28ce569716e39b4b7e14"><td class="memItemLeft">iterator&#160;</td><td class="memItemRight"><a class="el" href="#ada8ee773476f28ce569716e39b4b7e14">insert</a> (iterator pos, const T &amp;value)</td></tr>
 <tr class="memitem:a01fe34691d0dd3be86ea2e488e241cf2" id="r_a01fe34691d0dd3be86ea2e488e241cf2"><td class="memTemplParams" colspan="2">template&lt;typename InputIt&gt; </td></tr>
@@ -255,7 +254,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00339">339</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00348">348</a>.</p>
 
 </div>
 </div>
@@ -273,7 +272,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00351">351</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00360">360</a>.</p>
 
 </div>
 </div>
@@ -291,7 +290,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00338">338</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00347">347</a>.</p>
 
 </div>
 </div>
@@ -309,13 +308,13 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00350">350</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00359">359</a>.</p>
 
 </div>
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Konstruktoriaus ir Destruktoriaus Dokumentacija</h2>
 <a id="a39d6069675db4ecfc1ab81d440da759a" name="a39d6069675db4ecfc1ab81d440da759a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39d6069675db4ecfc1ab81d440da759a">&#9670;&#160;</a></span>Vector() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a39d6069675db4ecfc1ab81d440da759a">&#9670;&#160;</a></span>Vector() <span class="overload">[1/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -344,7 +343,7 @@ template&lt;typename T&gt; </div>
 </div>
 </div>
 <a id="af987082942a1e09bb5e63591e99f6f62" name="af987082942a1e09bb5e63591e99f6f62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af987082942a1e09bb5e63591e99f6f62">&#9670;&#160;</a></span>Vector() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af987082942a1e09bb5e63591e99f6f62">&#9670;&#160;</a></span>Vector() <span class="overload">[2/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -373,7 +372,7 @@ template&lt;typename T&gt; </div>
 </div>
 </div>
 <a id="a2b3c2ea9f564a134db843987137882b6" name="a2b3c2ea9f564a134db843987137882b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b3c2ea9f564a134db843987137882b6">&#9670;&#160;</a></span>Vector() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b3c2ea9f564a134db843987137882b6">&#9670;&#160;</a></span>Vector() <span class="overload">[3/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -405,8 +404,37 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
+<a id="a8d4ab361a0285a27e994707c43e50b21" name="a8d4ab361a0285a27e994707c43e50b21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d4ab361a0285a27e994707c43e50b21">&#9670;&#160;</a></span>Vector() <span class="overload">[4/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vector.html">Vector</a>&lt; T &gt;::Vector </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>init</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00164">164</a>.</p>
+
+</div>
+</div>
 <a id="a7d31be6e17417c7a2835600f8ae7a414" name="a7d31be6e17417c7a2835600f8ae7a414"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d31be6e17417c7a2835600f8ae7a414">&#9670;&#160;</a></span>Vector() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d31be6e17417c7a2835600f8ae7a414">&#9670;&#160;</a></span>Vector() <span class="overload">[5/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -430,7 +458,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00164">164</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00173">173</a>.</p>
 
 </div>
 </div>
@@ -459,12 +487,12 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00169">169</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00178">178</a>.</p>
 
 </div>
 </div>
 <a id="a940f94b7c4a1c15a65a1ab6e13859dfe" name="a940f94b7c4a1c15a65a1ab6e13859dfe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a940f94b7c4a1c15a65a1ab6e13859dfe">&#9670;&#160;</a></span>Vector() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a940f94b7c4a1c15a65a1ab6e13859dfe">&#9670;&#160;</a></span>Vector() <span class="overload">[6/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -488,12 +516,12 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00171">171</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00180">180</a>.</p>
 
 </div>
 </div>
 <a id="a5ed9bb7852ccee071f8418d10182927f" name="a5ed9bb7852ccee071f8418d10182927f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ed9bb7852ccee071f8418d10182927f">&#9670;&#160;</a></span>Vector() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ed9bb7852ccee071f8418d10182927f">&#9670;&#160;</a></span>Vector() <span class="overload">[7/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -517,48 +545,13 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00187">187</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00196">196</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Metodų Dokumentacija</h2>
-<a id="ae3bf2684ba5030e95f062d59d02a1d53" name="ae3bf2684ba5030e95f062d59d02a1d53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3bf2684ba5030e95f062d59d02a1d53">&#9670;&#160;</a></span>assign() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<div class="memtemplate">
-template&lt;typename InputIt&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_vector.html">Vector</a>&lt; T &gt;::assign </td>
-          <td>(</td>
-          <td class="paramtype">InputIt</td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">InputIt</td>          <td class="paramname"><span class="paramname"><em>last</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00374">374</a>.</p>
-
-</div>
-</div>
 <a id="ae8dfa135fec20c87550383b3ae20dff0" name="ae8dfa135fec20c87550383b3ae20dff0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8dfa135fec20c87550383b3ae20dff0">&#9670;&#160;</a></span>assign() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8dfa135fec20c87550383b3ae20dff0">&#9670;&#160;</a></span>assign()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -586,7 +579,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00362">362</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00371">371</a>.</p>
 
 </div>
 </div>
@@ -615,7 +608,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00216">216</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00225">225</a>.</p>
 
 </div>
 </div>
@@ -644,7 +637,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00223">223</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00232">232</a>.</p>
 
 </div>
 </div>
@@ -673,7 +666,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00248">248</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00257">257</a>.</p>
 
 </div>
 </div>
@@ -702,7 +695,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00255">255</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00264">264</a>.</p>
 
 </div>
 </div>
@@ -731,7 +724,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00341">341</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00350">350</a>.</p>
 
 </div>
 </div>
@@ -760,7 +753,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00344">344</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00353">353</a>.</p>
 
 </div>
 </div>
@@ -789,7 +782,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00210">210</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00219">219</a>.</p>
 
 </div>
 </div>
@@ -818,7 +811,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00347">347</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00356">356</a>.</p>
 
 </div>
 </div>
@@ -847,7 +840,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00348">348</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00357">357</a>.</p>
 
 </div>
 </div>
@@ -876,7 +869,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00230">230</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00239">239</a>.</p>
 
 </div>
 </div>
@@ -905,7 +898,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00359">359</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00368">368</a>.</p>
 
 </div>
 </div>
@@ -934,7 +927,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00360">360</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00369">369</a>.</p>
 
 </div>
 </div>
@@ -963,7 +956,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00588">588</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00601">601</a>.</p>
 
 </div>
 </div>
@@ -992,7 +985,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00589">589</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00602">602</a>.</p>
 
 </div>
 </div>
@@ -1027,7 +1020,7 @@ template&lt;typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00564">564</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00577">577</a>.</p>
 
 </div>
 </div>
@@ -1058,7 +1051,7 @@ template&lt;typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00554">554</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00567">567</a>.</p>
 
 </div>
 </div>
@@ -1087,7 +1080,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00211">211</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00220">220</a>.</p>
 
 </div>
 </div>
@@ -1116,7 +1109,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00342">342</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00351">351</a>.</p>
 
 </div>
 </div>
@@ -1145,7 +1138,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00345">345</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00354">354</a>.</p>
 
 </div>
 </div>
@@ -1178,7 +1171,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00503">503</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00516">516</a>.</p>
 
 </div>
 </div>
@@ -1207,7 +1200,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00489">489</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00502">502</a>.</p>
 
 </div>
 </div>
@@ -1240,7 +1233,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00536">536</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00549">549</a>.</p>
 
 </div>
 </div>
@@ -1269,7 +1262,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00521">521</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00534">534</a>.</p>
 
 </div>
 </div>
@@ -1298,7 +1291,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00234">234</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00243">243</a>.</p>
 
 </div>
 </div>
@@ -1327,7 +1320,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00241">241</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00250">250</a>.</p>
 
 </div>
 </div>
@@ -1356,7 +1349,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00591">591</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00604">604</a>.</p>
 
 </div>
 </div>
@@ -1389,7 +1382,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00380">380</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00393">393</a>.</p>
 
 </div>
 </div>
@@ -1429,7 +1422,7 @@ template&lt;typename InputIt&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00425">425</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00438">438</a>.</p>
 
 </div>
 </div>
@@ -1462,7 +1455,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00401">401</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00414">414</a>.</p>
 
 </div>
 </div>
@@ -1502,7 +1495,7 @@ template&lt;typename InputIt&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00458">458</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00471">471</a>.</p>
 
 </div>
 </div>
@@ -1531,7 +1524,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00584">584</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00597">597</a>.</p>
 
 </div>
 </div>
@@ -1560,7 +1553,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00314">314</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00323">323</a>.</p>
 
 </div>
 </div>
@@ -1589,7 +1582,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00318">318</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00327">327</a>.</p>
 
 </div>
 </div>
@@ -1618,7 +1611,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00330">330</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00339">339</a>.</p>
 
 </div>
 </div>
@@ -1647,7 +1640,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00175">175</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00184">184</a>.</p>
 
 </div>
 </div>
@@ -1676,7 +1669,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00194">194</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00203">203</a>.</p>
 
 </div>
 </div>
@@ -1705,7 +1698,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00306">306</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00315">315</a>.</p>
 
 </div>
 </div>
@@ -1734,7 +1727,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00326">326</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00335">335</a>.</p>
 
 </div>
 </div>
@@ -1763,7 +1756,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00334">334</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00343">343</a>.</p>
 
 </div>
 </div>
@@ -1792,7 +1785,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00213">213</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00222">222</a>.</p>
 
 </div>
 </div>
@@ -1821,7 +1814,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00214">214</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00223">223</a>.</p>
 
 </div>
 </div>
@@ -1850,7 +1843,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00672">672</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00685">685</a>.</p>
 
 </div>
 </div>
@@ -1881,7 +1874,7 @@ template&lt;typename T&gt; </div>
 <dl class="section examples"><dt>Pavyzdžiai</dt><dd><a class="el" href="_c_1_2_users_2ditas_2source_2repos_2ditassimoliunas-prog_2objektuzdv3_2header_files_2_vector_8h-example.html#a1">C:/Users/ditas/source/repos/ditassimoliunas-prog/objektuzdv3/header_files/Vector.h</a>.</dd>
 </dl>
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00615">615</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00628">628</a>.</p>
 
 </div>
 </div>
@@ -1910,7 +1903,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00644">644</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00657">657</a>.</p>
 
 </div>
 </div>
@@ -1939,7 +1932,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00353">353</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00362">362</a>.</p>
 
 </div>
 </div>
@@ -1968,7 +1961,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00356">356</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00365">365</a>.</p>
 
 </div>
 </div>
@@ -1997,7 +1990,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00354">354</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00363">363</a>.</p>
 
 </div>
 </div>
@@ -2026,7 +2019,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00357">357</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00366">366</a>.</p>
 
 </div>
 </div>
@@ -2055,7 +2048,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00262">262</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00271">271</a>.</p>
 
 </div>
 </div>
@@ -2084,7 +2077,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00592">592</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00605">605</a>.</p>
 
 </div>
 </div>
@@ -2113,7 +2106,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00280">280</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00289">289</a>.</p>
 
 </div>
 </div>
@@ -2146,7 +2139,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00287">287</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00296">296</a>.</p>
 
 </div>
 </div>
@@ -2175,7 +2168,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00268">268</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00277">277</a>.</p>
 
 </div>
 </div>
@@ -2204,7 +2197,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00209">209</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00218">218</a>.</p>
 
 </div>
 </div>
@@ -2233,7 +2226,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00299">299</a>.</p>
+<p class="definition">Apibrėžimas failo <a class="el" href="_vector_8h_source.html">Vector.h</a> eilutėje <a class="el" href="_vector_8h_source.html#l00308">308</a>.</p>
 
 </div>
 </div>

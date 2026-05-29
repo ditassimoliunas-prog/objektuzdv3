@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <vector>
 #include <string>
 #include <chrono>
 #include <iomanip>
@@ -21,7 +20,6 @@ namespace fs = std::filesystem;
 
 using std::cout;
 using std::cin;
-using std::vector;
 using std::string;
 using std::ofstream;
 using std::ifstream;
@@ -36,7 +34,7 @@ using std::move;
 using std::list;
 using std::deque;
 
-const vector<int> SZ = { 1000, 10000, 100000, 1000000, 10000000 };
+const Vector<int> SZ = { 1000, 10000, 100000, 1000000, 10000000 };
 const int paz_kiekis = 5;
 
 void ensureDirectoriesExist() {
@@ -69,12 +67,12 @@ void sukurtiTestavimoFailus() {
     cout << "Jusu pasirinkimas: ";
     cin >> pas;
 
-    vector<int> pasirinkti_SZ;
-    if (pas == 1) pasirinkti_SZ = { 1000 };
-    else if (pas == 2) pasirinkti_SZ = { 10000 };
-    else if (pas == 3) pasirinkti_SZ = { 100000 };
-    else if (pas == 4) pasirinkti_SZ = { 1000000 };
-    else if (pas == 5) pasirinkti_SZ = { 10000000 };
+    Vector<int> pasirinkti_SZ;
+    if (pas == 1) pasirinkti_SZ.push_back(1000);
+    else if (pas == 2) pasirinkti_SZ.push_back(10000);
+    else if (pas == 3) pasirinkti_SZ.push_back(100000);
+    else if (pas == 4) pasirinkti_SZ.push_back(1000000);
+    else if (pas == 5) pasirinkti_SZ.push_back(10000000);
     else if (pas == 6) pasirinkti_SZ = SZ;
     else {
         cout << "Neteisingas pasirinkimas!\n";
@@ -90,9 +88,9 @@ void sukurtiTestavimoFailus() {
 
         // Pradedamas matuoti laikas tiems irasams kurti 
         auto start = high_resolution_clock::now();
-        
+
         ofstream out(fname);
-        
+
         // Antraste
         out << left << setw(20) << "Vardas" << setw(20) << "Pavarde";
         for (int i = 1; i <= paz_kiekis; i++) {
@@ -153,7 +151,7 @@ double tirtiKonteineri(int n, const string& fname, int strat) {
     auto start = high_resolution_clock::now();
 
     Container grupe;
-    if constexpr (std::is_same_v<Container, vector<Studentas>>) {
+    if constexpr (std::is_same_v<Container, Vector<Studentas>>) {
         try {
             grupe.reserve(n); // list neturi reserve() funkcijos
         } catch (const std::exception& e) {
@@ -189,7 +187,7 @@ double tirtiKonteineri(int n, const string& fname, int strat) {
     Container kietiakai;
 
     if (strat == 1) {
-        if constexpr (std::is_same_v<Container, vector<Studentas>>) {
+        if constexpr (std::is_same_v<Container, Vector<Studentas>>) {
             vargsiukai.reserve(n / 2 + 100);
             kietiakai.reserve(n / 2 + 100);
         }
@@ -205,7 +203,7 @@ double tirtiKonteineri(int n, const string& fname, int strat) {
         Container().swap(grupe); // Isvalome pradini konteineri
     }
     else if (strat == 2) {
-        if constexpr (std::is_same_v<Container, vector<Studentas>>) {
+        if constexpr (std::is_same_v<Container, Vector<Studentas>>) {
             // Sukrupuojame vektoriu vietoje (O(N) laikas): 
             auto splitPoint = std::partition(grupe.begin(), grupe.end(), [](const Studentas& s) {
                 return s.getRez() >= 5.0; // Salyga kietiakams
@@ -249,7 +247,7 @@ double tirtiKonteineri(int n, const string& fname, int strat) {
         }
         else {
             // std::vector ir std::deque atveju efektyviausa naudoti std::partition in-place
-            if constexpr (std::is_same_v<Container, vector<Studentas>>) {
+            if constexpr (std::is_same_v<Container, Vector<Studentas>>) {
                 vargsiukai.reserve(n / 2 + 100);
             }
             auto it = std::stable_partition(grupe.begin(), grupe.end(), [](const Studentas& s) {
@@ -315,23 +313,26 @@ void atliktiSpartosAnalize() {
     cout << "Jusu pasirinkimas: ";
     cin >> pas;
 
-    vector<int> pasirinkti_SZ;
-    if (pas == 1) pasirinkti_SZ = { 1000 };
-    else if (pas == 2) pasirinkti_SZ = { 10000 };
-    else if (pas == 3) pasirinkti_SZ = { 100000 };
-    else if (pas == 4) pasirinkti_SZ = { 1000000 };
-    else if (pas == 5) pasirinkti_SZ = { 10000000 };
-    else if (pas == 6) pasirinkti_SZ = SZ;
+    Vector<int> pasirinkti_SZ;
+    if (pas == 1) pasirinkti_SZ.push_back(1000);
+    else if (pas == 2) pasirinkti_SZ.push_back(10000);
+    else if (pas == 3) pasirinkti_SZ.push_back(100000);
+    else if (pas == 4) pasirinkti_SZ.push_back(1000000);
+    else if (pas == 5) pasirinkti_SZ.push_back(10000000);
+    else if (pas == 6) {
+        for (int sz : SZ) {
+            pasirinkti_SZ.push_back(sz);
+        }
+    }
     else {
         cout << "Neteisingas pasirinkimas!\n";
         return;
     }
 
     cout << "\nPasirinkite konteinerio tipa testavimui:\n";
-    cout << "1. std::vector\n";
+    cout << "1. Vector (custom)\n";
     cout << "2. std::list\n";
     cout << "3. std::deque\n";
-    cout << "4. Vector (custom)\n";
     cout << "Jusu pasirinkimas: ";
     cin >> kont;
 
@@ -366,10 +367,9 @@ void atliktiSpartosAnalize() {
 
         for (int i = 0; i < test_kartai; i++) {
             cout << "\nTESTO NUMERIS: " << i + 1 << "\n";
-            if (kont == 1) visas_laikas += tirtiKonteineri<vector<Studentas>>(n, fname, strat);
+            if (kont == 1) visas_laikas += tirtiKonteineri<Vector<Studentas>>(n, fname, strat);
             else if (kont == 2) visas_laikas += tirtiKonteineri<list<Studentas>>(n, fname, strat);
             else if (kont == 3) visas_laikas += tirtiKonteineri<deque<Studentas>>(n, fname, strat);
-            else if (kont == 4) visas_laikas += tirtiKonteineri<Vector<Studentas>>(n, fname, strat);
             else {
                 cout << "Neteisingas konteinerio tipas!\n";
                 return;
@@ -382,7 +382,7 @@ void atliktiSpartosAnalize() {
     }
 }
 
-void PadalintiStudentusZabioGreiciu(std::vector<Studentas>& studentai, std::vector<Studentas>& vargsiukai) {
+void PadalintiStudentusZabioGreiciu(Vector<Studentas>& studentai, Vector<Studentas>& vargsiukai) {
     
     // 1. Sukrupuojame vektoriu vietoje (O(N) laikas): 
     // Visi, kuriu balas >= 5.0 atsiduria priekyje, o < 5.0 - gale.

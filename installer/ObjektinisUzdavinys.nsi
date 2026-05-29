@@ -8,9 +8,10 @@
 ; Name and file
 Name "ObjektinisUzdavinys v3.0"
 OutFile "ObjektinisUzdavinys_v3.0_Setup.exe"
+; Install directory - requires admin but user-accessible after install
 InstallDir "$PROGRAMFILES\VU\Ditas-Simoliunas"
 
-; Request admin rights
+; Request admin rights for installation
 RequestExecutionLevel admin
 
 ; MUI Settings
@@ -26,7 +27,7 @@ RequestExecutionLevel admin
 Section "Install"
   SetOutPath "$INSTDIR"
 
-  ; Copy main executable (HIDDEN - ne desktop shortcut)
+  ; Copy main executable
   File "..\out\build\x64-Debug\programa.exe"
 
   ; Copy documentation
@@ -55,7 +56,7 @@ Section "Install"
   ; Write uninstaller
   WriteUninstaller "$INSTDIR\uninstall.exe"
 
-  ; Write registry for Add/Remove Programs
+  ; Write registry for Add/Remove Programs (user-level registry)
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\ObjektinisUzdavinys" "DisplayName" "ObjektinisUzdavinys v3.0"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\ObjektinisUzdavinys" "UninstallString" "$INSTDIR\uninstall.exe"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\ObjektinisUzdavinys" "DisplayVersion" "3.0"

@@ -1,11 +1,10 @@
 #pragma once
 
-#include <vector>
 #include <string>
 
 #include "studentas.h"
+#include "Vector.h"
 
-using std::vector;
 using std::string;
 
-void outputas(vector<Studentas>& grupe);
+void outputas(Vector<Studentas>& grupe);

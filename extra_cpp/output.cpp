@@ -5,11 +5,11 @@
 #include <chrono>
 
 #include "../header_files/output.h"
+#include "../header_files/Vector.h"
 
 using std::cin;
 using std::cout;
 using std::string;
-using std::vector;
 using std::left;
 using std::right;
 using std::setw;
@@ -21,7 +21,7 @@ using std::streamsize;
 using std::chrono::high_resolution_clock;
 using std::chrono::duration;
 
-void outputas(vector<Studentas>& grupe) {
+void outputas(Vector<Studentas>& grupe) {
     if (grupe.empty()) {
         cout << "Nera studentu duomenu!\n";
         return;

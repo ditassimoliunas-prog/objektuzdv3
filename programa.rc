@@ -1,0 +1,5 @@
+// programa.rc - Resource file with admin manifest
+#include <windows.h>
+
+// Embed the manifest (resource ID 1 is reserved for program manifest)
+1 RT_MANIFEST "programa.manifest"

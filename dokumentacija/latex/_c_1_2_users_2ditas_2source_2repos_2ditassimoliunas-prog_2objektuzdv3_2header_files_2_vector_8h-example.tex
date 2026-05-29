@@ -191,6 +191,15 @@ push\+\_\+back(\+T\&\&), pop\+\_\+back(), emplace\+\_\+back()
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ size;\ ++i)\ \_data[i]\ =\ value;}
 \DoxyCodeLine{\ \ \ \ \}}
 \DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Initializer\ list\ constructor}}
+\DoxyCodeLine{\ \ \ \ Vector(std::initializer\_list<T>\ init)\ :\ \_size(init.size()),\ \_capacity(init.size()),\ \_realloc\_count(0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_data\ =\ \_size\ >\ 0\ ?\ \textcolor{keyword}{new}\ T[\_size]\ :\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ i\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ val\ :\ init)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_data[i++]\ =\ val;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Conversion\ constructor\ from\ std::vector}}
 \DoxyCodeLine{\ \ \ \ Vector(\textcolor{keyword}{const}\ std::vector<T>\&\ other)\ :\ \_size(other.size()),\ \_capacity(other.size()),\ \_realloc\_count(0)\ \{}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \_data\ =\ \_size\ >\ 0\ ?\ \textcolor{keyword}{new}\ T[\_size]\ :\ \textcolor{keyword}{nullptr};}
@@ -391,20 +400,24 @@ push\+\_\+back(\+T\&\&), pop\+\_\+back(), emplace\+\_\+back()
 \DoxyCodeLine{\ \ \ \ const\_reverse\_iterator\ crend()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ const\_reverse\_iterator(begin());\ \}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ assign(\textcolor{keywordtype}{size\_t}\ count,\ \textcolor{keyword}{const}\ T\&\ value)\ \{}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ clear();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assign:\ replace\ contents\ with\ count\ copies\ of\ value}}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ >\ \_capacity)\ \{}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ reallocate(count);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Deallocate\ old\ data}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \_data;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_data\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Allocate\ new\ data\ with\ proper\ capacity}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ new\_capacity\ =\ std::max(count,\ (\textcolor{keywordtype}{size\_t})10);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_data\ =\ \textcolor{keyword}{new}\ T[new\_capacity];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_capacity\ =\ new\_capacity;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_realloc\_count++;}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Fill\ with\ values}}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ count;\ ++i)\ \{}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_data[i]\ =\ value;}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \_size\ =\ count;}
-\DoxyCodeLine{\ \ \ \ \}}
-\DoxyCodeLine{}
-\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ InputIt>}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ assign(InputIt\ first,\ InputIt\ last)\ \{}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ is\ a\ specialized\ version\ -\/\ only\ works\ with\ Vector\ iterators}}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ general\ case,\ user\ should\ use\ clear()\ +\ for\ loop}}
 \DoxyCodeLine{\ \ \ \ \}}
 \DoxyCodeLine{}
 \DoxyCodeLine{}

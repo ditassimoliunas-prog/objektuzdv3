@@ -2,416 +2,415 @@
 \hypertarget{duomenu__valdymas_8cpp_source}{}\label{duomenu__valdymas_8cpp_source}\index{extra\_cpp/duomenu\_valdymas.cpp@{extra\_cpp/duomenu\_valdymas.cpp}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <algorithm>}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <cctype>}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <limits>}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <random>}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <ctime>}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <fstream>}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <iomanip>}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <chrono>}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00013}00013\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}../header\_files/duomenu\_valdymas.h"{}}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}../header\_files/mat\_funkcijos.h"{}}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}../header\_files/output.h"{}}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <cctype>}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}../header\_files/duomenu\_valdymas.h"{}}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}../header\_files/mat\_funkcijos.h"{}}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}../header\_files/output.h"{}}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}../header\_files/Vector.h"{}}}
 \DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00017}00017\ }
 \DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00018}00018\ \textcolor{keyword}{using\ }std::cin;}
 \DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00019}00019\ \textcolor{keyword}{using\ }std::cout;}
 \DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00020}00020\ \textcolor{keyword}{using\ }std::string;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00021}00021\ \textcolor{keyword}{using\ }std::vector;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00022}00022\ \textcolor{keyword}{using\ }std::numeric\_limits;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00023}00023\ \textcolor{keyword}{using\ }std::streamsize;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00024}00024\ \textcolor{keyword}{using\ }std::ifstream;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00025}00025\ \textcolor{keyword}{using\ }std::ofstream;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00026}00026\ \textcolor{keyword}{using\ }std::left;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00027}00027\ \textcolor{keyword}{using\ }std::setw;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00028}00028\ \textcolor{keyword}{using\ }std::fixed;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00029}00029\ \textcolor{keyword}{using\ }std::setprecision;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00030}00030\ \textcolor{keyword}{using\ }std::sort;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00031}00031\ \textcolor{keyword}{using\ }std::chrono::high\_resolution\_clock;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00032}00032\ \textcolor{keyword}{using\ }std::chrono::duration;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00033}00033\ \textcolor{keyword}{using\ }std::runtime\_error;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00034}00034\ \textcolor{keyword}{using\ }std::exception;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00021}00021\ \textcolor{keyword}{using\ }std::numeric\_limits;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00022}00022\ \textcolor{keyword}{using\ }std::streamsize;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00023}00023\ \textcolor{keyword}{using\ }std::ifstream;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00024}00024\ \textcolor{keyword}{using\ }std::ofstream;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00025}00025\ \textcolor{keyword}{using\ }std::left;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00026}00026\ \textcolor{keyword}{using\ }std::setw;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00027}00027\ \textcolor{keyword}{using\ }std::fixed;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00028}00028\ \textcolor{keyword}{using\ }std::setprecision;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00029}00029\ \textcolor{keyword}{using\ }std::sort;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00030}00030\ \textcolor{keyword}{using\ }std::chrono::high\_resolution\_clock;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00031}00031\ \textcolor{keyword}{using\ }std::chrono::duration;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00032}00032\ \textcolor{keyword}{using\ }std::runtime\_error;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00033}00033\ \textcolor{keyword}{using\ }std::exception;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00034}00034\ }
 \DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00035}00035\ }
 \DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00036}00036\ }
 \DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00039}00039\ \textcolor{comment}{//\ Atsitiktiniu\ skaiciu\ generavimas}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00040}00040\ \textcolor{keywordtype}{void}\ generuotiPaz(vector<Studentas>\&\ grupe)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00041}00041\ \ \ \ \ srand(time(0));}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00042}00042\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ testiStudenta\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00044}00044\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{while}\ (testiStudenta)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ A;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ vardasGeras\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!vardasGeras)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Iveskite\ varda\ ir\ pavarde:\ "{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ cin\ >>\ std::ws;\ \textcolor{keywordtype}{string}\ v,\ p;\ cin\ >>\ v\ >>\ p;\ A.\doxymbox{\hyperlink{class_zmogus_a2158d2752cd52e970ac4c809446e9d8b}{setVardas}}(v);\ A.\doxymbox{\hyperlink{class_zmogus_ac34eb9eb78f1c75080df7230ca61f2d2}{setPavarde}}(p);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00052}00052\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!arTikRaides(A.\doxymbox{\hyperlink{class_zmogus_aaea44664c236e2fadf022f3821862499}{getVardas}}())\ ||\ !arTikRaides(A.\doxymbox{\hyperlink{class_zmogus_a11ee9ac120fbb7d6a4e1f4da3a602b63}{getPavarde}}()))\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida!\ Vardas\ ir\ pavarde\ turi\ buti\ sudaryti\ tik\ is\ raidziu!\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin.clear();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vardasGeras\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00061}00061\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00063}00063\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Automatiskai\ generuojamas\ atsitiktinis\ pazymiu\ kiekis\ (3-\/10)}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ rand()\ \%\ 8\ +\ 3;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ A.reservePaz(n);\ \textcolor{comment}{//\ Atminties\ rezervacija\ pazymiams}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00067}00067\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Automatiskai\ generuojami\ pazymiai}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Sugeneruota\ "{}}\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ pazymiu:\ "{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ temp\ =\ generuotiPazymi();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ A.addPaz(temp);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ temp\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00076}00076\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Automatiskai\ generuojamas\ egzaminas}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ A.setEgz(generuotiEgzamina());}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Egzamino\ ivertinimas:\ "{}}\ <<\ A.getEgz()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00081}00081\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vidurkio\ skaiciavimas}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!A.isPazEmpty())\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ vid\ =\ vidurkis(A.getPaz());}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ A.setRez(galutinisBalas(vid,\ A.getEgz()));}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Medianos\ skaiciavimas}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ med\ =\ mediana(A.getPaz());}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ A.setMed(galutinisBalas(med,\ A.getEgz()));}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ A.setRez(A.getEgz()\ *\ 0.6);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ A.setMed(A.getEgz()\ *\ 0.6);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00094}00094\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ grupe.push\_back(A);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00096}00096\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Klausimas\ ar\ testi}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ atsakymas;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ atsakymasTeisingas\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!atsakymasTeisingas)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ar\ norite\ generuoti\ dar\ viena\ studenta?\ (T/N):\ "{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ cin\ >>\ atsakymas;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atsakymas\ ==\ \textcolor{charliteral}{'T'}\ ||\ atsakymas\ ==\ \textcolor{charliteral}{'t'})\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ testiStudenta\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ atsakymasTeisingas\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (atsakymas\ ==\ \textcolor{charliteral}{'N'}\ ||\ atsakymas\ ==\ \textcolor{charliteral}{'n'})\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ testiStudenta\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ atsakymasTeisingas\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida!\ Iveskite\ T\ arba\ N!\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin.clear();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin.ignore(numeric\_limits<streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00118}00118\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00119}00119\ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00120}00120\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00121}00121\ \textcolor{keywordtype}{void}\ generuotiVardIrPav(vector<Studentas>\&\ grupe)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00122}00122\ \ \ \ \ srand(time(0));}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00123}00123\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Nuskaitome\ failus}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ vector<string>\ vyruVard,\ vyruPav,\ motVard,\ motPav;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ ifstream\ vvard(\textcolor{stringliteral}{"{}../vpv/vvard.txt"{}});}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ ifstream\ vpav(\textcolor{stringliteral}{"{}../vpv/vpav.txt"{}});}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ ifstream\ mvard(\textcolor{stringliteral}{"{}../vpv/mvard.txt"{}});}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ ifstream\ mpav(\textcolor{stringliteral}{"{}../vpv/mpav.txt"{}});}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00131}00131\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Patikrinimas\ ar\ failai\ atsidare}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!vvard.is\_open()\ ||\ !vpav.is\_open()\ ||\ !mvard.is\_open()\ ||\ !mpav.is\_open())\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ runtime\_error(\textcolor{stringliteral}{"{}Nepavyko\ atidaryti\ vieno\ ar\ daugiau\ failu\ su\ vardais\ ir\ pavardemis!"{}});}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00136}00136\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Nuskaitomi\ visi\ vardai\ ir\ pavardes}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ eilute;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (vvard\ >>\ eilute)\ vyruVard.push\_back(eilute);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (vpav\ >>\ eilute)\ vyruPav.push\_back(eilute);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (mvard\ >>\ eilute)\ motVard.push\_back(eilute);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (mpav\ >>\ eilute)\ motPav.push\_back(eilute);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00143}00143\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ vvard.close();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ vpav.close();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ mvard.close();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ mpav.close();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00148}00148\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Patikrinama\ ar\ failai\ ne\ tusti}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vyruVard.empty()\ ||\ vyruPav.empty()\ ||\ motVard.empty()\ ||\ motPav.empty())\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ runtime\_error(\textcolor{stringliteral}{"{}Vienas\ ar\ daugiau\ failu\ yra\ tusti!"{}});}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00153}00153\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00154}00154\ \ \ \ \ \textcolor{keywordtype}{bool}\ testiStudenta\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00155}00155\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{while}\ (testiStudenta)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ A;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00158}00158\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Atsitiktinai\ parenka\ lyti\ (0\ -\/\ vyras,\ 1\ -\/\ moteris)}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ lytis\ =\ rand()\ \%\ 2;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00161}00161\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generuojamas\ vardas\ ir\ pavarde\ pagal\ lyti}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lytis\ ==\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vardIndex\ =\ rand()\ \%\ vyruVard.size();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pavIndex\ =\ rand()\ \%\ vyruPav.size();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ A.\doxymbox{\hyperlink{class_zmogus_a2158d2752cd52e970ac4c809446e9d8b}{setVardas}}(vyruVard[vardIndex]);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ A.\doxymbox{\hyperlink{class_zmogus_ac34eb9eb78f1c75080df7230ca61f2d2}{setPavarde}}(vyruPav[pavIndex]);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vardIndex\ =\ rand()\ \%\ motVard.size();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pavIndex\ =\ rand()\ \%\ motPav.size();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ A.\doxymbox{\hyperlink{class_zmogus_a2158d2752cd52e970ac4c809446e9d8b}{setVardas}}(motVard[vardIndex]);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ A.\doxymbox{\hyperlink{class_zmogus_ac34eb9eb78f1c75080df7230ca61f2d2}{setPavarde}}(motPav[pavIndex]);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00175}00175\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Sugeneruotas\ vardas\ ir\ pavarde:\ "{}}\ <<\ A.\doxymbox{\hyperlink{class_zmogus_aaea44664c236e2fadf022f3821862499}{getVardas}}()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ A.\doxymbox{\hyperlink{class_zmogus_a11ee9ac120fbb7d6a4e1f4da3a602b63}{getPavarde}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00178}00178\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Automatiskai\ generuojamas\ atsitiktinis\ pazymiu\ kiekis\ (3-\/10)}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ rand()\ \%\ 8\ +\ 3;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ A.reservePaz(n);\ \textcolor{comment}{//\ Atminties\ rezervacija\ pazymiams}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00182}00182\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Automatiskai\ sugeneruojami\ pazymiai}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Sugeneruota\ "{}}\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ pazymiu:\ "{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ temp\ =\ generuotiPazymi();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ A.addPaz(temp);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ temp\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00191}00191\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Automatiskai\ sugeneruojamas\ egzaminas}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ A.setEgz(generuotiEgzamina());}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Egzamino\ ivertinimas:\ "{}}\ <<\ A.getEgz()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00196}00196\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vidurkio\ skaiciavimas}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!A.isPazEmpty())\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ vid\ =\ vidurkis(A.getPaz());}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ A.setRez(galutinisBalas(vid,\ A.getEgz()));}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Medianos\ skaiciavimas}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ med\ =\ mediana(A.getPaz());}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ A.setMed(galutinisBalas(med,\ A.getEgz()));}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ A.setRez(A.getEgz()\ *\ 0.6);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ A.setMed(A.getEgz()\ *\ 0.6);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00209}00209\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ grupe.push\_back(A);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00211}00211\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Klausimas\ ar\ testi}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ atsakymas;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ atsakymasTeisingas\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!atsakymasTeisingas)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ar\ norite\ generuoti\ dar\ viena\ studenta?\ (T/N):\ "{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ cin\ >>\ atsakymas;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atsakymas\ ==\ \textcolor{charliteral}{'T'}\ ||\ atsakymas\ ==\ \textcolor{charliteral}{'t'})\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ testiStudenta\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ atsakymasTeisingas\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (atsakymas\ ==\ \textcolor{charliteral}{'N'}\ ||\ atsakymas\ ==\ \textcolor{charliteral}{'n'})\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ testiStudenta\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ atsakymasTeisingas\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida!\ Iveskite\ T\ arba\ N!\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin.clear();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin.ignore(numeric\_limits<streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00038}00038\ \textcolor{comment}{//\ Atsitiktiniu\ skaiciu\ generavimas}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00039}00039\ \textcolor{keywordtype}{void}\ generuotiPaz(\doxymbox{\hyperlink{class_vector}{Vector<Studentas>}}\&\ grupe)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00040}00040\ \ \ \ \ srand(time(0));}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ testiStudenta\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{while}\ (testiStudenta)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ A;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ vardasGeras\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!vardasGeras)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Iveskite\ varda\ ir\ pavarde:\ "{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ cin\ >>\ std::ws;\ \textcolor{keywordtype}{string}\ v,\ p;\ cin\ >>\ v\ >>\ p;\ A.\doxymbox{\hyperlink{class_zmogus_a2158d2752cd52e970ac4c809446e9d8b}{setVardas}}(v);\ A.\doxymbox{\hyperlink{class_zmogus_ac34eb9eb78f1c75080df7230ca61f2d2}{setPavarde}}(p);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!arTikRaides(A.\doxymbox{\hyperlink{class_zmogus_aaea44664c236e2fadf022f3821862499}{getVardas}}())\ ||\ !arTikRaides(A.\doxymbox{\hyperlink{class_zmogus_a11ee9ac120fbb7d6a4e1f4da3a602b63}{getPavarde}}()))\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida!\ Vardas\ ir\ pavarde\ turi\ buti\ sudaryti\ tik\ is\ raidziu!\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin.clear();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vardasGeras\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Automatiskai\ generuojamas\ atsitiktinis\ pazymiu\ kiekis\ (3-\/10)}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ rand()\ \%\ 8\ +\ 3;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ A.reservePaz(n);\ \textcolor{comment}{//\ Atminties\ rezervacija\ pazymiams}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Automatiskai\ generuojami\ pazymiai}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Sugeneruota\ "{}}\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ pazymiu:\ "{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ temp\ =\ generuotiPazymi();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ A.addPaz(temp);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ temp\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Automatiskai\ generuojamas\ egzaminas}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ A.setEgz(generuotiEgzamina());}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Egzamino\ ivertinimas:\ "{}}\ <<\ A.getEgz()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vidurkio\ skaiciavimas}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!A.isPazEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ vid\ =\ vidurkis(A.getPaz());}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ A.setRez(galutinisBalas(vid,\ A.getEgz()));}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Medianos\ skaiciavimas}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ med\ =\ mediana(A.getPaz());}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ A.setMed(galutinisBalas(med,\ A.getEgz()));}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ A.setRez(A.getEgz()\ *\ 0.6);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ A.setMed(A.getEgz()\ *\ 0.6);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ grupe.push\_back(A);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Klausimas\ ar\ testi}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ atsakymas;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ atsakymasTeisingas\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!atsakymasTeisingas)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ar\ norite\ generuoti\ dar\ viena\ studenta?\ (T/N):\ "{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ cin\ >>\ atsakymas;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atsakymas\ ==\ \textcolor{charliteral}{'T'}\ ||\ atsakymas\ ==\ \textcolor{charliteral}{'t'})\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ testiStudenta\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ atsakymasTeisingas\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (atsakymas\ ==\ \textcolor{charliteral}{'N'}\ ||\ atsakymas\ ==\ \textcolor{charliteral}{'n'})\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ testiStudenta\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ atsakymasTeisingas\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida!\ Iveskite\ T\ arba\ N!\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin.clear();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin.ignore(numeric\_limits<streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00118}00118\ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00120}00120\ \textcolor{keywordtype}{void}\ generuotiVardIrPav(\doxymbox{\hyperlink{class_vector}{Vector<Studentas>}}\&\ grupe)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00121}00121\ \ \ \ \ srand(time(0));}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00123}00123\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Nuskaitome\ failus}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ vector<string>\ vyruVard,\ vyruPav,\ motVard,\ motPav;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ ifstream\ vvard(\textcolor{stringliteral}{"{}../vpv/vvard.txt"{}});}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ ifstream\ vpav(\textcolor{stringliteral}{"{}../vpv/vpav.txt"{}});}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ ifstream\ mvard(\textcolor{stringliteral}{"{}../vpv/mvard.txt"{}});}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ ifstream\ mpav(\textcolor{stringliteral}{"{}../vpv/mpav.txt"{}});}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Patikrinimas\ ar\ failai\ atsidare}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!vvard.is\_open()\ ||\ !vpav.is\_open()\ ||\ !mvard.is\_open()\ ||\ !mpav.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ runtime\_error(\textcolor{stringliteral}{"{}Nepavyko\ atidaryti\ vieno\ ar\ daugiau\ failu\ su\ vardais\ ir\ pavardemis!"{}});}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Nuskaitomi\ visi\ vardai\ ir\ pavardes}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ eilute;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (vvard\ >>\ eilute)\ vyruVard.push\_back(eilute);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (vpav\ >>\ eilute)\ vyruPav.push\_back(eilute);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (mvard\ >>\ eilute)\ motVard.push\_back(eilute);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (mpav\ >>\ eilute)\ motPav.push\_back(eilute);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ vvard.close();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ vpav.close();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ mvard.close();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ mpav.close();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Patikrinama\ ar\ failai\ ne\ tusti}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vyruVard.empty()\ ||\ vyruPav.empty()\ ||\ motVard.empty()\ ||\ motPav.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ runtime\_error(\textcolor{stringliteral}{"{}Vienas\ ar\ daugiau\ failu\ yra\ tusti!"{}});}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00153}00153\ \ \ \ \ \textcolor{keywordtype}{bool}\ testiStudenta\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{keywordflow}{while}\ (testiStudenta)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ A;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Atsitiktinai\ parenka\ lyti\ (0\ -\/\ vyras,\ 1\ -\/\ moteris)}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ lytis\ =\ rand()\ \%\ 2;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generuojamas\ vardas\ ir\ pavarde\ pagal\ lyti}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lytis\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vardIndex\ =\ rand()\ \%\ vyruVard.size();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pavIndex\ =\ rand()\ \%\ vyruPav.size();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ A.\doxymbox{\hyperlink{class_zmogus_a2158d2752cd52e970ac4c809446e9d8b}{setVardas}}(vyruVard[vardIndex]);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ A.\doxymbox{\hyperlink{class_zmogus_ac34eb9eb78f1c75080df7230ca61f2d2}{setPavarde}}(vyruPav[pavIndex]);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vardIndex\ =\ rand()\ \%\ motVard.size();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pavIndex\ =\ rand()\ \%\ motPav.size();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ A.\doxymbox{\hyperlink{class_zmogus_a2158d2752cd52e970ac4c809446e9d8b}{setVardas}}(motVard[vardIndex]);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ A.\doxymbox{\hyperlink{class_zmogus_ac34eb9eb78f1c75080df7230ca61f2d2}{setPavarde}}(motPav[pavIndex]);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Sugeneruotas\ vardas\ ir\ pavarde:\ "{}}\ <<\ A.\doxymbox{\hyperlink{class_zmogus_aaea44664c236e2fadf022f3821862499}{getVardas}}()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ A.\doxymbox{\hyperlink{class_zmogus_a11ee9ac120fbb7d6a4e1f4da3a602b63}{getPavarde}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Automatiskai\ generuojamas\ atsitiktinis\ pazymiu\ kiekis\ (3-\/10)}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ rand()\ \%\ 8\ +\ 3;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ A.reservePaz(n);\ \textcolor{comment}{//\ Atminties\ rezervacija\ pazymiams}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Automatiskai\ sugeneruojami\ pazymiai}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Sugeneruota\ "{}}\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ pazymiu:\ "{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ temp\ =\ generuotiPazymi();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ A.addPaz(temp);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ temp\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Automatiskai\ sugeneruojamas\ egzaminas}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ A.setEgz(generuotiEgzamina());}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Egzamino\ ivertinimas:\ "{}}\ <<\ A.getEgz()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vidurkio\ skaiciavimas}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!A.isPazEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ vid\ =\ vidurkis(A.getPaz());}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ A.setRez(galutinisBalas(vid,\ A.getEgz()));}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Medianos\ skaiciavimas}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ med\ =\ mediana(A.getPaz());}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ A.setMed(galutinisBalas(med,\ A.getEgz()));}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ A.setRez(A.getEgz()\ *\ 0.6);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ A.setMed(A.getEgz()\ *\ 0.6);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ grupe.push\_back(A);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Klausimas\ ar\ testi}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ atsakymas;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ atsakymasTeisingas\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!atsakymasTeisingas)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ar\ norite\ generuoti\ dar\ viena\ studenta?\ (T/N):\ "{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ cin\ >>\ atsakymas;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atsakymas\ ==\ \textcolor{charliteral}{'T'}\ ||\ atsakymas\ ==\ \textcolor{charliteral}{'t'})\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ testiStudenta\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ atsakymasTeisingas\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (atsakymas\ ==\ \textcolor{charliteral}{'N'}\ ||\ atsakymas\ ==\ \textcolor{charliteral}{'n'})\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ testiStudenta\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ atsakymasTeisingas\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida!\ Iveskite\ T\ arba\ N!\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin.clear();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin.ignore(numeric\_limits<streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00232}00232\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00233}00233\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00234}00234\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00235}00235\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ runtime\_error\&\ e)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida\ generuojant\ studentus:\ "{}}\ <<\ e.what()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00237}00237\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00238}00238\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ exception\&\ e)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Netiketa\ klaida:\ "{}}\ <<\ e.what()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00240}00240\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00241}00241\ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00242}00242\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00243}00243\ \textcolor{keywordtype}{void}\ skaitytiIsFailo(vector<Studentas>\&\ grupe)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00244}00244\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ failoPavadinimas;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Iveskite\ failo\ pavadinima:\ "{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ cin\ >>\ failoPavadinimas;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00248}00248\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pridedamas\ testuojamas\ katalogas}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ kelias\ =\ \textcolor{stringliteral}{"{}..\(\backslash\)\(\backslash\)studentai\_test\(\backslash\)\(\backslash\)"{}}\ +\ failoPavadinimas;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00251}00251\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ ifstream\ failas(kelias);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!failas.is\_open())\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ runtime\_error(\textcolor{stringliteral}{"{}Nepavyko\ atidaryti\ failo:\ "{}}\ +\ kelias);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00256}00256\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Praleidziama\ antraste}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ eilute;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ getline(failas,\ eilute);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00260}00260\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Skaitomi\ studentai}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (failas\ >>\ eilute)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ A;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ A.\doxymbox{\hyperlink{class_zmogus_a2158d2752cd52e970ac4c809446e9d8b}{setVardas}}(eilute);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ failas\ >>\ A.\doxymbox{\hyperlink{class_zmogus_a11ee9ac120fbb7d6a4e1f4da3a602b63}{getPavarde}}();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00266}00266\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ vector<int>\ paz;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ paz.reserve(15);\ \textcolor{comment}{//\ Rezervuojama\ talpa\ (\string~15\ pazymiu\ dazniausiai\ pakanka)}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sk;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (failas\ >>\ sk)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ paz.push\_back(sk);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (failas.peek()\ ==\ \textcolor{charliteral}{'\(\backslash\)n'})\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00274}00274\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!paz.empty())\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ A.setEgz(paz.back());}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ paz.pop\_back();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ A.setPaz(paz);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ A.setRez(galutinisBalas(vidurkis(A.getPaz()),\ A.getEgz()));}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ A.setMed(galutinisBalas(mediana(A.getPaz()),\ A.getEgz()));}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grupe.push\_back(A);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ failas.ignore(numeric\_limits<streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00285}00285\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ failas.close();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00287}00287\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (grupe.empty())\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ runtime\_error(\textcolor{stringliteral}{"{}Failas\ yra\ tuscias\ arba\ neteisingai\ formatuotas!"{}});}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00291}00291\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Nuskaityta\ "{}}\ <<\ grupe.size()\ <<\ \textcolor{stringliteral}{"{}\ studentu!\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00293}00293\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Klausiama\ kur\ isvesti\ rezultatus}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!grupe.empty())\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pasirinkite\ isvesties\ buda:\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1.\ Isvesti\ i\ terminala\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2.\ Irasyti\ i\ faila\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ isvestiesPasirinkimas;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!(cin\ >>\ isvestiesPasirinkimas)\ ||\ (isvestiesPasirinkimas\ !=\ 1\ \&\&\ isvestiesPasirinkimas\ !=\ 2))\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida!\ Pasirinkite\ 1\ arba\ 2:\ "{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin.clear();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin.ignore(numeric\_limits<streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isvestiesPasirinkimas\ ==\ 1)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputas(grupe);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rasytIFaila(grupe);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00312}00312\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00313}00313\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00314}00314\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ runtime\_error\&\ e)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida\ skaitant\ is\ failo:\ "{}}\ <<\ e.what()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00316}00316\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00317}00317\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ exception\&\ e)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Netiketa\ klaida:\ "{}}\ <<\ e.what()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00319}00319\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00320}00320\ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00321}00321\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00322}00322\ \textcolor{keywordtype}{void}\ rasytIFaila(vector<Studentas>\&\ grupe)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00323}00323\ \ \ \ \ \textcolor{keywordflow}{if}\ (grupe.empty())\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Nera\ studentu\ duomenu!\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00326}00326\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00327}00327\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00328}00328\ \ \ \ \ \textcolor{comment}{//\ Klausiama\ kaip\ rusiuoti}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00329}00329\ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00330}00330\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pasirinkite\ rusiavimo\ buda:\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00331}00331\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1.\ Pagal\ varda\ (A-\/Z)\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00332}00332\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2.\ Pagal\ pavarde\ (A-\/Z)\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00333}00333\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}3.\ Pagal\ galutini\ bala\ (vidurki)\ -\/\ didejimo\ tvarka\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00334}00334\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}4.\ Pagal\ galutini\ bala\ (mediana)\ -\/\ didejimo\ tvarka\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00335}00335\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00336}00336\ \ \ \ \ \textcolor{keywordtype}{int}\ pasirinkimas;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00337}00337\ \ \ \ \ \textcolor{keywordflow}{while}\ (!(cin\ >>\ pasirinkimas)\ ||\ pasirinkimas\ <\ 1\ ||\ pasirinkimas\ >\ 4)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida!\ Iveskite\ skaiciu\ nuo\ 1\ iki\ 4:\ "{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00339}00339\ \ \ \ \ \ \ \ \ cin.clear();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00340}00340\ \ \ \ \ \ \ \ \ cin.ignore(numeric\_limits<streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00341}00341\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00342}00342\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00343}00343\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pasirinktas\ rusiavimas:\ "{}}\ <<\ pasirinkimas\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00344}00344\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00345}00345\ \ \ \ \ \textcolor{comment}{//\ Pradedamas\ rusiavimo\ laiko\ matavimas}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00346}00346\ \ \ \ \ \textcolor{keyword}{auto}\ pradzia\ =\ high\_resolution\_clock::now();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00347}00347\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00348}00348\ \ \ \ \ \textcolor{comment}{//\ Rusiuojama\ pagal\ pasirinkima}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00349}00349\ \ \ \ \ \textcolor{keywordflow}{switch}\ (pasirinkimas)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00350}00350\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00351}00351\ \ \ \ \ \ \ \ \ sort(grupe.begin(),\ grupe.end(),\ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ a,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ b)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ return\ a.getVardas()\ <\ b.getVardas();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00354}00354\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00355}00355\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00356}00356\ \ \ \ \ \ \ \ \ sort(grupe.begin(),\ grupe.end(),\ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ a,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ b)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ return\ a.getPavarde()\ <\ b.getPavarde();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00360}00360\ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00361}00361\ \ \ \ \ \ \ \ \ sort(grupe.begin(),\ grupe.end(),\ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ a,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ b)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ return\ a.getRez()\ <\ b.getRez();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00364}00364\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00365}00365\ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00366}00366\ \ \ \ \ \ \ \ \ sort(grupe.begin(),\ grupe.end(),\ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ a,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ b)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ return\ a.getMed()\ <\ b.getMed();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00369}00369\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00370}00370\ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00371}00371\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida!\ Neteisingas\ pasirinkimas.\ Rodoma\ be\ rusiavimo.\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00372}00372\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00373}00373\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00374}00374\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00375}00375\ \ \ \ \ \textcolor{comment}{//\ Baigiamas\ rusiavimo\ laiko\ matavimas}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00376}00376\ \ \ \ \ \textcolor{keyword}{auto}\ pabaiga\ =\ high\_resolution\_clock::now();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00377}00377\ \ \ \ \ duration<double>\ trukme\ =\ pabaiga\ -\/\ pradzia;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00378}00378\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00379}00379\ \ \ \ \ \textcolor{comment}{//\ Klausiama\ failo\ pavadinimo}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00380}00380\ \ \ \ \ \textcolor{keywordtype}{string}\ isvestiesFailas;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00381}00381\ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00382}00382\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Iveskite\ isvesties\ failo\ pavadinima:\ "{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00383}00383\ \ \ \ \ cin\ >>\ isvestiesFailas;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00384}00384\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00385}00385\ \ \ \ \ \textcolor{comment}{//\ Sukuriamas\ kelias\ i\ testuojama\ kataloga}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00386}00386\ \ \ \ \ \textcolor{keywordtype}{string}\ kelias\ =\ \textcolor{stringliteral}{"{}..\(\backslash\)\(\backslash\)studentai\_test\(\backslash\)\(\backslash\)"{}}\ +\ isvestiesFailas;}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00387}00387\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00388}00388\ \ \ \ \ ofstream\ failas(kelias);}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00389}00389\ \ \ \ \ \textcolor{keywordflow}{if}\ (!failas.is\_open())\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida!\ Nepavyko\ sukurti\ failo:\ "{}}\ <<\ kelias\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00392}00392\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00393}00393\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00394}00394\ \ \ \ \ \textcolor{comment}{//\ Antrastes\ eilute}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00395}00395\ \ \ \ \ failas\ <<\ left\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Vardas"{}}\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Pavarde"{}}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00396}00396\ \ \ \ \ \ \ \ \ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Galutinis\ (Vid.)"{}}\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Galutinis\ (Med.)\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00397}00397\ \ \ \ \ failas\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00398}00398\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00399}00399\ \ \ \ \ \textcolor{comment}{//\ Studentu\ duomenys}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00400}00400\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ A\ :\ grupe)\ \{}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00401}00401\ \ \ \ \ \ \ \ \ failas\ <<\ left\ <<\ setw(20)\ <<\ A.\doxymbox{\hyperlink{class_zmogus_aaea44664c236e2fadf022f3821862499}{getVardas}}()\ <<\ setw(20)\ <<\ A.\doxymbox{\hyperlink{class_zmogus_a11ee9ac120fbb7d6a4e1f4da3a602b63}{getPavarde}}()}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(20)\ <<\ fixed\ <<\ setprecision(2)\ <<\ A.getRez()}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(20)\ <<\ fixed\ <<\ setprecision(2)\ <<\ A.getMed()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00404}00404\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00405}00405\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00406}00406\ \ \ \ \ failas.close();}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00407}00407\ }
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00408}00408\ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00409}00409\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Duomenys\ sekmingai\ irasyti\ i\ faila:\ "{}}\ <<\ kelias\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00410}00410\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ivykdymo\ laikas:\ "{}}\ <<\ fixed\ <<\ setprecision(7)\ <<\ trukme.count()\ <<\ \textcolor{stringliteral}{"{}\ s\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00411}00411\ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00234}00234\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ runtime\_error\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida\ generuojant\ studentus:\ "{}}\ <<\ e.what()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00236}00236\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00237}00237\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Netiketa\ klaida:\ "{}}\ <<\ e.what()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00239}00239\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00240}00240\ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00242}00242\ \textcolor{keywordtype}{void}\ skaitytiIsFailo(\doxymbox{\hyperlink{class_vector}{Vector<Studentas>}}\&\ grupe)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00243}00243\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ failoPavadinimas;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Iveskite\ failo\ pavadinima:\ "{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ cin\ >>\ failoPavadinimas;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00247}00247\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pridedamas\ testuojamas\ katalogas}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ kelias\ =\ \textcolor{stringliteral}{"{}..\(\backslash\)\(\backslash\)studentai\_test\(\backslash\)\(\backslash\)"{}}\ +\ failoPavadinimas;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ ifstream\ failas(kelias);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!failas.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ runtime\_error(\textcolor{stringliteral}{"{}Nepavyko\ atidaryti\ failo:\ "{}}\ +\ kelias);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Praleidziama\ antraste}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ eilute;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ getline(failas,\ eilute);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Skaitomi\ studentai}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (failas\ >>\ eilute)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_studentas}{Studentas}}\ A;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ A.\doxymbox{\hyperlink{class_zmogus_a2158d2752cd52e970ac4c809446e9d8b}{setVardas}}(eilute);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ failas\ >>\ A.\doxymbox{\hyperlink{class_zmogus_a11ee9ac120fbb7d6a4e1f4da3a602b63}{getPavarde}}();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ vector<int>\ paz;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ paz.reserve(15);\ \textcolor{comment}{//\ Rezervuojama\ talpa\ (\string~15\ pazymiu\ dazniausiai\ pakanka)}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sk;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (failas\ >>\ sk)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ paz.push\_back(sk);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (failas.peek()\ ==\ \textcolor{charliteral}{'\(\backslash\)n'})\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00273}00273\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!paz.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ A.setEgz(paz.back());}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ paz.pop\_back();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ A.setPaz(paz);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ A.setRez(galutinisBalas(vidurkis(A.getPaz()),\ A.getEgz()));}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ A.setMed(galutinisBalas(mediana(A.getPaz()),\ A.getEgz()));}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grupe.push\_back(A);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ failas.ignore(numeric\_limits<streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ failas.close();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (grupe.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ runtime\_error(\textcolor{stringliteral}{"{}Failas\ yra\ tuscias\ arba\ neteisingai\ formatuotas!"{}});}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00290}00290\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Nuskaityta\ "{}}\ <<\ grupe.size()\ <<\ \textcolor{stringliteral}{"{}\ studentu!\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00292}00292\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00293}00293\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Klausiama\ kur\ isvesti\ rezultatus}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!grupe.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pasirinkite\ isvesties\ buda:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1.\ Isvesti\ i\ terminala\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2.\ Irasyti\ i\ faila\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ isvestiesPasirinkimas;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!(cin\ >>\ isvestiesPasirinkimas)\ ||\ (isvestiesPasirinkimas\ !=\ 1\ \&\&\ isvestiesPasirinkimas\ !=\ 2))\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida!\ Pasirinkite\ 1\ arba\ 2:\ "{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin.clear();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin.ignore(numeric\_limits<streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isvestiesPasirinkimas\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputas(grupe);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rasytIFaila(grupe);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00312}00312\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00313}00313\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ runtime\_error\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida\ skaitant\ is\ failo:\ "{}}\ <<\ e.what()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00315}00315\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00316}00316\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00317}00317\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Netiketa\ klaida:\ "{}}\ <<\ e.what()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00318}00318\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00319}00319\ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00320}00320\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00321}00321\ \textcolor{keywordtype}{void}\ rasytIFaila(\doxymbox{\hyperlink{class_vector}{Vector<Studentas>}}\&\ grupe)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00322}00322\ \ \ \ \ \textcolor{keywordflow}{if}\ (grupe.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Nera\ studentu\ duomenu!\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00325}00325\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00326}00326\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00327}00327\ \ \ \ \ \textcolor{comment}{//\ Klausiama\ kaip\ rusiuoti}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00328}00328\ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00329}00329\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pasirinkite\ rusiavimo\ buda:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00330}00330\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1.\ Pagal\ varda\ (A-\/Z)\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00331}00331\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2.\ Pagal\ pavarde\ (A-\/Z)\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00332}00332\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}3.\ Pagal\ galutini\ bala\ (vidurki)\ -\/\ didejimo\ tvarka\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00333}00333\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}4.\ Pagal\ galutini\ bala\ (mediana)\ -\/\ didejimo\ tvarka\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00334}00334\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00335}00335\ \ \ \ \ \textcolor{keywordtype}{int}\ pasirinkimas;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00336}00336\ \ \ \ \ \textcolor{keywordflow}{while}\ (!(cin\ >>\ pasirinkimas)\ ||\ pasirinkimas\ <\ 1\ ||\ pasirinkimas\ >\ 4)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00337}00337\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida!\ Iveskite\ skaiciu\ nuo\ 1\ iki\ 4:\ "{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ cin.clear();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00339}00339\ \ \ \ \ \ \ \ \ cin.ignore(numeric\_limits<streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00340}00340\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00341}00341\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00342}00342\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pasirinktas\ rusiavimas:\ "{}}\ <<\ pasirinkimas\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00343}00343\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00344}00344\ \ \ \ \ \textcolor{comment}{//\ Pradedamas\ rusiavimo\ laiko\ matavimas}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00345}00345\ \ \ \ \ \textcolor{keyword}{auto}\ pradzia\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00346}00346\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00347}00347\ \ \ \ \ \textcolor{comment}{//\ Rusiuojama\ pagal\ pasirinkima}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00348}00348\ \ \ \ \ \textcolor{keywordflow}{switch}\ (pasirinkimas)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00349}00349\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00350}00350\ \ \ \ \ \ \ \ \ sort(grupe.begin(),\ grupe.end(),\ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ a,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ b)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ return\ a.getVardas()\ <\ b.getVardas();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00353}00353\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00354}00354\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00355}00355\ \ \ \ \ \ \ \ \ sort(grupe.begin(),\ grupe.end(),\ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ a,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ b)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ return\ a.getPavarde()\ <\ b.getPavarde();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00358}00358\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00359}00359\ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ sort(grupe.begin(),\ grupe.end(),\ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ a,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ b)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ return\ a.getRez()\ <\ b.getRez();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00364}00364\ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00365}00365\ \ \ \ \ \ \ \ \ sort(grupe.begin(),\ grupe.end(),\ [](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ a,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_studentas}{Studentas}}\&\ b)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ return\ a.getMed()\ <\ b.getMed();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00368}00368\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00369}00369\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00370}00370\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida!\ Neteisingas\ pasirinkimas.\ Rodoma\ be\ rusiavimo.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00371}00371\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00372}00372\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00373}00373\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00374}00374\ \ \ \ \ \textcolor{comment}{//\ Baigiamas\ rusiavimo\ laiko\ matavimas}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00375}00375\ \ \ \ \ \textcolor{keyword}{auto}\ pabaiga\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00376}00376\ \ \ \ \ duration<double>\ trukme\ =\ pabaiga\ -\/\ pradzia;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00377}00377\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00378}00378\ \ \ \ \ \textcolor{comment}{//\ Klausiama\ failo\ pavadinimo}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00379}00379\ \ \ \ \ \textcolor{keywordtype}{string}\ isvestiesFailas;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00380}00380\ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00381}00381\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Iveskite\ isvesties\ failo\ pavadinima:\ "{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00382}00382\ \ \ \ \ cin\ >>\ isvestiesFailas;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00383}00383\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00384}00384\ \ \ \ \ \textcolor{comment}{//\ Sukuriamas\ kelias\ i\ testuojama\ kataloga}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00385}00385\ \ \ \ \ \textcolor{keywordtype}{string}\ kelias\ =\ \textcolor{stringliteral}{"{}..\(\backslash\)\(\backslash\)studentai\_test\(\backslash\)\(\backslash\)"{}}\ +\ isvestiesFailas;}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00386}00386\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00387}00387\ \ \ \ \ ofstream\ failas(kelias);}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00388}00388\ \ \ \ \ \textcolor{keywordflow}{if}\ (!failas.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Klaida!\ Nepavyko\ sukurti\ failo:\ "{}}\ <<\ kelias\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00391}00391\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00392}00392\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00393}00393\ \ \ \ \ \textcolor{comment}{//\ Antrastes\ eilute}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00394}00394\ \ \ \ \ failas\ <<\ left\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Vardas"{}}\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Pavarde"{}}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Galutinis\ (Vid.)"{}}\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Galutinis\ (Med.)\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00396}00396\ \ \ \ \ failas\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00397}00397\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00398}00398\ \ \ \ \ \textcolor{comment}{//\ Studentu\ duomenys}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00399}00399\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ A\ :\ grupe)\ \{}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00400}00400\ \ \ \ \ \ \ \ \ failas\ <<\ left\ <<\ setw(20)\ <<\ A.\doxymbox{\hyperlink{class_zmogus_aaea44664c236e2fadf022f3821862499}{getVardas}}()\ <<\ setw(20)\ <<\ A.\doxymbox{\hyperlink{class_zmogus_a11ee9ac120fbb7d6a4e1f4da3a602b63}{getPavarde}}()}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(20)\ <<\ fixed\ <<\ setprecision(2)\ <<\ A.getRez()}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(20)\ <<\ fixed\ <<\ setprecision(2)\ <<\ A.getMed()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00403}00403\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00404}00404\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00405}00405\ \ \ \ \ failas.close();}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00406}00406\ }
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00407}00407\ \ \ \ \ cout\ <<\ string(80,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00408}00408\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Duomenys\ sekmingai\ irasyti\ i\ faila:\ "{}}\ <<\ kelias\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00409}00409\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ivykdymo\ laikas:\ "{}}\ <<\ fixed\ <<\ setprecision(7)\ <<\ trukme.count()\ <<\ \textcolor{stringliteral}{"{}\ s\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{duomenu__valdymas_8cpp_source_l00410}00410\ \}}
 
 \end{DoxyCode}

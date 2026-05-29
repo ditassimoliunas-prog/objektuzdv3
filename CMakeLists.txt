@@ -17,7 +17,7 @@ endif()
 # Nurodome kur ieškoti header failų (.h)
 include_directories(header_files)
 
-# Visi išeitiniai (source) .cpp failai išskyrus patį main
+# Vsi išeitiniai (source) .cpp failai išskyrus patį main
 set(SOURCES 
     objekt1uzd.cpp 
     extra_cpp/duomenu_valdymas.cpp 
@@ -30,8 +30,25 @@ set(SOURCES
     extra_cpp/Studentas.cpp
 )
 
-# Sukuriame programa.exe (nuolatinis executable - nechange)
-add_executable(programa ${SOURCES})
+# Add resource file for manifest
+set(RESOURCES
+    programa.rc
+)
+
+# Sukuriame programa.exe (nuolatinis executable)
+add_executable(programa ${SOURCES} ${RESOURCES})
+
+# Disable automatic manifest generation - we're using the .rc file
+if(MSVC)
+    set_target_properties(programa PROPERTIES
+        VS_CONFIGURATION_TYPE "Application"
+        LINK_FLAGS "/MANIFEST:NO"
+    )
+endif()
+
+
+
+
 
 # ===== GOOGLE TEST FRAMEWORK =====
 include(FetchContent)

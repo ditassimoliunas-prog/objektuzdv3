@@ -1,4 +1,3 @@
-#include <vector>
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -14,11 +13,11 @@
 #include "../header_files/duomenu_valdymas.h"
 #include "../header_files/mat_funkcijos.h"
 #include "../header_files/output.h"
+#include "../header_files/Vector.h"
 
 using std::cin;
 using std::cout;
 using std::string;
-using std::vector;
 using std::numeric_limits;
 using std::streamsize;
 using std::ifstream;
@@ -37,7 +36,7 @@ using std::exception;
 
 
 // Atsitiktiniu skaiciu generavimas
-void generuotiPaz(vector<Studentas>& grupe) {
+void generuotiPaz(Vector<Studentas>& grupe) {
     srand(time(0));
 
     bool testiStudenta = true;
@@ -118,7 +117,7 @@ void generuotiPaz(vector<Studentas>& grupe) {
     }
 }
 
-void generuotiVardIrPav(vector<Studentas>& grupe) {
+void generuotiVardIrPav(Vector<Studentas>& grupe) {
     srand(time(0));
 
     try {
@@ -240,7 +239,7 @@ void generuotiVardIrPav(vector<Studentas>& grupe) {
     }
 }
 
-void skaitytiIsFailo(vector<Studentas>& grupe) {
+void skaitytiIsFailo(Vector<Studentas>& grupe) {
     try {
         string failoPavadinimas;
         cout << "Iveskite failo pavadinima: ";
@@ -319,7 +318,7 @@ void skaitytiIsFailo(vector<Studentas>& grupe) {
     }
 }
 
-void rasytIFaila(vector<Studentas>& grupe) {
+void rasytIFaila(Vector<Studentas>& grupe) {
     if (grupe.empty()) {
         cout << "Nera studentu duomenu!\n";
         return;

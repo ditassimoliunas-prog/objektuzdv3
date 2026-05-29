@@ -301,6 +301,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_c_1_2_users_2
 <div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; size; ++i) _data[i] = value;</div>
 <div class="line">    }</div>
 <div class="line"> </div>
+<div class="line">    <span class="comment">// Initializer list constructor</span></div>
+<div class="line">    Vector(std::initializer_list&lt;T&gt; init) : _size(init.size()), _capacity(init.size()), _realloc_count(0) {</div>
+<div class="line">        _data = _size &gt; 0 ? <span class="keyword">new</span> T[_size] : <span class="keyword">nullptr</span>;</div>
+<div class="line">        <span class="keywordtype">size_t</span> i = 0;</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; val : init) {</div>
+<div class="line">            _data[i++] = val;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
 <div class="line">    <span class="comment">// Conversion constructor from std::vector</span></div>
 <div class="line">    Vector(<span class="keyword">const</span> std::vector&lt;T&gt;&amp; other) : _size(other.size()), _capacity(other.size()), _realloc_count(0) {</div>
 <div class="line">        _data = _size &gt; 0 ? <span class="keyword">new</span> T[_size] : <span class="keyword">nullptr</span>;</div>
@@ -501,20 +510,24 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_c_1_2_users_2
 <div class="line">    const_reverse_iterator crend()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> const_reverse_iterator(begin()); }</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">void</span> assign(<span class="keywordtype">size_t</span> count, <span class="keyword">const</span> T&amp; value) {</div>
-<div class="line">        clear();</div>
+<div class="line">        <span class="comment">// Assign: replace contents with count copies of value</span></div>
 <div class="line">        <span class="keywordflow">if</span> (count &gt; _capacity) {</div>
-<div class="line">            reallocate(count);</div>
+<div class="line">            <span class="comment">// Deallocate old data</span></div>
+<div class="line">            <span class="keyword">delete</span>[] _data;</div>
+<div class="line">            _data = <span class="keyword">nullptr</span>;</div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">// Allocate new data with proper capacity</span></div>
+<div class="line">            <span class="keywordtype">size_t</span> new_capacity = std::max(count, (<span class="keywordtype">size_t</span>)10);</div>
+<div class="line">            _data = <span class="keyword">new</span> T[new_capacity];</div>
+<div class="line">            _capacity = new_capacity;</div>
+<div class="line">            _realloc_count++;</div>
 <div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Fill with values</span></div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; count; ++i) {</div>
 <div class="line">            _data[i] = value;</div>
 <div class="line">        }</div>
 <div class="line">        _size = count;</div>
-<div class="line">    }</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> InputIt&gt;</div>
-<div class="line">    <span class="keywordtype">void</span> assign(InputIt first, InputIt last) {</div>
-<div class="line">        <span class="comment">// This is a specialized version - only works with Vector iterators</span></div>
-<div class="line">        <span class="comment">// For general case, user should use clear() + for loop</span></div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line"> </div>
