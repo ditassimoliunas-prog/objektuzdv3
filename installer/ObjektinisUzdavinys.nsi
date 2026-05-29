@@ -27,17 +27,17 @@ Section "Install"
   SetOutPath "$INSTDIR"
 
   ; Copy main executable
-  File "..\build\Release\programa.exe"
+  File "..\build\programa.exe"
 
   ; Copy documentation
   SetOutPath "$INSTDIR\documentation"
   File "..\README.md"
-  File "..\dokumentacija\latex\refman.pdf"
+  File "..\refman.pdf"
 
-  ; Copy test data files
+  ; Copy test data files (optional - skip if not found)
   SetOutPath "$INSTDIR\test_data"
-  File "..\Studentai_test_10000.txt"
-  File "..\Studentai_test_100000.txt"
+  File /nonfatal "..\extra_cpp\Studentai_test_10000.txt"
+  File /nonfatal "..\extra_cpp\Studentai_test_100000.txt"
 
   ; Create desktop shortcut
   CreateShortcut "$DESKTOP\ObjektinisUzdavinys v3.0.lnk" "$INSTDIR\programa.exe" "" "$INSTDIR\programa.exe" 0
