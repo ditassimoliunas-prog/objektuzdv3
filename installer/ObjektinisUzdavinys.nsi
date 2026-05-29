@@ -34,10 +34,10 @@ Section "Install"
   File "..\README.md"
   File "..\refman.pdf"
 
-  ; Copy test data files (optional - skip if not found)
-  SetOutPath "$INSTDIR\test_data"
-  File /nonfatal "..\extra_cpp\Studentai_test_10000.txt"
-  File /nonfatal "..\extra_cpp\Studentai_test_100000.txt"
+  ; Copy test data files from Studentai_test folder
+  SetOutPath "$INSTDIR\Studentai_test"
+  File "..\Studentai_test\studentai_10000.txt"
+  File "..\Studentai_test\studentai_100000.txt"
 
   ; Create desktop shortcut
   CreateShortcut "$DESKTOP\ObjektinisUzdavinys v3.0.lnk" "$INSTDIR\programa.exe" "" "$INSTDIR\programa.exe" 0
